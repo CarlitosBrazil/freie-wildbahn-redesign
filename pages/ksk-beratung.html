@@ -48,6 +48,28 @@
     .beratung-page .inner-page-hero .video-container {
       margin: 0;
     }
+    .beratung-summary-section {
+      background: linear-gradient(180deg, #ffffff 0%, #fdfcf9 100%);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .beratung-summary-section .beratung-summary-heading {
+      color: var(--brand-orange);
+      font-size: clamp(21px, 2vw, 26px);
+      margin: 0 0 24px;
+    }
+    .beratung-summary-callout {
+      border-left: 5px solid var(--brand-orange);
+      padding: 2px 0 2px 26px;
+    }
+    .beratung-summary-callout p {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+    .beratung-summary-callout p:last-child {
+      margin-bottom: 0;
+    }
     .beratung-page .beratung-shell > h2 {
       color: var(--text-dark);
       font-size: clamp(28px, 3vw, 36px);
@@ -542,6 +564,9 @@
       .beratung-page .inner-page-hero .hero-image-col {
         grid-row: 2;
       }
+      .beratung-summary-callout {
+        padding-left: 20px;
+      }
       .beratung-quicklinks {
         width: 100%;
         padding: 22px 18px;
@@ -725,13 +750,13 @@
     <section class="inner-page-hero section-padding">
       <div class="hero-grid">
         <div class="hero-text-col">
-          <span class="dachzeile">KSK-Mitglied werden und KSK-Prüfung</span>
+          <span class="dachzeile">KSK-Versicherung und KSK-Prüfung</span>
           <h1>KSK-Beratung zu Künstlersozialkasse-Fragen</h1>
-          <p class="hero-description">Du möchtest Dich über die <strong>Künstlersozialkasse versichern</strong> und benötigst Unterstützung? Oder Du bist bereits Mitglied und wirst von der KSK geprüft?</p>
+          <p class="hero-description">Du möchtest Dich über die <strong>Künstlersozialkasse versichern</strong> und benötigst Unterstützung? Oder Du bist bereits über die KSK versichert und wirst geprüft?</p>
           <p><strong>45-minütige Beratung von KSK-Experten:</strong> Wir beraten künstlerisch oder publizistisch Tätige zu allen Themen rund um die Künstlersozialkasse.</p>
           <ul class="beratung-check-list">
             <li><span class="beratung-check">✓</span><span>Hilfe beim <strong>KSK-Antrag und Aufnahmeverfahren</strong>.</span></li>
-            <li><span class="beratung-check">✓</span><span><strong>Kostenfreie Beratung</strong> bei späterer Mitgliedschaft.</span></li>
+            <li><span class="beratung-check">✓</span><span><strong>Anrechnung der Beratungsgebühr</strong> bei anschließender FWB Mitgliedschaft.</span></li>
             <li><span class="beratung-check">✓</span><span>Unbeschwert und gut beraten durch die <strong>KSK-Prüfung</strong>.</span></li>
           </ul>
           <div class="beratung-cta-row">
@@ -747,41 +772,13 @@
       </div>
     </section>
 
-    <section id="experten" class="block-section bg-light section-padding">
+    <section class="block-section section-padding beratung-summary-section" aria-labelledby="beratung-gut-zu-wissen">
       <div class="container beratung-shell">
-        <span class="dachzeile">Dein Beratungsteam</span>
-        <h2>KSK-Beratung durch Künstlersozialkasse-Experten von Freie Wildbahn e.V.</h2>
-        <p>Deine KSK-Beratung liegt bei unserem <strong>eingespielten Team</strong>. Wer die 45 Minuten mit Dir übernimmt, kennt die Künstlersozialkasse aus der täglichen Praxis – Du bist nie von einer einzelnen Person abhängig.</p>
-        <article class="team-member-card">
-          <div class="team-member-photo"><img src="../assets/Detlef-Husemann-KSK-Experte-Freie-Wildbahn-e.V-1920w.png" alt="Detlef Husemann, KSK-Experte"></div>
-          <div class="team-member-body"><h3>Detlef Husemann</h3><p class="team-member-role">Gründer und Vorsitzender · KSK-Experte</p><p>Detlef machte die <strong>Künstlersozialkasse vor rund zwei Jahrzehnten zu seinem Schwerpunkt</strong>. Aus tausenden Fällen weiß er, wo Theorie und Verwaltungspraxis auseinandergehen.</p></div>
-        </article>
-        <article class="team-member-card">
-          <div class="team-member-photo"><img src="../assets/marlon_rother-1920w.jpeg" alt="Marlon Rother, Rechtsanwalt und KSK-Berater"></div>
-          <div class="team-member-body"><h3>Marlon Rother</h3><p class="team-member-role">Rechtsanwalt · KSK-Berater</p><p>Marlon bringt die <strong>juristische Perspektive</strong> ein. Für Mitglieder von Freie Wildbahn e.V. ist er Ansprechpartner im Forderungsmanagement und bei <strong>rechtlich kniffligen KSK-Fragen</strong>.</p></div>
-        </article>
-        <article class="team-member-card">
-          <div class="team-member-photo"><img src="../assets/Melina-Mitarbeiterin-Freie-Wildbahn-1920w.jpg" alt="Melina Husemann, KSK-Beraterin"></div>
-          <div class="team-member-body"><h3>Melina Husemann</h3><p class="team-member-role">KSK-Beraterin · Mitgliederbetreuung</p><p>Melina steuert <strong>KSK-Anträge</strong> und begleitet die Mitgliederbetreuung. Sie macht aus Deinen Fragen einen <strong>konkreten nächsten Schritt</strong>.</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="beratung-quicklinks-section">
-      <div class="container beratung-shell">
-        <nav class="beratung-quicklinks" aria-label="Direkt zu den Themen dieser Seite">
-          <h2>Quicklinks</h2>
-          <ol>
-            <li><a href="#experten"><span class="beratung-quicklinks-number">01</span><span>KSK-Beratung durch unsere Experten</span><span>›</span></a></li>
-            <li><a href="#kosten"><span class="beratung-quicklinks-number">02</span><span>Kosten und Inhalte der KSK-Beratung</span><span>›</span></a></li>
-            <li><a href="#kostenfrei"><span class="beratung-quicklinks-number">03</span><span>Kostenfreie Beratung bei späterer Mitgliedschaft</span><span>›</span></a></li>
-            <li><a href="#vorteile"><span class="beratung-quicklinks-number">04</span><span>Vorteile der FWB Mitgliedschaft</span><span>›</span></a></li>
-            <li><a href="#antrag"><span class="beratung-quicklinks-number">05</span><span>KSK-Antrag und Aufnahmeverfahren</span><span>›</span></a></li>
-            <li><a href="#pruefung"><span class="beratung-quicklinks-number">06</span><span>Beratung zu Deiner KSK-Prüfung</span><span>›</span></a></li>
-            <li><a href="#weitere-themen"><span class="beratung-quicklinks-number">07</span><span>Weitere Themen unserer KSK-Beratung</span><span>›</span></a></li>
-            <li><a href="#faq"><span class="beratung-quicklinks-number">08</span><span>Häufige Fragen zur KSK-Beratung</span><span>›</span></a></li>
-          </ol>
-        </nav>
+        <h2 id="beratung-gut-zu-wissen" class="beratung-summary-heading">Gut zu wissen:</h2>
+        <div class="beratung-summary-callout">
+          <p>Die persönliche KSK-Beratung dauert <strong>45 Minuten</strong> und kostet für Freiberufler:innen und Soloselbständige <strong>149,95 € inklusive 19 % MwSt.</strong> Für Gesellschafter:innen einer GbR, UG oder GmbH kostet sie <strong>190,40 € inklusive 19 % MwSt.</strong></p>
+          <p>Entscheidest Du Dich anschließend innerhalb von 24 Stunden für eine <strong>Mitgliedschaft bei Freie Wildbahn e.V.</strong>, wird die bereits bezahlte Beratungsgebühr auf Deinen Beitrag für das erste Mitgliedschaftsjahr angerechnet.</p>
+        </div>
       </div>
     </section>
 
@@ -806,7 +803,7 @@
           <tbody><tr><td>Freiberufler:innen und soloselbständig Tätige</td><td><strong>149,95 €*</strong></td></tr><tr><td>Du bist Gesellschafter:in einer GbR, UG oder GmbH</td><td><strong>190,40 €*</strong></td></tr></tbody>
         </table></div>
         <p>Die telefonische Beratung dauert <strong>45 Minuten</strong>.</p>
-        <p class="beratung-note">* Bei einer späteren FWB Mitgliedschaft werden die <strong>Beratungskosten auf Deinen Mitgliedsbeitrag angerechnet</strong>.</p>
+        <p class="beratung-note">* Entscheidest Du Dich innerhalb von 24 Stunden für eine FWB Mitgliedschaft, wird die bereits bezahlte <strong>Beratungsgebühr auf Deinen Beitrag für das erste Mitgliedschaftsjahr angerechnet</strong>.</p>
         <aside class="beratung-horizontal-expert" aria-label="KSK-Experte Detlef Husemann">
           <div class="beratung-horizontal-profile">
             <img src="../assets/detlef-husemann-freie-wildbahn-ksk-berater.jpg" alt="Detlef Husemann">
@@ -819,49 +816,39 @@
       </div>
     </section>
 
-    <section id="kostenfrei" class="block-section section-padding">
+    <section id="experten" class="block-section section-padding">
       <div class="container beratung-shell">
-        <div class="beratung-membership-intro">
-          <span class="dachzeile">Beratung und Mitgliedschaft</span>
-          <h2>Kostenfrei: Jetzt Beratung buchen und später Vereinsmitglied werden!</h2>
-          <p>Überzeuge Dich zunächst in einer persönlichen KSK-Beratung von unserer Erfahrung. Wenn Du Dich während der Beratung für eine <strong>Mitgliedschaft bei Freie Wildbahn e.V.</strong> entscheidest, rechnen wir die Beratungskosten mit Deinen Mitgliedsbeiträgen ab.</p>
-          <p>Damit ist die KSK-Beratung im Rahmen Deiner FWB Mitgliedschaft enthalten und für Dich <strong>ohne zusätzliche Kosten</strong>.</p>
-        </div>
-        <div class="beratung-membership-cards">
-          <article class="beratung-membership-card">
-            <h3>Mitgliedsbeiträge</h3>
-            <ul class="beratung-check-list">
-              <li><span class="beratung-check">✓</span><span><strong>45-minütige KSK-Beratung: 0 €</strong> für FWB Mitglieder</span></li>
-              <li><span class="beratung-check">✓</span><span>Freiberufler:innen und Soloselbständige: <strong>228 € im Jahr</strong> beziehungsweise 19,50 € im Monat</span></li>
-              <li><span class="beratung-check">✓</span><span>Gesellschafter-Geschäftsführer:innen: <strong>320 € im Jahr</strong> beziehungsweise 26,67 € im Monat</span></li>
-              <li><span class="beratung-check">✓</span><span>Jede weitere Person im Gesellschafterkreis: <strong>160 € im Jahr</strong></span></li>
-            </ul>
-          </article>
-          <article class="beratung-membership-card">
-            <h3>Deine Vorteile als FWB Mitglied</h3>
-            <ul class="beratung-check-list">
-              <li><span class="beratung-check">✓</span><span><strong>Mehr Zeit</strong> für Deine Selbständigkeit</span></li>
-              <li><span class="beratung-check">✓</span><span><strong>Übernahme der KSK-Kommunikation</strong> auf Wunsch</span></li>
-              <li><span class="beratung-check">✓</span><span>Vergünstigte <strong>Spezialversicherungen</strong></span></li>
-              <li><span class="beratung-check">✓</span><span><strong>Jederzeit individuelle Beratung</strong></span></li>
-            </ul>
-          </article>
-        </div>
-        <div class="beratung-membership-actions"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+        <span class="dachzeile">Dein Beratungsteam</span>
+        <h2>KSK-Beratung durch Künstlersozialkasse-Experten von Freie Wildbahn e.V.</h2>
+        <p>Deine KSK-Beratung liegt bei unserem <strong>eingespielten Team</strong>. Wer die 45 Minuten mit Dir übernimmt, kennt die Künstlersozialkasse aus der täglichen Praxis – Du bist nie von einer einzelnen Person abhängig.</p>
+        <article class="team-member-card">
+          <div class="team-member-photo"><img src="../assets/Detlef-Husemann-KSK-Experte-Freie-Wildbahn-e.V-1920w.png" alt="Detlef Husemann, KSK-Experte"></div>
+          <div class="team-member-body"><h3>Detlef Husemann</h3><p class="team-member-role">Gründer und Vorsitzender · KSK-Experte</p><p>Detlef machte die <strong>Künstlersozialkasse vor rund zwei Jahrzehnten zu seinem Schwerpunkt</strong>. Aus tausenden Fällen weiß er, wo Theorie und Verwaltungspraxis auseinandergehen.</p></div>
+        </article>
+        <article class="team-member-card">
+          <div class="team-member-photo"><img src="../assets/marlon_rother-1920w.jpeg" alt="Marlon Rother, Rechtsanwalt und KSK-Berater"></div>
+          <div class="team-member-body"><h3>Marlon Rother</h3><p class="team-member-role">Rechtsanwalt · KSK-Berater</p><p>Marlon bringt die <strong>juristische Perspektive</strong> ein. Für Mitglieder von Freie Wildbahn e.V. ist er Ansprechpartner im Forderungsmanagement und bei <strong>rechtlich kniffligen KSK-Fragen</strong>.</p></div>
+        </article>
+        <article class="team-member-card">
+          <div class="team-member-photo"><img src="../assets/Melina-Mitarbeiterin-Freie-Wildbahn-1920w.jpg" alt="Melina Husemann, KSK-Beraterin"></div>
+          <div class="team-member-body"><h3>Melina Husemann</h3><p class="team-member-role">KSK-Beraterin · Mitgliederbetreuung</p><p>Melina steuert <strong>KSK-Anträge</strong> und begleitet die Mitgliederbetreuung. Sie macht aus Deinen Fragen einen <strong>konkreten nächsten Schritt</strong>.</p></div>
+        </article>
       </div>
     </section>
 
-    <section id="vorteile" class="block-section bg-light section-padding">
+    <section class="beratung-quicklinks-section bg-light">
       <div class="container beratung-shell">
-        <span class="dachzeile">Dauerhafte Unterstützung</span>
-        <h2>Deine Vorteile als Mitglied von Freie Wildbahn e.V. im Überblick</h2>
-        <ul class="beratung-check-list">
-          <li><span class="beratung-check">✓</span><span><strong>Mehr Zeit:</strong> Wir unterstützen Dich so oft wie nötig bei Fragen rund um die KSK.</span></li>
-          <li><span class="beratung-check">✓</span><span><strong>KSK-Kommunikation:</strong> Auf Wunsch übernehmen wir per Postvollmacht den direkten Austausch mit der Künstlersozialkasse.</span></li>
-          <li><span class="beratung-check">✓</span><span><strong>Vergünstigte Spezialversicherungen</strong> für Deine berufliche Situation.</span></li>
-          <li><span class="beratung-check">✓</span><span><strong>Jederzeit individuelle Beratung</strong> durch ein erfahrenes Team.</span></li>
-        </ul>
-        <div class="beratung-cta-row"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+        <nav class="beratung-quicklinks" aria-label="Direkt zu den Themen dieser Seite">
+          <h2>Quicklinks</h2>
+          <ol>
+            <li><a href="#experten"><span class="beratung-quicklinks-number">01</span><span>KSK-Beratung durch unsere Experten</span><span>›</span></a></li>
+            <li><a href="#antrag"><span class="beratung-quicklinks-number">02</span><span>KSK-Antrag und Aufnahmeverfahren</span><span>›</span></a></li>
+            <li><a href="#pruefung"><span class="beratung-quicklinks-number">03</span><span>Beratung zu Deiner KSK-Prüfung</span><span>›</span></a></li>
+            <li><a href="#weitere-themen"><span class="beratung-quicklinks-number">04</span><span>Weitere Themen unserer KSK-Beratung</span><span>›</span></a></li>
+            <li><a href="#mitgliedschaft"><span class="beratung-quicklinks-number">05</span><span>KSK-Beratung und FWB Mitgliedschaft</span><span>›</span></a></li>
+            <li><a href="#faq"><span class="beratung-quicklinks-number">06</span><span>Häufige Fragen zur KSK-Beratung</span><span>›</span></a></li>
+          </ol>
+        </nav>
       </div>
     </section>
 
@@ -919,7 +906,40 @@
       </div>
     </section>
 
-    <section id="faq" class="block-section bg-light section-padding">
+    <section id="mitgliedschaft" class="block-section bg-light section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">Beratung und FWB Mitgliedschaft</span>
+        <h2>Nach der Beratung in Ruhe über Deine FWB Mitgliedschaft entscheiden</h2>
+        <p>Buche zunächst Deine persönliche KSK-Beratung. Entscheidest Du Dich anschließend innerhalb von 24 Stunden für eine <strong>Mitgliedschaft bei Freie Wildbahn e.V.</strong>, wird die bereits bezahlte Beratungsgebühr auf Deinen Beitrag für das erste Mitgliedschaftsjahr angerechnet.</p>
+        <p>Danach ist die laufende <strong>KSK-Fachberatung</strong> im Rahmen Deiner FWB Mitgliedschaft <strong>ohne zusätzliche Beratungskosten</strong> enthalten.</p>
+        <div class="beratung-membership-cards">
+          <article class="beratung-membership-card">
+            <h3>FWB Mitgliedsbeiträge</h3>
+            <ul class="beratung-check-list">
+              <li><span class="beratung-check">✓</span><span>Freiberufler:innen und Soloselbständige: <strong>228 € im Jahr</strong> (entspricht 19,00 € pro Monat bei jährlicher Zahlweise)</span></li>
+              <li><span class="beratung-check">✓</span><span>Gesellschafter-Geschäftsführer:innen: <strong>320 € im Jahr</strong> (entspricht 26,67 € pro Monat)</span></li>
+              <li><span class="beratung-check">✓</span><span>Jede weitere Person im Gesellschafterkreis: <strong>160 € im Jahr</strong> (entspricht 13,34 € pro Monat)</span></li>
+            </ul>
+          </article>
+          <article class="beratung-membership-card">
+            <h3>Deine Vorteile als FWB Mitglied</h3>
+            <ul class="beratung-check-list">
+              <li><span class="beratung-check">✓</span><span><strong>Laufende KSK-Fachberatung</strong> ohne zusätzliche Beratungskosten</span></li>
+              <li><span class="beratung-check">✓</span><span><strong>Mehr Zeit</strong> für Deine Selbständigkeit</span></li>
+              <li><span class="beratung-check">✓</span><span>Auf Wunsch <strong>Unterstützung bei der KSK-Kommunikation</strong></span></li>
+              <li><span class="beratung-check">✓</span><span>Vergünstigte <strong>Spezialversicherungen</strong></span></li>
+              <li><span class="beratung-check">✓</span><span><strong>Jederzeit individuelle Fachberatung</strong></span></li>
+            </ul>
+          </article>
+        </div>
+        <div class="beratung-cta-row">
+          <a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a>
+          <a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="block-section section-padding">
       <div class="container beratung-shell">
         <span class="dachzeile">Häufige Fragen</span>
         <h2>Häufige Fragen zur KSK-Beratung</h2>
