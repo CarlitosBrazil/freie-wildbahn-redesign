@@ -211,8 +211,13 @@
     .ksk-pruefung-page .ksk-alert-list .bullets-list-text p:last-child {
       margin-bottom: 0;
     }
+    .ksk-pruefung-page .ksk-green-check-list .bullets-list-icon {
+      color: var(--primary-green);
+      fill: var(--primary-green);
+    }
     .ksk-pruefung-page .ksk-faq {
       border-top: 1px solid var(--border-light);
+      margin-top: 28px;
       margin-bottom: 34px;
     }
     .ksk-pruefung-page .ksk-faq-item {
@@ -276,6 +281,38 @@
     .ksk-pruefung-page .ksk-faq-panel {
       padding: 0 46px 20px 4px;
     }
+    .ksk-pruefung-page .ksk-pruefung-final-cta-section {
+      background: #fff;
+      padding: 64px 0;
+    }
+    .ksk-pruefung-page .ksk-pruefung-final-cta {
+      align-items: center;
+      background: var(--primary-green);
+      border-radius: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 980px;
+      padding: 40px 48px;
+    }
+    .ksk-pruefung-page .ksk-pruefung-final-cta h2 {
+      color: #fff;
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    .ksk-pruefung-page .ksk-pruefung-final-cta p {
+      color: rgba(255,255,255,.9);
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 700px;
+    }
+    .ksk-pruefung-page .ksk-pruefung-final-cta .btn {
+      flex: 0 0 auto;
+    }
     @media (max-width: 980px) {
       .ksk-pruefung-page .inner-page-hero .hero-text-col,
       .ksk-pruefung-page .inner-page-hero .hero-image-col {
@@ -313,6 +350,18 @@
       }
       .ksk-pruefung-page .ksk-faq-panel {
         padding-right: 2px;
+      }
+      .ksk-pruefung-page .ksk-pruefung-final-cta-section {
+        padding: 40px 0;
+      }
+      .ksk-pruefung-page .ksk-pruefung-final-cta {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 30px 24px;
+      }
+      .ksk-pruefung-page .ksk-pruefung-final-cta .btn {
+        text-align: center;
+        width: 100%;
       }
     }
   </style>
@@ -485,7 +534,7 @@
           <p style="font-size: 17px; color: var(--text-medium); margin-bottom: 24px;"><strong>Wir informieren und beraten Dich gerne.</strong></p>
           
           <!-- Key Points Check List -->
-          <ul class="bullets-list">
+          <ul class="bullets-list ksk-green-check-list">
             <li class="bullets-list-item">
               <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
               <span class="bullets-list-text"><strong>Bußgeld:</strong> Minimiere das Risiko einer Geldbuße</span>
@@ -576,7 +625,7 @@
           <p>Augenscheinlich wirken die Ausfüllhinweise selbsterklärend. Trotzdem <strong>liegen die Gefahren im Detail</strong>.</p>
           <p>Daher unser klarer Rat: <strong>Bitte fülle das Dokument nicht vorschnell aus</strong>, wenn Du bei Deinem Einkommen, Deinen Tätigkeitsbereichen oder den geforderten Unterlagen unsicher bist.</p>
           <p>Prüfe zuerst genau:</p>
-          <ul class="bullets-list">
+          <ul class="bullets-list ksk-green-check-list">
             <li class="bullets-list-item">
               <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
               <span class="bullets-list-text"><strong>welche Angaben</strong> die KSK von Dir verlangt,</span>
@@ -730,11 +779,18 @@
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-11" aria-expanded="false" aria-controls="pruefung-faq-answer-11"><span>Kann ich gegen eine Entscheidung der KSK Widerspruch einlegen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-11" role="region" aria-labelledby="pruefung-faq-question-11" hidden><p>Gegen einen Bescheid der Künstlersozialkasse kannst Du grundsätzlich <strong>Widerspruch einlegen</strong>. Bei Versand innerhalb Deutschlands beträgt die Frist grundsätzlich einen Monat. Entscheidend ist die Rechtsbehelfsbelehrung im konkreten Bescheid. Nicht jedes KSK-Schreiben ist ein widerspruchsfähiger Bescheid.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-12" aria-expanded="false" aria-controls="pruefung-faq-answer-12"><span>Wann ist eine KSK-Beratung bei einer Prüfung sinnvoll?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-12" role="region" aria-labelledby="pruefung-faq-question-12" hidden><p>Eine KSK-Beratung kann sinnvoll sein, wenn Du unsicher bist, <strong>wie Du das Schreiben verstehen sollst, welche Angaben verlangt werden, welche Unterlagen relevant sind oder welche Folgen in Deinem Fall möglich sein können</strong>.</p></div></div>
           </div>
-          <p>Du möchtest Deine KSK-Prüfung jetzt einordnen und Dein weiteres Vorgehen klären?</p>
-          <div class="ksk-cta-pair">
-            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
-            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ksk-pruefung-final-cta-section">
+      <div class="container page-container">
+        <div class="ksk-pruefung-final-cta">
+          <div>
+            <h2>Unsicher bei Deiner KSK-Prüfung?</h2>
+            <p>Lass Dein KSK-Schreiben und Deine Unterlagen persönlich einordnen, bevor Du antwortest. So kannst Du Dein <strong>weiteres Vorgehen sorgfältig vorbereiten</strong>.</p>
           </div>
+          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
         </div>
       </div>
     </section>
