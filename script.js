@@ -34,9 +34,9 @@ window.renderGlobalHeader = function renderGlobalHeader() {
           <li class="menu-item${vereinPages.includes(page) ? ' active' : ''}"><a href="${pageLink('team.html')}">Verein</a><ul class="dropdown-menu"><li><a href="${pageLink('team.html')}">Team</a></li><li><a href="${pageLink('vorteile.html')}">Vorteile</a></li><li><a href="${pageLink('kontakt.html')}">Kontakt</a></li></ul></li>
           <li class="menu-item${blogPages ? ' active' : ''}"><a href="${pageLink('blog.html')}">Blog</a><ul class="dropdown-menu"><li><a href="${pageLink('blog-kategorie.html')}?kategorie=allgemein">Allgemein</a></li><li><a href="${pageLink('blog-kategorie.html')}?kategorie=kuenstlersozialkasse">Künstlersozialkasse</a></li><li><a href="${pageLink('blog-kategorie.html')}?kategorie=recht">Recht</a></li><li><a href="${pageLink('blog-kategorie.html')}?kategorie=steuern">Steuern</a></li><li><a href="${pageLink('blog-kategorie.html')}?kategorie=versicherung">Versicherung</a></li></ul></li>
         </ul></nav>
-        <div class="nav-right-group"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke?step=registration" class="btn btn-orange">Vorteile KSK-Beratung</a></div>
+        <div class="nav-right-group"><a href="${pageLink('ksk-beratung.html')}" class="btn btn-orange">KSK-Beratung</a></div>
       </div></div>
-      <div class="mobile-header"><a href="${root}index.html" class="mobile-logo"><img src="${root}assets/logo.png" alt="Freie Wildbahn e.V."></a><div class="mobile-nav-actions"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke?step=registration" class="btn btn-orange">Vorteile KSK-Beratung</a><button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false"><span></span><span></span><span></span></button></div></div>
+      <div class="mobile-header"><a href="${root}index.html" class="mobile-logo"><img src="${root}assets/logo.png" alt="Freie Wildbahn e.V."></a><div class="mobile-nav-actions"><a href="${pageLink('ksk-beratung.html')}" class="btn btn-orange">KSK-Beratung</a><button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false"><span></span><span></span><span></span></button></div></div>
     </header>`;
 
   currentHeader.before(...shell.childNodes);

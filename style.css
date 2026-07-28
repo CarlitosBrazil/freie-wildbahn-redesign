@@ -322,7 +322,7 @@ header {
 }
 
 .logo img {
-  height: 72px; /* Increased to match old site brand presence */
+  height: 80px;
   width: auto;
 }
 
@@ -1756,11 +1756,11 @@ main {
 .article-shell { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .article-shell-narrow { width: min(780px, calc(100% - 40px)); margin-inline: auto; }
 .article-back { display: block; width: fit-content; margin-bottom: 28px; color: #208b89; font-weight: 700; text-decoration: none; }
-.article-hero h1 { max-width: 1050px; margin: 14px 0 20px; font-size: clamp(40px, 5.2vw, 67px); line-height: 1.06; letter-spacing: -.035em; }
+.article-hero h1 { max-width: 920px; margin: 14px 0 20px; font-size: clamp(36px, 3.4vw, 46px); line-height: 1.14; letter-spacing: -.025em; }
 .article-deck { max-width: 800px; color: #59615e; font-size: 21px; line-height: 1.55; }
 .article-byline { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 28px; color: #6d706e; font-size: 14px; }
-.article-cover { margin-top: 48px; margin-bottom: 65px; }
-.article-cover img { width: 100%; height: clamp(340px, 54vw, 620px); display: block; object-fit: cover; border-radius: 14px; }
+.article-cover { max-width: 940px; margin: 48px auto 65px; }
+.article-cover img { width: 100%; height: clamp(300px, 38vw, 480px); display: block; object-fit: cover; border-radius: 14px; }
 .article-cover figcaption { margin-top: 10px; color: #767a77; font-size: 12px; }
 .article-body { padding-bottom: 50px; color: #3d4542; font-size: 18px; line-height: 1.82; }
 .article-body .article-lead { color: #283633; font-size: 22px; line-height: 1.68; }
