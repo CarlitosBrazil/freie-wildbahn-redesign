@@ -56,6 +56,12 @@
       grid-column: 2;
       min-width: 0;
     }
+    .inner-page-hero .hero-text-col .hero-description:last-of-type {
+      margin-bottom: 10px;
+    }
+    .inner-page-hero .hero-text-col .bullets-list {
+      margin-top: 0;
+    }
     @media (max-width: 968px) {
       .vorteile-hero-copy,
       .vorteile-hero-media {
@@ -111,21 +117,22 @@
       color: var(--primary-green);
     }
     .vorteile-expert-card {
-      background: var(--bg-light);
+      background: #fff;
       border-radius: 14px;
       padding: 28px 32px;
       display: flex;
       gap: 20px;
-      align-items: flex-start;
+      align-items: center;
       margin: 24px 0;
       border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
       max-width: 760px;
     }
     .vorteile-expert-card.team-style {
       background: var(--bg-white);
       box-shadow: var(--shadow-md);
       padding: 24px 28px;
-      align-items: flex-start;
+      align-items: center;
       max-width: 840px;
     }
     .vorteile-expert-card.team-style .expert-photo {
@@ -193,11 +200,11 @@
       color: var(--text-light);
     }
     .pricing-block {
-      background: var(--bg-light);
+      background: #fff;
       border-radius: 16px;
       border: 1px solid var(--border-light);
-      padding: 40px 48px;
-      box-shadow: var(--shadow-sm);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
       max-width: 780px;
       margin: 0 auto;
     }
@@ -220,13 +227,22 @@
     .pricing-row {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 16px;
-      align-items: baseline;
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border-light);
+      gap: 24px;
+      align-items: center;
+      padding: 24px 26px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-left: 5px solid var(--primary-green);
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 16px;
     }
-    .pricing-row:last-of-type {
-      border-bottom: none;
+    .pricing-row:nth-of-type(2) {
+      border-left-color: var(--brand-orange);
+      background: #fffdfa;
+    }
+    .pricing-row:nth-of-type(2) .price-value {
+      color: var(--brand-orange);
     }
     .pricing-row .price-label {
       font-size: 17px;
@@ -254,9 +270,144 @@
     .pricing-footer-note {
       font-size: 14px;
       color: var(--text-medium);
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-light);
+      margin: 8px 0 0;
+      padding: 18px 20px 0;
+      border-top: 0;
+    }
+    .vorteile-faq-section {
+      background: #fff;
+      padding: 72px 0;
+    }
+    .vorteile-faq-content {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .vorteile-faq-content > h2 {
+      color: var(--text-dark);
+      font-size: clamp(28px, 3vw, 36px);
+      line-height: 1.2;
+      margin: 0 0 28px;
+    }
+    .vorteile-faq-item {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .vorteile-faq-heading {
+      margin: 0 !important;
+    }
+    .vorteile-faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text-dark);
+      font: inherit;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: left;
+      padding: 19px 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+    }
+    .vorteile-faq-question:hover {
+      color: var(--primary-green);
+    }
+    .vorteile-faq-question:focus-visible {
+      outline: 3px solid rgba(0,128,128,.28);
+      outline-offset: 3px;
+    }
+    .vorteile-faq-indicator {
+      width: 18px;
+      height: 18px;
+      position: relative;
+      flex: 0 0 18px;
+    }
+    .vorteile-faq-indicator::before,
+    .vorteile-faq-indicator::after {
+      content: "";
+      position: absolute;
+      background: var(--primary-green);
+      border-radius: 2px;
+      transition: transform .2s ease;
+    }
+    .vorteile-faq-indicator::before {
+      width: 14px;
+      height: 2px;
+      top: 8px;
+      left: 2px;
+    }
+    .vorteile-faq-indicator::after {
+      width: 2px;
+      height: 14px;
+      top: 2px;
+      left: 8px;
+    }
+    .vorteile-faq-question[aria-expanded="true"] .vorteile-faq-indicator::after {
+      transform: rotate(90deg);
+    }
+    .vorteile-faq-panel {
+      padding: 0 44px 20px 4px;
+    }
+    .vorteile-faq-panel[hidden] {
+      display: none;
+    }
+    .vorteile-faq-panel p {
+      color: var(--text-medium);
+      font-size: 16px;
+      line-height: 1.75;
+      margin: 0 0 14px;
+    }
+    .vorteile-faq-panel p:last-child {
+      margin-bottom: 0;
+    }
+    .vorteile-faq-panel ul {
+      color: var(--text-medium);
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 12px 0 16px;
+      padding-left: 24px;
+    }
+    .vorteile-final-cta-section {
+      background: #fff;
+      padding: 0 0 72px;
+    }
+    .vorteile-final-cta {
+      align-items: center;
+      background: var(--primary-green);
+      border-radius: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 980px;
+      padding: 40px 48px;
+    }
+    .vorteile-final-cta-label {
+      color: rgba(255,255,255,.78);
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .vorteile-final-cta h2 {
+      color: #fff;
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.2;
+      margin: 0 0 10px;
+    }
+    .vorteile-final-cta p {
+      color: rgba(255,255,255,.9);
+      font-size: 16px;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 700px;
+    }
+    .vorteile-final-cta .btn {
+      flex: 0 0 auto;
     }
     @media (max-width: 768px) {
       .vorteile-benefit-block {
@@ -278,7 +429,33 @@
         gap: 10px;
       }
       .pricing-block {
-        padding: 28px 24px;
+        padding: 22px 16px;
+      }
+      .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 22px 20px;
+      }
+      .pricing-row > div:last-child {
+        text-align: left !important;
+      }
+      .vorteile-faq-section {
+        padding: 48px 0;
+      }
+      .vorteile-faq-panel {
+        padding-right: 4px;
+      }
+      .vorteile-final-cta-section {
+        padding-bottom: 48px;
+      }
+      .vorteile-final-cta {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 30px 24px;
+      }
+      .vorteile-final-cta .btn {
+        text-align: center;
+        width: 100%;
       }
     }
   </style>
@@ -412,15 +589,15 @@
           <ul class="bullets-list">
             <li class="bullets-list-item">
               <svg class="bullets-list-icon" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 5.917L5.724 10.5 15 1.5"/></svg>
-              <span class="bullets-list-text">ganzjährige professionelle KSK-Beratung zur Aufnahme, Antragstellung und Prüfung</span>
+              <span class="bullets-list-text"><strong>ganzjährige professionelle KSK-Beratung</strong> zur Aufnahme, Antragstellung und Prüfung</span>
             </li>
             <li class="bullets-list-item">
               <svg class="bullets-list-icon" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 5.917L5.724 10.5 15 1.5"/></svg>
-              <span class="bullets-list-text">kostenloser Inkassoservice</span>
+              <span class="bullets-list-text"><strong>kostenloser Inkassoservice</strong></span>
             </li>
             <li class="bullets-list-item">
               <svg class="bullets-list-icon" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 5.917L5.724 10.5 15 1.5"/></svg>
-              <span class="bullets-list-text">Aufbau soziales Netz</span>
+              <span class="bullets-list-text">Aufbau <strong>soziales Netz</strong></span>
             </li>
           </ul>
           <div class="hero-cta-wrapper">
@@ -596,6 +773,49 @@
       </div>
     </section>
 
+    <section id="faq" class="vorteile-faq-section">
+      <div class="container page-container">
+        <div class="vorteile-faq-content">
+          <h2>Häufige Fragen zur Mitgliedschaft bei Freie Wildbahn e.V.</h2>
+          <div class="vorteile-faq" data-vorteile-faq>
+            <div class="vorteile-faq-item">
+              <h3 class="vorteile-faq-heading"><button type="button" class="vorteile-faq-question" id="vorteile-faq-question-1" aria-expanded="true" aria-controls="vorteile-faq-answer-1"><span>Muss ich Mitglied bei Freie Wildbahn e.V. sein, um eine KSK-Beratung zu buchen?</span><span class="vorteile-faq-indicator" aria-hidden="true"></span></button></h3>
+              <div class="vorteile-faq-panel" id="vorteile-faq-answer-1" role="region" aria-labelledby="vorteile-faq-question-1"><p><strong>Nein.</strong> Du kannst die KSK-Beratung <strong>unabhängig von einer Mitgliedschaft</strong> buchen. Erst nach der Beratung entscheidest Du separat, ob Du Mitglied bei Freie Wildbahn e.V. werden möchtest.</p></div>
+            </div>
+            <div class="vorteile-faq-item">
+              <h3 class="vorteile-faq-heading"><button type="button" class="vorteile-faq-question" id="vorteile-faq-question-2" aria-expanded="false" aria-controls="vorteile-faq-answer-2"><span>Welche Vorteile hat eine Mitgliedschaft bei Freie Wildbahn e.V.?</span><span class="vorteile-faq-indicator" aria-hidden="true"></span></button></h3>
+              <div class="vorteile-faq-panel" id="vorteile-faq-answer-2" role="region" aria-labelledby="vorteile-faq-question-2" hidden><p>Im Mittelpunkt stehen die <strong>laufende Unterstützung rund um Deine KSK-Situation</strong>, die KSK-Fachberatung im Rahmen der Mitgliedschaft ohne zusätzliche Beratungskosten und auf Wunsch die Unterstützung bei der Kommunikation mit der KSK.</p><p>Hinzu kommen der <strong>Erinnerungsservice und der digitale Mitgliederbereich</strong>. Soweit angeboten, können außerdem Mitgliedskonditionen für betriebliche Sachversicherungen verfügbar sein.</p></div>
+            </div>
+            <div class="vorteile-faq-item">
+              <h3 class="vorteile-faq-heading"><button type="button" class="vorteile-faq-question" id="vorteile-faq-question-3" aria-expanded="false" aria-controls="vorteile-faq-answer-3"><span>Wie funktioniert die Anrechnung der Beratungsgebühr?</span><span class="vorteile-faq-indicator" aria-hidden="true"></span></button></h3>
+              <div class="vorteile-faq-panel" id="vorteile-faq-answer-3" role="region" aria-labelledby="vorteile-faq-question-3" hidden><p>Du buchst und bezahlst zuerst die KSK-Beratung.</p><p>Entscheidest Du Dich nach der Beratung <strong>innerhalb von 24 Stunden</strong> für die Mitgliedschaft bei Freie Wildbahn e.V., wird die bereits bezahlte Beratungsgebühr <strong>auf den Beitrag des ersten Mitgliedschaftsjahres angerechnet</strong>.</p></div>
+            </div>
+            <div class="vorteile-faq-item">
+              <h3 class="vorteile-faq-heading"><button type="button" class="vorteile-faq-question" id="vorteile-faq-question-4" aria-expanded="false" aria-controls="vorteile-faq-answer-4"><span>Lohnt sich eine Mitgliedschaft bei Freie Wildbahn e.V.?</span><span class="vorteile-faq-indicator" aria-hidden="true"></span></button></h3>
+              <div class="vorteile-faq-panel" id="vorteile-faq-answer-4" role="region" aria-labelledby="vorteile-faq-question-4" hidden><p>Das hängt davon ab, <strong>wie viel laufende Unterstützung Du brauchst</strong>.</p><p>Wenn Du regelmäßig KSK-Fragen klären, Unterstützung bei der Kommunikation nutzen oder weitere Mitgliederleistungen in Anspruch nehmen möchtest, kann die Mitgliedschaft sinnvoll sein.</p><p>Die erste Beratung hilft Dir dabei, <strong>Deinen Bedarf realistisch einzuschätzen</strong>.</p></div>
+            </div>
+            <div class="vorteile-faq-item">
+              <h3 class="vorteile-faq-heading"><button type="button" class="vorteile-faq-question" id="vorteile-faq-question-5" aria-expanded="false" aria-controls="vorteile-faq-answer-5"><span>Was ist nicht Bestandteil der Leistungen?</span><span class="vorteile-faq-indicator" aria-hidden="true"></span></button></h3>
+              <div class="vorteile-faq-panel" id="vorteile-faq-answer-5" role="region" aria-labelledby="vorteile-faq-question-5" hidden><p><strong>Nicht Bestandteil der Leistungen sind:</strong></p><ul><li>Steuerberatung</li><li>Altersvorsorgeberatung</li><li>Beratung oder Vermittlung zu Personenversicherungen wie Berufsunfähigkeits- oder Krankenversicherung</li></ul><p>Rechtliche Fragen werden nur als <strong>außergerichtliche Ersteinschätzung</strong> behandelt. Eine weitergehende anwaltliche Tätigkeit ist separat zu beauftragen.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vorteile-final-cta-section">
+      <div class="container page-container">
+        <div class="vorteile-final-cta">
+          <div>
+            <span class="vorteile-final-cta-label">Nächster Schritt</span>
+            <h2>Du möchtest Deine KSK-Situation zuerst persönlich klären?</h2>
+            <p>Entscheide danach, ob die Mitgliedschaft bei Freie Wildbahn e.V. zu Dir passt.</p>
+          </div>
+          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -661,6 +881,29 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      document.querySelectorAll('[data-vorteile-faq]').forEach((accordion) => {
+        const questions = Array.from(accordion.querySelectorAll('.vorteile-faq-question'));
+        questions.forEach((question) => {
+          question.addEventListener('click', () => {
+            const shouldOpen = question.getAttribute('aria-expanded') !== 'true';
+            questions.forEach((item) => {
+              const panel = document.getElementById(item.getAttribute('aria-controls'));
+              item.setAttribute('aria-expanded', 'false');
+              if (panel) panel.hidden = true;
+            });
+            if (shouldOpen) {
+              const panel = document.getElementById(question.getAttribute('aria-controls'));
+              question.setAttribute('aria-expanded', 'true');
+              if (panel) panel.hidden = false;
+            }
+          });
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
