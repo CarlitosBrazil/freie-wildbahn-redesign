@@ -1,7 +1,6 @@
-archive/
+﻿archive/
 pages_backup_*/
 .codex_tmp/
 *.backup
 WORKSPACE.md
 .vercel/
-
