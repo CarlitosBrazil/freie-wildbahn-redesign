@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSK-Beratung zu KSK-Antrag und KSK-Prüfung – Freie Wildbahn e.V.</title>
+  <meta name="description" content="Persönliche KSK-Beratung zu KSK-Antrag, Aufnahmeverfahren, Einkommensmeldung und KSK-Prüfung durch das Expertenteam von Freie Wildbahn e.V.">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script.js?v=8" defer></script>
+  <style>
+    .beratung-page .beratung-shell {
+      width: min(100%, 980px);
+      margin: 0 auto;
+    }
+    .beratung-page .inner-page-hero {
+      padding: 64px 0;
+    }
+    .beratung-page .inner-page-hero .hero-grid {
+      width: min(94vw, var(--hero-width));
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: center;
+    }
+    .beratung-page .inner-page-hero .hero-text-col {
+      grid-column: 1;
+      grid-row: 1;
+      order: 1;
+    }
+    .beratung-page .inner-page-hero .hero-image-col {
+      grid-column: 2;
+      grid-row: 1;
+      order: 2;
+    }
+    .beratung-page .inner-page-hero h1 {
+      font-size: 40px;
+      line-height: 1.15;
+      margin: 8px 0 22px;
+    }
+    .beratung-page .inner-page-hero .hero-description {
+      font-size: 18px;
+      line-height: 1.68;
+      margin-bottom: 18px;
+    }
+    .beratung-page .inner-page-hero p {
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .beratung-page .inner-page-hero .video-container {
+      margin: 0;
+    }
+    .beratung-page .beratung-shell > h2 {
+      color: var(--text-dark);
+      font-size: clamp(28px, 3vw, 36px);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .beratung-page .beratung-shell > h3 {
+      color: var(--primary-green);
+      font-size: 23px;
+      line-height: 1.3;
+      margin: 30px 0 14px;
+    }
+    .beratung-page .beratung-shell p {
+      font-size: 16px;
+      line-height: 1.78;
+      margin-bottom: 18px;
+    }
+    .beratung-page .hero-subtitle {
+      color: var(--primary-green);
+      font-size: clamp(24px, 2.8vw, 34px);
+      line-height: 1.25;
+      margin: 8px 0 22px;
+    }
+    .beratung-check-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+      padding: 0;
+      list-style: none;
+    }
+    .beratung-check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .beratung-check {
+      color: var(--primary-green);
+      font-size: 20px;
+      line-height: 1.1;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+    .beratung-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 26px;
+    }
+    .beratung-page .btn-teal {
+      background: var(--primary-green);
+      color: #fff;
+    }
+    .beratung-page .btn-teal:hover {
+      background: #fff;
+      color: var(--primary-green);
+      box-shadow: inset 0 0 0 2px var(--primary-green);
+    }
+    .beratung-quicklinks {
+      width: min(64vw, var(--text-section-width));
+      margin: 0 auto;
+      padding: 30px;
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+    }
+    .beratung-quicklinks-section {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .beratung-quicklinks h2 {
+      color: var(--text-dark);
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+    .beratung-quicklinks ol {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .beratung-quicklinks li {
+      margin: 0;
+    }
+    .beratung-quicklinks a {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 18px;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      color: var(--text-dark);
+      font-size: 17px;
+      line-height: 1.35;
+    }
+    .beratung-quicklinks-number {
+      color: var(--primary-green);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+    .beratung-quicklinks a > span:last-child {
+      color: var(--primary-green);
+      font-size: 28px;
+      line-height: 1;
+    }
+    .beratung-quicklinks a:hover {
+      border-color: var(--primary-green);
+      color: var(--primary-green);
+    }
+    .beratung-team {
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    .team-member-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      margin-bottom: 28px;
+      transition: box-shadow .3s ease;
+    }
+    .team-member-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+    .team-member-photo {
+      background: var(--bg-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 28px 22px 24px;
+      border-right: 1px solid var(--border-light);
+    }
+    .team-member-photo img {
+      width: 154px;
+      height: 154px;
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid #fff;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 15px;
+    }
+    .team-member-photo .member-name {
+      color: var(--text-dark);
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .team-member-photo .member-role {
+      color: var(--primary-green);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      text-align: center;
+    }
+    .team-member-body {
+      padding: 30px 34px;
+      align-self: center;
+    }
+    .team-member-body h3 {
+      color: var(--text-dark);
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+    .team-member-body .team-member-role {
+      color: var(--primary-green);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .team-member-body .member-subtitle {
+      color: var(--primary-green);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .team-member-body p {
+      color: var(--text-medium);
+      font-size: 15px;
+      line-height: 1.72;
+      margin: 0;
+    }
+    .beratung-table-wrap {
+      overflow-x: auto;
+      margin: 26px 0;
+    }
+    .beratung-table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .beratung-table th,
+    .beratung-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-light);
+      text-align: left;
+      vertical-align: middle;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .beratung-table th {
+      background: var(--primary-green);
+      color: #fff;
+      font-weight: 700;
+    }
+    .beratung-table tr:last-child td {
+      border-bottom: 0;
+    }
+    .beratung-note {
+      padding: 20px 22px;
+      margin: 24px 0;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-left: 5px solid var(--primary-green);
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+    .beratung-note p:last-child {
+      margin-bottom: 0;
+    }
+    .beratung-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, .75fr);
+      gap: 54px;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .beratung-split--quote {
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1.45fr);
+    }
+    .beratung-detlef-card {
+      width: min(100%, 390px);
+      margin: 0 auto;
+      padding: 30px 28px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+    .beratung-detlef-card img {
+      width: 168px;
+      height: 168px;
+      margin: 0 auto 18px;
+      border: 4px solid #fff;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      object-fit: cover;
+      object-position: center top;
+    }
+    .beratung-detlef-card blockquote {
+      color: var(--primary-green);
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.55;
+      margin: 0 0 18px;
+    }
+    .beratung-detlef-card h3 {
+      color: var(--text-dark);
+      font-size: 18px;
+      margin: 0 0 4px;
+    }
+    .beratung-detlef-card .beratung-detlef-role {
+      color: var(--text-medium);
+      font-size: 13px;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .beratung-detlef-card .beratung-detlef-description {
+      color: var(--text-medium);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 18px 0;
+    }
+    .beratung-horizontal-expert {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      align-items: center;
+      gap: 34px;
+      width: min(100%, 840px);
+      min-height: 250px;
+      margin: 34px auto 0;
+      padding: 28px 36px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+    }
+    .beratung-horizontal-profile {
+      text-align: center;
+    }
+    .beratung-horizontal-profile img {
+      width: 154px;
+      height: 154px;
+      margin: 0 auto 14px;
+      border: 4px solid #fff;
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+      object-fit: cover;
+      object-position: center top;
+    }
+    .beratung-horizontal-profile h3 {
+      color: var(--text-dark);
+      font-size: 17px;
+      margin: 0 0 3px;
+    }
+    .beratung-horizontal-profile p {
+      color: var(--primary-green) !important;
+      font-size: 12px !important;
+      font-weight: 700;
+      letter-spacing: .04em;
+      line-height: 1.35 !important;
+      margin: 0 !important;
+      text-transform: uppercase;
+    }
+    .beratung-horizontal-expert blockquote {
+      align-self: center;
+      color: var(--primary-green);
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .beratung-horizontal-expert .beratung-horizontal-copy {
+      color: var(--primary-green);
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .beratung-membership-intro {
+      text-align: center;
+    }
+    .beratung-membership-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin: 34px auto 0;
+    }
+    .beratung-membership-card {
+      padding: 28px 30px;
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .beratung-membership-card h3 {
+      color: var(--primary-green);
+      font-size: 21px;
+      margin: 0 0 18px;
+    }
+    .beratung-membership-card .beratung-check-list {
+      margin-bottom: 0;
+    }
+    .beratung-membership-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 30px;
+    }
+    .beratung-feature-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin: 0 auto 30px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+    }
+    .beratung-faq-item {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .beratung-faq-heading {
+      margin: 0 !important;
+    }
+    .beratung-faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text-dark);
+      font: inherit;
+      font-size: 17px;
+      font-weight: 700;
+      text-align: left;
+      padding: 19px 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+    }
+    .beratung-faq-question:hover {
+      color: var(--primary-green);
+    }
+    .beratung-faq-question:focus-visible {
+      outline: 3px solid rgba(0, 128, 128, .28);
+      outline-offset: 3px;
+    }
+    .beratung-faq-indicator {
+      width: 18px;
+      height: 18px;
+      position: relative;
+      flex: 0 0 18px;
+    }
+    .beratung-faq-indicator::before,
+    .beratung-faq-indicator::after {
+      content: "";
+      position: absolute;
+      background: var(--primary-green);
+      border-radius: 2px;
+      transition: transform .2s ease;
+    }
+    .beratung-faq-indicator::before {
+      width: 14px;
+      height: 2px;
+      top: 8px;
+      left: 2px;
+    }
+    .beratung-faq-indicator::after {
+      width: 2px;
+      height: 14px;
+      top: 2px;
+      left: 8px;
+    }
+    .beratung-faq-question[aria-expanded="true"] .beratung-faq-indicator::after {
+      transform: rotate(90deg);
+    }
+    .beratung-faq-answer {
+      padding: 0 44px 20px 4px;
+    }
+    .beratung-faq-answer[hidden] {
+      display: none;
+    }
+    .beratung-final-cta {
+      padding: 48px 0;
+      background: #fff;
+      border: 0 !important;
+    }
+    .beratung-final-cta-box {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 40px 48px;
+      background: var(--primary-green);
+      border-radius: 14px;
+      color: #fff;
+    }
+    .beratung-final-cta-box h2 {
+      color: #fff;
+      font-size: clamp(26px, 3vw, 34px);
+      margin-bottom: 8px;
+    }
+    .beratung-final-cta-box p {
+      color: rgba(255,255,255,.88);
+      margin-bottom: 22px;
+    }
+    @media (max-width: 768px) {
+      .beratung-page .inner-page-hero {
+        padding: 42px 0;
+      }
+      .beratung-page .inner-page-hero .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .beratung-page .inner-page-hero .hero-text-col,
+      .beratung-page .inner-page-hero .hero-image-col {
+        grid-column: 1;
+      }
+      .beratung-page .inner-page-hero .hero-text-col {
+        grid-row: 1;
+      }
+      .beratung-page .inner-page-hero .hero-image-col {
+        grid-row: 2;
+      }
+      .beratung-quicklinks {
+        width: 100%;
+        padding: 22px 18px;
+      }
+      .beratung-quicklinks a {
+        grid-template-columns: 34px minmax(0, 1fr) 14px;
+        gap: 10px;
+        padding: 15px 14px;
+        font-size: 15px;
+      }
+      .team-member-card {
+        grid-template-columns: 1fr;
+      }
+      .beratung-split,
+      .beratung-split--quote,
+      .beratung-membership-cards {
+        grid-template-columns: 1fr;
+      }
+      .beratung-horizontal-expert {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 26px 22px;
+        text-align: center;
+      }
+      .beratung-split--quote .beratung-detlef-card {
+        order: 2;
+      }
+      .beratung-split--quote .beratung-split-copy {
+        order: 1;
+      }
+      .team-member-photo {
+        border-right: 0;
+        border-bottom: 1px solid var(--border-light);
+        flex-direction: row;
+        justify-content: center;
+        gap: 18px;
+      }
+      .team-member-photo img {
+        width: 106px;
+        height: 106px;
+        margin: 0;
+      }
+      .team-member-body {
+        padding: 24px 22px;
+      }
+      .beratung-cta-row .btn {
+        width: 100%;
+        text-align: center;
+      }
+      .beratung-final-cta-box {
+        padding: 30px 24px;
+      }
+      .beratung-feature-image {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </div>
+      <button class="close-drawer" id="closeDrawer" aria-label="Menü schließen">✕</button>
+    </div>
+    <ul class="mobile-menu-list">
+      <li><a href="../index.html">Startseite</a></li>
+      <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+      <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+      <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+      <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+      <li><a href="#">Verein</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="ksk-beratung.html">Beratung</a></li>
+      <li><a href="#">Mitgliedschaft</a></li>
+      <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+    </ul>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Level 1: Green Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <nav aria-label="Hilfsnavigation">
+          <ul class="top-nav-list">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="ksk-beratung.html">Beratung</a></li>
+            <li><a href="#">Mitgliedschaft</a></li>
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Level 2: White Main Navigation Bar -->
+    <div class="main-nav">
+      <div class="container main-nav-container">
+        <a href="../index.html" class="logo">
+          <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+        </a>
+        
+        <nav aria-label="Hauptnavigation">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="../index.html" class="home-icon" aria-label="Startseite">
+                <svg viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-34 32.1h-32v176c0 26.5-21.5 48-48 48H352c-17.7 0-32-14.3-32-32V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7-14.3 32-32 32H112c-26.5 0-48-21.5-48-48V287.6H32c-19 0-34-14-34-32.1c0-9 3-17 10-24L266.4 8c7-7 15-10.9 25.6-10.9s18.6 3.9 25.6 10.9L565.8 231c8 8 10 16 10 24.5z"/></svg>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a>
+            </li>
+            <li class="menu-item">
+              <a href="ksk-beitragsrechner.html">KSK-Rechner <svg class="arrow-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+              </ul>
+            </li>
+            <li class="menu-item active">
+              <a href="#">Künstlersozialkasse <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse (KSK)</a></li>
+                <li><a href="antrag-und-aufnahme.html">Antrag und Aufnahme</a></li>
+                <li><a href="#">Künstlersozialabgabe</a></li>
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+                <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung der Versicherten</a></li>
+                <li><a href="ksk-beratung.html">KSK-Beratung</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Verein <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="team.html">Team</a></li>
+                <li><a href="#">Erfahrungen</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="blog.html">Blog <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="blog-kategorie.html?kategorie=allgemein">Allgemein</a></li>
+                <li><a href="blog-kategorie.html?kategorie=kuenstlersozialkasse">Künstlersozialkasse</a></li>
+                <li><a href="blog-kategorie.html?kategorie=recht">Recht</a></li>
+                <li><a href="blog-kategorie.html?kategorie=steuern">Steuern</a></li>
+                <li><a href="blog-kategorie.html?kategorie=versicherung">Versicherung</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-right-group">
+          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <a href="../index.html" class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </a>
+      <div class="mobile-nav-actions">
+        <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <main class="beratung-page">
+    <section class="inner-page-hero section-padding">
+      <div class="hero-grid">
+        <div class="hero-text-col">
+          <span class="dachzeile">KSK-Mitglied werden und KSK-Prüfung</span>
+          <h1>KSK-Beratung zu Künstlersozialkasse-Fragen</h1>
+          <p class="hero-description">Du möchtest Dich über die <strong>Künstlersozialkasse versichern</strong> und benötigst Unterstützung? Oder Du bist bereits Mitglied und wirst von der KSK geprüft?</p>
+          <p><strong>45-minütige Beratung von KSK-Experten:</strong> Wir beraten künstlerisch oder publizistisch Tätige zu allen Themen rund um die Künstlersozialkasse.</p>
+          <ul class="beratung-check-list">
+            <li><span class="beratung-check">✓</span><span>Hilfe beim <strong>KSK-Antrag und Aufnahmeverfahren</strong>.</span></li>
+            <li><span class="beratung-check">✓</span><span><strong>Kostenfreie Beratung</strong> bei späterer Mitgliedschaft.</span></li>
+            <li><span class="beratung-check">✓</span><span>Unbeschwert und gut beraten durch die <strong>KSK-Prüfung</strong>.</span></li>
+          </ul>
+          <div class="beratung-cta-row">
+            <a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a>
+            <a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+        <div class="hero-image-col">
+          <div class="video-container">
+            <video src="../assets/1gTWVEYkTwS7uwlm6NNC_KSK-Pruefung-Freie-Wildbahn-v.mp4" poster="../assets/thumbnail-ksk-beratung.jpg" controls></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experten" class="block-section bg-light section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">Dein Beratungsteam</span>
+        <h2>KSK-Beratung durch Künstlersozialkasse-Experten von Freie Wildbahn e.V.</h2>
+        <p>Deine KSK-Beratung liegt bei unserem <strong>eingespielten Team</strong>. Wer die 45 Minuten mit Dir übernimmt, kennt die Künstlersozialkasse aus der täglichen Praxis – Du bist nie von einer einzelnen Person abhängig.</p>
+        <article class="team-member-card">
+          <div class="team-member-photo"><img src="../assets/Detlef-Husemann-KSK-Experte-Freie-Wildbahn-e.V-1920w.png" alt="Detlef Husemann, KSK-Experte"></div>
+          <div class="team-member-body"><h3>Detlef Husemann</h3><p class="team-member-role">Gründer und Vorsitzender · KSK-Experte</p><p>Detlef machte die <strong>Künstlersozialkasse vor rund zwei Jahrzehnten zu seinem Schwerpunkt</strong>. Aus tausenden Fällen weiß er, wo Theorie und Verwaltungspraxis auseinandergehen.</p></div>
+        </article>
+        <article class="team-member-card">
+          <div class="team-member-photo"><img src="../assets/marlon_rother-1920w.jpeg" alt="Marlon Rother, Rechtsanwalt und KSK-Berater"></div>
+          <div class="team-member-body"><h3>Marlon Rother</h3><p class="team-member-role">Rechtsanwalt · KSK-Berater</p><p>Marlon bringt die <strong>juristische Perspektive</strong> ein. Für Mitglieder von Freie Wildbahn e.V. ist er Ansprechpartner im Forderungsmanagement und bei <strong>rechtlich kniffligen KSK-Fragen</strong>.</p></div>
+        </article>
+        <article class="team-member-card">
+          <div class="team-member-photo"><img src="../assets/Melina-Mitarbeiterin-Freie-Wildbahn-1920w.jpg" alt="Melina Husemann, KSK-Beraterin"></div>
+          <div class="team-member-body"><h3>Melina Husemann</h3><p class="team-member-role">KSK-Beraterin · Mitgliederbetreuung</p><p>Melina steuert <strong>KSK-Anträge</strong> und begleitet die Mitgliederbetreuung. Sie macht aus Deinen Fragen einen <strong>konkreten nächsten Schritt</strong>.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="beratung-quicklinks-section">
+      <div class="container beratung-shell">
+        <nav class="beratung-quicklinks" aria-label="Direkt zu den Themen dieser Seite">
+          <h2>Quicklinks</h2>
+          <ol>
+            <li><a href="#experten"><span class="beratung-quicklinks-number">01</span><span>KSK-Beratung durch unsere Experten</span><span>›</span></a></li>
+            <li><a href="#kosten"><span class="beratung-quicklinks-number">02</span><span>Kosten und Inhalte der KSK-Beratung</span><span>›</span></a></li>
+            <li><a href="#kostenfrei"><span class="beratung-quicklinks-number">03</span><span>Kostenfreie Beratung bei späterer Mitgliedschaft</span><span>›</span></a></li>
+            <li><a href="#vorteile"><span class="beratung-quicklinks-number">04</span><span>Vorteile der FWB Mitgliedschaft</span><span>›</span></a></li>
+            <li><a href="#antrag"><span class="beratung-quicklinks-number">05</span><span>KSK-Antrag und Aufnahmeverfahren</span><span>›</span></a></li>
+            <li><a href="#pruefung"><span class="beratung-quicklinks-number">06</span><span>Beratung zu Deiner KSK-Prüfung</span><span>›</span></a></li>
+            <li><a href="#weitere-themen"><span class="beratung-quicklinks-number">07</span><span>Weitere Themen unserer KSK-Beratung</span><span>›</span></a></li>
+            <li><a href="#faq"><span class="beratung-quicklinks-number">08</span><span>Häufige Fragen zur KSK-Beratung</span><span>›</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <section id="kosten" class="block-section bg-light section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">Inhalte, Kosten &amp; Dauer</span>
+        <h2>Was beinhaltet unsere KSK-Beratung?</h2>
+        <p>Du erhältst eine <strong>individuelle 45-minütige Telefonberatung</strong>. Wir beraten freiberuflich und soloselbständig Tätige ebenso wie Gesellschafter-Geschäftsführer einer <strong>GbR, KG, OHG, GmbH, AG oder UG</strong>.</p>
+        <ul class="beratung-check-list">
+          <li><span class="beratung-check">✓</span><span><strong>KSK-Antrag</strong> und Aufnahmeverfahren</span></li>
+          <li><span class="beratung-check">✓</span><span><strong>KSK-Prüfung</strong></span></li>
+          <li><span class="beratung-check">✓</span><span>Einkommensmeldung und <strong>Einkommensschätzung</strong></span></li>
+          <li><span class="beratung-check">✓</span><span>Zusätzliche Beschäftigung neben der Selbständigkeit</span></li>
+          <li><span class="beratung-check">✓</span><span>Künstlerische und nicht-künstlerische Tätigkeiten</span></li>
+          <li><span class="beratung-check">✓</span><span>Gesellschafterstellung in einer <strong>GbR, UG oder GmbH</strong></span></li>
+          <li><span class="beratung-check">✓</span><span>Beendigung der Versicherung über die KSK</span></li>
+          <li><span class="beratung-check">✓</span><span>Weitere Fragen zu Deinem konkreten KSK-Fall</span></li>
+        </ul>
+        <h3>Kosten und Dauer</h3>
+        <div class="beratung-table-wrap"><table class="beratung-table">
+          <thead><tr><th>KSK-Beratung für</th><th>Preis inklusive 19 % MwSt.</th></tr></thead>
+          <tbody><tr><td>Freiberufler:innen und soloselbständig Tätige</td><td><strong>149,95 €*</strong></td></tr><tr><td>Du bist Gesellschafter:in einer GbR, UG oder GmbH</td><td><strong>190,40 €*</strong></td></tr></tbody>
+        </table></div>
+        <p>Die telefonische Beratung dauert <strong>45 Minuten</strong>.</p>
+        <p class="beratung-note">* Bei einer späteren FWB Mitgliedschaft werden die <strong>Beratungskosten auf Deinen Mitgliedsbeitrag angerechnet</strong>.</p>
+        <aside class="beratung-horizontal-expert" aria-label="KSK-Experte Detlef Husemann">
+          <div class="beratung-horizontal-profile">
+            <img src="../assets/detlef-husemann-freie-wildbahn-ksk-berater.jpg" alt="Detlef Husemann">
+            <h3>Detlef Husemann</h3>
+            <p>Vorstandsvorsitzender Freie Wildbahn e.V. und KSK-Experte</p>
+          </div>
+          <p class="beratung-horizontal-copy"><strong>Profitiere von mehr als 20 Jahren praktischer KSK-Erfahrung</strong> und einer Beratung, die Theorie und Verwaltungspraxis zusammenführt.</p>
+        </aside>
+        <div class="beratung-cta-row"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+      </div>
+    </section>
+
+    <section id="kostenfrei" class="block-section section-padding">
+      <div class="container beratung-shell">
+        <div class="beratung-membership-intro">
+          <span class="dachzeile">Beratung und Mitgliedschaft</span>
+          <h2>Kostenfrei: Jetzt Beratung buchen und später Vereinsmitglied werden!</h2>
+          <p>Überzeuge Dich zunächst in einer persönlichen KSK-Beratung von unserer Erfahrung. Wenn Du Dich während der Beratung für eine <strong>Mitgliedschaft bei Freie Wildbahn e.V.</strong> entscheidest, rechnen wir die Beratungskosten mit Deinen Mitgliedsbeiträgen ab.</p>
+          <p>Damit ist die KSK-Beratung im Rahmen Deiner FWB Mitgliedschaft enthalten und für Dich <strong>ohne zusätzliche Kosten</strong>.</p>
+        </div>
+        <div class="beratung-membership-cards">
+          <article class="beratung-membership-card">
+            <h3>Mitgliedsbeiträge</h3>
+            <ul class="beratung-check-list">
+              <li><span class="beratung-check">✓</span><span><strong>45-minütige KSK-Beratung: 0 €</strong> für FWB Mitglieder</span></li>
+              <li><span class="beratung-check">✓</span><span>Freiberufler:innen und Soloselbständige: <strong>228 € im Jahr</strong> beziehungsweise 19,50 € im Monat</span></li>
+              <li><span class="beratung-check">✓</span><span>Gesellschafter-Geschäftsführer:innen: <strong>320 € im Jahr</strong> beziehungsweise 26,67 € im Monat</span></li>
+              <li><span class="beratung-check">✓</span><span>Jede weitere Person im Gesellschafterkreis: <strong>160 € im Jahr</strong></span></li>
+            </ul>
+          </article>
+          <article class="beratung-membership-card">
+            <h3>Deine Vorteile als FWB Mitglied</h3>
+            <ul class="beratung-check-list">
+              <li><span class="beratung-check">✓</span><span><strong>Mehr Zeit</strong> für Deine Selbständigkeit</span></li>
+              <li><span class="beratung-check">✓</span><span><strong>Übernahme der KSK-Kommunikation</strong> auf Wunsch</span></li>
+              <li><span class="beratung-check">✓</span><span>Vergünstigte <strong>Spezialversicherungen</strong></span></li>
+              <li><span class="beratung-check">✓</span><span><strong>Jederzeit individuelle Beratung</strong></span></li>
+            </ul>
+          </article>
+        </div>
+        <div class="beratung-membership-actions"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+      </div>
+    </section>
+
+    <section id="vorteile" class="block-section bg-light section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">Dauerhafte Unterstützung</span>
+        <h2>Deine Vorteile als Mitglied von Freie Wildbahn e.V. im Überblick</h2>
+        <ul class="beratung-check-list">
+          <li><span class="beratung-check">✓</span><span><strong>Mehr Zeit:</strong> Wir unterstützen Dich so oft wie nötig bei Fragen rund um die KSK.</span></li>
+          <li><span class="beratung-check">✓</span><span><strong>KSK-Kommunikation:</strong> Auf Wunsch übernehmen wir per Postvollmacht den direkten Austausch mit der Künstlersozialkasse.</span></li>
+          <li><span class="beratung-check">✓</span><span><strong>Vergünstigte Spezialversicherungen</strong> für Deine berufliche Situation.</span></li>
+          <li><span class="beratung-check">✓</span><span><strong>Jederzeit individuelle Beratung</strong> durch ein erfahrenes Team.</span></li>
+        </ul>
+        <div class="beratung-cta-row"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+      </div>
+    </section>
+
+    <section id="antrag" class="block-section section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">KSK-Antrag</span>
+        <h2>Hilfe beim KSK-Antrag und Aufnahmeverfahren</h2>
+        <img class="beratung-feature-image" src="../assets/pexels-mizuno-k-12911186.jpg" alt="Künstlerin bei der Vorbereitung ihres KSK-Antrags am Computer">
+        <p>Wer über die Künstlersozialkasse versichert werden möchte, muss <strong>bestimmte Voraussetzungen erfüllen</strong> und ein Aufnahmeverfahren durchlaufen.</p>
+        <p>Wir erklären Dir die Voraussetzungen und prüfen gemeinsam, ob eine Versicherung über die KSK grundsätzlich infrage kommt. Deine Unterlagen bilden die Grundlage für die Entscheidung.</p>
+        <p>Wir helfen Dir, die <strong>richtigen Nachweise auszuwählen</strong> und sinnvoll zusammenzustellen. Fordere Deinen persönlichen Antrag erst an, wenn Du den <strong>optimalen Zeitpunkt</strong> für die Antragstellung kennst.</p>
+        <p>Ein ungeeigneter Zeitpunkt kann zu unnötigen <strong>Nachzahlungen im dreistelligen Bereich</strong> führen. Unsere langjährige Praxis hilft Dir, das Verfahren gut vorbereitet zu beginnen.</p>
+        <div class="beratung-cta-row"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+      </div>
+    </section>
+
+    <section id="pruefung" class="block-section bg-light section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">Einkommensprüfung</span>
+        <h2>Beratung zu Deiner KSK-Prüfung</h2>
+        <p>Du hast das Formular <strong>„Meldung des tatsächlichen Arbeitseinkommens der Vorjahre“</strong> erhalten? Die Künstlersozialkasse überprüft jährlich rund <strong>fünf Prozent beziehungsweise etwa 10.000 Versicherte</strong>.</p>
+        <p>Bei deutlichen Abweichungen können <strong>Bußgelder von bis zu 5.000 Euro</strong> drohen. Auch andere Feststellungen können Auswirkungen auf Deine Versicherungspflicht nach dem KSVG haben.</p>
+        <p>Unsere Beratung hilft Dir, <strong>Risiken frühzeitig zu erkennen</strong>, Deine Angaben nachvollziehbar vorzubereiten und das Risiko eines Ausschlusses oder hoher Nachforderungen zu verringern.</p>
+        <aside class="beratung-horizontal-expert" aria-label="Hinweis von Detlef Husemann">
+          <div class="beratung-horizontal-profile">
+            <img src="../assets/detlef-husemann-freie-wildbahn-ksk-berater.jpg" alt="Detlef Husemann">
+            <h3>Detlef Husemann</h3>
+            <p>Vorstand &amp; KSK-Experte</p>
+          </div>
+          <blockquote>„Bitte reagieren Sie vorsichtig bei Prüfungen durch die Künstlersozialkasse.“</blockquote>
+        </aside>
+        <div class="beratung-cta-row">
+          <a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a>
+          <a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="weitere-themen" class="block-section section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">Deine persönliche Situation</span>
+        <h2>Weitere Themen unserer KSK-Beratung</h2>
+        <p>Wir beraten Dich auch zu weiteren KSK-relevanten Fragen:</p>
+        <ul class="beratung-check-list">
+          <li><span class="beratung-check">✓</span><span>Wie melde ich <strong>Änderungen meines Einkommens</strong>?</span></li>
+          <li><span class="beratung-check">✓</span><span>Welche Folgen hat eine zusätzliche Beschäftigung?</span></li>
+          <li><span class="beratung-check">✓</span><span>Was gilt bei einer <strong>GmbH- oder UG-Beteiligung</strong>?</span></li>
+          <li><span class="beratung-check">✓</span><span>Welche Tätigkeiten gelten als künstlerisch oder publizistisch?</span></li>
+          <li><span class="beratung-check">✓</span><span>Was passiert bei längerer Krankheit oder Elternzeit?</span></li>
+          <li><span class="beratung-check">✓</span><span>Wann endet die <strong>Versicherungspflicht nach dem KSVG</strong>?</span></li>
+          <li><span class="beratung-check">✓</span><span>Wie kommuniziere ich richtig mit der Künstlersozialkasse?</span></li>
+        </ul>
+        <p>Du erhältst <strong>individuelle, zeitnahe und kompetente Antworten</strong>.</p>
+        <div class="beratung-cta-row"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+      </div>
+    </section>
+
+    <section id="faq" class="block-section bg-light section-padding">
+      <div class="container beratung-shell">
+        <span class="dachzeile">Häufige Fragen</span>
+        <h2>Häufige Fragen zur KSK-Beratung</h2>
+        <div class="beratung-faq" data-beratung-faq>
+          <div class="beratung-faq-item"><button class="beratung-faq-question" aria-expanded="true" aria-controls="beratung-faq-1"><span>Was ist eine KSK-Beratung und für wen ist sie geeignet?</span><span class="beratung-faq-indicator" aria-hidden="true"></span></button><div class="beratung-faq-answer" id="beratung-faq-1"><p>Eine <strong>45-minütige telefonische Einzelberatung</strong> für freiberuflich und soloselbständig Kunst- oder Publizistikschaffende sowie Gesellschafter:innen.</p></div></div>
+          <div class="beratung-faq-item"><button class="beratung-faq-question" aria-expanded="false" aria-controls="beratung-faq-2"><span>Hilft mir die Beratung beim KSK-Antrag?</span><span class="beratung-faq-indicator" aria-hidden="true"></span></button><div class="beratung-faq-answer" id="beratung-faq-2" hidden><p>Ja. Wir klären Voraussetzungen, Nachweise und den <strong>passenden Zeitpunkt für Deinen KSK-Antrag</strong>.</p></div></div>
+          <div class="beratung-faq-item"><button class="beratung-faq-question" aria-expanded="false" aria-controls="beratung-faq-3"><span>Unterstützt mich die Beratung bei einer KSK-Prüfung?</span><span class="beratung-faq-indicator" aria-hidden="true"></span></button><div class="beratung-faq-answer" id="beratung-faq-3" hidden><p>Ja. Wir helfen Dir, das Prüfschreiben einzuordnen und <strong>mögliche Risiken frühzeitig zu erkennen</strong>.</p></div></div>
+          <div class="beratung-faq-item"><button class="beratung-faq-question" aria-expanded="false" aria-controls="beratung-faq-4"><span>Was kostet die KSK-Beratung und wie lange dauert sie?</span><span class="beratung-faq-indicator" aria-hidden="true"></span></button><div class="beratung-faq-answer" id="beratung-faq-4" hidden><p><strong>45 Minuten</strong>; 149,95 € für Freiberufler:innen und Soloselbständige, 190,40 € für Gesellschafter:innen einer GbR, UG oder GmbH – jeweils inklusive 19 % MwSt.</p></div></div>
+          <div class="beratung-faq-item"><button class="beratung-faq-question" aria-expanded="false" aria-controls="beratung-faq-5"><span>Wer führt die KSK-Beratung durch?</span><span class="beratung-faq-indicator" aria-hidden="true"></span></button><div class="beratung-faq-answer" id="beratung-faq-5" hidden><p>Ein Mitglied unseres <strong>eingespielten KSK-Expertenteams</strong> mit täglicher Praxiserfahrung.</p></div></div>
+          <div class="beratung-faq-item"><button class="beratung-faq-question" aria-expanded="false" aria-controls="beratung-faq-6"><span>Wird die Gebühr bei einer späteren FWB Mitgliedschaft angerechnet?</span><span class="beratung-faq-indicator" aria-hidden="true"></span></button><div class="beratung-faq-answer" id="beratung-faq-6" hidden><p>Entscheidest Du Dich <strong>innerhalb von 24 Stunden</strong> für die FWB Mitgliedschaft, rechnen wir die Gebühr auf Deinen Beitrag im ersten Jahr an.</p></div></div>
+          <div class="beratung-faq-item"><button class="beratung-faq-question" aria-expanded="false" aria-controls="beratung-faq-7"><span>Welche Themen sind ausgeschlossen?</span><span class="beratung-faq-indicator" aria-hidden="true"></span></button><div class="beratung-faq-answer" id="beratung-faq-7" hidden><p>Ausgeschlossen sind <strong>Steuer- und Altersvorsorgeberatung</strong>, Beratung zu Personenversicherungen sowie umfassende rechtliche Vertretung. Rechtliche Fragen können nur außergerichtlich erstbewertet werden.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="beratung-final-cta">
+      <div class="container beratung-shell"><div class="beratung-final-cta-box">
+        <h2>Du möchtest Deine konkrete KSK-Situation klären?</h2>
+        <p>Buche Deine persönliche KSK-Beratung und erhalte einen <strong>klaren nächsten Schritt</strong>.</p>
+        <div class="beratung-cta-row"><a href="https://login.freie-wildbahn.de/auth/advice/antragsstrecke" class="btn btn-orange">KSK-Beratung buchen</a><a href="vorteile.html" class="btn btn-teal">Vorteile FWB Mitgliedschaft</a></div>
+      </div></div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <!-- Upper zone: #faf9f6 background with logo + columns -->
+    <div class="footer-upper">
+      <div class="container footer-upper-grid">
+
+        <!-- Brand column -->
+        <div class="footer-brand-col">
+          <a href="../index.html" class="footer-logo">
+            <img src="../assets/logo.png" alt="Freie Wildbahn e.V.">
+          </a>
+          <p class="footer-tagline">Schnell und einfach stetig auf dem neuesten Stand rund um das Thema „Künstler und Künstlersozialkasse".</p>
+        </div>
+
+        <!-- Unsere Themen -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Unsere Themen</h6>
+          <ul class="footer-col-links">
+            <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+            <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+            <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+          </ul>
+        </div>
+
+        <!-- Über uns -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Über uns</h6>
+          <ul class="footer-col-links">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Konto -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Konto</h6>
+          <ul class="footer-col-links">
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+            <li><a href="#">Registrieren</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lower bar: teal background -->
+    <div class="footer-lower">
+      <div class="container footer-lower-inner">
+
+        <!-- Legal links -->
+        <nav class="footer-legal-nav" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutzinformation</a>
+          <a href="#">Quellenangaben</a>
+        </nav>
+
+        <!-- Copyright + credit -->
+        <div class="footer-copy">
+          <p>© 2026 Freie Wildbahn e.V. | Alle Rechte vorbehalten</p>
+          <p><a href="https://digitallanders.de" target="_blank" rel="noopener">Website &amp; Marketing: digitallanders</a></p>
+        </div>
+
+        <!-- Social + back to top -->
+        <div class="footer-right-group">
+          <div class="footer-social">
+            <!-- Facebook icon -->
+            <a href="#" aria-label="Facebook" class="footer-social-link">
+              <svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </a>
+            <!-- YouTube icon -->
+            <a href="#" aria-label="YouTube" class="footer-social-link">
+              <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            </a>
+          </div>
+          <a href="#" class="footer-back-top" id="backToTop" aria-label="Zurück nach oben">
+            <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+            Zurück nach oben
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-beratung-faq] .beratung-faq-question').forEach((button) => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', String(!expanded));
+        if (panel) panel.hidden = expanded;
+      });
+    });
+  </script>
+</body>
+</html>

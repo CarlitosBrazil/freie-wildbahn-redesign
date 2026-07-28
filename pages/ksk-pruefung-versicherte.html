@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSK-Prüfung der Versicherten | Hilfe bei der Einkommensprüfung – Freie Wildbahn e.V.</title>
+  <meta name="description" content="Wenn die Künstlersozialkasse eine KSK-Prüfung Deines tatsächlichen Einkommens vornimmt, hilft Dir Freie Wildbahn e.V. da heraus! Bußgelder vermeiden.">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script.js?v=8" defer></script>
+  <style>
+    /* Lower section layout: match upper page width while keeping readable text blocks */
+    .container-narrow {
+      max-width: var(--container-width);
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .container-narrow .quote-card-horizontal {
+      max-width: 860px;
+      margin: 35px auto;
+      width: 100%;
+    }
+    .container-narrow .block-section-img {
+      max-width: 860px !important;
+      width: 100%;
+      margin: 30px auto 35px;
+      text-align: center;
+    }
+    .container-narrow .block-section-img img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: var(--shadow-md);
+      display: block;
+      margin: 0 auto;
+    }
+    .lower-section-copy {
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .lower-section-copy p {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .ksk-pruefung-page .lower-section-copy p a {
+      color: var(--primary-green);
+      font-weight: 700;
+    }
+    .ksk-pruefung-page .lower-section-copy p a:hover {
+      text-decoration: underline;
+    }
+    .container-narrow .bullets-list {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .quote-card-horizontal {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: center;
+      text-align: left;
+      box-sizing: border-box;
+      background-color: var(--bg-white);
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      padding: 24px;
+      border: 1px solid var(--border-light);
+    }
+    .quote-card-horizontal .quote-card-img {
+      flex-shrink: 0;
+      margin: 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--bg-cream);
+      box-shadow: var(--shadow-sm);
+    }
+    .quote-card-horizontal blockquote {
+      margin: 0 0 12px;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--primary-green);
+      line-height: 1.5;
+      border-left: none;
+      padding-left: 0;
+    }
+    .quote-card-horizontal.quote-card-team-style {
+      align-items: center;
+      gap: 28px;
+    }
+    .quote-card-horizontal.quote-card-team-style .quote-card-img {
+      width: 190px;
+      height: auto;
+      border-radius: 12px;
+      overflow: visible;
+      border: none;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: transparent;
+    }
+    .quote-card-horizontal.quote-card-team-style .quote-card-img img {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid #fff;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .quote-card-member-name {
+      font-size: 16px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .quote-card-member-role {
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--primary-green);
+      text-align: center;
+    }
+    .quote-card-horizontal.quote-card-team-style .quote-card-content {
+      align-items: center;
+      align-self: stretch;
+      display: flex;
+      flex: 1;
+      padding-top: 0;
+    }
+    .quote-card-horizontal.quote-card-team-style blockquote {
+      margin-bottom: 0;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .ksk-pruefung-page .ksk-cta-pair {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 24px 0 0;
+    }
+    .ksk-pruefung-page .ksk-summary-section {
+      background: linear-gradient(180deg, #ffffff 0%, #fdfcf9 100%);
+      border-bottom: 1px solid var(--border-light);
+      border-top: 1px solid var(--border-light);
+    }
+    .ksk-pruefung-page .ksk-summary-section .content-box {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 860px;
+      width: calc(100% - 40px);
+    }
+    .ksk-pruefung-page .ksk-summary-heading {
+      color: var(--brand-orange);
+      font-size: clamp(21px, 2vw, 26px);
+      margin: 0 0 24px;
+    }
+    .ksk-pruefung-page .ksk-summary-callout {
+      border-left: 5px solid var(--brand-orange);
+      padding: 2px 0 2px 26px;
+    }
+    .ksk-pruefung-page .ksk-summary-callout p {
+      margin: 0;
+    }
+    .ksk-pruefung-page .ksk-support-callout {
+      background: #fdfcf9;
+      border-left: 4px solid var(--brand-orange);
+      margin: 32px 0 42px;
+      padding: 20px 24px;
+    }
+    .ksk-pruefung-page .ksk-support-callout p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin: 0;
+    }
+    .ksk-pruefung-page .ksk-support-callout .ksk-cta-pair {
+      margin-top: 20px;
+    }
+    .ksk-pruefung-page .ksk-alert-list .bullets-list-item {
+      gap: 14px;
+    }
+    .ksk-pruefung-page .ksk-alert-list .bullets-list-icon {
+      color: var(--brand-orange);
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 5px;
+    }
+    .ksk-pruefung-page .ksk-alert-list .bullets-list-text {
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .ksk-pruefung-page .ksk-alert-list .bullets-list-text p {
+      margin: 0 0 12px;
+    }
+    .ksk-pruefung-page .ksk-alert-list .bullets-list-text p:last-child {
+      margin-bottom: 0;
+    }
+    .ksk-pruefung-page .ksk-faq {
+      border-top: 1px solid var(--border-light);
+      margin-bottom: 34px;
+    }
+    .ksk-pruefung-page .ksk-faq-item {
+      border-bottom: 1px solid var(--border-light);
+    }
+    .ksk-pruefung-page .ksk-faq-heading {
+      font-size: inherit;
+      margin: 0;
+    }
+    .ksk-pruefung-page .ksk-faq-question {
+      align-items: center;
+      background: transparent;
+      border: 0;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      font: inherit;
+      font-size: 18px;
+      font-weight: 700;
+      justify-content: space-between;
+      padding: 20px 4px;
+      text-align: left;
+      width: 100%;
+    }
+    .ksk-pruefung-page .ksk-faq-question:hover {
+      color: var(--primary-green);
+    }
+    .ksk-pruefung-page .ksk-faq-question:focus-visible {
+      border-radius: 4px;
+      outline: 3px solid var(--primary-green);
+      outline-offset: 3px;
+    }
+    .ksk-pruefung-page .ksk-faq-indicator {
+      flex: 0 0 18px;
+      height: 18px;
+      margin-left: 20px;
+      position: relative;
+      width: 18px;
+    }
+    .ksk-pruefung-page .ksk-faq-indicator::before,
+    .ksk-pruefung-page .ksk-faq-indicator::after {
+      background: var(--primary-green);
+      content: "";
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .ksk-pruefung-page .ksk-faq-indicator::before {
+      height: 2px;
+      width: 18px;
+    }
+    .ksk-pruefung-page .ksk-faq-indicator::after {
+      height: 18px;
+      transition: transform 0.15s ease;
+      width: 2px;
+    }
+    .ksk-pruefung-page .ksk-faq-question[aria-expanded="true"] .ksk-faq-indicator::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    .ksk-pruefung-page .ksk-faq-panel {
+      padding: 0 46px 20px 4px;
+    }
+    @media (max-width: 980px) {
+      .ksk-pruefung-page .inner-page-hero .hero-text-col,
+      .ksk-pruefung-page .inner-page-hero .hero-image-col {
+        grid-column: 1 !important;
+      }
+    }
+    @media (max-width: 576px) {
+      .quote-card-horizontal {
+        flex-direction: column !important;
+        text-align: center !important;
+      }
+      .quote-card-horizontal .quote-card-img {
+        margin: 0 auto 16px auto !important;
+      }
+      .quote-card-horizontal.quote-card-team-style .quote-card-img {
+        width: 100%;
+      }
+      .quote-card-horizontal.quote-card-team-style .quote-card-content {
+        padding-top: 0;
+      }
+      .ksk-pruefung-page .ksk-cta-pair {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .ksk-pruefung-page .ksk-cta-pair .btn {
+        text-align: center;
+        width: 100%;
+      }
+      .ksk-pruefung-page .ksk-summary-callout {
+        padding-left: 20px;
+      }
+      .ksk-pruefung-page .ksk-faq-question {
+        font-size: 17px;
+        padding: 18px 2px;
+      }
+      .ksk-pruefung-page .ksk-faq-panel {
+        padding-right: 2px;
+      }
+    }
+  </style>
+  <noscript>
+    <style>
+      .ksk-pruefung-page .ksk-faq-panel[hidden] {
+        display: block;
+      }
+    </style>
+  </noscript>
+</head>
+<body class="ksk-pruefung-page">
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </div>
+      <button class="close-drawer" id="closeDrawer" aria-label="Menü schließen">✕</button>
+    </div>
+    <ul class="mobile-menu-list">
+      <li><a href="../index.html">Startseite</a></li>
+      <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+      <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+      <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+      <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+      <li><a href="#">Verein</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="ksk-beratung.html">Beratung</a></li>
+      <li><a href="#">Mitgliedschaft</a></li>
+      <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+    </ul>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Level 1: Green Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <nav aria-label="Hilfsnavigation">
+          <ul class="top-nav-list">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="ksk-beratung.html">Beratung</a></li>
+            <li><a href="#">Mitgliedschaft</a></li>
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Level 2: White Main Navigation Bar -->
+    <div class="main-nav">
+      <div class="container main-nav-container">
+        <a href="../index.html" class="logo">
+          <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+        </a>
+        
+        <nav aria-label="Hauptnavigation">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="../index.html" class="home-icon" aria-label="Startseite">
+                <svg viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-34 32.1h-32v176c0 26.5-21.5 48-48 48H352c-17.7 0-32-14.3-32-32V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7-14.3 32-32 32H112c-26.5 0-48-21.5-48-48V287.6H32c-19 0-34-14-34-32.1c0-9 3-17 10-24L266.4 8c7-7 15-10.9 25.6-10.9s18.6 3.9 25.6 10.9L565.8 231c8 8 10 16 10 24.5z"/></svg>
+              </a>
+            </li>
+            <li class="menu-item active">
+              <a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a>
+            </li>
+            <li class="menu-item">
+              <a href="ksk-beitragsrechner.html">KSK-Rechner <svg class="arrow-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="kuenstlersozialkasse.html">Künstlersozialkasse <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse (KSK)</a></li>
+                <li><a href="antrag-und-aufnahme.html">Antrag und Aufnahme</a></li>
+                <li><a href="#">Künstlersozialabgabe</a></li>
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+                <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung der Versicherten</a></li>
+                <li><a href="ksk-beratung.html">KSK-Beratung</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Verein <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="team.html">Team</a></li>
+                <li><a href="#">Erfahrungen</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="blog.html">Blog <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="blog-kategorie.html?kategorie=allgemein">Allgemein</a></li>
+                <li><a href="blog-kategorie.html?kategorie=kuenstlersozialkasse">Künstlersozialkasse</a></li>
+                <li><a href="blog-kategorie.html?kategorie=recht">Recht</a></li>
+                <li><a href="blog-kategorie.html?kategorie=steuern">Steuern</a></li>
+                <li><a href="blog-kategorie.html?kategorie=versicherung">Versicherung</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-right-group">
+          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <a href="../index.html" class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </a>
+      <div class="mobile-nav-actions">
+        <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- STANDARDIZED HERO SECTION FOR INNER PAGE -->
+    <section class="inner-page-hero section-padding">
+      <div class="hero-grid">
+        <div class="hero-text-col" style="grid-column: 1; order: 1;">
+          <span class="dachzeile">KSK-Prüfung der Versicherten</span>
+          <h1>KSK-Prüfung der Versicherten: Meldung des tatsächlichen Arbeitseinkommens für Vorjahre</h1>
+          <p class="hero-description">Du bist <strong>über die KSK versichert</strong> und hast das Schreiben <strong>„Meldung des tatsächlichen Arbeitseinkommens für Vorjahre“</strong> erhalten?</p>
+          <p class="hero-description">Du möchtest <strong>Dein KSK-Schreiben und Deine konkrete Prüfungssituation</strong> einordnen?</p>
+          <div class="ksk-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+        <div class="hero-image-col" style="grid-column: 2; order: 2;">
+          <div class="hero-image-container">
+            <video src="https://vid.cdn-website.com/ece5c90d/videos/1gTWVEYkTwS7uwlm6NNC_KSK-Pruefung-Freie-Wildbahn-v.mp4" poster="../assets/thumbnail-ksk-pruefung-freie-wildbahn.jpg" controls playsinline style="width: 100%; height: 100%; display: block; object-fit: cover;"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHORT SUMMARY -->
+    <section id="ksk-pruefung-kurz-gesagt" class="block-section section-padding ksk-summary-section">
+      <div class="container content-box">
+        <h2 class="ksk-summary-heading">Kurz gesagt:</h2>
+        <div class="ksk-summary-callout">
+          <p>Wenn Du <strong>dieses Schreiben erhalten hast</strong>, solltest Du es <strong>nicht wie eine normale Einkommensmeldung behandeln</strong>. Auf dieser Seite erfährst Du, <strong>woran Du eine KSK-Prüfung erkennst</strong>, welche Folgen <strong>falsche oder unvollständige Angaben</strong> haben können, was bei <strong>zu hoch oder zu niedrig geschätztem Einkommen</strong> wichtig ist und warum Du das <strong>Formular nicht vorschnell ausfüllen</strong> solltest.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLANATION & HOTLINE SECTION -->
+    <section class="section-padding">
+      <div class="container container-narrow">
+        <div class="lower-section-copy">
+          <h2 style="font-size: 32px; margin-bottom: 20px;">Die Künstlersozialkasse ist durch den Gesetzgeber verpflichtet, bei jährlich etwa 10.000 Versicherten stichprobenartig eine KSK-Prüfung durchzuführen.</h2>
+          <p style="font-size: 17px; color: var(--text-medium); margin-bottom: 24px;"><strong>Wir informieren und beraten Dich gerne.</strong></p>
+          
+          <!-- Key Points Check List -->
+          <ul class="bullets-list">
+            <li class="bullets-list-item">
+              <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span class="bullets-list-text"><strong>Bußgeld:</strong> Minimiere das Risiko einer Geldbuße</span>
+            </li>
+            <li class="bullets-list-item">
+              <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span class="bullets-list-text"><strong>Versicherungspflicht:</strong> Kläre, ob Dein Versicherungsstatus betroffen sein kann</span>
+            </li>
+            <li class="bullets-list-item">
+              <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span class="bullets-list-text"><strong>Nachzahlung:</strong> Kläre, welche finanziellen Folgen in Deinem Fall tatsächlich möglich sind</span>
+            </li>
+          </ul>
+          <div class="ksk-support-callout">
+            <p><strong>Du benötigst Sofort-Hilfe?</strong> Wir helfen Dir bei der <strong>Einkommensprüfung durch die KSK</strong>. Wir konnten bereits viele Freiberufler bei KSK-Prüfungen unterstützen, <strong>Risiken frühzeitig zu erkennen, Bußgelder zu verringern oder mögliche Strafen zu vermeiden</strong>. Lass Dich deshalb <strong>rechtzeitig beraten</strong>, bevor Du Angaben machst, bei denen Du Dir unsicher bist.</p>
+            <div class="ksk-cta-pair">
+              <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+              <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quicklinks Nav Box -->
+      <div class="container">
+        <div class="quicklinks-box">
+          <h3>Direkt zum Thema springen:</h3>
+          <div class="quicklinks-flex">
+            <a href="#so-erkennen-sie" class="cta">
+              <span>So erkennst Du, dass Du eine KSK-Prüfung hast</span>
+              <svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+            </a>
+            <a href="#konsequenzen-falscher-angaben" class="cta">
+              <span>Konsequenzen, die eine KSK-Prüfung für Deine Versicherungspflicht haben kann</span>
+              <svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+            </a>
+            <a href="#einkommen-geschaetzt" class="cta">
+              <span>In den Vorjahren hast Du Dein Einkommen zu gering oder zu hoch geschätzt</span>
+              <svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+            </a>
+            <a href="#formular-vorjahre" class="cta">
+              <span>KSK-Prüfung: Das solltest Du beim Erhalt des Formulars „Meldung Deines Arbeitseinkommens für Vorjahre“ tun</span>
+              <svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+            </a>
+            <a href="#faq" class="cta">
+              <span>Häufige Fragen zur KSK-Prüfung</span>
+              <svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SO ERKENNEN SIE... -->
+    <section id="so-erkennen-sie" class="block-section bg-light">
+      <div class="container container-narrow">
+        <div class="lower-section-copy">
+          <span class="dachzeile">Risiken erkennen</span>
+          <h3 style="margin-bottom: 24px;">So erkennst Du, dass Du eine KSK-Prüfung hast</h3>
+          
+          <p>Mit der <strong>Meldung des voraussichtlichen Jahresarbeitseinkommens</strong> musst Du als KSK-versicherte Person Deinen Gewinn für das folgende Kalenderjahr schätzen und diese Gewinnprognose abgeben. Diese <strong>reguläre Einkommensmeldung</strong> ist von einer <strong>KSK-Prüfung</strong> zu unterscheiden.</p>
+          <p>Ein älteres Beispiel eines KSK-Schreibens zur Meldung des voraussichtlichen Jahresarbeitseinkommens mit Hinweis auf eine spätere Prüfung findest Du <a href="../archive/legacy/duda-export/freie-wildbahn.de_site/Resources/files/ksk-meldung-vorausssichtliches-jahreseinkommen-2020-hinweis-auf-ksk-pruefung-2019-09.pdf" target="_blank" rel="noopener">hier</a>. Das Beispiel dient nur zur Orientierung. <strong>Form, Jahre und Fristen können sich ändern.</strong></p>
+          <p><strong>Aber Achtung!</strong> Bei etwa 5 % der Schreiben, die die Künstlersozialkasse an ihre Mitglieder verschickt, ist im unteren Bereich ein <strong>sehr wichtiger Absatz versteckt</strong>, der leicht übersehen werden kann:</p>
+        </div>
+        
+        <!-- Marlon Rother Quote Block -->
+        <div class="quote-card-horizontal quote-card-team-style">
+          <div class="quote-card-img">
+            <img src="../assets/marlon_rother.jpeg" alt="Marlon Rother">
+            <div class="quote-card-member-name">Marlon Rother</div>
+            <div class="quote-card-member-role">Rechtsanwalt</div>
+          </div>
+          <div class="quote-card-content">
+            <blockquote>„Die Künstlersozialkasse ist gesetzlich verpflichtet, die Einkommensverhältnisse der Versicherten stichprobenartig zu überprüfen. Sie werden in Kürze eine weitere Anfrage der Künstlersozialkasse erhalten, in der es um Ihre in den vergangenen Jahren erzielten Einkünfte geht.“</blockquote>
+          </div>
+        </div>
+        
+        <!-- Document warning visual -->
+        <div class="block-section-img">
+          <img src="../assets/dokument-hinweis-ksk-pruefung.jpg" alt="Dokument - Meldung Einkommen Vorjahre - KSK-Prüfung">
+        </div>
+        
+        <div class="lower-section-copy">
+          <p>Wenn Du ein Schreiben mit einem solchen Hinweis erhalten hast, kann eine <strong>gesonderte Anfrage zu Deinem tatsächlichen Arbeitseinkommen der Vorjahre</strong> folgen. Ein älteres Beispiel des Formulars <strong>„Meldung des tatsächlichen Arbeitseinkommens für Vorjahre“</strong> findest Du <a href="../archive/legacy/duda-export/freie-wildbahn.de_site/Resources/files/ksk-meldung-des-tatsaechlichen-einkommens-fuer-vorjahre-2019-09.pdf" target="_blank" rel="noopener">hier</a>.</p>
+          <p>Der Sinn der Prüfung: Die KSK gleicht <strong>Deine damaligen Schätzungen mit den tatsächlichen Gewinnen aus den Steuerbescheiden</strong> ab.</p>
+          <p>Auch dieses Beispiel dient nur zur Orientierung. <strong>Maßgeblich sind immer Dein konkretes Schreiben, die dort angeforderten Unterlagen und die dort genannte Frist.</strong></p>
+          <p><strong>Sieht Dein KSK-Schreiben so oder ähnlich aus? Dann sei ab jetzt bitte sehr vorsichtig!</strong></p>
+          <p>Augenscheinlich wirken die Ausfüllhinweise selbsterklärend. Trotzdem <strong>liegen die Gefahren im Detail</strong>.</p>
+          <p>Daher unser klarer Rat: <strong>Bitte fülle das Dokument nicht vorschnell aus</strong>, wenn Du bei Deinem Einkommen, Deinen Tätigkeitsbereichen oder den geforderten Unterlagen unsicher bist.</p>
+          <p>Prüfe zuerst genau:</p>
+          <ul class="bullets-list">
+            <li class="bullets-list-item">
+              <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span class="bullets-list-text"><strong>welche Angaben</strong> die KSK von Dir verlangt,</span>
+            </li>
+            <li class="bullets-list-item">
+              <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span class="bullets-list-text"><strong>welche Jahre</strong> betroffen sind,</span>
+            </li>
+            <li class="bullets-list-item">
+              <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span class="bullets-list-text"><strong>welche Unterlagen</strong> Du einreichen sollst,</span>
+            </li>
+            <li class="bullets-list-item">
+              <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+              <span class="bullets-list-text">und <strong>welche Frist in Deinem konkreten Schreiben gilt</strong>.</span>
+            </li>
+          </ul>
+          <p>Du musst nicht überhastet reagieren. Wichtig ist aber, dass Du <strong>fristgerecht</strong> antwortest und Dich nicht auf alte Musterformulare oder frühere Fristen verlässt.</p>
+          <p>Was Deine vollständigen Unterlagen umfassen und was Du in Deinem individuellen Fall beachten solltest, klären wir gerne gemeinsam mit Dir in unserer individuellen Beratung zu Deiner KSK-Prüfung:</p>
+          <div class="ksk-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: KONSEQUENZEN -->
+    <section id="konsequenzen-falscher-angaben" class="block-section">
+      <div class="container container-narrow">
+        <div class="lower-section-copy">
+          <span class="dachzeile">Konsequenzen vermeiden</span>
+          <h3 style="margin-bottom: 24px;">Konsequenzen, die eine KSK-Prüfung für Deine Versicherungspflicht haben kann</h3>
+          <p>Eine KSK-Prüfung kann <strong>mehr auslösen als nur Rückfragen zu Deinem Einkommen</strong>. Je nach Deinem individuellen Fall können <strong>Deine Versicherungspflicht, Deine Kranken- und Pflegeversicherung, Beitragszuschüsse, mögliche Bußgelder oder weitere Prüfungen und Nachweise</strong> betroffen sein.</p>
+        </div>
+        
+        <div class="block-section-img">
+          <img src="../assets/5000-euro-geldbusse-ksk-pruefung.jpg" alt="5000 Euro Geldbuße">
+        </div>
+
+        <ul class="bullets-list ksk-alert-list" style="margin-top: 0;">
+          <li class="bullets-list-item">
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
+            <div class="bullets-list-text"><p><strong>Mindesteinkommen:</strong> Ein Ausschluss aus der Versicherung über die KSK kann in Betracht kommen, wenn das jährliche Mindesteinkommen von <strong>3.900 Euro</strong> innerhalb von sechs Jahren mehr als zweimal unterschritten wurde. <strong>Ein einmaliges Unterschreiten bedeutet daher nicht automatisch, dass Deine Versicherungspflicht sofort endet.</strong></p></div>
+          </li>
+          <li class="bullets-list-item">
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
+            <div class="bullets-list-text">
+              <p><strong>Kranken- und Pflegeversicherung:</strong> Eine zusätzliche Beschäftigung oder eine weitere nicht künstlerische bzw. nicht publizistische selbständige Tätigkeit kann Deinen Versicherungsschutz nach dem Künstlersozialversicherungsgesetz (KSVG) beeinflussen. Entscheidend sind <strong>Art, Umfang und wirtschaftliche Bedeutung der jeweiligen Tätigkeit</strong>. Pauschale Aussagen allein anhand einer einzelnen Monatsgrenze reichen dafür nicht aus.</p>
+              <p>Je nach Art und Umfang Deiner zusätzlichen Tätigkeit kann sich daraus eine andere sozialversicherungsrechtliche Einordnung ergeben. In solchen Fällen kann die KSK weiterhin Beiträge zur Rentenversicherung verlangen, während für die Krankenversicherung eine andere Absicherung erforderlich werden kann. Dabei können zusätzliche Krankenversicherungsbeiträge von <strong>400 Euro monatlich oder mehr</strong> entstehen.</p>
+            </div>
+          </li>
+          <li class="bullets-list-item">
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
+            <div class="bullets-list-text"><p><strong>Private Krankenversicherung und Beitragszuschüsse:</strong> Wenn Du privat krankenversichert bist und einen Beitragszuschuss der KSK erhältst, können Abweichungen zwischen Deinem geschätzten und Deinem tatsächlich erzielten Einkommen relevant werden. Je nach Deinem konkreten Versicherungs- und Zuschussfall kann es zu <strong>Korrekturen oder Rückforderungen</strong> kommen. Dabei kann es schnell um vierstellige Beträge gehen.</p></div>
+          </li>
+          <li class="bullets-list-item">
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
+            <div class="bullets-list-text">
+              <p>Viele stellen sich natürlich die Frage: <strong>„KSK-Nachzahlung – wie hoch fällt sie aus?“</strong></p>
+              <p>Ergeben sich bei der Gegenüberstellung Deines gemeldeten Einkommens und Deines tatsächlichen Arbeitseinkommens größere Abweichungen, bedeutet das <strong>nicht automatisch</strong>, dass bereits festgesetzte monatliche KSK-Beiträge rückwirkend neu berechnet werden. <strong>Größere Abweichungen können jedoch weitere oder detailliertere Prüfungen auslösen.</strong></p>
+            </div>
+          </li>
+        </ul>
+        <div class="lower-section-copy">
+          <p>Gerade deshalb geht es bei einer KSK-Prüfung nicht nur darum, Zahlen in ein Formular einzutragen. Entscheidend ist, <strong>welche Angaben die KSK konkret prüft, welche Unterlagen verlangt werden und welche Auswirkungen sich daraus für Deinen individuellen Fall ergeben können.</strong></p>
+          <p>Du möchtest mögliche Folgen Deiner KSK-Prüfung einordnen lassen?</p>
+          <div class="ksk-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: GESCÄTZTES EINKOMMEN -->
+    <section id="einkommen-geschaetzt" class="block-section bg-light">
+      <div class="container container-narrow">
+        <div class="lower-section-copy">
+          <div style="text-align: center; margin-bottom: 40px;">
+            <span class="dachzeile">Fehleinschätzungen</span>
+            <h3>In den Vorjahren hast Du Dein Einkommen <span style="color: var(--primary-green);">zu gering oder zu hoch geschätzt</span></h3>
+          </div>
+          
+          <p>Mit der <strong>Meldung des voraussichtlichen Jahresarbeitseinkommens</strong> musst Du als KSK-versicherte Person Deinen Gewinn für das folgende Kalenderjahr schätzen und diese Gewinnprognose abgeben.</p>
+          <p>Das voraussichtliche Jahresarbeitseinkommen ist eine <strong>Prognose</strong>. Wenn sich Deine Erwartungen im laufenden Jahr ändern, kannst Du der KSK ein geändertes voraussichtliches Arbeitseinkommen mitteilen. Die Änderung wirkt sich grundsätzlich <strong>für die Zukunft</strong> auf die Beitragsberechnung aus.</p>
+          <p>Hast Du in den vergangenen Jahren Dein Einkommen zu gering eingeschätzt? Und Du hast jetzt eine KSK-Prüfung – also eine Überprüfung Deines tatsächlichen Arbeitseinkommens für Vorjahre?</p>
+          <p>Dann befürchtest Du möglicherweise eine hohe Nachzahlung an KSK-Beiträgen.</p>
+          <p><strong>Die gute Nachricht vorweg:</strong> Eine Abweichung zwischen Deiner früheren Einkommensprognose und Deinem späteren tatsächlichen Einkommen führt <strong>nicht automatisch zu einer rückwirkenden Nachzahlung bereits festgesetzter monatlicher KSK-Beiträge</strong>.</p>
+          <p><strong>Aber Achtung:</strong> Das bedeutet nicht, dass falsche oder unvollständige Angaben folgenlos bleiben.</p>
+          <p>§ 36 Abs. 1 KSVG sieht für bestimmte vorsätzliche oder fahrlässige Verstöße gegen <strong>Melde-, Auskunfts- und Vorlagepflichten</strong> Geldbußen von bis zu <strong>5.000 Euro</strong> vor. Entscheidend ist deshalb nicht allein, wie groß die Abweichung zwischen Schätzung und tatsächlichem Einkommen war, sondern <strong>was konkret gemeldet wurde, welche Pflichten bestanden und wie Dein individueller Fall aussieht</strong>.</p>
+          <p>Hast Du Dein Einkommen dagegen <strong>zu hoch geschätzt</strong>, können daraus höhere monatliche KSK-Beiträge entstanden sein, die rückwirkend grundsätzlich nicht korrigiert werden.</p>
+          <p>Betriebswirtschaftlich solltest Du Deine Prognose deshalb möglichst realistisch abgeben und deutliche Veränderungen rechtzeitig berücksichtigen. Aber weder Du noch jemand anderes hat eine Glaskugel zu Hause, die zuverlässig die zukünftigen Gewinne vorhersagen kann.</p>
+          <p>Genau für dieses Dilemma gibt es zur ersten Orientierung unseren <a href="ksk-beitragsrechner.html"><strong>KSK-Beitragsrechner</strong></a>.</p>
+          <p><strong>Aber Vorsicht!</strong> Beiträge und mögliche Bußgelder sind nicht die einzigen Themen. Je nach Deinem konkreten Fall kann die KSK auch prüfen, ob die <strong>Voraussetzungen für Deine Versicherung nach dem KSVG weiterhin erfüllt</strong> sind.</p>
+          <p>Du möchtest Deine bisherige Einkommensschätzung vor einer Antwort genau und individuell einordnen?</p>
+          <div class="ksk-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FORMULAR UND VORGEHEN -->
+    <section id="formular-vorjahre" class="block-section">
+      <div class="container container-narrow">
+        <div class="lower-section-copy">
+          <span class="dachzeile">Richtig reagieren</span>
+          <h3 style="margin-bottom: 24px;">KSK-Prüfung: Das solltest Du beim Erhalt des Formulars „Meldung Deines Arbeitseinkommens für Vorjahre“ tun</h3>
+          <p>Du und etwa <strong>10.000 weitere KSK-Versicherte</strong> erhalten im Rahmen der Stichprobenprüfung die Aufforderung, Nachweise über das tatsächliche Arbeitseinkommen vergangener Jahre vorzulegen.</p>
+          <p>Das Wichtigste: <strong>Bewahre bei einer KSK-Prüfung Ruhe und antworte nicht vorschnell.</strong></p>
+          <p>Prüfe zuerst genau, <strong>was die Künstlersozialkasse von Dir verlangt</strong>, welche Jahre betroffen sind und welche Unterlagen Du tatsächlich einreichen sollst.</p>
+          <p>Wenn die KSK Dich zur Vorlage von Einkommensnachweisen auffordert, solltest Du strukturiert vorgehen:</p>
+          <ul class="bullets-list">
+            <li class="bullets-list-item"><svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg><span class="bullets-list-text"><strong>Lies das Schreiben vollständig</strong> und markiere die dort genannte Frist.</span></li>
+            <li class="bullets-list-item"><svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg><span class="bullets-list-text">Prüfe, <strong>für welche Jahre und Tätigkeiten</strong> die KSK Angaben oder Nachweise verlangt.</span></li>
+            <li class="bullets-list-item"><svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg><span class="bullets-list-text">Stelle die <strong>ausdrücklich verlangten Unterlagen</strong> zusammen.</span></li>
+            <li class="bullets-list-item"><svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg><span class="bullets-list-text">Vergleiche Deine früheren Einkommensschätzungen mit den tatsächlichen Ergebnissen und prüfe größere Abweichungen.</span></li>
+            <li class="bullets-list-item"><svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg><span class="bullets-list-text"><strong>Kläre offene Fragen vor der Abgabe</strong>, wenn Dir Angaben oder mögliche Folgen unklar sind.</span></li>
+            <li class="bullets-list-item"><svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg><span class="bullets-list-text">Bewahre eine <strong>vollständige Kopie Deiner Antwort und der eingereichten Unterlagen</strong> auf.</span></li>
+          </ul>
+          <p>Die KSK-Prüfung kann unter anderem der Klärung dienen, ob Deine Angaben vollständig waren und ob Du Deinen gesetzlichen Melde-, Auskunfts- und Vorlagepflichten nachgekommen bist.</p>
+          <p><strong>Antworte nicht überhastet, aber reagiere fristgerecht auf Dein konkretes Schreiben.</strong> Nach Deiner Antwort kann die KSK weitere Unterlagen oder Erläuterungen anfordern.</p>
+          <p>Erlässt die KSK später einen Bescheid und bist Du mit der Entscheidung nicht einverstanden, kann ein <strong>Widerspruch</strong> möglich sein. Maßgeblich sind dabei immer die <strong>Rechtsbehelfsbelehrung und die Frist im konkreten Bescheid</strong>.</p>
+          <p>Du möchtest Dein Schreiben, Deine Unterlagen und mögliche Abweichungen vor der Abgabe gemeinsam prüfen?</p>
+          <div class="ksk-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="block-section bg-light">
+      <div class="container container-narrow">
+        <div class="lower-section-copy">
+          <h2>Häufige Fragen zur KSK-Prüfung</h2>
+          <div class="ksk-faq" data-ksk-faq>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-1" aria-expanded="true" aria-controls="pruefung-faq-answer-1"><span>Was ist eine KSK-Prüfung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-1" role="region" aria-labelledby="pruefung-faq-question-1"><p>Eine KSK-Prüfung ist eine Überprüfung durch die Künstlersozialkasse. Im Rahmen einer jährlichen Stichprobe bei <strong>5 % der KSK-Versicherten</strong> – etwa 10.000 Personen – wird die KSK Nachweise zum tatsächlichen Arbeitseinkommen der vergangenen Jahre anfordern. Abgegeben werden müssen Steuerbescheide und andere Nachweise für maximal sechs vorangegangene Jahre, um diese zu überprüfen und mit Deinen zuvor gemachten Angaben zu vergleichen. Auch die Tätigkeitsbereiche werden hierbei standardmäßig erneut abgefragt. Daneben sind auch anlassbezogene Prüfungen möglich.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-2" aria-expanded="false" aria-controls="pruefung-faq-answer-2"><span>Warum fragt die Künstlersozialkasse nach meinem tatsächlichen Arbeitseinkommen der Vorjahre?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-2" role="region" aria-labelledby="pruefung-faq-question-2" hidden><p>Deine laufenden Beiträge beruhen auf dem <strong>voraussichtlichen Jahresarbeitseinkommen</strong>, das Du im Voraus schätzt und der KSK meldest. Bei einer Stichprobenprüfung wird die KSK später Nachweise zum tatsächlich erzielten Arbeitseinkommen verlangen und Deine Angaben aus zurückliegenden Jahren überprüfen.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-3" aria-expanded="false" aria-controls="pruefung-faq-answer-3"><span>Was ist der Unterschied zwischen voraussichtlichem und tatsächlichem Arbeitseinkommen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-3" role="region" aria-labelledby="pruefung-faq-question-3" hidden><p>Das voraussichtliche Arbeitseinkommen ist Deine <strong>Prognose für das kommende Kalenderjahr</strong>. Das tatsächliche Arbeitseinkommen ergibt sich später aus dem realen Gewinn Deiner selbständigen künstlerischen oder publizistischen Tätigkeit. Der Unterschied zwischen beiden sollte nicht zu groß sein.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-4" aria-expanded="false" aria-controls="pruefung-faq-answer-4"><span>Welche Unterlagen brauche ich für eine KSK-Prüfung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-4" role="region" aria-labelledby="pruefung-faq-question-4" hidden><p>Welche Unterlagen Du brauchst, steht in <strong>Deinem konkreten KSK-Schreiben</strong>. Bei der aktuellen Stichprobenpraxis kann die KSK insbesondere Einkommensteuerbescheide der zurückliegenden Jahre verlangen. Reiche nicht vorsorglich wahllos Unterlagen ein, sondern orientiere Dich an der konkreten Anforderung.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-5" aria-expanded="false" aria-controls="pruefung-faq-answer-5"><span>Welche Frist gilt bei einer KSK-Prüfung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-5" role="region" aria-labelledby="pruefung-faq-question-5" hidden><p>Maßgeblich ist die <strong>Frist in Deinem eigenen Schreiben der Künstlersozialkasse</strong>. Verlass Dich nicht auf alte Musterformulare oder frühere Jahresfristen.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-6" aria-expanded="false" aria-controls="pruefung-faq-answer-6"><span>Muss ich das Formular sofort ausfüllen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-6" role="region" aria-labelledby="pruefung-faq-question-6" hidden><p>Du solltest <strong>nicht überhastet antworten</strong>. Du solltest das Schreiben aber auch nicht liegen lassen. Prüfe zuerst, welche Angaben verlangt werden, welche Unterlagen dazugehören und welche Frist gilt.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-7" aria-expanded="false" aria-controls="pruefung-faq-answer-7"><span>Was passiert, wenn ich mein Einkommen zu niedrig geschätzt habe?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-7" role="region" aria-labelledby="pruefung-faq-question-7" hidden><p>Eine zu niedrige Schätzung führt <strong>nicht automatisch zu einer rückwirkenden Korrektur bereits festgesetzter Monatsbeiträge</strong>. Problematisch können jedoch unrichtige oder unvollständige Angaben und Verstöße gegen gesetzliche Melde-, Auskunfts- oder Vorlagepflichten sein. Erkennt die Künstlersozialkasse oder die Deutsche Rentenversicherung bei der Überprüfung Deiner Einkommen der Vorjahre systematisch erheblich zu gering geschätzte Einkommensschätzungen, droht ein Bußgeld bis zu einer Höhe von <strong>5.000 Euro</strong>.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-8" aria-expanded="false" aria-controls="pruefung-faq-answer-8"><span>Droht mir bei einer KSK-Prüfung automatisch eine Nachzahlung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-8" role="region" aria-labelledby="pruefung-faq-question-8" hidden><p><strong>Nein.</strong> Eine Abweichung zwischen Prognose und tatsächlichem Einkommen bedeutet nicht automatisch, dass bereits gezahlte KSK-Beiträge rückwirkend neu berechnet werden. Andere finanzielle oder versicherungsrechtliche Folgen können je nach Sachverhalt trotzdem relevant sein und unterschiedliche Konsequenzen haben.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-9" aria-expanded="false" aria-controls="pruefung-faq-answer-9"><span>Kann meine Versicherungspflicht durch eine KSK-Prüfung entfallen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-9" role="region" aria-labelledby="pruefung-faq-question-9" hidden><p>Wenn die gesetzlichen Voraussetzungen für die Versicherung nach dem KSVG nicht mehr erfüllt sind, kann sich Dein Versicherungsstatus ändern. <strong>Ein einmaliges Unterschreiten des Mindesteinkommens führt aber nicht automatisch dazu.</strong></p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-10" aria-expanded="false" aria-controls="pruefung-faq-answer-10"><span>Was passiert nach der Einreichung meiner Unterlagen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-10" role="region" aria-labelledby="pruefung-faq-question-10" hidden><p>Die KSK prüft Deine Angaben und kann bei Bedarf <strong>weitere Unterlagen oder Erläuterungen anfordern</strong>. Je nach Ergebnis kann die Prüfung ohne weitere Folgen abgeschlossen werden oder zu einer weiteren Entscheidung über Deinen Versicherungsstatus oder andere Punkte führen.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-11" aria-expanded="false" aria-controls="pruefung-faq-answer-11"><span>Kann ich gegen eine Entscheidung der KSK Widerspruch einlegen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-11" role="region" aria-labelledby="pruefung-faq-question-11" hidden><p>Gegen einen Bescheid der Künstlersozialkasse kannst Du grundsätzlich <strong>Widerspruch einlegen</strong>. Bei Versand innerhalb Deutschlands beträgt die Frist grundsätzlich einen Monat. Entscheidend ist die Rechtsbehelfsbelehrung im konkreten Bescheid. Nicht jedes KSK-Schreiben ist ein widerspruchsfähiger Bescheid.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-12" aria-expanded="false" aria-controls="pruefung-faq-answer-12"><span>Wann ist eine KSK-Beratung bei einer Prüfung sinnvoll?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-12" role="region" aria-labelledby="pruefung-faq-question-12" hidden><p>Eine KSK-Beratung kann sinnvoll sein, wenn Du unsicher bist, <strong>wie Du das Schreiben verstehen sollst, welche Angaben verlangt werden, welche Unterlagen relevant sind oder welche Folgen in Deinem Fall möglich sein können</strong>.</p></div></div>
+          </div>
+          <p>Du möchtest Deine KSK-Prüfung jetzt einordnen und Dein weiteres Vorgehen klären?</p>
+          <div class="ksk-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+
+    <!-- Upper zone: #faf9f6 background with logo + columns -->
+    <div class="footer-upper">
+      <div class="container footer-upper-grid">
+
+        <!-- Brand column -->
+        <div class="footer-brand-col">
+          <a href="../index.html" class="footer-logo">
+            <img src="../assets/logo.png" alt="Freie Wildbahn e.V.">
+          </a>
+          <p class="footer-tagline">Schnell und einfach stetig auf dem neuesten Stand rund um das Thema „Künstler und Künstlersozialkasse".</p>
+        </div>
+
+        <!-- Unsere Themen -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Unsere Themen</h6>
+          <ul class="footer-col-links">
+            <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+            <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+            <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+          </ul>
+        </div>
+
+        <!-- Über uns -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Über uns</h6>
+          <ul class="footer-col-links">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Konto -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Konto</h6>
+          <ul class="footer-col-links">
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+            <li><a href="#">Registrieren</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lower bar: teal background -->
+    <div class="footer-lower">
+      <div class="container footer-lower-inner">
+
+        <!-- Legal links -->
+        <nav class="footer-legal-nav" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutzinformation</a>
+          <a href="#">Quellenangaben</a>
+        </nav>
+
+        <!-- Copyright + credit -->
+        <div class="footer-copy">
+          <p>© 2026 Freie Wildbahn e.V. | Alle Rechte vorbehalten</p>
+          <p><a href="https://digitallanders.de" target="_blank" rel="noopener">Website &amp; Marketing: digitallanders</a></p>
+        </div>
+
+        <!-- Social + back to top -->
+        <div class="footer-right-group">
+          <div class="footer-social">
+            <!-- Facebook icon -->
+            <a href="#" aria-label="Facebook" class="footer-social-link">
+              <svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </a>
+            <!-- YouTube icon -->
+            <a href="#" aria-label="YouTube" class="footer-social-link">
+              <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            </a>
+          </div>
+          <a href="#" class="footer-back-top" id="backToTop" aria-label="Zurück nach oben">
+            <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+            Zurück nach oben
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+    (() => {
+      const accordion = document.querySelector('[data-ksk-faq]');
+      if (!accordion) return;
+      const questions = Array.from(accordion.querySelectorAll('.ksk-faq-question'));
+      questions.forEach((question) => {
+        question.addEventListener('click', () => {
+          const willOpen = question.getAttribute('aria-expanded') !== 'true';
+          const panel = document.getElementById(question.getAttribute('aria-controls'));
+          questions.forEach((otherQuestion) => {
+            const otherPanel = document.getElementById(otherQuestion.getAttribute('aria-controls'));
+            otherQuestion.setAttribute('aria-expanded', 'false');
+            otherPanel.hidden = true;
+          });
+          question.setAttribute('aria-expanded', String(willOpen));
+          panel.hidden = !willOpen;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

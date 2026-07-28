@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Das Team | Freie Wildbahn e.V. – KSK-Experten und Berater</title>
+  <meta name="description" content="Lernen Sie das Team von Freie Wildbahn e.V. kennen – KSK-Experten, Steuerberater, Rechtsanwalt und die Mitgliederbetreuung.">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script.js?v=8" defer></script>
+  <style>
+    /* â”€â”€ Team page specific styles â”€â”€ */
+    .team-member-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      margin-bottom: 40px;
+      transition: box-shadow 0.3s ease;
+    }
+    .team-member-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+    .team-member-photo {
+      background: var(--bg-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 32px 24px 24px;
+      border-right: 1px solid var(--border-light);
+      min-height: 280px;
+    }
+    .team-member-photo img {
+      width: 168px;
+      height: 168px;
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: center top;
+      border: 4px solid #fff;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 16px;
+    }
+    .team-member-photo .member-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .team-member-photo .member-role {
+      font-size: 12px;
+      color: var(--primary-green);
+      text-align: center;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .team-member-body {
+      padding: 32px 36px;
+    }
+    .team-member-body h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .team-member-body .member-subtitle {
+      font-size: 14px;
+      color: var(--primary-green);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .team-member-body p {
+      font-size: 15px;
+      color: var(--text-medium);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .team-member-body p:last-child {
+      margin-bottom: 0;
+    }
+    .team-member-body .member-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .member-tag {
+      background: var(--bg-light);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-green);
+    }
+    @media (max-width: 768px) {
+      .team-member-card {
+        grid-template-columns: 1fr;
+      }
+      .team-member-photo {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 24px;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        text-align: left;
+        min-height: auto;
+      }
+      .team-member-photo img {
+        width: 112px;
+        height: 112px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+      .team-member-photo .member-name,
+      .team-member-photo .member-role {
+        text-align: left;
+      }
+      .team-member-body {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </div>
+      <button class="close-drawer" id="closeDrawer" aria-label="Menü schließen">✕</button>
+    </div>
+    <ul class="mobile-menu-list">
+      <li><a href="../index.html">Startseite</a></li>
+      <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+      <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+      <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+      <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="vorteile.html">Vorteile</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="ksk-beratung.html">Beratung</a></li>
+      <li><a href="#" >Mitgliedschaft</a></li>
+      <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+    </ul>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Level 1: Green Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <nav aria-label="Hilfsnavigation">
+          <ul class="top-nav-list">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="ksk-beratung.html">Beratung</a></li>
+            <li><a href="#">Mitgliedschaft</a></li>
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Level 2: White Main Navigation Bar -->
+    <div class="main-nav">
+      <div class="container main-nav-container">
+        <a href="../index.html" class="logo">
+          <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+        </a>
+
+        <nav aria-label="Hauptnavigation">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="../index.html" class="home-icon" aria-label="Startseite">
+                <svg viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-34 32.1h-32v176c0 26.5-21.5 48-48 48H352c-17.7 0-32-14.3-32-32V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7-14.3 32-32 32H112c-26.5 0-48-21.5-48-48V287.6H32c-19 0-34-14-34-32.1c0-9 3-17 10-24L266.4 8c7-7 15-10.9 25.6-10.9s18.6 3.9 25.6 10.9L565.8 231c8 8 10 16 10 24.5z"/></svg>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a>
+            </li>
+            <li class="menu-item">
+              <a href="ksk-beitragsrechner.html">KSK-Rechner <svg class="arrow-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Künstlersozialkasse <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse (KSK)</a></li>
+                <li><a href="antrag-und-aufnahme.html">Antrag und Aufnahme</a></li>
+                <li><a href="kuenstlersozialabgabe.html">Künstlersozialabgabe</a></li>
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+                <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung der Versicherten</a></li>
+                <li><a href="ksk-beratung.html">KSK-Beratung</a></li>
+              </ul>
+            </li>
+            <li class="menu-item active">
+              <a href="#">Verein <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="team.html">Team</a></li>
+                <li><a href="#">Erfahrungen</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="blog.html">Blog <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="blog-kategorie.html?kategorie=allgemein">Allgemein</a></li>
+                <li><a href="blog-kategorie.html?kategorie=kuenstlersozialkasse">Künstlersozialkasse</a></li>
+                <li><a href="blog-kategorie.html?kategorie=recht">Recht</a></li>
+                <li><a href="blog-kategorie.html?kategorie=steuern">Steuern</a></li>
+                <li><a href="blog-kategorie.html?kategorie=versicherung">Versicherung</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-right-group">
+          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <a href="../index.html" class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </a>
+      <div class="mobile-nav-actions">
+        <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- â”€â”€ HERO â”€â”€ -->
+    <section class="inner-page-hero section-padding" style="background: var(--bg-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container" style="max-width: 900px; text-align: center;">
+        <span class="dachzeile">Verein</span>
+        <h1 style="font-size: 42px; margin-bottom: 16px; line-height: 1.2;">Das Team von Freie Wildbahn e.V.</h1>
+        <p style="font-size: 18px; color: var(--text-medium); line-height: 1.7; max-width: 720px; margin: 0 auto 32px;">Unsere KSK-Experten, Berater und Ihre Mitgliederbetreuung</p>
+        <a href="https://login.freie-wildbahn.de/beratung?registrychoice=2" class="btn btn-orange">KSK-Beratung buchen</a>
+      </div>
+    </section>
+
+    <!-- â”€â”€ TEAM MEMBERS â”€â”€ -->
+    <section class="section-padding" style="background: #fff;">
+      <div class="container" style="max-width: 1060px;">
+
+        <!-- Detlef Husemann -->
+        <div class="team-member-card">
+          <div class="team-member-photo">
+            <img src="../assets/Detlef-Husemann-KSK-Experte-Freie-Wildbahn-e.V-1920w.png" alt="Detlef Husemann – Vorsitzender Freie Wildbahn e.V.">
+            <div class="member-name">Detlef Husemann</div>
+            <div class="member-role">Vorsitzender &amp; KSK-Experte</div>
+          </div>
+          <div class="team-member-body">
+            <h3>Detlef Husemann</h3>
+            <div class="member-subtitle">Vorsitzender Freie Wildbahn e.V. – Experte für Künstlersozialkasse und KSK-Beratung</div>
+            <p>Als registrierter <strong>Versicherungsmakler</strong> ist Detlef Husemann bereits seit Januar 1986 tätig. Etwa ab Ende der 90er Jahre mehrten sich Anfragen zu den Regelungen bezüglich der Künstlersozialkasse für <strong>Journalisten, Künstler und Publizisten</strong>. Durch die Agenda 2010 nahm die Zahl der selbständigen Künstler, Journalisten und anderer Medienschaffender stark zu. Dadurch stieg auch die Anzahl der sehr spezifischen Fragen weiter rasant an. Den stetig wachsenden Beratungsbedarf zur KSK konnte der Versicherungsmakler Detlef Husemann bald nicht mehr allein bedienen. Ab 2005 vorbereitet – erfolgte die Gründung des Vereins <strong>Freie Wildbahn e.V.</strong> schließlich im März 2007.</p>
+            <div class="member-tags">
+              <span class="member-tag">KSK-Beratung</span>
+              <span class="member-tag">Versicherungsmakler</span>
+              <span class="member-tag">Vereinsgründer</span>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Marlon Rother -->
+        <div class="team-member-card">
+          <div class="team-member-photo">
+            <img src="../assets/marlon_rother-1920w.jpeg" alt="Marlon Rother – Rechtsanwalt">
+            <div class="member-name">Marlon Rother</div>
+            <div class="member-role">Rechtsanwalt</div>
+          </div>
+          <div class="team-member-body">
+            <h3>Marlon Rother</h3>
+            <div class="member-subtitle">Rechtsanwalt</div>
+            <p>Marlon Rother ist seit 2016 zugelassener Rechtsanwalt und Mitglied der Rechtsanwaltskammer Hamm. Seine Tätigkeitsschwerpunkte sind das allgemeine Zivilrecht, Forderungsmanagement, Vertragsgestaltung und IT-Recht.</p>
+            <p>Durch eine ausgezeichnete bundesweite Vernetzung und enge Zusammenarbeit mit anderen Rechtsanwaltskanzleien kann RA Rother zudem eine fachgerechte Beratung in den Tätigkeitsfeldern des Straf-, Verkehrs- und Arbeitsrechts gewährleisten. Zudem ist er seit 2017 als ehrenamtliches Vorstandsmitglied und Justitiar des Roten Kreuzes O.V. Neheim-Hüsten tätig.</p>
+            <p>Seit 2019 verstärkt er das Team des Freie Wildbahn e. V. als rechtlicher Berater und ist für Mitglieder der Ansprechpartner für Forderungsmanagement sowie erforderliche Inkassoverfahren.</p>
+            <div class="member-tags">
+              <span class="member-tag">Zivilrecht</span>
+              <span class="member-tag">Forderungsmanagement</span>
+              <span class="member-tag">IT-Recht</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Melina Husemann -->
+        <div class="team-member-card">
+          <div class="team-member-photo">
+            <img src="../assets/Melina-Mitarbeiterin-Freie-Wildbahn-1920w.jpg" alt="Melina Husemann – Mitgliederbetreuung">
+            <div class="member-name">Melina Husemann</div>
+            <div class="member-role">Mitgliederbetreuung</div>
+          </div>
+          <div class="team-member-body">
+            <h3>Melina Husemann</h3>
+            <div class="member-subtitle">Mitgliederbetreuung – Kauffrau im Gesundheitswesen · KSK-Antragssteuerung</div>
+            <p>Während meiner Ausbildung als Kauffrau im Gesundheitswesen begegnete mir das Thema Künstlersozialkasse eher selten. Das deutsche Sozialversicherungssystem war aber Bestandteil meiner Ausbildung. Auch wenn es im Künstlersozialversicherungsgesetz um sehr spezielle Voraussetzungen geht, erschließen sich mir die Zusammenhänge dann doch sehr schnell und sinnvoll. Im Austausch mit meinem Vater ist mir zusätzlich deutlich bewusst geworden, dass es wie in vielen anderen Bereichen auch in diesem Fall entscheidende Unterschiede zwischen der Theorie und der Praxis gibt. Die Praxiserfahrung ist nämlich neben der fachlichen Expertise, ein wesentlicher Bestandteil unserer Arbeit hier bei Freie Wildbahn e.V.</p>
+            <p>Der Verein verwaltet, betreut und berät zu individuellen Themen und Fallkonstellationen sehr transparent und vertrauenswürdig. Es geht darum die Ausgangslage für Künstler und Medienschaffende ausgiebig zu erörtern, damit unsere Mitglieder optimal aufgestellt sind.</p>
+            <p>Insofern fiel mir die Entscheidung, mich nach Abschluss meiner Ausbildung, der Arbeit hier bei Freie Wildbahn e.V. anzuschließen sehr leicht. Neben dem positiven Teamspirit habe ich täglich Gespräche mit unseren Mitgliedern, die unsere Unterstützung gerne dankend annehmen – darüber bin ich sehr glücklich.</p>
+            <div class="member-tags">
+              <span class="member-tag">Mitgliederbetreuung</span>
+              <span class="member-tag">KSK-Antragssteuerung</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dorit Ahlers -->
+        <div class="team-member-card">
+          <div class="team-member-photo">
+            <img src="../assets/Dorit-Ahlers-Freie-Wildbahn-2-1920w.jpg" alt="Dorit Ahlers – Mitgliederbetreuung und Verwaltung">
+            <div class="member-name">Dorit Ahlers</div>
+            <div class="member-role">Mitgliederbetreuung</div>
+          </div>
+          <div class="team-member-body">
+            <h3>Dorit Ahlers</h3>
+            <div class="member-subtitle">Mitgliederbetreuung und Verwaltung</div>
+            <p>Anfang 2015 kam ich, nach meiner Umschulung zur Kauffrau für Büromanagement bei einer Werbegemeinschaft und nach fast 20-jähriger Erfahrung als Fachkraft aus dem Einzelhandel zu Freie Wildbahn und war sofort von allen täglichen Aufgaben und den angebotenen Leistungen für die Künstler und Publizisten begeistert.</p>
+            <p>Im Laufe meiner Arbeit habe ich dann schnell erkannt, welche verantwortungsvolle Aufgabe hier geleistet wird, um den freien Künstler die Möglichkeit zu verwirklichen, frei in Ihrer Kunst und dabei, individuell sozial abgesichert zu sein.</p>
+            <p>In der Mitgliederbetreuung arbeiten wir mit unseren Experten Hand in Hand, damit jede Fragestellung so schnell und kompetent wie möglich im Interesse der Mitglieder bearbeitet werden kann. Das derart positive Feedback unserer Mitglieder, zeigt mir täglich, welchen Wert die Leistung des ganzen Teams darstellt.</p>
+            <div class="member-tags">
+              <span class="member-tag">Mitgliederbetreuung</span>
+              <span class="member-tag">Verwaltung</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pia Haber -->
+        <div class="team-member-card">
+          <div class="team-member-photo">
+            <img src="../assets/Pia-Haber-Freie-Wildbahn-2-1920w.jpg" alt="Pia Haber – Mitgliederbetreuung und Verwaltung">
+            <div class="member-name">Pia Haber</div>
+            <div class="member-role">Mitgliederbetreuung</div>
+          </div>
+          <div class="team-member-body">
+            <h3>Pia Haber</h3>
+            <div class="member-subtitle">Mitgliederbetreuung und Verwaltung</div>
+            <p>Neben meiner Arbeit beim Steuerberater habe ich als Fachkraft für Büromanagement bei Freie Wildbahn e.V. zunächst ausgeholfen. Bereits nach kurzer Zeit habe ich festgestellt, dass den Künstlern und Medienschaffenden bei Freie Wildbahn ein absolut spezialisierter Service geboten wird. Die Arbeit mit den Mitgliedern gab mir persönlich sofort ein gutes Gefühl. Als sich dann die Möglichkeit ergab, hier voll einzusteigen, war es für mich überhaupt keine Frage mehr.</p>
+            <p>Die Arbeit in der Mitgliederbetreuung und täglich neue Anfragen zeigen mir, dass unsere Arbeit – Künstlern und Publizisten dabei zu helfen, sich durch die Künstlersozialkasse ein bezahlbares soziales Netz aufzubauen – wirklich wichtig ist. Die positiven Rückmeldungen unserer Mitglieder aber auch unser Teamgeist zeigen mir, dass ich genau das Richtige mache.</p>
+            <div class="member-tags">
+              <span class="member-tag">Mitgliederbetreuung</span>
+              <span class="member-tag">Verwaltung</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manuel Husemann -->
+        <div class="team-member-card">
+          <div class="team-member-photo">
+            <img src="../assets/Manuel-Husemannjpg-9063a7e7-1920w.jpg" alt="Manuel Husemann – Mitgliederbetreuung und Social Media">
+            <div class="member-name">Manuel Husemann</div>
+            <div class="member-role">Mitgliederbetreuung</div>
+          </div>
+          <div class="team-member-body">
+            <h3>Manuel Husemann</h3>
+            <div class="member-subtitle">Mitgliederbetreuung und Social Media</div>
+            <p>Während meines Studiums der Gesellschaftswissenschaften mit den Schwerpunkten Politik, Soziologie und Theologie habe ich ein Praktikum beim Radio gemacht. Dort habe ich schätzen gelernt, wie wichtig kreative Arbeit für unsere Gesellschaft ist. Deshalb fiel mir die Entscheidung leicht, mich bei Freie Wildbahn e.V. zu engagieren und den Kulturbereich aktiv zu unterstützen. Mein Anliegen: Menschen unterstützen – besonders bei komplexen Themen wie der Künstlersozialkasse. In der Mitgliederbetreuung begleiten wir unsere Mitglieder bei Fragen rund um die KSK und machen bürokratische Prozesse verständlich und zugänglich.</p>
+            <p>Zudem möchte ich unsere Themen über Social Media nach außen tragen – klar, nahbar und mit dem Ziel, mehr Sichtbarkeit und Zugang zu schaffen. Gemeinsam mit unserem Team setze ich mich dafür ein, dass soziale Absicherung für Kulturschaffende kein Randthema bleibt.</p>
+            <div class="member-tags">
+              <span class="member-tag">Mitgliederbetreuung</span>
+              <span class="member-tag">Social Media</span>
+            </div>
+          </div>
+        </div>
+        <!-- Jürgen Preuß -->
+        <div class="team-member-card">
+          <div class="team-member-photo">
+            <img src="../assets/juergen_preuss-1920w.jpeg" alt="Jürgen Preuß – Steuerberater">
+            <div class="member-name">Jürgen Preuß</div>
+            <div class="member-role">Steuerberater</div>
+          </div>
+          <div class="team-member-body">
+            <h3>Jürgen Preuß</h3>
+            <div class="member-subtitle">Steuerberater</div>
+            <p>Mittlerweile berät Jürgen Preuß bereits seit mehr als 20 Jahren mittelständische Mandanten und Freiberufler in allen Fragen des Steuerrechts und des Sozialversicherungsrechtes. Schon während des Studiums zum Dipl.-Kaufmann ergaben sich die ersten Kontakte zu Journalisten und Künstlern. Gerade diese Berufsgruppe bildet den Schwerpunkt seiner Kanzlei, die er 1998 als selbständiger Steuerberater in Arnsberg gegründet hat.</p>
+            <p>Um gerade seine Erfahrungen als langjähriger Berater der Medien- und Kulturschaffenden einem breiten Publikum zur Verfügung zu stellen, beschloss Jürgen Preuß zusammen mit Detlef Husemann die Gründung des Vereins Freie Wildbahn e.V., dem er jetzt als stellvertretender Vorsitzender angehört.</p>
+            <p>Erfahrung als ehrenamtlich Tätiger hat Jürgen Preuß bereits schon 2001 durch die Gründung eines Fördervereins für Integrationsmedien gesammelt. Entspannung vom Berufsleben findet er als Mitglied eines Segelflugvereins unter den Wolken des Sauerlandes, wo er mit seiner Familie am Möhnesee lebt.</p>
+            <div class="member-tags">
+              <span class="member-tag">Steuerrecht</span>
+              <span class="member-tag">Sozialversicherungsrecht</span>
+              <span class="member-tag">Stellv. Vorsitzender</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- â”€â”€ CTA BANNER â”€â”€ -->
+    <section class="section-padding bg-light" style="padding-top: 60px; padding-bottom: 60px;">
+      <div class="container" style="max-width: 800px; text-align: center;">
+        <span class="dachzeile">Persönliche Beratung</span>
+        <h2 style="font-size: 28px; margin-bottom: 16px;">Jetzt persönliche Beratung buchen</h2>
+        <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 32px; line-height: 1.7;">Unser Team steht Ihnen ganzjährig bei allen Fragen rund um die Künstlersozialkasse zur Seite. Vereinbaren Sie noch heute Ihre persönliche Erstberatung.</p>
+        <a href="https://login.freie-wildbahn.de/beratung?registrychoice=2" class="btn btn-orange">KSK-Beratung buchen</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <!-- Upper zone: #faf9f6 background with logo + columns -->
+    <div class="footer-upper">
+      <div class="container footer-upper-grid">
+
+        <!-- Brand column -->
+        <div class="footer-brand-col">
+          <a href="../index.html" class="footer-logo">
+            <img src="../assets/logo.png" alt="Freie Wildbahn e.V.">
+          </a>
+          <p class="footer-tagline">Schnell und einfach stetig auf dem neuesten Stand rund um das Thema „Künstler und Künstlersozialkasse".</p>
+        </div>
+
+        <!-- Unsere Themen -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Unsere Themen</h6>
+          <ul class="footer-col-links">
+            <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+            <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+            <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+          </ul>
+        </div>
+
+        <!-- Über uns -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Über uns</h6>
+          <ul class="footer-col-links">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Konto -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Konto</h6>
+          <ul class="footer-col-links">
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+            <li><a href="#">Registrieren</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lower bar: teal background -->
+    <div class="footer-lower">
+      <div class="container footer-lower-inner">
+
+        <!-- Legal links -->
+        <nav class="footer-legal-nav" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutzinformation</a>
+          <a href="#">Quellenangaben</a>
+        </nav>
+
+        <!-- Copyright + credit -->
+        <div class="footer-copy">
+          <p>Â© 2026 Freie Wildbahn e.V. | Alle Rechte vorbehalten</p>
+          <p><a href="https://digitallanders.de" target="_blank" rel="noopener">Website &amp; Marketing: digitallanders</a></p>
+        </div>
+
+        <!-- Social + back to top -->
+        <div class="footer-right-group">
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="footer-social-link">
+              <svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="footer-social-link">
+              <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            </a>
+          </div>
+          <a href="#" class="footer-back-top" id="backToTop" aria-label="Zurück nach oben">
+            <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+            Zurück nach oben
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>

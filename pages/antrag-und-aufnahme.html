@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antrag und Aufnahme | Freie Wildbahn e.V.</title>
+  <meta name="description" content="Vorteile &amp; Erklärungen zur Künstlersozialkasse (KSK) für Künstler, Freelancer &amp; Publizisten. Vorteile, Aufgaben, Leistungen, Voraussetzungen &amp; Antrag">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script.js?v=8" defer></script>
+  <style>
+    /* ── Page-specific styles for antrag-und-aufnahme ── */
+    .antrag-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 40px 0;
+      max-width: 420px;
+      margin-left: auto;
+    }
+    .antrag-info-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .antrag-info-card .card-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--bg-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .antrag-info-card .card-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--primary-green);
+    }
+    .antrag-info-card h4 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .antrag-info-card p {
+      font-size: 14px;
+      color: var(--text-medium);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .antrag-callout {
+      background: var(--bg-light);
+      border-left: 4px solid var(--primary-green);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .antrag-callout p {
+      font-size: 15px;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .antrag-callout strong {
+      color: var(--primary-green);
+    }
+    .antrag-cta-banner {
+      background: var(--primary-green);
+      border-radius: 14px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 56px 0 0;
+    }
+    .antrag-cta-banner .cta-text h3 {
+      font-size: 33px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .antrag-cta-banner .cta-text p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      margin: 0;
+    }
+    .antrag-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .antrag-split.reverse {
+      direction: rtl;
+    }
+    .antrag-split.reverse > * {
+      direction: ltr;
+    }
+    .antrag-split-img {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .antrag-split-img img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+    .antrag-split-text h3 {
+      font-size: 33px;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .antrag-split-text p {
+      font-size: 16px;
+      color: var(--text-medium);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .antrag-step-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .antrag-step-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+    .antrag-step-list li .step-num {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary-green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .antrag-warning-box {
+      background: #fff8f0;
+      border: 1px solid #f0c090;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .antrag-warning-box strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--brand-orange);
+      margin-bottom: 8px;
+    }
+    .antrag-warning-box p {
+      font-size: 14px;
+      color: var(--text-medium);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .antrag-rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .antrag-rights-item {
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid var(--border-light);
+      padding: 20px;
+    }
+    .antrag-rights-item svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--primary-green);
+      margin-bottom: 10px;
+    }
+    .antrag-rights-item h5 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .antrag-rights-item p {
+      font-size: 13px;
+      color: var(--text-medium);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .antrag-flow-section {
+      max-width: none;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .antrag-flow-section {
+      --antrag-flow-content-width: 100%;
+    }
+    .antrag-flow-heading {
+      font-size: 33px;
+      margin-bottom: 24px;
+      color: var(--text-dark);
+    }
+    .antrag-flow-media {
+      max-width: var(--antrag-flow-content-width);
+      margin: 0 0 32px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+      background: #fff;
+    }
+    .antrag-flow-media img {
+      width: 100%;
+      aspect-ratio: 21 / 10;
+      object-fit: cover;
+      display: block;
+    }
+    .antrag-flow-copy p {
+      font-size: 16px;
+      color: var(--text-medium);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .antrag-flow-copy {
+      max-width: var(--antrag-flow-content-width);
+    }
+    .antrag-flow-subheading {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 8px 0 16px;
+    }
+    .antrag-offer-block {
+      background: var(--bg-light);
+      border-left: 4px solid var(--primary-green);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin-top: 28px;
+    }
+    .antrag-offer-block h4 {
+      font-size: 26px;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .antrag-offer-block p {
+      margin-bottom: 12px;
+    }
+    .antrag-offer-block p:last-child {
+      margin-bottom: 0;
+    }
+    @media (max-width: 768px) {
+      .antrag-split, .antrag-split.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .antrag-cta-banner { padding: 28px 24px; }
+      .antrag-rights-grid { grid-template-columns: 1fr; }
+      .antrag-flow-media {
+        margin-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </div>
+      <button class="close-drawer" id="closeDrawer" aria-label="Menü schließen">✕</button>
+    </div>
+    <ul class="mobile-menu-list">
+      <li><a href="../index.html">Startseite</a></li>
+      <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+      <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+      <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+      <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+      <li><a href="#">Verein</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="ksk-beratung.html">Beratung</a></li>
+      <li><a href="#">Mitgliedschaft</a></li>
+      <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+    </ul>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Level 1: Green Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <nav aria-label="Hilfsnavigation">
+          <ul class="top-nav-list">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="ksk-beratung.html">Beratung</a></li>
+            <li><a href="#">Mitgliedschaft</a></li>
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Level 2: White Main Navigation Bar -->
+    <div class="main-nav">
+      <div class="container main-nav-container">
+        <a href="../index.html" class="logo">
+          <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+        </a>
+        
+        <nav aria-label="Hauptnavigation">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="../index.html" class="home-icon" aria-label="Startseite">
+                <svg viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-34 32.1h-32v176c0 26.5-21.5 48-48 48H352c-17.7 0-32-14.3-32-32V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7-14.3 32-32 32H112c-26.5 0-48-21.5-48-48V287.6H32c-19 0-34-14-34-32.1c0-9 3-17 10-24L266.4 8c7-7 15-10.9 25.6-10.9s18.6 3.9 25.6 10.9L565.8 231c8 8 10 16 10 24.5z"/></svg>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a>
+            </li>
+            <li class="menu-item">
+              <a href="ksk-beitragsrechner.html">KSK-Rechner <svg class="arrow-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+              </ul>
+            </li>
+            <li class="menu-item active">
+              <a href="#">Künstlersozialkasse <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse (KSK)</a></li>
+                <li><a href="antrag-und-aufnahme.html">Antrag und Aufnahme</a></li>
+                <li><a href="kuenstlersozialabgabe.html">Künstlersozialabgabe</a></li>
+                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+                <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung der Versicherten</a></li>
+                <li><a href="ksk-beratung.html">KSK-Beratung</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Verein <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="team.html">Team</a></li>
+                <li><a href="#">Erfahrungen</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="blog.html">Blog <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="blog-kategorie.html?kategorie=allgemein">Allgemein</a></li>
+                <li><a href="blog-kategorie.html?kategorie=kuenstlersozialkasse">Künstlersozialkasse</a></li>
+                <li><a href="blog-kategorie.html?kategorie=recht">Recht</a></li>
+                <li><a href="blog-kategorie.html?kategorie=steuern">Steuern</a></li>
+                <li><a href="blog-kategorie.html?kategorie=versicherung">Versicherung</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-right-group">
+          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <a href="../index.html" class="mobile-logo">
+        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
+      </a>
+      <div class="mobile-nav-actions">
+        <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ── HERO (unchanged – already accepted) ── -->
+    <section class="hero" style="padding: 60px 0; background-color: var(--bg-light); border-bottom: 1px solid var(--border-light);">
+      <div class="hero-grid">
+        <div class="hero-content hero-content-col" style="grid-column: 1; order: 1;">
+          <span class="dachzeile">Künstlersozialkasse</span>
+          <h1 style="font-size: 40px; line-height: 1.2; margin-bottom: 20px;">Antrag und Aufnahme</h1>
+          <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 30px; line-height: 1.6;">
+            Freiberufliche Künstler und Publizisten sind verpflichtet, einen <strong>Künstlersozialkasse Antrag</strong>, abgekürzt <strong>KSK Antrag</strong>, zu stellen. Wer aber ist Künstler oder Publizist? Es existiert keine verbindliche Definition. Laut Bundesministerium für Arbeit und Soziales schaffen Künstler Musik, darstellende oder bildende Kunst, üben diese aus oder lehren sie.
+          </p>
+          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        </div>
+        <div class="hero-media hero-visual-col" style="grid-column: 2; order: 2;">
+          <video src="https://vid.cdn-website.com/ece5c90d/videos/QIbxTKYSmWGL0rcR6KwH_KSK_Freie_Wildbahn_Erklaerfilm%282024%29-v.mp4" poster="../assets/thumbnail-ksk-antrag-aufnahme-2.jpg" controls playsinline style="width: 100%; display: block; border-radius: 12px; box-shadow: var(--shadow-md); object-fit: cover;"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 1: ZUGANGSVORAUSSETZUNGEN ── -->
+    <section class="block-section section-padding">
+      <div class="container page-container content-box">
+        <div class="antrag-split">
+          <div class="antrag-split-text">
+            <span class="dachzeile">Voraussetzungen</span>
+            <h3>Zugangsvoraussetzungen für eine Mitgliedschaft in der Künstlersozialkasse</h3>
+            <p>
+              Als Publizisten bezeichnet die Behörde diejenigen, die als Schriftsteller, Journalist oder in anderer Weise publizistisch tätig sind, oder die Publizistik lehren. Die Folge der unklaren und unverbindlichen Definition ist, dass die Künstlersozialkasse einzeln prüft, und im Ergebnis eine Entscheidung trifft. Zu diesem Zweck fordert sie vom Künstler oder Publizisten, der den KSK Antrag stellt, umfangreiche Unterlagen an, zum Beispiel Arbeitsnachweise, Belege über Honorare oder Gagen.
+            </p>
+            <p>
+              Klar definiert hingegen ist die Bedingung, dass die selbständige Erwerbstätigkeit nicht nur vorübergehend und im Wesentlichen im Inland ausgeübt wird. Das Einkommen, das für einen Künstlersozialkasse Antrag erforderlich ist, muss 3.900 Euro jährlich überschreiten. Berufsanfänger sind davon in zwei der ersten drei Jahre einer erstmaligen Selbständigkeit ausgenommen.
+            </p>
+          </div>
+          <div>
+            <div class="antrag-info-cards">
+              <div class="antrag-info-card">
+                <div class="card-icon">
+                  <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </div>
+                <h4>Selbständige Tätigkeit</h4>
+                <p>Die künstlerische oder publizistische Tätigkeit muss dauerhaft und überwiegend im Inland ausgeübt werden.</p>
+              </div>
+              <div class="antrag-info-card">
+                <div class="card-icon">
+                  <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </div>
+                <h4>Mindesteinkommen</h4>
+                <p>Das Jahreseinkommen muss <strong>3.900 Euro</strong> übersteigen – mit Ausnahmen für Berufsanfänger in den ersten drei Jahren.</p>
+              </div>
+              <div class="antrag-info-card">
+                <div class="card-icon">
+                  <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                </div>
+                <h4>Nachweispflicht</h4>
+                <p>Arbeitsnachweise, Honorarbelege und Gagen sind für die Einzelfallprüfung durch die KSK beizubringen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 2: AUFGABEN UND LEISTUNGEN (cream bg) ── -->
+    <section class="block-section bg-light section-padding">
+      <div class="container page-container content-box">
+        <div class="antrag-flow-section">
+          <span class="dachzeile">Leistungen</span>
+          <h3 class="antrag-flow-heading">Aufgaben und Leistungen der Künstlersozialkasse</h3>
+          <div class="antrag-flow-media">
+            <img src="../assets/kuenstlersozialkasse-maler2-freie-wildbahn-1920w.jpg" alt="KSK Leistungen für Künstler">
+          </div>
+          <div class="antrag-flow-copy">
+            <p>Freiberufler tragen die Kosten für Krankenversicherung, Pflegeversicherung und Altersvorsorge selbst. Beträchtliche Summen sind monatlich fällig, um den Versicherungsschutz zu gewährleisten. Für Künstler, Publizisten und Medienschaffende reduziert die Pflichtversicherung in der Künstlersozialkasse diese Ausgaben um etwa die Hälfte.</p>
+            <p>Aufgabe der Künstlersozialkasse ist es, das Künstlersozialversicherungsgesetz (KSVG) umzusetzen. Das Gesetz regelt, dass Künstler und Publizisten in ähnlicher Weise in der gesetzlichen Sozialversicherung abgesichert sind wie Arbeitnehmer. Die Künstlersozialkasse übernimmt de facto die Rolle des Arbeitgebers. Sie ist selbst kein Leistungsträger, ihre Aufgabe ist die Koordination. Sie führt die Beiträge ihrer Mitglieder zu einer frei wählbaren Krankenversicherung und zur Renten- und Pflegeversicherung ab.</p>
+            <p>Wie der Arbeitgeber in einem sozialversicherungspflichtigen Beschäftigungsverhältnis übernimmt die Künstlersozialkasse 50 Prozent der Kosten. Die verbleibenden 50 Prozent sind der Beitrag des Freiberuflers. Die Höhe der Beiträge richtet sich nach dem Einkommen.</p>
+            <p>Die Künstlersozialkasse errechnet die Beitragsanteile, zieht diese ein und leitet sie an die Leistungsträger weiter. Künstler und Publizisten, die erfolgreich einen Künstlersozialkasse Antrag gestellt haben, erhalten somit Zugriff auf die damit verbundenen gesamten gesetzlichen Leistungen. Gern beraten wir Sie in diesen Fragen ausführlich. Schreiben Sie uns eine E-Mail oder rufen Sie an.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 3: DER WEG IN DIE KSK (split image right) ── -->
+    <section class="block-section section-padding">
+      <div class="container page-container content-box">
+        <div class="antrag-flow-section">
+            <span class="dachzeile">Antragstellung</span>
+            <h3 class="antrag-flow-heading">KSK Antrag – der Weg in die Künstlersozialkasse</h3>
+            <div class="antrag-flow-media">
+              <img src="../assets/kuenstlersozialkasse-malerin-freie-wildbahn-e74be187-1920w.jpg" alt="KSK Antrag – der Weg in die Künstlersozialkasse">
+            </div>
+            <div class="antrag-flow-copy">
+              <p>Ist der KSK Antrag gestellt, braucht es viel Geduld für das langwierige Prozedere. Da jeder Fall einzeln anhand zahlreicher Unterlagen geprüft wird, vergeht viel Zeit bis zu einem Ergebnis. Die von der Künstlersozialkasse angeforderten Unterlagen sind die Grundlage für die Entscheidung. Das Zusammenstellen dieser Nachweise ist eine Herausforderung, die Zeit, Konzentration und Mühe erfordert. Nachlässigkeit wirkt sich gegebenenfalls negativ aus.</p>
+              <p>Wir unterstützen Sie gern bei der Antragstellung. Nehmen Sie unsere Hilfe und Erfahrung in Anspruch. Auch wenn die Bearbeitungszeit lang ist, Nachteile entstehen nicht, wenn Sie sich die Antragstellung bestätigen lassen. Im Falle einer Bewilligung sind Sie ab dem Tag des Zugangs Ihres Antrags bei der Künstlersozialkasse anspruchsberechtigt.</p>
+              <p>Die Homepage der Künstlersozialkasse bietet die Möglichkeit, sich direkt anzumelden, die Anmeldeunterlagen, den Fragebogen und Informationen herunterzuladen sowie um Speicherung der Daten zur Dokumentation der Meldung zu bitten. Per E-Mail erhalten Sie ein vorläufiges Aktenzeichen als Nachweis Ihrer Meldung. Wir empfehlen die elektronische Anforderung mit Übersendung per Post.</p>
+              <p>Schon der Zeitpunkt der Anforderung sollte häufig im Vorfeld gut überlegt werden. Im Rahmen einer Beratung kristallisiert sich der optimale Zeitpunkt in der Regel erst heraus. Das alleine kann schnell einen dreistelligen Eurobetrag an gesparten oder doppelt gezahlten Beiträgen ausmachen.</p>
+            </div>
+            <a href="ksk-beratung.html" class="btn btn-orange" style="margin-top: 8px;">Vorteile KSK-Beratung</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 4: AUSSAGEKRÄFTIGE UNTERLAGEN (cream bg) ── -->
+    <section class="block-section bg-light section-padding">
+      <div class="container page-container content-box">
+        <div class="antrag-flow-section">
+          <span class="dachzeile">Unterlagen</span>
+          <h3 class="antrag-flow-heading" style="margin-bottom: 16px;">Aussagekräftige Unterlagen für den KSK Antrag</h3>
+          <div class="antrag-flow-copy">
+            <p>Basis für die Entscheidung über den Künstlersozialkasse Antrag sind die eingereichten Unterlagen. Dazu gehören aktuelle Verträge, Abrechnungen, Nachweise über Veröffentlichungen, Aufführungen, Ausstellungen, Konzerte und ähnliches. Je mehr Nachweise vorgelegt werden, möglichst von zahlreichen unterschiedlichen Auftraggebern, umso besser. Achten Sie darauf, dass aus den Nachweisen hervorgeht, welche Tätigkeiten Sie jeweils konkret ausgeübt haben, und dass Sie als Freiberufler unter Vertrag waren. Bei manchen Berufen, zum Beispiel bei Schauspielern, ist es mitunter schwierig zu beurteilen, ob freiberuflich oder versicherungspflichtig beschäftigt wird.</p>
+            <h4 class="antrag-flow-subheading">Was gehört in die Unterlagen?</h4>
+            <ul class="bullets-list">
+              <li class="bullets-list-item">
+                <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                <span class="bullets-list-text">Aktuelle Verträge und Abrechnungen mit Auftraggebern</span>
+              </li>
+              <li class="bullets-list-item">
+                <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                <span class="bullets-list-text">Nachweise über Veröffentlichungen, Aufführungen, Ausstellungen und Konzerte</span>
+              </li>
+              <li class="bullets-list-item">
+                <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                <span class="bullets-list-text">Belege die zeigen, dass Sie als Freiberufler unter Vertrag waren</span>
+              </li>
+              <li class="bullets-list-item">
+                <svg class="bullets-list-icon" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                <span class="bullets-list-text">Nachweise von möglichst vielen verschiedenen Auftraggebern</span>
+              </li>
+            </ul>
+            <p>Das voraussichtliche Jahreseinkommen, aus dem sich die Beitragshöhe ergibt, wird in geschätzter Höhe angegeben. Änderungen sind im Verlauf des Jahres möglich. Errechnet wird das Einkommen nach den allgemeinen Gewinnermittlungsvorschriften des Einkommensteuerrechts in Form einer Gewinn- und Verlustrechnung.</p>
+            <p>Das voraussichtliche Jahreseinkommen, aus dem sich die Beitragshöhe ergibt, wird in geschätzter Höhe angegeben. Änderungen sind im Verlauf des Jahres möglich. Errechnet wird das Einkommen nach den allgemeinen Gewinnermittlungsvorschriften des Einkommensteuerrechts in Form einer Gewinn- und Verlustrechnung.</p>
+            <div class="antrag-offer-block">
+              <h4>Unser Angebot an Sie</h4>
+              <p>Wir bieten Ihnen an, Ihre Unterlagen zu sichten und Hilfestellung zu geben.</p>
+              <p>Wenden Sie sich an uns. Wir sind für Sie da.</p>
+            </div>
+            <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION 5: RECHTE UND PFLICHTEN (image left) ── -->
+    <section class="block-section section-padding">
+      <div class="container page-container content-box">
+        <div class="antrag-flow-section">
+          <span class="dachzeile">Mitgliedschaft</span>
+          <h3 class="antrag-flow-heading">Rechte und Pflichten während der Mitgliedschaft in der Künstlersozialkasse</h3>
+          <div class="antrag-flow-media">
+            <img src="../assets/kuenstlersozialkasse-antrag-freie-wildbahn-1920w.jpg" alt="Rechte und Pflichten in der Künstlersozialkasse">
+          </div>
+          <div class="antrag-flow-copy">
+            <p>Werden Sie in die Künstlersozialkasse aufgenommen, erhalten Sie einen entsprechenden Bescheid. Die Mitgliedschaft ist mit Rechten und Pflichten verbunden. Sie haben das Recht auf die Leistungen, für die Sie durch die Beitragszahlungen einen Anspruch erwerben.</p>
+            <p>Als Mitglied der Künstlersozialkasse unterliegen Sie Auskunfts- und Meldepflichten. Dafür sind die Vordrucke der Künstlersozialkasse zu nutzen. So ist bis zum 1. Dezember eines Jahres das voraussichtliche Jahreseinkommen für das folgende Kalenderjahr zu melden.</p>
+            <div class="antrag-rights-grid">
+              <div class="antrag-rights-item">
+                <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+                <h5>Prüfrecht der KSK</h5>
+                <p>Die Künstlersozialkasse ist berechtigt, die Angaben zu prüfen und Einkommenssteuerbelege zu verlangen. Sie führt gegebenenfalls auch Stichproben durch.</p>
+              </div>
+              <div class="antrag-rights-item">
+                <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+                <h5>Krankenversicherung</h5>
+                <p>Auch für Mitglieder gilt Wahlfreiheit zwischen gesetzlicher und privater Krankenkasse. Eine Rückkehr aus einer privaten in eine gesetzliche Kasse ist jedoch nur für Berufsanfänger möglich.</p>
+              </div>
+              <div class="antrag-rights-item">
+                <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+                <h5>Beitragssätze</h5>
+                <p>Für die Berechnung sind die jeweils gültigen Beitragssätze maßgeblich. Einen eventuellen Zusatzbeitrag Ihrer Krankenkasse tragen Sie allein.</p>
+              </div>
+              <div class="antrag-rights-item">
+                <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+                <h5>Jahreseinkommens&shy;meldung</h5>
+                <p>Bis zum 1. Dezember jedes Jahres ist das voraussichtliche Jahreseinkommen für das folgende Kalenderjahr zu melden.</p>
+              </div>
+            </div>
+            <p>Wir geben gern weitere Auskünfte. Unsere Mitglieder beraten wir gerne zu allen Belangen rund um die Künstlersozialkasse und vielen weiteren Themen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA BANNER ── -->
+    <section style="padding: 0 0 72px;">
+      <div class="container page-container content-box">
+        <div class="antrag-cta-banner">
+          <div class="cta-text">
+            <h3>Wir unterstützen Sie bei Ihrem KSK-Antrag</h3>
+            <p>Erfahren Sie in einer persönlichen Beratung, wie Sie Ihren Antrag optimal vorbereiten und das Risiko einer Ablehnung minimieren.</p>
+          </div>
+          <a href="ksk-beratung.html" class="btn btn-orange" style="flex-shrink: 0;">Vorteile KSK-Beratung</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <!-- Upper zone: #faf9f6 background with logo + columns -->
+    <div class="footer-upper">
+      <div class="container footer-upper-grid">
+
+        <!-- Brand column -->
+        <div class="footer-brand-col">
+          <a href="../index.html" class="footer-logo">
+            <img src="../assets/logo.png" alt="Freie Wildbahn e.V.">
+          </a>
+          <p class="footer-tagline">Schnell und einfach stetig auf dem neuesten Stand rund um das Thema „Künstler und Künstlersozialkasse".</p>
+        </div>
+
+        <!-- Unsere Themen -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Unsere Themen</h6>
+          <ul class="footer-col-links">
+            <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+            <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+            <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+          </ul>
+        </div>
+
+        <!-- Über uns -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Über uns</h6>
+          <ul class="footer-col-links">
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Konto -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Konto</h6>
+          <ul class="footer-col-links">
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+            <li><a href="#">Registrieren</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lower bar: teal background -->
+    <div class="footer-lower">
+      <div class="container footer-lower-inner">
+
+        <!-- Legal links -->
+        <nav class="footer-legal-nav" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutzinformation</a>
+          <a href="#">Quellenangaben</a>
+        </nav>
+
+        <!-- Copyright + credit -->
+        <div class="footer-copy">
+          <p>© 2026 Freie Wildbahn e.V. | Alle Rechte vorbehalten</p>
+          <p><a href="https://digitallanders.de" target="_blank" rel="noopener">Website &amp; Marketing: digitallanders</a></p>
+        </div>
+
+        <!-- Social + back to top -->
+        <div class="footer-right-group">
+          <div class="footer-social">
+            <!-- Facebook icon -->
+            <a href="#" aria-label="Facebook" class="footer-social-link">
+              <svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </a>
+            <!-- YouTube icon -->
+            <a href="#" aria-label="YouTube" class="footer-social-link">
+              <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            </a>
+          </div>
+          <a href="#" class="footer-back-top" id="backToTop" aria-label="Zurück nach oben">
+            <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+            Zurück nach oben
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>

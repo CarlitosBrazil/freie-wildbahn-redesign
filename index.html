@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freie Wildbahn e.V. | KSK-Beratung & Unterstützung</title>
+  <meta name="description" content="Freie Wildbahn e.V. unterstützt Selbständige aus Kunst, Medien und Kultur bei KSK-Beratung, Antrag, Aufnahme und Prüfung – plus Vorteile der Vereinsmitgliedschaft.">
+  <link rel="stylesheet" href="style.css?v=9">
+  <script src="script.js?v=8" defer></script>
+</head>
+<body>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="mobile-logo">
+        <img src="assets/logo.png" alt="Freie Wildbahn e. V.">
+      </div>
+      <button class="close-drawer" id="closeDrawer" aria-label="Menü schließen">✕</button>
+    </div>
+    <ul class="mobile-menu-list">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="pages/ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+      <li><a href="pages/ksk-beitragsrechner.html">KSK-Rechner</a></li>
+      <li><a href="pages/ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+      <li><a href="pages/kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+      <li><a href="#">Verein</a></li>
+      <li><a href="pages/blog.html">Blog</a></li>
+      <li><a href="pages/kontakt.html">Kontakt</a></li>
+      <li><a href="pages/ksk-beratung.html">Beratung</a></li>
+      <li><a href="#">Mitgliedschaft</a></li>
+      <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+    </ul>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <!-- Level 1: Green Top Bar -->
+    <div class="top-bar">
+      <div class="container top-bar-container">
+        <nav aria-label="Hilfsnavigation">
+          <ul class="top-nav-list">
+            <li><a href="pages/kontakt.html">Kontakt</a></li>
+            <li><a href="pages/ksk-beratung.html">Beratung</a></li>
+            <li><a href="#">Mitgliedschaft</a></li>
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Level 2: White Main Navigation Bar -->
+    <div class="main-nav">
+      <div class="container main-nav-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logo.png" alt="Freie Wildbahn e. V.">
+        </a>
+        
+        <nav aria-label="Hauptnavigation">
+          <ul class="menu-list">
+            <li class="menu-item active">
+              <a href="index.html" class="home-icon" aria-label="Startseite">
+                <svg viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-34 32.1h-32v176c0 26.5-21.5 48-48 48H352c-17.7 0-32-14.3-32-32V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7-14.3 32-32 32H112c-26.5 0-48-21.5-48-48V287.6H32c-19 0-34-14-34-32.1c0-9 3-17 10-24L266.4 8c7-7 15-10.9 25.6-10.9s18.6 3.9 25.6 10.9L565.8 231c8 8 10 16 10 24.5z"/></svg>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="pages/ksk-pruefung-versicherte.html">KSK-Prüfung</a>
+            </li>
+            <li class="menu-item">
+              <a href="pages/ksk-beitragsrechner.html">KSK-Rechner <svg class="arrow-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="pages/ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="pages/ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="pages/kuenstlersozialkasse.html">Künstlersozialkasse <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="pages/kuenstlersozialkasse.html">Künstlersozialkasse (KSK)</a></li>
+                <li><a href="pages/antrag-und-aufnahme.html">Antrag und Aufnahme</a></li>
+                <li><a href="pages/kuenstlersozialabgabe.html">Künstlersozialabgabe</a></li>
+                <li><a href="pages/ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
+                <li><a href="pages/ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+                <li><a href="pages/ksk-pruefung-versicherte.html">KSK-Prüfung der Versicherten</a></li>
+                <li><a href="pages/ksk-beratung.html">KSK-Beratung</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="#">Verein <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="pages/team.html">Team</a></li>
+                <li><a href="#">Erfahrungen</a></li>
+                <li><a href="pages/vorteile.html">Vorteile</a></li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="pages/blog.html">Blog <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
+              <ul class="dropdown-menu">
+                <li><a href="pages/blog-kategorie.html?kategorie=allgemein">Allgemein</a></li>
+                <li><a href="pages/blog-kategorie.html?kategorie=kuenstlersozialkasse">Künstlersozialkasse</a></li>
+                <li><a href="pages/blog-kategorie.html?kategorie=recht">Recht</a></li>
+                <li><a href="pages/blog-kategorie.html?kategorie=steuern">Steuern</a></li>
+                <li><a href="pages/blog-kategorie.html?kategorie=versicherung">Versicherung</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-right-group">
+          <a href="pages/ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+      <a href="index.html" class="mobile-logo">
+        <img src="assets/logo.png" alt="Freie Wildbahn e. V.">
+      </a>
+      <div class="mobile-nav-actions">
+        <a href="pages/ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- STANDARDIZED HERO SECTION -->
+    <section class="hero-section section-padding homepage-hero">
+      <div class="hero-grid" style="align-items: start;">
+        <!-- Left column: Text & CTA -->
+        <div class="hero-text-col" style="grid-column: 1; order: 1;">
+          <span class="dachzeile">Künstlersozialkasse-Beratung</span>
+          <h2 style="font-size: 40px; margin-bottom: 20px; line-height: 1.15;">Freie Wildbahn e.V.</h2>
+          <h1 class="green-text" style="font-size: 32px; margin-bottom: 20px; font-weight: 600;">Wir machen die Welt für Künstlerinnen und Künstler ein Stückchen freier.</h1>
+          <p class="hero-description">Wir unterstützen freiberufliche Künstlerinnen und Künstler, Medien- und Kulturschaffende bei der persönlichen und beruflichen Absicherung rund um die Künstlersozialkasse – seit über 20 Jahren.</p>
+          
+          <!-- Conversion-oriented CTA Area -->
+          <div class="hero-cta-wrapper">
+            <p class="hero-cta-intro">Du möchtest klären, ob die Künstlersozialkasse (KSK) zu Deiner Situation passt, oder brauchst Unterstützung bei Antrag, Aufnahme in die KSK oder bei einer KSK-Prüfung?</p>
+            <div class="hero-cta-buttons">
+              <a href="pages/ksk-beratung.html" class="btn btn-orange">
+                KSK-Beratung
+                <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+              </a>
+              <a href="pages/vorteile.html" class="btn btn-green">
+                Vorteile FWB Mitgliedschaft
+                <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right column: Image -->
+        <div class="hero-image-col" style="grid-column: 2; order: 2;">
+          <div class="hero-image-container">
+            <img src="assets/home-hero-team.webp" alt="Team arbeitet gemeinsam am Laptop" style="object-fit: contain; background-color: #fff;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: WE ADVISE YOU ON THE KSK & EXPERT QUOTE -->
+    <section class="quote-section section-padding">
+      <div class="container quote-wrapper">
+        <div class="quote-text-container">
+          <span class="dachzeile">Wir beraten Dich zur Künstlersozialkasse</span>
+          <h2 style="font-size: 32px; margin-bottom: 24px;">Künstlerinnen und Künstler sowie Publizierende, die selbständig arbeiten, sind sozial oft deutlich schlechter abgesichert als andere Selbständige. Das geht auch anders!</h2>
+          <p style="font-size: 17px; color: var(--text-medium); margin-bottom: 16px; font-weight: 600;">Die Künstlersozialkasse (KSK) führt das Künstlersozialversicherungsgesetz durch und sorgt dafür, dass selbständige Künstlerinnen, Künstler und Publizierende einen ähnlichen Schutz in der gesetzlichen Sozialversicherung erhalten wie Arbeitnehmerinnen und Arbeitnehmer.</p>
+          <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 16px;">Die KSK selbst ist keine Krankenkasse. Wer über die KSK versichert ist, bleibt bei der gewählten Kranken- und Pflegekasse versichert und ist bei der Deutschen Rentenversicherung abgesichert.</p>
+          <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 16px;">Die Künstlersozialkasse (KSK) übernimmt genau 50 % Deiner Sozialversicherungsbeiträge. Sie funktioniert damit wie ein Arbeitgeber. Das bedeutet, Du zahlst nur die andere Hälfte für Deine Kranken-, Pflege- und Rentenversicherung.</p>
+          <p style="font-size: 16px; color: var(--text-medium); margin-bottom: 24px;">So ermöglicht die Künstlersozialversicherung vielen selbständig Tätigen aus Kunst und Publizistik eine soziale Absicherung in der Kranken-, Pflege- und Rentenversicherung zu Bedingungen, die mit der Absicherung von Arbeitnehmerinnen und Arbeitnehmern vergleichbar sind.</p>
+        </div>
+        
+        <!-- Expert Quote Card -->
+        <div class="quote-card">
+          <div class="quote-card-img">
+            <img src="assets/detlef-husemann-freie-wildbahn-ksk-berater.jpg" alt="Detlef Husemann, KSK Berater">
+          </div>
+          <blockquote>„Als Verein unterstützen wir Künstlerinnen, Künstler und Publizierende – egal, ob sie Mitglied bei Freie Wildbahn e.V. sind oder nicht.“</blockquote>
+          <div class="quote-author">Detlef Husemann</div>
+          <div class="quote-author-title">— KSK-Experte</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: KSK RECHNER SECTION -->
+    <section class="rechner-section">
+      <div class="container page-container grid-2">
+        <div class="rechner-text-col">
+          <span class="dachzeile">KSK-Beitragsrechner</span>
+          <h3>Der kostenfreie KSK-Beitragsrechner</h3>
+          <p>Schnell und einfach erfährst Du, wie hoch Dein voraussichtlicher KSK-Beitrag sein kann. Für die detaillierte Berechnung nutzt Du unseren KSK-Beitragsrechner.</p>
+          <a href="pages/ksk-beitragsrechner.html" class="btn btn-orange">
+            KSK-Beitrag berechnen
+            <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+          </a>
+        </div>
+        <div class="rechner-image-col">
+          <div class="rechner-image-container">
+            <img src="assets/mockup3.png" alt="Mockup Laptop Beitragsrechner">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ACTIVITIES SECTION -->
+    <section class="section-padding">
+      <div class="container page-container text-center" style="margin-bottom: 50px;">
+        <span class="dachzeile">Für viele künstlerische und publizistische Tätigkeiten</span>
+        <h2 style="font-size: 36px;">Unser Angebot richtet sich an freiberufliche Künstlerinnen und Künstler, Medien- und Kulturschaffende – zum Beispiel:</h2>
+      </div>
+      <div class="container page-container grid-3">
+        <!-- Card 1: Künstler -->
+        <div class="activity-card">
+          <div class="activity-img-container">
+            <img src="assets/freie-wildbahn-frau.jpg" alt="Freiberufliche Künstlerinnen">
+          </div>
+          <div class="activity-content">
+            <h3>Freiberufliche Künstlerinnen und Künstler</h3>
+            <ul class="activity-list">
+              <li>Designer:innen</li>
+              <li>Webdesigner:innen</li>
+              <li>Illustrator:innen</li>
+              <li>Entertainer:innen</li>
+              <li>Maler:innen</li>
+              <li>Musiker:innen</li>
+              <li>Fotodesigner:innen</li>
+              <li>u. v. m.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Card 2: Medienschaffende -->
+        <div class="activity-card">
+          <div class="activity-img-container">
+            <img src="assets/freie-wildbahn-pc.jpg" alt="Freie Medienschaffende">
+          </div>
+          <div class="activity-content">
+            <h3>Freie Medienschaffende</h3>
+            <ul class="activity-list">
+              <li>Schauspieler:innen</li>
+              <li>Grafiker:innen</li>
+              <li>Journalist:innen</li>
+              <li>Regisseur:innen</li>
+              <li>Texter:innen</li>
+              <li>Kameraleute</li>
+              <li>Colorist:innen</li>
+              <li>u. v. m.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Card 3: Kulturschaffende -->
+        <div class="activity-card">
+          <div class="activity-img-container">
+            <img src="assets/freie-wildbahn-mann.jpg" alt="Freie Kulturschaffende">
+          </div>
+          <div class="activity-content">
+            <h3>Freie Kulturschaffende</h3>
+            <ul class="activity-list">
+              <li>Schauspiellehrkräfte</li>
+              <li>Tänzer:innen</li>
+              <li>Comedians</li>
+              <li>Kabarettist:innen</li>
+              <li>Schriftsteller:innen</li>
+              <li>Drehbuchautor:innen</li>
+              <li>Dramaturg:innen</li>
+              <li>u. v. m.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: MEMBERSHIP BENEFITS CARDS -->
+    <section class="bg-light section-padding">
+      <div class="container page-container text-center" style="margin-bottom: 50px;">
+        <span class="dachzeile">Vorteile einer Mitgliedschaft bei Freie Wildbahn e.V.</span>
+        <h2 style="font-size: 36px; margin-bottom: 16px;">Wir beraten und unterstützen Mitglieder von Freie Wildbahn e.V. bei vielen Anliegen rund um die Künstlersozialkasse.</h2>
+        <p style="font-size: 18px; color: var(--text-medium);">Von Antrag und Aufnahme bis zur KSK-Prüfung und laufenden Kommunikation: Als Mitglied bei Freie Wildbahn e.V. (FWB) kannst Du unsere praktische KSK-Erfahrung aus mehr als 20 Jahren ganzjährig ohne Zusatzkosten nutzen. Die Entscheidung für eine Vereinsmitgliedschaft triffst Du separat nach Deiner ersten Beratung.</p>
+      </div>
+      <div class="container page-container feature-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <img src="assets/01.svg" alt="KSK-Beratung Icon">
+          </div>
+          <h4>KSK-Beratung</h4>
+          <p>Wir beraten Dich zu Fragen rund um die Künstlersozialkasse und Deine persönliche Situation.</p>
+          <a href="pages/ksk-beratung.html" class="link-cta">
+            Mehr Details 
+            <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <img src="assets/02.svg" alt="KSK-Aufnahme Icon">
+          </div>
+          <h4>KSK-Aufnahme</h4>
+          <p>Wir unterstützen Dich beim Ausfüllen der KSK-Antragsunterlagen und erklären, worauf Du im Aufnahmeverfahren achten solltest.</p>
+          <a href="pages/antrag-und-aufnahme.html" class="link-cta">
+            Mehr Details 
+            <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <img src="assets/03.svg" alt="KSK-Prüfung Icon">
+          </div>
+          <h4>KSK-Prüfung</h4>
+          <p>Bei einer KSK-Prüfung unterstützen wir Dich dabei, angeforderte Unterlagen und Fristen strukturiert im Blick zu behalten.</p>
+          <a href="pages/ksk-pruefung-versicherte.html" class="link-cta">
+            Mehr Details 
+            <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <img src="assets/04.svg" alt="KSK-Kommunikation Icon">
+          </div>
+          <h4>KSK-Kommunikation</h4>
+          <p>Mitglieder von Freie Wildbahn e.V. (FWB) unterstützen wir bei der Kommunikation mit der KSK. Auf Wunsch übernehmen wir per Postvollmacht den gesamten direkten Austausch mit der Künstlersozialkasse.</p>
+          <a href="pages/ksk-beratung.html" class="link-cta">
+            Mehr Details 
+            <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <img src="assets/05.svg" alt="Digital Connected Icon">
+          </div>
+          <h4>Digital Connected</h4>
+          <p>Als Mitglied bei Freie Wildbahn e.V. erhältst Du Zugang zum persönlichen Loginbereich STRIX mit allen wichtigen Dokumenten und Vorlagen an einem Ort.</p>
+          <a href="https://login.freie-wildbahn.de/login" class="link-cta">
+            Mehr Details
+            <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-container">
+            <img src="assets/06.svg" alt="Erinnerungsservice Icon">
+          </div>
+          <h4>Erinnerungsservice</h4>
+          <p>Als Mitglied bei Freie Wildbahn e.V. erinnern wir Dich an relevante Fristen und Abgabetermine.</p>
+          <a href="pages/vorteile.html" class="link-cta">
+            Mehr Details
+            <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PRICING COMPARISON -->
+    <section class="section-padding">
+      <div class="container page-container text-center" style="margin-bottom: 50px;">
+        <span class="dachzeile">Beratung oder Mitgliedschaft?</span>
+        <h2 style="font-size: 36px;">Einzelberatung oder Mitgliedschaft bei Freie Wildbahn e.V.?</h2>
+        <p style="font-size: 18px; color: var(--text-medium);">Unsere Optionen im Überblick:</p>
+      </div>
+
+      <div class="container page-container pricing-wrapper">
+        <div class="pricing-grid">
+          <!-- Option 1: Consultation -->
+          <div class="pricing-card">
+            <div class="pricing-card-icon">
+              <img src="assets/07.svg" alt="KSK-Beratung Icon">
+            </div>
+            <h4>KSK-Beratung</h4>
+            <div class="price-item">
+              <span class="price-label">Soloselbständige Freiberufler</span>
+              <span class="price-value">149,95<span class="price-currency">€</span></span>
+            </div>
+            <div class="price-item">
+              <span class="price-label">Gesellschafter einer GmbH, UG oder GbR</span>
+              <span class="price-value">190,40<span class="price-currency">€</span></span>
+            </div>
+            <p class="price-subtext">inkl. 19 % MwSt.</p>
+            <div class="pricing-footer-btn-wrapper">
+              <a href="pages/ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            </div>
+          </div>
+
+          <!-- Option 2: Membership -->
+          <div class="pricing-card popular">
+            <div class="pricing-card-icon">
+              <img src="assets/08.svg" alt="Mitgliedsbeitrag Icon">
+            </div>
+            <h4>Mitgliedschaft bei Freie Wildbahn e.V.</h4>
+            <div class="price-item">
+              <span class="price-label">Soloselbständige Freiberufler / Jahr</span>
+              <span class="price-value">228,00<span class="price-currency">€</span></span>
+            </div>
+            <div class="price-item">
+              <span class="price-label">Gesellschafter einer GmbH, UG oder GbR / Jahr</span>
+              <span class="price-value">320,00<span class="price-currency">€</span></span>
+            </div>
+            <p class="price-subtext">Für jeden weiteren GGF erhöht sich der Beitrag um nur €160</p>
+            <div class="pricing-footer-btn-wrapper">
+              <a href="pages/vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Feature Comparison -->
+        <h3 style="font-size: 28px; margin: 48px 0 24px; text-align: center;">Vergleich: Einzelberatung und Mitgliedschaft</h3>
+        <div class="comparison-list-wrapper">
+          <!-- Row 1 -->
+          <div class="comparison-row">
+            <div class="comparison-feature">45 Minuten KSK-Beratung</div>
+            <div class="comparison-value">
+              <svg class="check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+            <div class="comparison-value">
+              <svg class="check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="comparison-row">
+            <div class="comparison-feature">KSK-Beratung nach Bedarf</div>
+            <div class="comparison-value">
+              <svg class="xmark" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </div>
+            <div class="comparison-value">
+              <svg class="check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+          </div>
+          <!-- Row 3 -->
+          <div class="comparison-row">
+            <div class="comparison-feature">Erinnerungsservice</div>
+            <div class="comparison-value">
+              <svg class="xmark" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </div>
+            <div class="comparison-value">
+              <svg class="check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+          </div>
+          <!-- Row 4 -->
+          <div class="comparison-row">
+            <div class="comparison-feature">KSK-Kommunikation auf Wunsch</div>
+            <div class="comparison-value">
+              <svg class="xmark" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </div>
+            <div class="comparison-value">
+              <svg class="check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+          </div>
+          <!-- Row 5 -->
+          <div class="comparison-row">
+            <div class="comparison-feature">Digitaler Mitgliederbereich für wichtige Dokumente</div>
+            <div class="comparison-value">
+              <svg class="xmark" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </div>
+            <div class="comparison-value">
+              <svg class="check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="text-center" style="margin-top: 48px;">
+          <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 24px;">Die Mitgliedschaft bei Freie Wildbahn e.V. wird nach der ersten Beratung separat entschieden.</p>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+            <a href="pages/ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <a href="pages/vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <!-- Upper zone: #faf9f6 background with logo + columns -->
+    <div class="footer-upper">
+      <div class="container footer-upper-grid">
+
+        <!-- Brand column -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logo.png" alt="Freie Wildbahn e.V.">
+          </a>
+          <p class="footer-tagline">Schnell und einfach stetig auf dem neuesten Stand rund um das Thema „Künstler und Künstlersozialkasse".</p>
+        </div>
+
+        <!-- Unsere Themen -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Unsere Themen</h6>
+          <ul class="footer-col-links">
+            <li><a href="pages/ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+            <li><a href="pages/ksk-beitragsrechner.html">KSK-Rechner</a></li>
+            <li><a href="pages/kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+          </ul>
+        </div>
+
+        <!-- Über uns -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Über uns</h6>
+          <ul class="footer-col-links">
+            <li><a href="pages/kontakt.html">Kontakt</a></li>
+            <li><a href="pages/team.html">Team</a></li>
+            <li><a href="pages/blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Konto -->
+        <div class="footer-col">
+          <h6 class="footer-col-heading">Konto</h6>
+          <ul class="footer-col-links">
+            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+            <li><a href="#">Registrieren</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Lower bar: teal background -->
+    <div class="footer-lower">
+      <div class="container footer-lower-inner">
+
+        <!-- Legal links -->
+        <nav class="footer-legal-nav" aria-label="Rechtliches">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutzinformation</a>
+          <a href="#">Quellenangaben</a>
+        </nav>
+
+        <!-- Copyright + credit -->
+        <div class="footer-copy">
+          <p>© 2026 Freie Wildbahn e.V. | Alle Rechte vorbehalten</p>
+          <p><a href="https://digitallanders.de" target="_blank" rel="noopener">Website &amp; Marketing: digitallanders</a></p>
+        </div>
+
+        <!-- Social + back to top -->
+        <div class="footer-right-group">
+          <div class="footer-social">
+            <!-- Facebook icon -->
+            <a href="#" aria-label="Facebook" class="footer-social-link">
+              <svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            </a>
+            <!-- YouTube icon -->
+            <a href="#" aria-label="YouTube" class="footer-social-link">
+              <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            </a>
+          </div>
+          <a href="#" class="footer-back-top" id="backToTop" aria-label="Zurück nach oben">
+            <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+            Zurück nach oben
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+</html>
