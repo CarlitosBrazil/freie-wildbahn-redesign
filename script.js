@@ -41,6 +41,7 @@ window.renderGlobalHeader = function renderGlobalHeader() {
 
   currentHeader.before(...shell.childNodes);
   currentHeader.remove();
+  window.bindStickyHeader?.();
 };
 
 window.bindGlobalHeader = function bindGlobalHeader() {
@@ -59,6 +60,33 @@ window.bindGlobalHeader = function bindGlobalHeader() {
   closeDrawerBtn.addEventListener('click', () => setDrawer(false));
   drawerOverlay.addEventListener('click', () => setDrawer(false));
   mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setDrawer(false)));
+};
+
+window.bindStickyHeader = function bindStickyHeader() {
+  const updateHeader = () => {
+    const header = document.querySelector('body > header');
+    if (!header) return;
+
+    if (window.scrollY > 96) {
+      header.classList.add('is-scrolled');
+    } else if (window.scrollY < 32) {
+      header.classList.remove('is-scrolled');
+    }
+  };
+
+  updateHeader();
+  if (window.__stickyHeaderBound) return;
+
+  window.__stickyHeaderBound = true;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      updateHeader();
+      ticking = false;
+    });
+  }, { passive: true });
 };
 
 window.renderGlobalReviews = function renderGlobalReviews() {
@@ -84,9 +112,112 @@ window.applyGlobalRegistrationLinks = function applyGlobalRegistrationLinks() {
   const registrationUrl = 'https://login.freie-wildbahn.de/auth/advice/antragsstrecke?step=registration';
   document.querySelectorAll('a').forEach(link => {
     const label = link.textContent.trim();
-    if (label === 'Registrieren' || label === 'KSK-Beratung buchen' || label === 'Vorteile KSK-Beratung') {
+    if (label === 'Registrieren') {
       link.setAttribute('href', registrationUrl);
     }
+  });
+};
+
+window.applyGlobalContentCtas = function applyGlobalContentCtas() {
+  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const isConsultationPage = page === 'ksk-beratung.html';
+  const consultationUrl = 'https://www.freie-wildbahn.de/kuenstlersozialkasse/ksk-beratung';
+  const bookingUrl = 'https://login.freie-wildbahn.de/auth/advice/antragsstrecke';
+  const membershipUrl = 'https://www.freie-wildbahn.de/vorteile-mitgliedschaft';
+  const primaryLabel = isConsultationPage ? 'KSK-Beratung buchen' : 'KSK-Beratung';
+  const normalize = value => value.replace(/\s+/g, ' ').trim().toLowerCase();
+  const contentButtons = [...document.querySelectorAll('main a.btn')];
+
+  const buttonType = button => {
+    const label = normalize(button.textContent);
+    const href = normalize(button.getAttribute('href') || '');
+    if (
+      label.includes('vorteile fwb mitgliedschaft') ||
+      label === 'vorteile mitgliedschaft' ||
+      (href.includes('vorteile') && label.includes('mitgliedschaft'))
+    ) return 'secondary';
+    if (
+      label === 'ksk-beratung' ||
+      label === 'ksk-beratung buchen' ||
+      label === 'beratung buchen' ||
+      label === 'vorteile ksk-beratung' ||
+      href.includes('ksk-beratung') ||
+      href.includes('/auth/advice/antragsstrecke') ||
+      href.includes('/beratung?registrychoice=')
+    ) return 'primary';
+    return null;
+  };
+
+  const candidates = contentButtons.filter(button => buttonType(button));
+  const processed = new Set();
+
+  const hasBrandBackground = element => {
+    let ancestor = element.parentElement;
+    while (ancestor && ancestor !== document.body) {
+      const color = getComputedStyle(ancestor).backgroundColor;
+      const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+      if (match && Number(match[4] ?? 1) > 0) {
+        const [, red, green, blue] = match.map(Number);
+        if (green > red * 1.2 && blue > red * 1.1 && green > 75) return true;
+        if (red > 235 && green > 235 && blue > 235) return false;
+      }
+      ancestor = ancestor.parentElement;
+    }
+    return false;
+  };
+
+  const normalizeButton = (button, type) => {
+    button.querySelectorAll('svg').forEach(icon => icon.remove());
+    button.className = `btn ${type === 'primary' ? 'btn-cta-primary' : 'btn-cta-secondary'}`;
+    button.textContent = type === 'primary' ? primaryLabel : 'Vorteile FWB Mitgliedschaft';
+    button.href = type === 'primary'
+      ? (isConsultationPage ? bookingUrl : consultationUrl)
+      : membershipUrl;
+    button.dataset.globalCta = type;
+  };
+
+  candidates.forEach(button => {
+    if (processed.has(button)) return;
+
+    const parent = button.parentElement;
+    const directCandidates = [...parent.children].filter(
+      child => child.matches?.('a.btn') && buttonType(child)
+    );
+    let group = parent;
+
+    if (directCandidates.length < 2 && parent.childElementCount > 1) {
+      group = document.createElement('div');
+      group.className = 'content-cta-pair';
+      button.before(group);
+      group.appendChild(button);
+    } else {
+      group.classList.add('content-cta-pair');
+    }
+
+    const groupedButtons = [...group.children].filter(
+      child => child.matches?.('a.btn') && buttonType(child)
+    );
+    let primary = groupedButtons.find(child => buttonType(child) === 'primary');
+    let secondary = groupedButtons.find(child => buttonType(child) === 'secondary');
+
+    if (!primary) {
+      primary = document.createElement('a');
+      primary.className = 'btn';
+      group.prepend(primary);
+    }
+    if (!secondary) {
+      secondary = document.createElement('a');
+      secondary.className = 'btn';
+      group.appendChild(secondary);
+    }
+
+    normalizeButton(primary, 'primary');
+    normalizeButton(secondary, 'secondary');
+    group.classList.toggle('on-brand-background', hasBrandBackground(group));
+    groupedButtons.forEach(groupedButton => processed.add(groupedButton));
+    processed.add(button);
+    processed.add(primary);
+    processed.add(secondary);
   });
 };
 
@@ -95,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.bindGlobalHeader();
   window.renderGlobalReviews();
   window.applyGlobalRegistrationLinks();
+  window.applyGlobalContentCtas();
   // Prevent placeholder parent menu links from jumping to the top.
   // Real destination links are left untouched.
   const parentMenuLinks = document.querySelectorAll('.menu-item > a[href="#"]');

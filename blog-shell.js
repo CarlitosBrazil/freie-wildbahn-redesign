@@ -7,6 +7,7 @@ if (!document.querySelector('script[src*="script.js?v=8"]')) {
       window.bindGlobalHeader?.();
       window.renderGlobalReviews?.();
       window.applyGlobalRegistrationLinks?.();
+      window.applyGlobalContentCtas?.();
     }
   };
   document.head.appendChild(globalScript);
@@ -52,4 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (categoryLabel) categoryLabel.textContent = 'Künstlersozialkasse';
   }
   window.applyGlobalRegistrationLinks?.();
+  window.applyGlobalContentCtas?.();
 });

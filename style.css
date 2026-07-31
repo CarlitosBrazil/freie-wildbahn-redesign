@@ -247,6 +247,83 @@ img {
   transform: translateX(4px);
 }
 
+/* ==========================================
+   GLOBAL CONTENT CTA PAIRS
+   ========================================== */
+.content-cta-pair {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.content-cta-pair .btn {
+  min-height: 56px;
+  border: 2px solid;
+  font-weight: 700;
+  transform: none;
+}
+
+.content-cta-pair .btn:hover {
+  transform: none;
+}
+
+.content-cta-pair .btn-cta-primary {
+  color: #fff;
+  border-color: #dd3300;
+  background: #dd3300;
+}
+
+.content-cta-pair .btn-cta-primary:hover,
+.content-cta-pair .btn-cta-primary:focus-visible {
+  color: #dd3300;
+  border-color: #dd3300;
+  background: #fff;
+}
+
+.content-cta-pair .btn-cta-secondary {
+  color: #268080;
+  border-color: #268080;
+  background: #fff;
+}
+
+.content-cta-pair .btn-cta-secondary:hover,
+.content-cta-pair .btn-cta-secondary:focus-visible {
+  color: #fff;
+  border-color: #268080;
+  background: #268080;
+}
+
+.content-cta-pair.on-brand-background .btn-cta-secondary {
+  color: #fff;
+  border-color: #fff;
+  background: transparent;
+}
+
+.content-cta-pair.on-brand-background .btn-cta-secondary:hover,
+.content-cta-pair.on-brand-background .btn-cta-secondary:focus-visible {
+  color: #268080;
+  border-color: #fff;
+  background: #fff;
+}
+
+.article-cta .content-cta-pair,
+.rechner-cta-banner .content-cta-pair {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 600px) {
+  .content-cta-pair {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .content-cta-pair .btn {
+    width: 100%;
+  }
+}
+
 .link-cta {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
@@ -274,6 +351,18 @@ header {
   background-color: var(--bg-white);
 }
 
+/* Keep the global site navigation available while the page scrolls. */
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow 220ms ease;
+}
+
+body > header.is-scrolled {
+  box-shadow: 0 8px 24px rgba(25, 49, 47, 0.12);
+}
+
 /* Level 1: Top bar (Green) */
 .top-bar {
   background-color: var(--primary-green);
@@ -282,6 +371,12 @@ header {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
+  transition: padding 220ms ease;
+}
+
+body > header.is-scrolled .top-bar {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .top-bar-container {
@@ -313,6 +408,12 @@ header {
 .main-nav {
   padding: 15px 0;
   border-bottom: 3px solid var(--primary-green);
+  transition: padding 220ms ease;
+}
+
+body > header.is-scrolled .main-nav {
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .main-nav-container {
@@ -324,6 +425,11 @@ header {
 .logo img {
   height: 80px;
   width: auto;
+  transition: height 220ms ease;
+}
+
+body > header.is-scrolled .logo img {
+  height: 64px;
 }
 
 /* Menu Items */
@@ -459,11 +565,33 @@ header {
   border-bottom: 3px solid var(--primary-green);
   justify-content: space-between;
   align-items: center;
+  transition: padding 220ms ease;
 }
 
 .mobile-logo img {
   height: 40px; /* Proportionally larger on mobile too */
   width: auto;
+  transition: height 220ms ease;
+}
+
+body > header.is-scrolled .mobile-header {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+body > header.is-scrolled .mobile-logo img {
+  height: 34px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > header,
+  .top-bar,
+  .main-nav,
+  .logo img,
+  .mobile-header,
+  .mobile-logo img {
+    transition: none;
+  }
 }
 
 .mobile-nav-toggle {
@@ -551,9 +679,13 @@ header {
   gap: 8px;
 }
 
+.homepage-hero .hero-cta-wrapper {
+  gap: 24px;
+}
+
 .hero-cta-intro {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .hero-cta-buttons {
@@ -1725,7 +1857,7 @@ main {
 .blog-variant-switch span, .blog-variant-switch a { padding: 9px 12px; border-radius: 5px; text-decoration: none; }
 .blog-variant-switch span { color: #fff; background: #244d4b; }
 .blog-variant-switch a { color: #208b89; border: 1px solid #a8ccca; background: #fff; }
-.concept-header { position: relative; z-index: 5; border-bottom: 1px solid #e8e8e4; background: #fff; }
+.concept-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #e8e8e4; background: #fff; }
 .concept-header-inner { min-height: 98px; display: flex; align-items: center; justify-content: space-between; gap: 35px; }
 .concept-header img { width: 150px; height: auto; }
 .concept-header nav { display: flex; align-items: center; gap: 28px; }
