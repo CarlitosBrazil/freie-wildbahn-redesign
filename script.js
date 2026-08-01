@@ -190,6 +190,9 @@ window.applyGlobalContentCtas = function applyGlobalContentCtas() {
     button.textContent = type === 'primary'
       ? (isBookingCta ? 'KSK-Beratung buchen' : 'KSK-Beratung')
       : 'Vorteile FWB Mitgliedschaft';
+    if (type === 'primary') {
+      button.insertAdjacentHTML('beforeend', '<svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>');
+    }
     button.href = type === 'primary'
       ? (isBookingCta ? bookingUrl : consultationUrl)
       : membershipUrl;
