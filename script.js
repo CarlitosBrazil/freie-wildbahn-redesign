@@ -120,11 +120,12 @@ window.applyGlobalRegistrationLinks = function applyGlobalRegistrationLinks() {
 
 window.applyGlobalContentCtas = function applyGlobalContentCtas() {
   const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const inPages = window.location.pathname.toLowerCase().includes('/pages/');
+  const pageLink = name => `${inPages ? '' : 'pages/'}${name}`;
   const isConsultationPage = page === 'ksk-beratung.html';
-  const consultationUrl = 'https://www.freie-wildbahn.de/kuenstlersozialkasse/ksk-beratung';
-  const bookingUrl = 'https://login.freie-wildbahn.de/auth/advice/antragsstrecke';
-  const membershipUrl = 'https://www.freie-wildbahn.de/vorteile-mitgliedschaft';
-  const primaryLabel = isConsultationPage ? 'KSK-Beratung buchen' : 'KSK-Beratung';
+  const consultationUrl = pageLink('ksk-beratung.html');
+  const bookingUrl = 'https://login.freie-wildbahn.de/auth/advice/antragsstrecke?step=registration';
+  const membershipUrl = pageLink('vorteile.html');
   const normalize = value => value.replace(/\s+/g, ' ').trim().toLowerCase();
   const contentButtons = [...document.querySelectorAll('main a.btn')];
 
@@ -178,11 +179,19 @@ window.applyGlobalContentCtas = function applyGlobalContentCtas() {
   };
 
   const normalizeButton = (button, type) => {
+    const originalLabel = normalize(button.textContent);
+    const isBookingCta = type === 'primary' && (
+      isConsultationPage ||
+      originalLabel === 'ksk-beratung buchen' ||
+      originalLabel === 'beratung buchen'
+    );
     button.querySelectorAll('svg').forEach(icon => icon.remove());
     button.className = `btn ${type === 'primary' ? 'btn-cta-primary' : 'btn-cta-secondary'}`;
-    button.textContent = type === 'primary' ? primaryLabel : 'Vorteile FWB Mitgliedschaft';
+    button.textContent = type === 'primary'
+      ? (isBookingCta ? 'KSK-Beratung buchen' : 'KSK-Beratung')
+      : 'Vorteile FWB Mitgliedschaft';
     button.href = type === 'primary'
-      ? (isConsultationPage ? bookingUrl : consultationUrl)
+      ? (isBookingCta ? bookingUrl : consultationUrl)
       : membershipUrl;
     button.dataset.globalCta = type;
   };
