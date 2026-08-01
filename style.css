@@ -30,6 +30,7 @@
   --text-section-width: 980px;
   --page-gutter: 20px;
   --hero-width: 1680px;
+  --hero-heading-content-gap: 22px;
   --transition-speed: 0.3s;
   --border-radius: 8px;
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -691,7 +692,7 @@ body > header.is-scrolled .mobile-logo img {
 
 .hero-section h1 {
   font-size: 40px;
-  margin-bottom: 20px;
+  margin-bottom: var(--hero-heading-content-gap);
   line-height: 1.15;
 }
 
@@ -1433,6 +1434,10 @@ body > header.is-scrolled .mobile-logo img {
 .inner-page-hero {
   background-color: var(--bg-light);
   border-bottom: 1px solid var(--border-light);
+}
+
+.inner-page-hero h1 {
+  margin-bottom: var(--hero-heading-content-gap);
 }
 
 .bullets-list {
