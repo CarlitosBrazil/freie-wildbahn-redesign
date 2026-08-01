@@ -307,6 +307,35 @@ img {
   background: #fff;
 }
 
+/* Homepage pricing-table exception: one dedicated CTA per price card. */
+.pricing-footer-btn-wrapper .btn-pricing-consultation {
+  color: #fff;
+  border: 2px solid #dd3300;
+  background: #dd3300;
+}
+
+.pricing-footer-btn-wrapper .btn-pricing-consultation:hover,
+.pricing-footer-btn-wrapper .btn-pricing-consultation:focus-visible {
+  color: #dd3300;
+  border-color: #dd3300;
+  background: #fff;
+  transform: none;
+}
+
+.pricing-footer-btn-wrapper .btn-pricing-membership {
+  color: #fff;
+  border: 2px solid #268080;
+  background: #268080;
+}
+
+.pricing-footer-btn-wrapper .btn-pricing-membership:hover,
+.pricing-footer-btn-wrapper .btn-pricing-membership:focus-visible {
+  color: #268080;
+  border-color: #268080;
+  background: #fff;
+  transform: none;
+}
+
 .article-cta .content-cta-pair,
 .rechner-cta-banner .content-cta-pair {
   flex: 0 0 auto;

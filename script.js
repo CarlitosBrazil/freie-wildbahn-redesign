@@ -128,6 +128,15 @@ window.applyGlobalContentCtas = function applyGlobalContentCtas() {
   const normalize = value => value.replace(/\s+/g, ' ').trim().toLowerCase();
   const contentButtons = [...document.querySelectorAll('main a.btn')];
 
+  /* The homepage pricing table intentionally uses one button per card. */
+  contentButtons.filter(button => button.dataset.pricingCta).forEach(button => {
+    const isMembership = button.dataset.pricingCta === 'membership';
+    button.querySelectorAll('svg').forEach(icon => icon.remove());
+    button.className = `btn ${isMembership ? 'btn-pricing-membership' : 'btn-pricing-consultation'}`;
+    button.textContent = isMembership ? 'Vorteile FWB Mitgliedschaft' : 'KSK-Beratung';
+    button.href = isMembership ? membershipUrl : consultationUrl;
+  });
+
   const buttonType = button => {
     const label = normalize(button.textContent);
     const href = normalize(button.getAttribute('href') || '');
@@ -148,7 +157,9 @@ window.applyGlobalContentCtas = function applyGlobalContentCtas() {
     return null;
   };
 
-  const candidates = contentButtons.filter(button => buttonType(button));
+  const candidates = contentButtons.filter(
+    button => !button.dataset.pricingCta && buttonType(button)
+  );
   const processed = new Set();
 
   const hasBrandBackground = element => {

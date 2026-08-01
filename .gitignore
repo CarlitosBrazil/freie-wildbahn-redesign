@@ -4,3 +4,5 @@ pages_backup_*/
 *.backup
 WORKSPACE.md
 .vercel/
+.vercel
+.env*
