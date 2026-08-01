@@ -2045,15 +2045,9 @@ main {
 }
 
 .page-review-google-mark {
-  display: grid;
   flex: 0 0 54px;
   width: 54px;
   height: 54px;
-  place-items: center;
-  color: #4285f4;
-  font-family: Arial, sans-serif;
-  font-size: 38px;
-  font-weight: 700;
 }
 
 .page-review-summary > span:last-child,
