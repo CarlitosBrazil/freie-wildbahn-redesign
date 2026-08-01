@@ -710,7 +710,7 @@ body > header.is-scrolled .mobile-logo img {
 }
 
 .homepage-hero .hero-cta-wrapper {
-  gap: 24px;
+  gap: 0;
 }
 
 .hero-cta-intro {
@@ -2016,7 +2016,7 @@ main {
 /* Compact Google trust badge for the Home hero. */
 .hero-google-review-badge {
   display: inline-flex;
-  width: fit-content;
+  width: max-content;
   gap: 11px;
   align-items: center;
   padding: 10px 14px;
@@ -2025,7 +2025,19 @@ main {
   background: #fff;
   color: var(--text-dark);
   box-shadow: var(--shadow-sm);
+  margin-top: 18px;
   transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.hero-text-col > .hero-google-review-badge,
+.hero-content-col > .hero-google-review-badge {
+  display: flex;
+}
+
+.sozialabgabe-hero-copy > .hero-cta-wrapper {
+  width: 100%;
+  gap: 0;
+  align-items: flex-start;
 }
 
 .hero-google-review-badge:hover,

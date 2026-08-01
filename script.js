@@ -247,6 +247,25 @@ document.addEventListener('DOMContentLoaded', () => {
   window.renderGlobalReviews();
   window.applyGlobalRegistrationLinks();
   window.applyGlobalContentCtas();
+
+  // The calculator pages use compressed one-line hero markup, so attach the
+  // compact reviews badge to their existing primary hero CTA at runtime.
+  const calculatorReviewTargets = {
+    'ksk-beitragsrechner.html': '.ksk-split-hero .btn[href="#JetztKSK-Beitragberechnen"]',
+    'ksk-beitraege-kosten.html': '.ksk-split-hero .btn[href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"]'
+  };
+  const currentPage = window.location.pathname.split('/').pop();
+  const calculatorReviewTarget = document.querySelector(calculatorReviewTargets[currentPage]);
+  if (calculatorReviewTarget && !calculatorReviewTarget.parentElement.querySelector('.hero-google-review-badge')) {
+    const reviewBadge = document.createElement('a');
+    reviewBadge.className = 'hero-google-review-badge';
+    reviewBadge.href = 'https://www.google.com/maps/place/Freie+Wildbahn+e.V./@51.4315333,7.9589351,684m/data=!3m2!1e3!5s0x47b96741ced1b7b7:0x30a71ba88a66de7f!4m8!3m7!1s0x47b96741cb05854b:0xf3b53f0cdfda43b5!8m2!3d51.43153!4d7.96151!9m1!1b1!16s%2Fg%2F11dd__6phl?entry=ttu';
+    reviewBadge.target = '_blank';
+    reviewBadge.rel = 'noopener';
+    reviewBadge.setAttribute('aria-label', 'Google Bewertungen von Freie Wildbahn e.V. ansehen');
+    reviewBadge.innerHTML = '<img class="hero-google-review-logo" src="../assets/google-g.svg" alt=""><span><strong>Google</strong><span><b>4.9</b> <span class="hero-google-review-stars" aria-label="5 von 5 Sternen">★★★★★</span></span><small>Alle Rezensionen ansehen</small></span>';
+    calculatorReviewTarget.insertAdjacentElement('afterend', reviewBadge);
+  }
   // Prevent placeholder parent menu links from jumping to the top.
   // Real destination links are left untouched.
   const parentMenuLinks = document.querySelectorAll('.menu-item > a[href="#"]');
