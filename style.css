@@ -2013,10 +2013,119 @@ main {
 .review-google { font-size: 22px; font-weight: 800; }
 .review-card p { color: #525366; font-size: 14px; line-height: 1.5; }
 
+/* Compact reusable reviews block for placement directly below page heroes. */
+.page-review-strip {
+  padding: 30px 0;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.page-review-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.page-review-summary,
+.page-review-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(38, 128, 128, 0.14);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.page-review-summary {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.page-review-google-mark {
+  display: grid;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  color: #4285f4;
+  font-family: Arial, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.page-review-summary > span:last-child,
+.page-review-card-head > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page-review-summary strong,
+.page-review-card-head strong {
+  color: var(--primary-green);
+  font-size: 14px;
+}
+
+.page-review-score {
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.page-review-score span {
+  color: #f9ab00;
+  letter-spacing: 1px;
+}
+
+.page-review-link {
+  margin-top: 3px;
+  color: var(--text-light);
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.page-review-card-head {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 18px;
+  gap: 9px;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.page-review-card .review-avatar {
+  width: 42px;
+  height: 42px;
+  font-size: 15px;
+}
+
+.page-review-card .review-stars {
+  font-size: 13px;
+}
+
+.page-review-card time {
+  color: #9a9a9a;
+  font-size: 11px;
+}
+
+.page-review-card .review-google {
+  font-size: 16px;
+}
+
+.page-review-card p {
+  color: var(--text-medium);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 @media (max-width: 900px) {
   .reviews-heading-row { grid-template-columns: 1fr; gap: 30px; }
   .reviews-summary { justify-content: flex-start; flex-wrap: wrap; }
   .reviews-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .page-review-strip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 600px) {
@@ -2026,4 +2135,5 @@ main {
   .review-platform { min-width: 0; padding: 12px; }
   .review-platform strong { font-size: 16px; }
   .reviews-grid { grid-template-columns: 1fr; }
+  .page-review-strip-grid { grid-template-columns: 1fr; }
 }
