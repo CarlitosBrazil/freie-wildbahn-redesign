@@ -2045,6 +2045,14 @@ main {
   align-items: flex-start;
 }
 
+/* One paragraph typography standard across all full-width page heroes. */
+.inner-page-hero .hero-text-col p,
+.ksk-split-hero .hero-content-col > p,
+.hero .hero-content-col > p {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+}
+
 .hero-google-review-badge:hover,
 .hero-google-review-badge:focus-visible {
   border-color: rgba(38, 128, 128, 0.45);
