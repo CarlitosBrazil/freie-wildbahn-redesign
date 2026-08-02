@@ -35,6 +35,50 @@
       border-top: 1px solid var(--border-light);
       border-bottom: 1px solid var(--border-light);
     }
+    .sozialabgabe-quicklinks-nav {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: 30px;
+      background: var(--bg-cream);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+    }
+    .sozialabgabe-quicklinks-nav h2 {
+      font-size: 25px;
+      margin-bottom: 22px;
+    }
+    .sozialabgabe-quicklinks-nav ol {
+      display: grid;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .sozialabgabe-quicklinks-nav li { margin: 0; }
+    .sozialabgabe-quicklinks-nav a {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 18px;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      color: var(--text-dark);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+    .sozialabgabe-quicklinks-number {
+      color: var(--primary-green);
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+    .sozialabgabe-quicklinks-nav a > span:last-child {
+      justify-self: end;
+      color: var(--primary-green);
+      font-size: 28px;
+      line-height: 1;
+    }
     .sozialabgabe-section {
       padding-top: 56px;
       padding-bottom: 56px;
@@ -193,7 +237,7 @@
     .sozialabgabe-pillar-card h3 { font-size: 22px; }
     .sozialabgabe-pillar-card p { font-size: 17px; }
     .sozialabgabe-final-cta {
-      padding-top: 0;
+      padding-top: 56px;
       padding-bottom: 72px;
     }
     @media (max-width: 768px) {
@@ -231,6 +275,14 @@
       .sozialabgabe-table th,
       .sozialabgabe-table td {
         font-size: 16px;
+      }
+      .sozialabgabe-quicklinks-nav {
+        padding: 22px 18px;
+      }
+      .sozialabgabe-quicklinks-nav a {
+        grid-template-columns: 34px minmax(0, 1fr) 14px;
+        gap: 10px;
+        padding: 15px 14px;
       }
     }
   </style>
@@ -375,21 +427,21 @@
 
     <section class="sozialabgabe-quicklinks">
       <div class="container page-container">
-        <div class="quicklinks-box">
+        <nav class="sozialabgabe-quicklinks-nav" aria-label="Direkt zu den Themen dieser Seite">
           <h2>Quicklinks</h2>
-          <div class="quicklinks-flex">
-            <a href="#abgabepflicht" class="cta"><span>Wer muss Künstlersozialabgabe zahlen?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#bagatellgrenze" class="cta"><span>Für wen gilt die 1.000-Euro-Grenze?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#beratung-unternehmen" class="cta"><span>KSK-Beratung für Unternehmen und Verwerter</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#bemessungsgrundlage" class="cta"><span>Welche Zahlungen gehören zur Bemessungsgrundlage?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#berechnung" class="cta"><span>Wie berechnet man die KSK-Abgabe?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#finanzierung" class="cta"><span>Wie finanziert sich die Künstlersozialversicherung?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#rechnung" class="cta"><span>Muss die Künstlersozialabgabe auf der Rechnung stehen?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#regelmaessigkeit" class="cta"><span>Wann ist eine Leistung künstlerisch oder publizistisch?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#anmeldung" class="cta"><span>Anmeldung, Meldung und Prüfung</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#weitere-ksk-themen" class="cta"><span>Weitere KSK-Themen für Kreative</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-          </div>
-        </div>
+          <ol>
+            <li><a href="#abgabepflicht"><span class="sozialabgabe-quicklinks-number">01</span><span>Wer muss Künstlersozialabgabe zahlen?</span><span>›</span></a></li>
+            <li><a href="#bagatellgrenze"><span class="sozialabgabe-quicklinks-number">02</span><span>Für wen gilt die 1.000-Euro-Grenze?</span><span>›</span></a></li>
+            <li><a href="#beratung-unternehmen"><span class="sozialabgabe-quicklinks-number">03</span><span>KSK-Beratung für Unternehmen und Verwerter</span><span>›</span></a></li>
+            <li><a href="#bemessungsgrundlage"><span class="sozialabgabe-quicklinks-number">04</span><span>Welche Zahlungen gehören zur Bemessungsgrundlage?</span><span>›</span></a></li>
+            <li><a href="#berechnung"><span class="sozialabgabe-quicklinks-number">05</span><span>Wie berechnet man die KSK-Abgabe?</span><span>›</span></a></li>
+            <li><a href="#finanzierung"><span class="sozialabgabe-quicklinks-number">06</span><span>Wie finanziert sich die Künstlersozialversicherung?</span><span>›</span></a></li>
+            <li><a href="#rechnung"><span class="sozialabgabe-quicklinks-number">07</span><span>Muss die Künstlersozialabgabe auf der Rechnung stehen?</span><span>›</span></a></li>
+            <li><a href="#regelmaessigkeit"><span class="sozialabgabe-quicklinks-number">08</span><span>Wann ist eine Leistung künstlerisch oder publizistisch?</span><span>›</span></a></li>
+            <li><a href="#anmeldung"><span class="sozialabgabe-quicklinks-number">09</span><span>Anmeldung, Meldung und Prüfung</span><span>›</span></a></li>
+            <li><a href="#weitere-ksk-themen"><span class="sozialabgabe-quicklinks-number">10</span><span>Weitere KSK-Themen für Kreative</span><span>›</span></a></li>
+          </ol>
+        </nav>
       </div>
     </section>
 
