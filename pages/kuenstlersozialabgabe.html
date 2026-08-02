@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4,2% K&uuml;nstlersozialabgabe - Wer zahlt die KSK-Abgabe?</title>
-  <meta name="description" content="Erfahren Sie als freiberuflicher K&uuml;nstler alles &uuml;ber die Abgabepflicht, Bemessungsgrundlage, Entgeltmeldung und H&ouml;he der KSK-Abgabe f&uuml;r Ihre Auftraggeber!">
+  <title>Künstlersozialabgabe 2026: Wer zahlt die KSK-Abgabe?</title>
+  <meta name="description" content="Künstlersozialabgabe 2026 verständlich erklärt: Abgabepflicht, 1.000-Euro-Grenze, Bemessungsgrundlage, Meldung und Abgabesatz für Kreative und Unternehmen.">
   <link rel="stylesheet" href="../style.css?v=10">
   <script src="../script.js?v=8" defer></script>
   <style>
@@ -17,7 +17,7 @@
       margin-bottom: 4px;
     }
     .sozialabgabe-hero-copy p {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.75;
       color: var(--text-medium);
       margin: 0;
@@ -63,8 +63,13 @@
       font-size: 30px;
       margin-bottom: 20px;
     }
+    .sozialabgabe-copy h2 {
+      font-size: clamp(28px, 3vw, 36px);
+      line-height: 1.25;
+      margin-bottom: 22px;
+    }
     .sozialabgabe-copy p {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.8;
       color: var(--text-medium);
       margin-bottom: 16px;
@@ -110,8 +115,107 @@
     .sozialabgabe-cta-row {
       margin-top: 28px;
       display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
       justify-content: flex-start;
     }
+    .sozialabgabe-quicklinks .quicklinks-flex {
+      display: grid;
+      gap: 12px;
+      counter-reset: sozialabgabe-link;
+    }
+    .sozialabgabe-quicklinks .quicklinks-flex .cta {
+      counter-increment: sozialabgabe-link;
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) 14px;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 20px;
+      font-size: 18px;
+    }
+    .sozialabgabe-quicklinks .quicklinks-flex .cta::before {
+      content: counter(sozialabgabe-link, decimal-leading-zero);
+      color: var(--primary-green);
+      font-weight: 800;
+    }
+    .sozialabgabe-quicklinks .quicklinks-flex .cta svg {
+      width: 10px;
+      height: 16px;
+      fill: var(--primary-green);
+    }
+    .sozialabgabe-table-wrap {
+      overflow-x: auto;
+      margin: 26px 0;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sozialabgabe-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      background: #fff;
+    }
+    .sozialabgabe-table th,
+    .sozialabgabe-table td {
+      padding: 16px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    .sozialabgabe-table th {
+      background: var(--primary-green);
+      color: #fff;
+      font-weight: 700;
+    }
+    .sozialabgabe-table tr:last-child td {
+      border-bottom: 0;
+    }
+    .sozialabgabe-note {
+      border-left: 4px solid var(--primary-green);
+      background: #f2f8f7;
+      padding: 20px 22px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .sozialabgabe-note p:last-child { margin-bottom: 0; }
+    .sozialabgabe-check-list {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0;
+      display: grid;
+      gap: 12px;
+    }
+    .sozialabgabe-check-list li {
+      position: relative;
+      padding-left: 32px;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+    .sozialabgabe-check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-green);
+      font-weight: 800;
+    }
+    .sozialabgabe-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .sozialabgabe-pillar-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sozialabgabe-pillar-card h3 { font-size: 22px; }
+    .sozialabgabe-pillar-card p { font-size: 17px; }
     .sozialabgabe-final-cta {
       padding-top: 0;
       padding-bottom: 72px;
@@ -144,6 +248,18 @@
       }
       .sozialabgabe-cta-row {
         justify-content: center;
+      }
+      .sozialabgabe-pillars {
+        grid-template-columns: 1fr;
+      }
+      .sozialabgabe-quicklinks .quicklinks-flex .cta {
+        grid-template-columns: 38px minmax(0, 1fr) 12px;
+        gap: 10px;
+        padding: 15px 14px;
+      }
+      .sozialabgabe-table th,
+      .sozialabgabe-table td {
+        font-size: 16px;
       }
     }
   </style>
@@ -268,11 +384,10 @@
     <section class="inner-page-hero section-padding">
       <div class="hero-grid">
         <div class="hero-text-col sozialabgabe-hero-copy" style="grid-column: 1; order: 1;">
-          <span class="dachzeile">Das m&uuml;ssen Sie wissen!</span>
-          <h1>K&uuml;nstlersozialabgabe</h1>
-          <p>Unternehmen, die einen freiberuflichen Texter, Grafiker oder Webdesigner besch&auml;ftigen, sind sich h&auml;ufig gar nicht dar&uuml;ber im Klaren, dass f&uuml;r diesen Auftrag eine gesonderte Abgabe f&auml;llig werden kann.</p>
-          <p>Bei der n&auml;chsten Betriebspr&uuml;fung wird dieser Sachverhalt pl&ouml;tzlich offenkundig, und dann folgt oft die Frage an den entsprechenden kreativen Dienstleister: Sind Sie &uuml;berhaupt <a href="kuenstlersozialkasse.html#vorteile-versicherter">Mitglied in der K&uuml;nstlersozialkasse</a>?</p>
-          <p>Wenn Sie Ihrem Auftraggeber den Sinn und Zweck der K&uuml;nstlersozialabgabe erkl&auml;ren k&ouml;nnen, erh&ouml;ht das zweifellos Ihre Glaubw&uuml;rdigkeit.</p>
+          <span class="dachzeile">Künstlersozialabgabe 2026</span>
+          <h1>Künstlersozialabgabe: Wer zahlt die KSK-Abgabe?</h1>
+          <p>Wenn Du selbständig künstlerisch oder publizistisch arbeitest, begegnet die Künstlersozialabgabe oft zuerst Deinen Auftraggebern. Wenn Du ein Unternehmen führst und kreative Leistungen einkaufst, kann sie dagegen unmittelbar Deine eigene Melde- und Zahlungspflicht betreffen.</p>
+          <p><strong>Ob die beauftragte Person selbst über die KSK versichert ist, entscheidet nicht über die Abgabepflicht.</strong> Maßgeblich sind die Art der Leistung, die Rechtsform des Auftragnehmenden und die Voraussetzungen Deines Unternehmens.</p>
           <div class="hero-cta-wrapper" style="margin-top:8px;">
             <div class="hero-cta-buttons">
               <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
@@ -290,184 +405,160 @@
     <section class="sozialabgabe-quicklinks">
       <div class="container page-container">
         <div class="quicklinks-box">
-          <h3>Direkt zum Thema springen:</h3>
+          <h2>Quicklinks</h2>
           <div class="quicklinks-flex">
-            <a href="#abgabepflicht" class="cta"><span>Die Abgabepflicht h&auml;ngt nicht vom K&uuml;nstler, sondern von der Dienstleistung ab!</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#ksk-abgabe-zahlen" class="cta"><span>Wof&uuml;r muss man die KSK-Abgabe zahlen?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#regelmaessigkeit" class="cta"><span>Wie definiert sich die Regelm&auml;&szlig;igkeit der k&uuml;nstlerischen Leistung?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#warum-abgabe" class="cta"><span>Warum gibt es die K&uuml;nstlersozialabgabe?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#finanzierung" class="cta"><span>Wie finanziert sich die K&uuml;nstlersozialkasse?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#unternehmen" class="cta"><span>Welche Unternehmen zahlen die K&uuml;nstlersozialabgabe?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#anmeldung-unternehmen" class="cta"><span>Wie meldet sich ein Unternehmen zur K&uuml;nstlersozialabgabe an?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#hoehe-abgabe" class="cta"><span>Wie hoch kann die K&uuml;nstlersozialabgabe ausfallen?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#nicht-gemeldet" class="cta"><span>Was passiert, wenn man die Abgabepflicht zur K&uuml;nstlersozialabgabe nicht meldet?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#mitglied-werden" class="cta"><span>Wer kann Mitglied in der K&uuml;nstlersozialkasse werden?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#antrag-mitgliedschaft" class="cta"><span>Wie stellt man einen Antrag auf die Mitgliedschaft in der K&uuml;nstlersozialkasse?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#mitgliedsbeitraege" class="cta"><span>Wie hoch sind die Mitgliedsbeitr&auml;ge in der K&uuml;nstlersozialkasse?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
-            <a href="#dienstleistung-kuenstlerisch" class="cta"><span>Ist meine Dienstleistung wirklich k&uuml;nstlerisch?</span><svg viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#abgabepflicht" class="cta"><span>Wer muss Künstlersozialabgabe zahlen?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#bagatellgrenze" class="cta"><span>Für wen gilt die 1.000-Euro-Grenze?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#beratung-unternehmen" class="cta"><span>KSK-Beratung für Unternehmen und Verwerter</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#bemessungsgrundlage" class="cta"><span>Welche Zahlungen gehören zur Bemessungsgrundlage?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#berechnung" class="cta"><span>Wie berechnet man die KSK-Abgabe?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#finanzierung" class="cta"><span>Wie finanziert sich die Künstlersozialversicherung?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#rechnung" class="cta"><span>Muss die Künstlersozialabgabe auf der Rechnung stehen?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#regelmaessigkeit" class="cta"><span>Wann ist eine Leistung künstlerisch oder publizistisch?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#anmeldung" class="cta"><span>Anmeldung, Meldung und Prüfung</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="#weitere-ksk-themen" class="cta"><span>Weitere KSK-Themen für Kreative</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
           </div>
         </div>
       </div>
     </section>
 
     <section id="abgabepflicht" class="sozialabgabe-section bg-light">
-      <div class="container page-container content-box text-center">
-        <div class="sozialabgabe-copy">
-          <span class="dachzeile">Abgabepflicht</span>
-          <h3 style="font-size: 33px; margin-bottom: 24px;">Die Abgabepflicht h&auml;ngt nicht vom K&uuml;nstler, sondern von der Dienstleistung ab!</h3>
-          <p style="font-size: 17px; color: var(--text-medium); line-height: 1.7; margin-bottom: 20px;">Im ung&uuml;nstigsten Fall wird Ihr &uuml;berraschter Auftraggeber versuchen, die K&uuml;nstlersozialabgabe mit Ihrem Honorar zu verrechnen.</p>
-          <p style="font-size: 17px; color: var(--text-medium); line-height: 1.7; margin-bottom: 0;">Das ist allerdings nicht rechtm&auml;&szlig;ig, denn Sie sind nicht der Verursacher der Kosten. Der Verursacher ist der Auftraggeber selbst, denn er nimmt die Ergebnisse Ihrer k&uuml;nstlerischen oder publizistischen T&auml;tigkeit in Anspruch und wird - sofern dies nicht sehr geringf&uuml;gig geschieht - damit automatisch abgabepflichtig. Wir beantworten hier die wichtigsten Fragen zum Thema K&uuml;nstlersozialabgabe.</p>
-        </div>
-      </div>
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Abgabepflicht</span>
+        <h2>Wer muss Künstlersozialabgabe zahlen?</h2>
+        <p>Die Abgabepflicht knüpft an das Unternehmen und die Verwertung selbständiger künstlerischer oder publizistischer Leistungen an. Für Kreative ist wichtig zu verstehen, was auf Auftraggeberseite passiert. Unternehmen können hier direkt prüfen, zu welcher Gruppe sie gehören.</p>
+        <ul class="sozialabgabe-check-list">
+          <li><strong>Typische Verwerter</strong> vermarkten künstlerische oder publizistische Leistungen als Teil ihres Geschäftsmodells, etwa Verlage, Theater, Galerien, Sender sowie Werbe- und PR-Agenturen.</li>
+          <li><strong>Eigenwerber</strong> beauftragen Kreative für Werbung oder Öffentlichkeitsarbeit des eigenen Unternehmens, beispielsweise für Logo, Website, Imagefilm oder Broschüren.</li>
+          <li><strong>Generalklausel-Unternehmen</strong> nutzen kreative Leistungen im eigenen Produkt oder Angebot, mit dem sie Einnahmen erzielen.</li>
+        </ul>
+        <p><strong>Die Abgabe kann auch anfallen, wenn die beauftragte Person selbst nicht über die KSK versichert ist.</strong> Entscheidend ist die beauftragte Leistung und nicht der persönliche Versicherungsstatus.</p>
+      </div></div>
     </section>
 
-    <section id="ksk-abgabe-zahlen" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Wof&uuml;r muss man die KSK-Abgabe zahlen?</h3>
-          <p>Wer regelm&auml;&szlig;ig, also t&auml;glich, w&ouml;chentlich, monatlich oder j&auml;hrlich - in manchen F&auml;llen sogar in Abst&auml;nden von mehreren Jahren - selbst&auml;ndige k&uuml;nstlerische Leistungen f&uuml;r seine eigenen Zwecke (Werbungen, Publikationen, Pr&auml;sentationen, Produktverpackungen u.v.m.) nutzt, der ist in jedem Fall zur Abgabe verpflichtet. Dabei ist es gleichg&uuml;ltig, ob ein Auftrag aus einem Gesamtpaket oder aus mehreren einzelnen Dienstleistungen bestand oder ob in regelm&auml;&szlig;igen Abst&auml;nden viele verschiedene, wirtschaftlich eher unbedeutende Einzelleistungen abgerufen wurden.</p>
-          <p>Die Abgabe wird f&uuml;r ein Unternehmen auch f&auml;llig, wenn der beauftragte K&uuml;nstler selbst nicht Mitglied in der K&uuml;nstlersozialkasse ist. Auch f&uuml;r die k&uuml;nstlerische Leistung von Studenten, Rentnern, nebenberuflich t&auml;tigen oder im Ausland lebenden Auftragnehmern f&auml;llt die Abgabe an, sobald ihre Arbeit regelm&auml;&szlig;ig in Anspruch genommen wir. Die K&uuml;nstlersozialabgabe ist also eine auf den Job bezogene und keine auf den Auftragnehmer bezogene Abgabe. Diese wird unabh&auml;ngig von der Mitgliedschaft in der KSK f&uuml;r die erbrachte Leistung verlangt. F&uuml;r den Auftraggeber entstehen damit aktuell in 2020 aber nur 5,0 % K&uuml;nstlersozialabgabe und nicht ca. 21 % Lohnnebenkosten wie bei einem Arbeitnehmer, der auch im Krankheits- und Urlaubsfall bezahlt werden muss.d</p>
-        </div>
-      </div>
+    <section id="bagatellgrenze" class="sozialabgabe-section">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Bagatellgrenze 2026</span>
+        <h2>Für wen gilt die 1.000-Euro-Grenze — und für wen nicht?</h2>
+        <p>Seit dem 1. Januar 2026 liegt die Bagatellgrenze bei <strong>1.000 € im Kalenderjahr</strong>. Ob sie Dich schützt, hängt davon ab, zu welcher Gruppe Dein Unternehmen gehört.</p>
+        <div class="sozialabgabe-table-wrap"><table class="sozialabgabe-table">
+          <thead><tr><th>Gruppe</th><th>So erkennst Du sie</th><th>Typische Beispiele</th><th>Gilt die 1.000-€-Grenze?</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Typische Verwerter</strong></td><td>Das Geschäftsmodell besteht in der Vermarktung künstlerischer oder publizistischer Leistungen.</td><td>Verlage, Werbe- und PR-Agenturen, Galerien, Theater, Konzertveranstalter</td><td><strong>Nein</strong> — abgabepflichtig ab dem ersten Euro</td></tr>
+            <tr><td><strong>Eigenwerber</strong></td><td>Kreative arbeiten für Werbung und Öffentlichkeitsarbeit des eigenen Unternehmens.</td><td>Logo, Website-Design, Imagefilm oder Broschüre</td><td><strong>Ja</strong></td></tr>
+            <tr><td><strong>Generalklausel</strong></td><td>Kreative Leistungen stecken im Produkt oder Angebot, mit dem das Unternehmen Einnahmen erzielt.</td><td>Produkt- und Verpackungsdesign, Illustrationen in verkauften Produkten, bestimmte Veranstaltungen</td><td><strong>Ja</strong></td></tr>
+          </tbody>
+        </table></div>
+        <div class="sozialabgabe-note"><p><strong>Merksatz:</strong> Wirbt die kreative Leistung für Dich, bist Du Eigenwerber. Steckt sie in dem, was Du verkaufst, kann die Generalklausel greifen. Ist die Verwertung Dein Geschäftsmodell, bist Du typischer Verwerter — ohne Bagatellgrenze.</p></div>
+        <p>Für Unternehmen außerhalb des Verwerter-Katalogs kann eine Abgabepflicht über Eigenwerbung oder die Generalklausel entstehen. Wer keine künstlerischen oder publizistischen Leistungen einkauft, hat mit der Künstlersozialabgabe nichts zu tun. Privatpersonen sind nicht abgabepflichtig.</p>
+        <p><strong>Die 1.000 € sind eine Freigrenze, kein Freibetrag.</strong> Wird sie überschritten, ist die gesamte Summe abgabepflichtig. Gezählt werden alle maßgeblichen Zahlungen im Kalenderjahr zusammen. Bis 2024 lag die Grenze bei 450 €, im Jahr 2025 bei 700 €.</p>
+      </div></div>
     </section>
 
-    <section id="regelmaessigkeit" class="sozialabgabe-section bg-light">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy centered-media-layout">
-          <h3>Wie definiert sich die Regelm&auml;&szlig;igkeit der k&uuml;nstlerischen Leistung?</h3>
-          <div class="sozialabgabe-media">
-            <img src="../assets/kuenstlersozialkasse-fotograf-freie-wildbahn-1920w.jpg" alt="K&uuml;nstlersozialabgabe">
-          </div>
-          <p>Die Beispiele sind zahlreich: Ein Fotograf, der Bilder f&uuml;r einen Katalog machen soll, wurde f&uuml;r sechs kurze Termine bestellt. F&uuml;r eine Produktgestaltung wurde ein Designer zweimal im Jahr angefragt. Oder f&uuml;r wiederkehrende Messeauftritte wird ein Dienstleister in Abst&auml;nden von 2 Jahren beauftragt. Alle diese k&uuml;nstlerischen Leistungen verpflichten zur Anmeldung bei der K&uuml;nstlersozialkasse.</p>
-          <p>Wenn es bei weniger als vier Veranstaltungen bleibt, etwa wenn eine Bar h&ouml;chstens dreimal im Jahr Live-Musik im Programm hat, wird der k&uuml;nstlerische Anteil als geringf&uuml;gig eingestuft.</p>
-          <p>Die Geringf&uuml;gigkeit wird aber bereits ab &euro; 450.- p.a. &uuml;berschritten.</p>
-        </div>
-      </div>
+    <section id="beratung-unternehmen" class="sozialabgabe-section bg-light">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Persönliche Beratung</span>
+        <h2>Du bist Unternehmer:in und verwertest künstlerische Leistungen? Wir beraten auch Dich.</h2>
+        <p>Ob Abgabepflicht, Meldung, Bemessungsgrundlage oder eine Prüfung durch die Deutsche Rentenversicherung: In der <strong>KSK-Beratung</strong> klären wir Deine Fragen zur Künstlersozialabgabe individuell — keine automatisierte KI-Antwort, sondern ein persönliches Gespräch auf Grundlage jahrzehntelanger KSK-Expertise.</p>
+        <p>Wir wissen nicht nur, was in den Vorgaben steht, sondern auch, wie die Künstlersozialkasse sie in der Praxis tatsächlich anwendet.</p>
+        <p>Mitglieder von Freie Wildbahn e.V. klären solche Fragen jederzeit mit uns, ohne Zusatzkosten. Bist Du noch nicht Mitglied, ist die <strong>KSK-Beratung</strong> Dein Einstieg — und wird auf Deinen ersten Jahresbeitrag angerechnet, wenn Du Dich danach für eine Mitgliedschaft entscheidest.</p>
+        <div class="sozialabgabe-cta-row"><a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a><a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a></div>
+      </div></div>
     </section>
 
-    <section id="warum-abgabe" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Warum gibt es die K&uuml;nstlersozialabgabe?</h3>
-          <p>In den 1970er Jahren erhob die sozial-liberale Regierung der Bundesrepublik Deutschland eine Untersuchung der Situation von freiberuflich t&auml;tigen K&uuml;nstlern aller Genres, von Schauspielern und Musikern &uuml;ber bildende K&uuml;nstler oder Grafiker bis hin zu Schriftstellern und Journalisten. Aufgrund der schwankenden Auftragslage, so fand man mithilfe der Studie heraus, waren diese Berufsgruppen benachteiligt. Im Vergleich zu Arbeitnehmern hatten die freiberuflichen K&uuml;nstler keine M&ouml;glichkeit, regelm&auml;&szlig;ig in die staatlichen Rentenkassen einzuzahlen. Eine gesetzliche Krankenversicherung kam aufgrund der Mindestbeitr&auml;ge f&uuml;r freiwillig versicherte Selbst&auml;ndige ebenfalls nicht infrage, wodurch einfach viele K&uuml;nstler weder krankenversichert waren, noch eine Altersvorsorge installieren konnten. Um diese selbst&auml;ndigen kreativen Berufsgruppen besser abzusichern, gr&uuml;ndete man 1983 die K&uuml;nstlersozialkasse mit Sitz in Wilhelmshaven.</p>
-        </div>
-      </div>
+    <section id="bemessungsgrundlage" class="sozialabgabe-section">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Bemessungsgrundlage</span>
+        <h2>Welche Zahlungen gehören zur Bemessungsgrundlage?</h2>
+        <p>Grundlage sind grundsätzlich die im Kalenderjahr gezahlten Entgelte für selbständige künstlerische oder publizistische Leistungen. Dazu können auch Zahlungen an Studierende, Rentner:innen, nebenberuflich Tätige und im Ausland lebende Auftragnehmende gehören.</p>
+        <p>Nicht zur Bemessungsgrundlage gehören insbesondere Zahlungen an juristische Personen wie UG, GmbH, Ltd. oder AG sowie an KG, OHG und GmbH &amp; Co. KG. Ebenfalls nicht dazu zählt das Arbeitsentgelt eigener Angestellter; dafür fallen die üblichen Sozialversicherungsbeiträge an.</p>
+        <p>Beauftragst Du eine Gesellschaft, die ihrerseits selbständige Kreative für Teilbereiche einsetzt, kann die Abgabepflicht auf dieser nachgelagerten Ebene entstehen.</p>
+      </div></div>
+    </section>
+
+    <section id="berechnung" class="sozialabgabe-section bg-light">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Abgabesatz</span>
+        <h2>Wie berechnet man die KSK-Abgabe?</h2>
+        <p>Die Berechnung ist grundsätzlich einfach:</p>
+        <div class="sozialabgabe-note"><p><strong>Abgabepflichtige Entgelte × aktueller Abgabesatz = Künstlersozialabgabe</strong></p></div>
+        <p>Für 2026 beträgt der Abgabesatz <strong>4,9 %</strong>. Für 2027 sieht der Verordnungsentwurf des Bundesministeriums für Arbeit und Soziales 5,0 % vor. Endgültig festgesetzt wird der Satz erst mit der Verordnung.</p>
+        <p>Beispiel: Bei 10.000 € abgabepflichtigen Entgelten ergibt sich 2026 eine Künstlersozialabgabe von 490 €.</p>
+      </div></div>
     </section>
 
     <section id="finanzierung" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Wie finanziert sich die K&uuml;nstlersozialkasse?</h3>
-          <p>Die K&uuml;nstlersozialkasse fungiert im Grunde wie ein Arbeitgeber f&uuml;r ihre Mitglieder. Die Versicherten, also die K&uuml;nstler selbst, zahlen 50 % ihrer Beitr&auml;ge f&uuml;r Renten-, Pflege- und Krankenversicherung.</p>
-          <p>Den Arbeitgeberanteil &uuml;bernehmen zwei wichtige Partner: Der Bund unterst&uuml;tzt alle Mitgliederbeitr&auml;ge mit einem Zuschuss von 20 Prozent. Die restlichen 30 Prozent des Arbeitgeberanteils zahlt die K&uuml;nstlersozialkasse. Sie bezieht ihre Mittel von allen Unternehmen, Organisationen und Vereinen, die k&uuml;nstlerische Arbeit in Auftrag geben und f&uuml;r ihre eigenen Zwecke nutzen, etwa f&uuml;r Werbung oder Pr&auml;sentationen.</p>
-        </div>
-      </div>
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Finanzierung</span>
+        <h2>So finanziert sich die Künstlersozialversicherung</h2>
+        <div class="sozialabgabe-table-wrap"><table class="sozialabgabe-table">
+          <thead><tr><th>Wer zahlt?</th><th>Anteil</th></tr></thead>
+          <tbody><tr><td>Die Versicherten selbst</td><td><strong>50 %</strong></td></tr><tr><td>Die Unternehmen über die Künstlersozialabgabe</td><td><strong>30 %</strong></td></tr><tr><td>Der Bund über einen Zuschuss</td><td><strong>20 %</strong></td></tr></tbody>
+        </table></div>
+        <p>Die Künstlersozialkasse zahlt also nichts aus eigenen Mitteln. Sie zieht die Beiträge ein und leitet sie weiter — die 30 % kommen von den Unternehmen, die künstlerische und publizistische Leistungen verwerten.</p>
+      </div></div>
     </section>
 
-    <section id="unternehmen" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy centered-media-layout">
-          <h3>Welche Unternehmen zahlen die K&uuml;nstlersozialabgabe?</h3>
-          <div class="sozialabgabe-media">
-            <img src="../assets/AdobeStock_96150722-1920w.jpg" alt="K&uuml;nstlersozialabgabe">
-          </div>
-          <p>Wenn ein Unternehmen ohnehin zur k&uuml;nstlerischen oder publizistischen Branche z&auml;hlt, ist es damit automatisch verpflichtet, K&uuml;nstlersozialabgabe zu zahlen. Dazu z&auml;hlen Theater, Orchester, Konzert- und Tourneeveranstalter oder K&uuml;nstleragenturen ebenso wie Fernseh- oder Radiosender, Verlage oder PR-Agenturen, aber auch Museen und Galerien, Variet&eacute;s und Zirkusse oder kulturelle Fortbildungsst&auml;tten f&uuml;r Erwachsene und Kinder.</p>
-          <p>Die zweite Gruppe der abgabepflichtigen Unternehmen bilden alle, die - wie oben beschrieben - eine k&uuml;nstlerische Dienstleistung dauerhaft oder in regelm&auml;&szlig;igen Abst&auml;nden f&uuml;r ihre eigenen Werbezwecke einsetzen.<br>Die K&uuml;nstlersozialabgabe entf&auml;llt f&uuml;r den Rechnungsempf&auml;nger, wenn der Auftragnehmer eine Unternehmergesellschaft (UG haftungsbeschr&auml;nkt), KG, GmbH, Ltd. oder AG mit einem k&uuml;nstlerischen Projekt betraut. Der Auftragnehmer muss allerdings K&uuml;nstlersozialabgabe abf&uuml;hren, sofern er von freien K&uuml;nstlern Teilbereiche des Gesamtprojekts erstellen l&auml;sst.</p>
-          <p>Auch wer einen K&uuml;nstler in seinem Betrieb anstellt hat, zahlt keine K&uuml;nstlersozialabgabe, sondern f&uuml;hrt f&uuml;r diesen Mitarbeiter die &uuml;blichen Sozialversicherungsbeitr&auml;ge eines Angestellten ab.</p>
-        </div>
-      </div>
+    <section id="rechnung" class="sozialabgabe-section bg-light">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <h2>Muss die Künstlersozialabgabe auf der Rechnung ausgewiesen werden?</h2>
+        <p>Nein. Kreative müssen ihren Versicherungsstatus nicht auf der Rechnung angeben und die Künstlersozialabgabe nicht gesondert ausweisen. Die gesetzliche Prüf- und Meldepflicht liegt beim abgabepflichtigen Unternehmen.</p>
+        <p>Die Abgabe darf nicht einfach vom Honorar der beauftragten Person abgezogen werden. Auch irreführende Leistungsbezeichnungen sind keine saubere Lösung: Entscheidend ist, welche Leistung tatsächlich erbracht wurde.</p>
+      </div></div>
     </section>
 
-    <section id="anmeldung-unternehmen" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Wie meldet sich ein Unternehmen zur K&uuml;nstlersozialabgabe an?</h3>
-          <p>Bei der K&uuml;nstlersozialkasse kann ein Unternehmen sich mithilfe eines Anmeldebogens registrieren lassen. Wer erfasst ist und eine Abgabenummer erhalten hat, muss bis zum 31. M&auml;rz eines Jahres alle Auftr&auml;ge k&uuml;nstlerischer Natur in einer Gesamtsumme f&uuml;r das Vorjahr melden. Von der K&uuml;nstlersozialkasse wird das Unternehmen dann dar&uuml;ber informiert, wie viel an K&uuml;nstlersozialabgabe zu leisten ist. Zudem wird normalerweise eine monatlich zu leistende Vorauszahlung f&uuml;r das folgende Jahr festgesetzt. Ein gelistetes Unternehmen ist verpflichtet, alle abgabepflichtigen Posten fortlaufend und &uuml;berpr&uuml;fbar zu dokumentieren und f&uuml;r mindestens f&uuml;nf Jahre aufzubewahren.</p>
-        </div>
-      </div>
+    <section id="regelmaessigkeit" class="sozialabgabe-section">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy centered-media-layout">
+        <span class="dachzeile">Einordnung der Leistung</span>
+        <h2>Wann ist eine Dienstleistung künstlerisch oder publizistisch?</h2>
+        <div class="sozialabgabe-media"><img src="../assets/kuenstlersozialkasse-fotograf-freie-wildbahn-1920w.jpg" alt="Fotografie als künstlerische Leistung"></div>
+        <p>Fotograf:innen sollen Bilder für einen Katalog machen und werden für sechs kurze Termine gebucht. Für eine Produktgestaltung werden Designer:innen zweimal im Jahr angefragt. Oder für wiederkehrende Messeauftritte wird alle zwei Jahre dieselbe Agentur beauftragt. Solche Konstellationen können für die Einordnung relevant sein.</p>
+        <p>Wer Grafik, Fotografie, Text oder Webdesign beauftragt, fordert damit regelmäßig eine künstlerische oder publizistische Leistung ab. Wer eine Website nur technisch betreut, also Bedienerfreundlichkeit und Aktualität pflegt, gehört dagegen nicht allein deshalb zur Berufsgruppe der Künstler:innen.</p>
+        <p>Auch ein privater Fernsehsender wurde nachträglich zur Künstlersozialabgabe herangezogen, nachdem eine Jurorentätigkeit als künstlerisch eingeordnet worden war. Entscheidend ist nicht die Qualität, sondern die Art der Tätigkeit.</p>
+        <p>Bei gemischten künstlerischen und nichtkünstlerischen Tätigkeiten kann eine individuelle Prüfung notwendig sein. Je nach Konstellation stellt die Künstlersozialkasse nur die Rentenversicherungspflicht fest. An Deinen Kosten für die Krankenversicherung beteiligt sie sich dann nicht.</p>
+        <p>Dasselbe kann passieren, wenn sich die Gewichtung Deiner Tätigkeiten im Laufe der Zeit verschiebt. <strong>Ein zusätzlicher Auftrag kann sich dann unterm Strich nicht rechnen</strong> — wenn er dazu führt, dass Du den Zuschuss zur Krankenversicherung verlierst. Genau das lässt sich vorher durchrechnen.</p>
+      </div></div>
     </section>
 
-    <section id="hoehe-abgabe" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Wie hoch kann die K&uuml;nstlersozialabgabe ausfallen?</h3>
-          <p>Seit dem Jahr 2000 ist der Abgabesatz f&uuml;r alle k&uuml;nstlerischen und publizistischen Leistungen in etwa auf dem gleichen Niveau und changiert zwischen vier und f&uuml;nf Prozent. Die prozentuale H&ouml;he der K&uuml;nstlersozialabgabe wird bis zum 30. September f&uuml;r das folgende Kalenderjahr neu festgelegt. Verantwortlich f&uuml;r die Anpassung ist die Verordnung des Bundesministeriums f&uuml;r Arbeit und Soziales zur K&uuml;nstlersozialabgabe.</p>
-          <p>2016 lag der Satz f&uuml;r die Abgabe noch bei 5,2 Prozent und wurde dann mit dem 1. Januar 2017 auf 4,8 Prozent gesenkt. Seit 2018 verharrte der Abgabesatz unver&auml;ndert bei 4,2 Prozent, wurde aber bedingt durch die Pandemie ab 2023 auf 5% angehoben. Der Bund hat die Unterst&uuml;tzung erh&ouml;ht, weil der Abgabensatz sonst st&auml;rker steigen m&uuml;sste.</p>
-          <p>Auch f&uuml;r 2024 steht schon fest, dass es bei 5,0 % bleiben wird.</p>
-        </div>
-      </div>
+    <section id="anmeldung" class="sozialabgabe-section bg-light">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Unternehmen und Verwerter</span>
+        <h2>Wie erfolgen Anmeldung, Meldung und Prüfung?</h2>
+        <p>Ein Unternehmen registriert sich bei der Künstlersozialkasse und erhält eine Abgabenummer. Die im Vorjahr gezahlten abgabepflichtigen Entgelte werden grundsätzlich bis zum 31. März des Folgejahres gemeldet. Aufzeichnungen und Belege müssen nachvollziehbar geführt und aufbewahrt werden.</p>
+        <p>Die Deutsche Rentenversicherung prüft die Künstlersozialabgabe im Rahmen von Arbeitgeberprüfungen. Wurde die Abgabepflicht nicht oder nicht vollständig gemeldet, können Beiträge grundsätzlich für fünf Jahre nacherhoben werden; Säumniszuschläge können hinzukommen.</p>
+      </div></div>
     </section>
 
-    <section id="nicht-gemeldet" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Was passiert, wenn man die Abgabepflicht zur K&uuml;nstlersozialabgabe nicht meldet?</h3>
-          <p>Seit 2015 besteht ein versch&auml;rftes Gesetz zur Pr&uuml;fung der ordnungsgem&auml;&szlig;en Abgabe, das K&uuml;nstlersozialabgabestabilisierungsgesetz (KSAStabG).</p>
-          <p>Im Rahmen der Sozialversicherungspr&uuml;fung in Betrieben &uuml;berpr&uuml;ft die Deutsche Rentenversicherung auch die Richtigkeit aller Angaben zur K&uuml;nstlersozialabgabe. Bei Unternehmen mit &uuml;ber 19 Mitarbeitern, die bereits bei der K&uuml;nstlersozialkasse registriert sind, wird mindestens alle 4 Jahre eine Pr&uuml;fung f&auml;llig. Bei allen &uuml;brigen wird die Betriebspr&uuml;fung sp&auml;testens nach 10 Jahren durchgef&uuml;hrt. Waren es bisher durchschnittlich 70.000 Betriebspr&uuml;fungen im Jahr, soll der Schnitt in K&uuml;rze bei einer Gr&ouml;&szlig;enordnung von 400.000 liegen.</p>
-          <p>Unternehmen, die keine oder eine zu geringe K&uuml;nstlersozialabgabe gezahlt haben, werden f&uuml;r 5 Jahre r&uuml;ckwirkend zu einer Nachzahlung mit zus&auml;tzlichen S&auml;umniszuschl&auml;gen aufgefordert. Weiterhin k&ouml;nnen Bu&szlig;gelder bis zu &euro; 50.000.- verh&auml;ngt werden. Ein begr&uuml;ndeter Widerspruch gegen den Beschluss muss binnen eines Monats erfolgen. Wird der Widerspruch abgewiesen, hilft nur noch eine Klage beim Sozialgericht.</p>
+    <section id="weitere-ksk-themen" class="sozialabgabe-section">
+      <div class="container page-container"><div class="sozialabgabe-copy">
+        <span class="dachzeile">Für Künstler:innen und Publizist:innen</span>
+        <h2>Weitere KSK-Themen verständlich erklärt</h2>
+        <div class="sozialabgabe-pillars">
+          <article class="sozialabgabe-pillar-card"><h3>Wer kann über die KSK versichert werden?</h3><p>Versichert werden können selbständige Künstler:innen und Publizist:innen, die ihre Tätigkeit erwerbsmäßig ausüben. Eine geringfügige Beschäftigung bleibt möglich — bis zur monatlichen Geringfügigkeitsgrenze, die 2026 bei 603 € liegt.</p><p><a class="ksk-text-link" href="kuenstlersozialkasse.html">Künstlersozialkasse</a></p></article>
+          <article class="sozialabgabe-pillar-card"><h3>KSK-Antrag und Aufnahme</h3><p>Wer die gesetzlichen Voraussetzungen erfüllt, ist nach dem KSVG versicherungspflichtig. Wer mit der selbständigen künstlerischen oder publizistischen Tätigkeit nicht mehr als 3.900 € im Jahr erzielt, ist grundsätzlich versicherungsfrei; für Berufsanfänger:innen gelten wichtige Ausnahmen.</p><p><a class="ksk-text-link" href="antrag-und-aufnahme.html">KSK-Antrag und Aufnahme</a></p></article>
+          <article class="sozialabgabe-pillar-card"><h3>KSK-Beitrag: Höhe und Berechnung</h3><p>Die Beitragshöhe richtet sich nach dem voraussichtlichen Jahresarbeitseinkommen und den geltenden Beitragssätzen. Änderungen der Prognose wirken grundsätzlich für die Zukunft.</p><p><a class="ksk-text-link" href="ksk-beitraege-kosten.html">KSK-Beitrag: Höhe und Berechnung</a></p></article>
         </div>
-      </div>
+        <p style="margin-top:28px;">Mitglieder von Freie Wildbahn e.V. klären solche Fragen jederzeit mit uns, ohne Zusatzkosten. Bist Du noch nicht Mitglied, ist die <strong>KSK-Beratung</strong> Dein Einstieg — und wird auf Deinen ersten Jahresbeitrag angerechnet, wenn Du Dich danach für eine Mitgliedschaft entscheidest.</p>
+        <div class="sozialabgabe-cta-row"><a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a><a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a></div>
+      </div></div>
     </section>
 
-    <section id="mitglied-werden" class="sozialabgabe-section bg-light">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy centered-media-layout">
-          <h3>Wer kann Mitglied in der K&uuml;nstlersozialkasse werden?</h3>
-          <div class="sozialabgabe-media">
-            <img src="../assets/AdobeStock_422978452-1920w.jpg" alt="K&uuml;nstlersozialabgabe">
-          </div>
-          <p>Die K&uuml;nstlersozialkasse unterst&uuml;tzt alle selbst&auml;ndigen K&uuml;nstler und Publizisten, die von ihrer T&auml;tigkeit ihren Lebensunterhalt finanzieren. Wer als Freiberufler in einer k&uuml;nstlerischen oder publizistischen Branche t&auml;tig ist, tut gut daran, sich schon zu Beginn seiner beruflichen Laufbahn um eine Mitgliedschaft in der K&uuml;nstlersozialkasse zu bem&uuml;hen.</p>
-          <p>Der Definition der K&uuml;nstlersozialkasse zufolge z&auml;hlen zu den m&ouml;glichen Versicherten alle Personen, die Kunst oder Publizistik lehren oder aus&uuml;ben, alle Autoren und Journalisten, alle Musiker sowie alle bildenden oder darstellenden K&uuml;nstler.</p>
-          <p>Wenn Sie nachweisen k&ouml;nnen, dass Sie in einem dieser Bereiche einer selbst&auml;ndigen erwerbsm&auml;&szlig;igen T&auml;tigkeit nachgehen, sind Sie potenziell ein Anw&auml;rter auf die Mitgliedschaft in der K&uuml;nstlersozialkasse.</p>
-          <p>Haben Sie im Rahmen Ihrer T&auml;tigkeit mehr als einen sozialversicherungspflichtigen Besch&auml;ftigten angestellt, ist eine Mitgliedschaft ausgeschlossen. Sind die Mitarbeiter allerdings zum Zwecke der Berufsausbildung angestellt oder nur geringf&uuml;gig besch&auml;ftigt, also auf 450,- Euro-Basis oder darunter, k&ouml;nnen Sie immer noch in die K&uuml;nstlersozialkasse aufgenommen werden.</p>
-          <p>Wenn Sie als Mitglied unseres Vereins Fragen zu Ihrer spezifischen Situation haben, kontaktieren Sie uns. Wir erl&auml;utern Ihnen die Details. Nichtmitglieder k&ouml;nnen bei uns gerne ein Erstberatungsgespr&auml;ch vereinbaren.</p>
-        </div>
-      </div>
+    <section id="faq" class="sozialabgabe-section bg-light">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <span class="dachzeile">FAQ</span>
+        <h2>Häufige Fragen zur Künstlersozialabgabe</h2>
+        <div class="sozialabgabe-note"><p><strong>Wie hoch ist die Künstlersozialabgabe?</strong></p><p>2026 beträgt sie 4,9 % der abgabepflichtigen Entgelte. Für 2027 sieht der aktuelle Verordnungsentwurf 5,0 % vor.</p></div>
+        <div class="sozialabgabe-note"><p><strong>Wie berechnet man die KSK-Abgabe?</strong></p><p>Du summierst die abgabepflichtigen Entgelte des Kalenderjahres und multiplizierst sie mit dem geltenden Abgabesatz.</p></div>
+        <div class="sozialabgabe-note"><p><strong>Muss die Künstlersozialabgabe auf der Rechnung ausgewiesen werden?</strong></p><p>Nein. Die Melde- und Zahlungspflicht liegt beim abgabepflichtigen Unternehmen.</p></div>
+      </div></div>
     </section>
 
-    <section id="antrag-mitgliedschaft" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Wie stellt man einen Antrag auf die Mitgliedschaft in der K&uuml;nstlersozialkasse?</h3>
-          <p>Ein K&uuml;nstler braucht nicht zwingend Mitglied in der K&uuml;nstlersozialkasse zu sein, aber f&uuml;r die meisten kreativen Berufe lohnt sich diese Form der Absicherung.</p>
-          <p>F&uuml;r einen Antrag auf die Versicherung in der K&uuml;nstlersozialkasse l&auml;sst man sich die entsprechenden Formulare aus Wilhelmshaven zukommen und sendet diese zusammen mit einigen Nachweisen &uuml;ber die k&uuml;nstlerische oder publizistische T&auml;tigkeit zur&uuml;ck.</p>
-          <p>Wer mit seiner selbst&auml;ndigen T&auml;tigkeit als K&uuml;nstler oder Publizist nicht die j&auml;hrliche Mindestgrenze von 3.900,- Euro erreicht, ist von der Versicherungspflicht in der gesetzlichen Renten-, Pflege- und Krankenversicherung befreit.</p>
-          <p>F&uuml;r Berufsanf&auml;nger gilt eine Sonderregelung w&auml;hrend der ersten drei Berufsjahre, beginnend mit der erstmaligen Aufnahme ihrer erwerbsm&auml;&szlig;igen T&auml;tigkeit. Sie sind auch versichert, wenn sie die erforderliche Mindestgrenze von 3.900,- Euro noch nicht erreichen. Hier gilt eine spezielle Schonfrist, weil sie sich ihre Existenzgrundlage erst noch erarbeiten m&uuml;ssen. Sollte die selbst&auml;ndige T&auml;tigkeit in der Anfangsphase dar&uuml;ber hinaus noch durch einen freiwilligen Wehrdienst oder durch Mutterschutz bzw. Elternzeit unterbrochen sein, verl&auml;ngern sich die 3 Jahre um den entsprechenden zeitlichen Anteil.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="mitgliedsbeitraege" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy">
-          <h3>Wie hoch sind die Mitgliedsbeitr&auml;ge in der K&uuml;nstlersozialkasse?</h3>
-          <p>Die Beitr&auml;ge f&uuml;r die K&uuml;nstlersozialkasse werden am Ende des Vorjahres f&uuml;r das kommende Jahr festgelegt. Versicherte geben am Jahresende einer Sch&auml;tzung Ihrer zu erwartenden Eink&uuml;nfte ab, erhalten von der Kasse einen Bescheid &uuml;ber die monatlich zu zahlenden Betr&auml;ge und k&ouml;nnen diese notfalls im Verlauf des Folgejahres korrigieren.</p>
-          <p>Je h&ouml;her das angenommene Einkommen, desto h&ouml;her sind nat&uuml;rlich auch die Betr&auml;ge, die Sie in die gesetzliche Rentenkasse einzahlen und die langfristig Ihre Altersvorsorge sichern.</p>
-          <p>Bei Fragen nach der Bemessung Ihrer individuellen Beitr&auml;ge unterst&uuml;tzen und beraten wir Sie als <a href="http://login.freie-wildbahn.de/registrieren" target="_blank" rel="noopener">Mitglied</a> gern! Nichtmitglieder k&ouml;nnen ein Erstberatungsgespr&auml;ch vereinbaren.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="dienstleistung-kuenstlerisch" class="sozialabgabe-section">
-      <div class="container page-container content-box">
-        <div class="sozialabgabe-copy centered-media-layout">
-          <h3>Ist meine Dienstleistung wirklich k&uuml;nstlerisch?</h3>
-          <div class="sozialabgabe-media">
-            <img src="../assets/kuenstlersozialkasse-maskenbildner-freie-wildbahn-1920w.jpg" alt="K&uuml;nstlersozialabgabe">
-          </div>
-          <p>Ein Nachweis der Qualit&auml;t von k&uuml;nstlerischen oder publizistischen Leistungen ist kein Kriterium f&uuml;r die Aufnahme in der K&uuml;nstlersozialkasse oder f&uuml;r die Bewertung der Abgabepflicht. Auch der Fernsehsender RTL wurde nachtr&auml;glich dazu veranlasst, K&uuml;nstlersozialabgabe zu zahlen, da die Jurorent&auml;tigkeit bei der Sendung &bdquo;Deutschland sucht den Superstar&ldquo; vom Bundessozialgericht als k&uuml;nstlerisch eingestuft wurde.</p>
-          <p>Wer einen Grafiker, einen Fotografen, einen Texter oder einen Webdesigner beauftragt, der fordert damit eine k&uuml;nstlerische Leistung ab. Ein Webmaster oder Administrator, der eine Seite im Internet nur technisch betreut, also ihre Bedienerfreundlichkeit und Aktualit&auml;t auf den neusten Stand bringt, geh&ouml;rt nicht zur Berufsgruppe der K&uuml;nstler.</p>
-          <p>In vielen F&auml;llen werden unterschiedliche teils k&uuml;nstlerische und nichtk&uuml;nstlerische T&auml;tigkeiten ausgef&uuml;hrt. In diesen F&auml;llen ist eine Pr&uuml;fung der individuellen Situation schon fast zwingend, bevor der Antrag an die K&uuml;nstlersozialkasse geht. Je nach Konstellation kann der Bescheid der K&uuml;nstlersozialkasse dann auch nur die Rentenversicherungspflicht ergeben. An den Kosten f&uuml;r die Krankenversicherung beteiligt sich die KSK dann nicht. Gleiches gilt f&uuml;r sich ver&auml;ndernde Gewichtungen der eigenen T&auml;tigkeitsbereiche. Auch hier macht nicht jeder Umsatz Sinn, sofern dieser zum Ausschluss aus der Unterst&uuml;tzung zur Krankenversicherung f&uuml;hrt.</p>
-          <p>Sollten Sie als Mitglied unseres Vereins noch Fragen zur Einstufung Ihrer spezifischen T&auml;tigkeit(en) haben - per Email oder telefonisch sind wir f&uuml;r Sie erreichbar! Nichtmitglieder beraten wir gerne in einem <a href="ksk-beratung.html">Erstgespr&auml;ch</a>.</p>
-          <div class="sozialabgabe-cta-row">
-            <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sozialabgabe-final-cta">
-      <div class="container page-container"></div>
+    <section class="sozialabgabe-section sozialabgabe-final-cta">
+      <div class="container page-container content-box"><div class="sozialabgabe-copy">
+        <h2>Deine Situation zur Künstlersozialabgabe sicher einordnen</h2>
+        <p>Mitglieder von Freie Wildbahn e.V. klären solche Fragen jederzeit mit uns, ohne Zusatzkosten. Bist Du noch nicht Mitglied, ist die <strong>KSK-Beratung</strong> Dein Einstieg — und wird auf Deinen ersten Jahresbeitrag angerechnet, wenn Du Dich danach für eine Mitgliedschaft entscheidest.</p>
+        <div class="sozialabgabe-cta-row"><a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a><a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a></div>
+      </div></div>
     </section>
   </main>
 
