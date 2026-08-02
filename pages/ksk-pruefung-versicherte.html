@@ -198,6 +198,40 @@
     .ksk-pruefung-page .ksk-support-callout .ksk-cta-pair {
       margin-top: 20px;
     }
+    .ksk-pruefung-page .ksk-pruefung-price-box {
+      margin: 0 0 42px;
+    }
+    .ksk-pruefung-page .ksk-pruefung-price-table-wrap {
+      margin: 26px 0;
+      overflow-x: auto;
+    }
+    .ksk-pruefung-page .ksk-pruefung-price-table {
+      width: 100%;
+      min-width: 620px;
+      border: 1px solid var(--border-light);
+      border-collapse: collapse;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .ksk-pruefung-page .ksk-pruefung-price-table th,
+    .ksk-pruefung-page .ksk-pruefung-price-table td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 15px;
+      line-height: 1.5;
+      text-align: left;
+      vertical-align: middle;
+    }
+    .ksk-pruefung-page .ksk-pruefung-price-table th {
+      background: var(--primary-green);
+      color: #fff;
+      font-weight: 700;
+    }
+    .ksk-pruefung-page .ksk-pruefung-price-table tr:last-child td {
+      border-bottom: 0;
+    }
     .ksk-pruefung-page .ksk-alert-list .bullets-list-item {
       gap: 14px;
     }
@@ -559,6 +593,19 @@
           </ul>
           <div class="ksk-support-callout">
             <p><strong>Du benötigst Sofort-Hilfe?</strong> Wir helfen Dir bei der <strong>Einkommensprüfung durch die KSK</strong>. Wir konnten bereits viele Freiberufler bei KSK-Prüfungen unterstützen, <strong>Risiken frühzeitig zu erkennen, Bußgelder zu verringern oder mögliche Strafen zu vermeiden</strong>. Lass Dich deshalb <strong>rechtzeitig beraten</strong>, bevor Du Angaben machst, bei denen Du Dir unsicher bist.</p>
+          </div>
+
+          <div class="ksk-pruefung-price-box">
+            <h3>Was eine KSK-Beratung zur Prüfung kostet</h3>
+            <div class="ksk-pruefung-price-table-wrap">
+              <table class="ksk-pruefung-price-table">
+                <thead><tr><th>Das trifft auf Dich zu</th><th>Preis</th></tr></thead>
+                <tbody><tr><td>Du arbeitest allein als Freiberufler:in</td><td><strong>149,95 € inkl. 19 % MwSt.</strong></td></tr><tr><td>Du bist Gesellschafter:in einer GbR, UG oder GmbH</td><td><strong>190,40 € inkl. 19 % MwSt.</strong></td></tr></tbody>
+              </table>
+            </div>
+            <p><strong>Dauer:</strong> 45 Minuten.</p>
+            <p><strong>Du zahlst nichts doppelt.</strong></p>
+            <p>Deine Beratung bezahlst Du direkt bei der Buchung. Entscheidest Du Dich danach für eine Mitgliedschaft bei Freie Wildbahn e.V., schreiben wir Dir den Betrag gut. Vom ersten Jahresbeitrag musst Du dann nur noch die Differenz begleichen.</p>
             <div class="ksk-cta-pair">
               <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
               <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
@@ -677,31 +724,39 @@
 
         <ul class="bullets-list ksk-alert-list" style="margin-top: 0;">
           <li class="bullets-list-item">
-            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
-            <div class="bullets-list-text"><p><strong>Mindesteinkommen:</strong> Ein Ausschluss aus der Versicherung über die KSK kann in Betracht kommen, wenn das jährliche Mindesteinkommen von <strong>3.900 Euro</strong> innerhalb von sechs Jahren mehr als zweimal unterschritten wurde. <strong>Ein einmaliges Unterschreiten bedeutet daher nicht automatisch, dass Deine Versicherungspflicht sofort endet.</strong></p></div>
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">🚨</span>
+            <div class="bullets-list-text"><p><strong>ACHTUNG: Mindesteinkommen:</strong> Ein Ausschluss aus der Versicherung über die KSK kann in Betracht kommen, wenn das jährliche Mindesteinkommen von 3.900 Euro innerhalb von sechs Jahren mehr als zweimal unterschritten wurde. Ein einmaliges Unterschreiten bedeutet daher nicht automatisch, dass Deine Versicherungspflicht sofort endet.</p></div>
           </li>
           <li class="bullets-list-item">
-            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">🚨</span>
             <div class="bullets-list-text">
-              <p><strong>Kranken- und Pflegeversicherung:</strong> Eine zusätzliche Beschäftigung oder eine weitere nicht künstlerische bzw. nicht publizistische selbständige Tätigkeit kann Deinen Versicherungsschutz nach dem Künstlersozialversicherungsgesetz (KSVG) beeinflussen. Entscheidend sind <strong>Art, Umfang und wirtschaftliche Bedeutung der jeweiligen Tätigkeit</strong>. Pauschale Aussagen allein anhand einer einzelnen Monatsgrenze reichen dafür nicht aus.</p>
-              <p>Je nach Art und Umfang Deiner zusätzlichen Tätigkeit kann sich daraus eine andere sozialversicherungsrechtliche Einordnung ergeben. In solchen Fällen kann die KSK weiterhin Beiträge zur Rentenversicherung verlangen, während für die Krankenversicherung eine andere Absicherung erforderlich werden kann. Dabei können zusätzliche Krankenversicherungsbeiträge von <strong>400 Euro monatlich oder mehr</strong> entstehen.</p>
+              <p><strong>ACHTUNG: Kranken- und Pflegeversicherung:</strong> Eine zusätzliche Beschäftigung oder eine weitere nicht künstlerische bzw. nicht publizistische selbständige Tätigkeit kann Deinen Versicherungsschutz nach dem Künstlersozialversicherungsgesetz (KSVG) beeinflussen. Entscheidend sind Art, Umfang und wirtschaftliche Bedeutung der jeweiligen Tätigkeit. Pauschale Aussagen allein anhand einer einzelnen Monatsgrenze reichen dafür nicht aus.</p>
+              <p>Je nach Art und Umfang Deiner zusätzlichen Tätigkeit kann sich daraus eine andere sozialversicherungsrechtliche Einordnung ergeben. In solchen Fällen kann die KSK weiterhin Beiträge zur Rentenversicherung verlangen, während für die Krankenversicherung eine andere Absicherung erforderlich werden kann. Dabei können zusätzliche Krankenversicherungsbeiträge von 400 Euro monatlich oder mehr entstehen.</p>
             </div>
           </li>
           <li class="bullets-list-item">
             <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
-            <div class="bullets-list-text"><p><strong>Private Krankenversicherung und Beitragszuschüsse:</strong> Wenn Du privat krankenversichert bist und einen Beitragszuschuss der KSK erhältst, können Abweichungen zwischen Deinem geschätzten und Deinem tatsächlich erzielten Einkommen relevant werden. Je nach Deinem konkreten Versicherungs- und Zuschussfall kann es zu <strong>Korrekturen oder Rückforderungen</strong> kommen. Dabei kann es schnell um vierstellige Beträge gehen.</p></div>
+            <div class="bullets-list-text"><p><strong>WICHTIG: Private Krankenversicherung und Beitragszuschüsse:</strong> Wenn Du privat krankenversichert bist und einen Beitragszuschuss der KSK erhältst, können Abweichungen zwischen Deinem geschätzten und Deinem tatsächlich erzielten Einkommen relevant werden. Je nach Deinem konkreten Versicherungs- und Zuschussfall kann es zu Korrekturen oder Rückforderungen kommen. Dabei kann es schnell um vierstellige Beträge gehen.</p></div>
+          </li>
+          <li class="bullets-list-item">
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">🚨</span>
+            <div class="bullets-list-text">
+              <p><strong>ACHTUNG: Bußgeld bei falschen oder unvollständigen Angaben:</strong> § 36 Abs. 1 KSVG sieht für bestimmte vorsätzliche oder fahrlässige Verstöße gegen Melde-, Auskunfts- und Vorlagepflichten Geldbußen von bis zu 5.000 Euro vor.</p>
+              <p>Erkennt die Künstlersozialkasse oder die Deutsche Rentenversicherung bei der Überprüfung Deiner Einkommen der Vorjahre systematisch erheblich zu niedrige Einkommensschätzungen, droht ein Bußgeld bis zu einer Höhe von 5.000 Euro.</p>
+            </div>
           </li>
           <li class="bullets-list-item">
             <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
-            <div class="bullets-list-text">
-              <p>Viele stellen sich natürlich die Frage: <strong>„KSK-Nachzahlung – wie hoch fällt sie aus?“</strong></p>
-              <p>Ergeben sich bei der Gegenüberstellung Deines gemeldeten Einkommens und Deines tatsächlichen Arbeitseinkommens größere Abweichungen, bedeutet das <strong>nicht automatisch</strong>, dass bereits festgesetzte monatliche KSK-Beiträge rückwirkend neu berechnet werden. <strong>Größere Abweichungen können jedoch weitere oder detailliertere Prüfungen auslösen.</strong></p>
-            </div>
+            <div class="bullets-list-text"><p><strong>WICHTIG: Weitere oder detailliertere Prüfungen:</strong> Ergeben sich bei der Gegenüberstellung Deines gemeldeten Einkommens und Deines tatsächlichen Arbeitseinkommens größere Abweichungen, bedeutet das nicht automatisch, dass bereits festgesetzte monatliche KSK-Beiträge rückwirkend neu berechnet werden. Größere Abweichungen können jedoch weitere oder detailliertere Prüfungen auslösen.</p></div>
+          </li>
+          <li class="bullets-list-item">
+            <span class="bullets-list-icon" style="fill: none !important; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center;">⚠️</span>
+            <div class="bullets-list-text"><p><strong>WICHTIG: Zu hoch geschätztes Einkommen:</strong> Hast Du Dein Einkommen zu hoch geschätzt, können daraus höhere monatliche KSK-Beiträge entstanden sein, die rückwirkend grundsätzlich nicht korrigiert werden.</p></div>
           </li>
         </ul>
         <div class="lower-section-copy">
           <p>Gerade deshalb geht es bei einer KSK-Prüfung nicht nur darum, Zahlen in ein Formular einzutragen. Entscheidend ist, <strong>welche Angaben die KSK konkret prüft, welche Unterlagen verlangt werden und welche Auswirkungen sich daraus für Deinen individuellen Fall ergeben können.</strong></p>
-          <p>Du möchtest mögliche Folgen Deiner KSK-Prüfung einordnen lassen?</p>
+          <p>Diese Liste soll Dir keine Angst machen — sie zeigt, warum eine KSK-Prüfung kein Fall für Bauchgefühl ist. Die gute Nachricht: Fast alle diese Konsequenzen lassen sich vermeiden, wenn Du strukturiert und rechtzeitig antwortest. Genau dabei unterstützen wir Dich — mit der praktischen Erfahrung von Freie Wildbahn e.V. aus tausenden KSK-Fällen.</p>
           <div class="ksk-cta-pair">
             <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
             <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
@@ -775,13 +830,13 @@
         <div class="lower-section-copy">
           <h2>Häufige Fragen zur KSK-Prüfung</h2>
           <div class="ksk-faq" data-ksk-faq>
-            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-1" aria-expanded="true" aria-controls="pruefung-faq-answer-1"><span>Was ist eine KSK-Prüfung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-1" role="region" aria-labelledby="pruefung-faq-question-1"><p>Eine KSK-Prüfung ist eine Überprüfung durch die Künstlersozialkasse. Im Rahmen einer jährlichen Stichprobe bei <strong>5 % der KSK-Versicherten</strong> – etwa 10.000 Personen – wird die KSK Nachweise zum tatsächlichen Arbeitseinkommen der vergangenen Jahre anfordern. Abgegeben werden müssen Steuerbescheide und andere Nachweise für maximal sechs vorangegangene Jahre, um diese zu überprüfen und mit Deinen zuvor gemachten Angaben zu vergleichen. Auch die Tätigkeitsbereiche werden hierbei standardmäßig erneut abgefragt. Daneben sind auch anlassbezogene Prüfungen möglich.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-1" aria-expanded="true" aria-controls="pruefung-faq-answer-1"><span>Was ist eine KSK-Prüfung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-1" role="region" aria-labelledby="pruefung-faq-question-1"><p>Eine KSK-Prüfung ist eine Überprüfung durch die Künstlersozialkasse. Im Rahmen einer jährlichen Stichprobe bei <strong>5 % der KSK-Versicherten</strong> – etwa 10.000 Personen – wird die KSK Nachweise zum tatsächlichen Arbeitseinkommen der vergangenen Jahre anfordern. Abgegeben werden müssen Steuerbescheide und andere Nachweise für in der Regel vier bis sechs Vorjahre, um diese zu überprüfen und mit Deinen zuvor gemachten Angaben zu vergleichen. Auch die Tätigkeitsbereiche werden hierbei standardmäßig erneut abgefragt. Daneben sind auch anlassbezogene Prüfungen möglich.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-2" aria-expanded="false" aria-controls="pruefung-faq-answer-2"><span>Warum fragt die Künstlersozialkasse nach meinem tatsächlichen Arbeitseinkommen der Vorjahre?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-2" role="region" aria-labelledby="pruefung-faq-question-2" hidden><p>Deine laufenden Beiträge beruhen auf dem <strong>voraussichtlichen Jahresarbeitseinkommen</strong>, das Du im Voraus schätzt und der KSK meldest. Bei einer Stichprobenprüfung wird die KSK später Nachweise zum tatsächlich erzielten Arbeitseinkommen verlangen und Deine Angaben aus zurückliegenden Jahren überprüfen.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-3" aria-expanded="false" aria-controls="pruefung-faq-answer-3"><span>Was ist der Unterschied zwischen voraussichtlichem und tatsächlichem Arbeitseinkommen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-3" role="region" aria-labelledby="pruefung-faq-question-3" hidden><p>Das voraussichtliche Arbeitseinkommen ist Deine <strong>Prognose für das kommende Kalenderjahr</strong>. Das tatsächliche Arbeitseinkommen ergibt sich später aus dem realen Gewinn Deiner selbständigen künstlerischen oder publizistischen Tätigkeit. Der Unterschied zwischen beiden sollte nicht zu groß sein.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-4" aria-expanded="false" aria-controls="pruefung-faq-answer-4"><span>Welche Unterlagen brauche ich für eine KSK-Prüfung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-4" role="region" aria-labelledby="pruefung-faq-question-4" hidden><p>Welche Unterlagen Du brauchst, steht in <strong>Deinem konkreten KSK-Schreiben</strong>. Bei der aktuellen Stichprobenpraxis kann die KSK insbesondere Einkommensteuerbescheide der zurückliegenden Jahre verlangen. Reiche nicht vorsorglich wahllos Unterlagen ein, sondern orientiere Dich an der konkreten Anforderung.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-5" aria-expanded="false" aria-controls="pruefung-faq-answer-5"><span>Welche Frist gilt bei einer KSK-Prüfung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-5" role="region" aria-labelledby="pruefung-faq-question-5" hidden><p>Maßgeblich ist die <strong>Frist in Deinem eigenen Schreiben der Künstlersozialkasse</strong>. Verlass Dich nicht auf alte Musterformulare oder frühere Jahresfristen.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-6" aria-expanded="false" aria-controls="pruefung-faq-answer-6"><span>Muss ich das Formular sofort ausfüllen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-6" role="region" aria-labelledby="pruefung-faq-question-6" hidden><p>Du solltest <strong>nicht überhastet antworten</strong>. Du solltest das Schreiben aber auch nicht liegen lassen. Prüfe zuerst, welche Angaben verlangt werden, welche Unterlagen dazugehören und welche Frist gilt.</p></div></div>
-            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-7" aria-expanded="false" aria-controls="pruefung-faq-answer-7"><span>Was passiert, wenn ich mein Einkommen zu niedrig geschätzt habe?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-7" role="region" aria-labelledby="pruefung-faq-question-7" hidden><p>Eine zu niedrige Schätzung führt <strong>nicht automatisch zu einer rückwirkenden Korrektur bereits festgesetzter Monatsbeiträge</strong>. Problematisch können jedoch unrichtige oder unvollständige Angaben und Verstöße gegen gesetzliche Melde-, Auskunfts- oder Vorlagepflichten sein. Erkennt die Künstlersozialkasse oder die Deutsche Rentenversicherung bei der Überprüfung Deiner Einkommen der Vorjahre systematisch erheblich zu gering geschätzte Einkommensschätzungen, droht ein Bußgeld bis zu einer Höhe von <strong>5.000 Euro</strong>.</p></div></div>
+            <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-7" aria-expanded="false" aria-controls="pruefung-faq-answer-7"><span>Was passiert, wenn ich mein Einkommen zu niedrig geschätzt habe?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-7" role="region" aria-labelledby="pruefung-faq-question-7" hidden><p>Eine zu niedrige Schätzung führt <strong>nicht automatisch zu einer rückwirkenden Korrektur bereits festgesetzter Monatsbeiträge</strong>. Problematisch können jedoch unrichtige oder unvollständige Angaben und Verstöße gegen gesetzliche Melde-, Auskunfts- oder Vorlagepflichten sein. Erkennt die Künstlersozialkasse oder die Deutsche Rentenversicherung bei der Überprüfung Deiner Einkommen der Vorjahre systematisch erheblich zu niedrige Einkommensschätzungen, droht ein Bußgeld bis zu einer Höhe von <strong>5.000 Euro</strong>.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-8" aria-expanded="false" aria-controls="pruefung-faq-answer-8"><span>Droht mir bei einer KSK-Prüfung automatisch eine Nachzahlung?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-8" role="region" aria-labelledby="pruefung-faq-question-8" hidden><p><strong>Nein.</strong> Eine Abweichung zwischen Prognose und tatsächlichem Einkommen bedeutet nicht automatisch, dass bereits gezahlte KSK-Beiträge rückwirkend neu berechnet werden. Andere finanzielle oder versicherungsrechtliche Folgen können je nach Sachverhalt trotzdem relevant sein und unterschiedliche Konsequenzen haben.</p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-9" aria-expanded="false" aria-controls="pruefung-faq-answer-9"><span>Kann meine Versicherungspflicht durch eine KSK-Prüfung entfallen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-9" role="region" aria-labelledby="pruefung-faq-question-9" hidden><p>Wenn die gesetzlichen Voraussetzungen für die Versicherung nach dem KSVG nicht mehr erfüllt sind, kann sich Dein Versicherungsstatus ändern. <strong>Ein einmaliges Unterschreiten des Mindesteinkommens führt aber nicht automatisch dazu.</strong></p></div></div>
             <div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="pruefung-faq-question-10" aria-expanded="false" aria-controls="pruefung-faq-answer-10"><span>Was passiert nach der Einreichung meiner Unterlagen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="pruefung-faq-answer-10" role="region" aria-labelledby="pruefung-faq-question-10" hidden><p>Die KSK prüft Deine Angaben und kann bei Bedarf <strong>weitere Unterlagen oder Erläuterungen anfordern</strong>. Je nach Ergebnis kann die Prüfung ohne weitere Folgen abgeschlossen werden oder zu einer weiteren Entscheidung über Deinen Versicherungsstatus oder andere Punkte führen.</p></div></div>
