@@ -461,6 +461,30 @@
         width: 100%;
       }
     }
+    /* Page-only reading size for the Vorteile page */
+    .vorteile-page section p,
+    .vorteile-page section li,
+    .vorteile-page section blockquote,
+    .vorteile-page .hero-description,
+    .vorteile-page .bullets-list-text,
+    .vorteile-page section div[style*="font-size: 15px"],
+    .vorteile-page .vorteile-faq-panel p,
+    .vorteile-page .vorteile-faq-panel li,
+    .vorteile-page .vorteile-final-cta p {
+      font-size: 20px !important;
+    }
+    .vorteile-page .bullets-list {
+      width: 100%;
+      max-width: 100%;
+    }
+    .vorteile-page .bullets-list-text {
+      min-width: 0;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+    .vorteile-page .bullets-list-text small {
+      font-size: inherit;
+    }
   </style>
 </head>
 <body>
@@ -579,7 +603,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="vorteile-page">
 
     <!-- ── HERO ── -->
     <section class="inner-page-hero section-padding">
@@ -587,8 +611,8 @@
         <div class="hero-text-col" style="grid-column: 1; order: 1;">
           <span class="dachzeile">Mitgliedschaftsvorteile Freie Wildbahn e.V.</span>
           <h1>Vorteile der Mitgliedschaft bei Freie Wildbahn e.V.</h1>
-          <p class="hero-description" style="margin-bottom: 12px;">Sie sind freiberuflicher Medienschaffender, Publizist oder Künstler und benötigen professionelle Beratung im Bereich Künstlersozialkasse oder allgemein zur Absicherung &amp; Vorsorge?</p>
-          <p class="hero-description">Als Mitglied von Freie Wildbahn e.V. stehen wir Ihnen ganzjährig mit Rat und Tat zu folgenden Themen zur Seite:</p>
+          <p class="hero-description" style="margin-bottom: 12px;">Du bist freiberuflicher Medienschaffender, Publizist oder Künstler und benötigst professionelle Beratung im Bereich Künstlersozialkasse oder allgemein zur Absicherung &amp; Vorsorge?</p>
+          <p class="hero-description">Als Mitglied von Freie Wildbahn e.V. stehen wir Dir ganzjährig mit Rat und Tat zu folgenden Themen zur Seite:</p>
           <ul class="bullets-list">
             <li class="bullets-list-item">
               <svg class="bullets-list-icon" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 5.917L5.724 10.5 15 1.5"/></svg>
@@ -603,9 +627,9 @@
               <span class="bullets-list-text">Aufbau <strong>soziales Netz</strong></span>
             </li>
           </ul>
-          <div class="hero-cta-wrapper">
+          <div class="hero-cta-wrapper" data-global-cta-skip>
             <a href="ksk-beratung.html" class="btn btn-orange">
-              Vorteile KSK-Beratung
+              KSK-Beratung
               <svg class="btn-arrow" viewBox="0 0 320 512"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg>
             </a>
             <span class="hero-cta-note">Vor einer Mitgliedschaft immer eine 1. Beratung buchen</span>
@@ -669,15 +693,15 @@
 
         <div class="vorteile-expert-card team-style" style="text-align: left; max-width: 780px; margin: 0 auto 32px;">
           <div class="expert-photo">
-            <img src="../assets/detlef-husemann-freie-wildbahn-ksk-berater-1920w.jpg" alt="Detlef Husemann">
+            <img src="../assets/detlef-husemann-card-red-background.png" alt="Detlef Husemann">
             <div class="expert-name">Detlef Husemann</div>
-            <div class="expert-role">KSK Experte und Gründer von Freie Wildbahn e.V.</div>
+            <div class="expert-role">Vorsitzender von Freie Wildbahn e.V. und KSK-Experte</div>
           </div>
-          <blockquote>Profitieren Sie langfristig von einer deutlich günstigeren Sozialversicherung, wenn Sie durch unsere Beratung Mitglied in der Künstlersozialkasse werden. Denn nach der Aufnahme in die Künstlersozialkasse <strong>sparen Sie als Mitglied mehrere hundert Euro monatlich</strong> für Ihre Sozialversicherung.</blockquote>
+          <blockquote>Wenn Du nach dem Künstlersozialversicherungsgesetz (KSVG) versichert wirst, beteiligt sich die Künstlersozialversicherung an den Beiträgen zur gesetzlichen Kranken-, Pflege- und Rentenversicherung.<br><br>Wie hoch Deine persönliche Entlastung ausfällt, hängt von Deiner individuellen Versicherungs- und Einkommenssituation ab.</blockquote>
         </div>
 
-        <div style="margin-top: 16px;">
-          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <div style="margin-top: 16px;" data-global-cta-skip>
+          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
         </div>
       </div>
     </section>
@@ -689,7 +713,7 @@
         <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--text-dark);">Inkasso Beratung: Kostenlos für Vereins-Mitglieder</h3>
         <div style="font-size: 15px; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; text-align: left;">
           <p>Hast Du manchmal mit Kunden zu tun, die auch nach der dritten Mahnung Deine <strong>Dienstleistung nicht bezahlen</strong>?</p>
-          <p>Unsere Partnerkanzlei bietet Dir als Vereinsmitglied für solche Fälle außerbehördlich und außergerichtlich eine <strong>kostenfreie Inkassoberatung</strong> an.</p>
+          <p>Unsere Partnerkanzlei bietet Dir als Vereinsmitglied für solche Fälle eine <strong>kostenfreie außergerichtliche Inkassoberatung</strong> an.</p>
           <p>Diese umfasst die Prüfung, ob die Forderung bislang unbestritten ist und bei weiterer Beauftragung die Voraussetzungen für eine <strong>Kostenübernahme durch die Gegenseite</strong> erfüllt sind.</p>
           <p>Solltest Du die Partnerkanzlei mit der weiteren Geltendmachung der Forderung beauftragen, so wird die außergerichtliche Tätigkeit Dir nur dann in Rechnung gestellt, wenn das Verfahren erfolgreich ist und die Gegenseite <strong>rechtlich zur Erstattung der entstandenen Kosten verpflichtet ist</strong>.</p>
           <p>Falls die außergerichtliche Tätigkeit jedoch nicht zum Erfolg führt, wird Dir als Vereinsmitglied der Aufwand hierfür nicht berechnet, sodass für Dich <strong>kein Kostenrisiko</strong> besteht.</p>
@@ -697,7 +721,7 @@
           <p>In diesem Fall fallen jedoch gesetzliche Mindestgebühren in Form von Gerichts- und Anwaltskosten an, welche wir Dir <strong>vorab transparent kommunizieren</strong> werden.</p>
           <p>Du kannst dann frei entscheiden, ob Du die Forderung weiter gerichtlich verfolgen lassen möchtest oder ob Du das Verfahren einstellen willst, <strong>ohne ein Kostenrisiko zu tragen</strong>.</p>
           <p>Hast Du eine offene Forderung und möchtest unseren Inkassoservice in Anspruch nehmen oder hast Du Fragen zu Deinem konkreten Fall?</p>
-          <p>Dann buche gerne einen Termin zur <strong>kostenlosen Inkassoberatung</strong>, bei dem wir Deinen Fall und den genauen Ablauf des Inkassoverfahrens besprechen können.</p>
+          <p>Dann buche gerne einen Termin zur <strong>kostenfreien Inkassoberatung</strong>, bei dem wir Deinen Fall und den genauen Ablauf des Inkassoverfahrens besprechen können.</p>
         </div>
         
         <ul class="bullets-list" style="align-self: flex-start; margin-bottom: 32px;">
@@ -715,8 +739,8 @@
           <blockquote>Als rechtlicher Berater bei Freie Wildbahn e.V. stehe ich unseren Mitgliedern bei Forderungsmanagement und Inkassoverfahren kompetent zur Seite.</blockquote>
         </div>
 
-        <div style="margin-top: 16px;">
-          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <div style="margin-top: 16px;" data-global-cta-skip>
+          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
         </div>
       </div>
     </section>
@@ -747,8 +771,8 @@
           <img src="../assets/AdobeStock_499643425-1920w.jpg" alt="Versicherungsberatung für Künstler" style="border-radius: 14px; width: 100%; object-fit: cover; box-shadow: var(--shadow-md);">
         </div>
 
-        <div style="margin-top: 16px;">
-          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <div style="margin-top: 16px;" data-global-cta-skip>
+          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
         </div>
       </div>
     </section>
@@ -763,37 +787,37 @@
         <div class="pricing-block">
           <div class="pricing-row">
             <div class="price-label">
-              Soloselbständige Freiberufler
+              Du arbeitest allein als Freiberufler:in
             </div>
             <div style="text-align: right;">
-              <div class="price-value">€228,–<span class="price-note"> / Jahr</span></div>
-              <div style="font-size: 13px; color: var(--text-light);">(entspricht €19,50 / Monat), jährliche Zahlweise</div>
+              <div class="price-value">228 €<span class="price-note"> / Jahr</span></div>
+              <div style="font-size: 13px; color: var(--text-light);">(entspricht 19,00 € / Monat bei jährlicher Zahlweise)</div>
             </div>
           </div>
           <div class="pricing-row">
             <div class="price-label">
-              Gesellschafter einer GbR, UG, GmbH
-              <p>Für jeden weiteren Gesellschafter wird bei der Gesellschaft ein Mitgliedsbeitrag von €160,–/Jahr (entspricht €13,34/Monat) erhoben.</p>
+              Du bist Gesellschafter:in einer GbR, UG oder GmbH
+              <p>Jede weitere Person im Gesellschafterkreis: 160 € / Jahr (entspricht 13,33 € / Monat).</p>
             </div>
             <div style="text-align: right;">
-              <div class="price-value">€320,–<span class="price-note"> / Jahr</span></div>
-              <div style="font-size: 13px; color: var(--text-light);">(entspricht €26,67 / Monat)</div>
+              <div class="price-value">320 €<span class="price-note"> / Jahr</span></div>
+              <div style="font-size: 13px; color: var(--text-light);">(entspricht 26,67 € / Monat)</div>
             </div>
           </div>
-          <p class="pricing-footer-note">Beiträge werden bequem per SEPA Lastschriftverfahren abgebucht</p>
+          <p class="pricing-footer-note">Beiträge sind umsatzsteuerfrei und werden bequem per SEPA-Lastschrift, Debit- oder Kreditkarte abgebucht.</p>
         </div>
 
-        <div class="vorteile-expert-card" style="max-width: 780px; margin: 40px auto 0; text-align: left;">
-          <img src="../assets/detlef-husemann-freie-wildbahn-ksk-berater-1920w.jpg" alt="Detlef Husemann">
-          <div>
-            <blockquote>Profitieren Sie langfristig von einer deutlich günstigeren Sozialversicherung, wenn Sie durch unsere Beratung Mitglied in der Künstlersozialkasse werden. Denn nach der Aufnahme in die Künstlersozialkasse <strong>sparen Sie als Mitglied mehrere hundert Euro monatlich</strong> für Ihre Sozialversicherung.</blockquote>
-            <div class="q-author">Detlef Husemann</div>
-            <div class="q-title">KSK Experte und Gründer von Freie Wildbahn e.V.</div>
+        <div class="vorteile-expert-card team-style" style="max-width: 780px; margin: 40px auto 0; text-align: left;">
+          <div class="expert-photo">
+            <img src="../assets/detlef-husemann-card-red-background.png" alt="Detlef Husemann">
+            <div class="expert-name">Detlef Husemann</div>
+            <div class="expert-role">Vorsitzender von Freie Wildbahn e.V. und KSK-Experte</div>
           </div>
+          <blockquote>Wenn Du nach dem Künstlersozialversicherungsgesetz (KSVG) versichert wirst, beteiligt sich die Künstlersozialversicherung an den Beiträgen zur gesetzlichen Kranken-, Pflege- und Rentenversicherung.<br><br>Wie hoch Deine persönliche Entlastung ausfällt, hängt von Deiner individuellen Versicherungs- und Einkommenssituation ab.</blockquote>
         </div>
 
-        <div style="margin-top: 40px;">
-          <a href="ksk-beratung.html" class="btn btn-orange">Vorteile KSK-Beratung</a>
+        <div style="margin-top: 40px;" data-global-cta-skip>
+          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
         </div>
       </div>
     </section>
@@ -809,7 +833,7 @@
             </div>
             <div class="vorteile-faq-item">
               <h3 class="vorteile-faq-heading"><button type="button" class="vorteile-faq-question" id="vorteile-faq-question-2" aria-expanded="false" aria-controls="vorteile-faq-answer-2"><span>Welche Vorteile hat eine Mitgliedschaft bei Freie Wildbahn e.V.?</span><span class="vorteile-faq-indicator" aria-hidden="true"></span></button></h3>
-              <div class="vorteile-faq-panel" id="vorteile-faq-answer-2" role="region" aria-labelledby="vorteile-faq-question-2" hidden><p>Im Mittelpunkt stehen die <strong>laufende Unterstützung rund um Deine KSK-Situation</strong>, die KSK-Fachberatung im Rahmen der Mitgliedschaft ohne zusätzliche Beratungskosten und auf Wunsch die Unterstützung bei der Kommunikation mit der KSK.</p><p>Hinzu kommen der <strong>Erinnerungsservice und der digitale Mitgliederbereich</strong>. Soweit angeboten, können außerdem Mitgliedskonditionen für betriebliche Sachversicherungen verfügbar sein.</p></div>
+              <div class="vorteile-faq-panel" id="vorteile-faq-answer-2" role="region" aria-labelledby="vorteile-faq-question-2" hidden><p>Im Mittelpunkt stehen die <strong>laufende Unterstützung rund um Deine KSK-Situation</strong>, die KSK-Fachberatung im Rahmen der Mitgliedschaft ohne zusätzliche Beratungskosten und auf Wunsch die Unterstützung bei der Kommunikation mit der KSK.</p><p>Hinzu kommen der <strong>Erinnerungsservice und STRIX, Dein digitaler Mitgliederbereich</strong>. Soweit angeboten, können außerdem Mitgliedskonditionen für betriebliche Sachversicherungen verfügbar sein.</p></div>
             </div>
             <div class="vorteile-faq-item">
               <h3 class="vorteile-faq-heading"><button type="button" class="vorteile-faq-question" id="vorteile-faq-question-3" aria-expanded="false" aria-controls="vorteile-faq-answer-3"><span>Wie funktioniert die Anrechnung der Beratungsgebühr?</span><span class="vorteile-faq-indicator" aria-hidden="true"></span></button></h3>
