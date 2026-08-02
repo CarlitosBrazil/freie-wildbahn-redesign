@@ -19,7 +19,16 @@ window.renderGlobalHeader = function renderGlobalHeader() {
     <div class="mobile-menu-drawer" id="mobileDrawer">
       <div class="mobile-drawer-header"><a class="mobile-logo" href="${root}index.html"><img src="${root}assets/logo.png" alt="Freie Wildbahn e.V."></a><button class="close-drawer" id="closeDrawer" aria-label="Menü schließen">×</button></div>
       <ul class="mobile-menu-list">
-        <li><a href="${root}index.html">Startseite</a></li><li><a href="${pageLink('ksk-pruefung-versicherte.html')}">KSK-Prüfung</a></li><li><a href="${pageLink('ksk-beitragsrechner.html')}">KSK-Rechner</a></li><li><a href="${pageLink('ksk-beitraege-kosten.html')}">KSK-Beiträge und Kosten</a></li><li><a href="${pageLink('kuenstlersozialkasse.html')}">Künstlersozialkasse (KSK)</a></li><li><a href="${pageLink('antrag-und-aufnahme.html')}">Antrag und Aufnahme</a></li><li><a href="${pageLink('kuenstlersozialabgabe.html')}">Künstlersozialabgabe</a></li><li><a href="${pageLink('ksk-beitragsrechner.html')}">KSK-Beitragsrechner</a></li><li><a href="${pageLink('ksk-beitraege-kosten.html')}">KSK-Beiträge und Kosten</a></li><li><a href="${pageLink('ksk-pruefung-versicherte.html')}">KSK-Prüfung der Versicherten</a></li><li><a href="${pageLink('ksk-beratung.html')}">KSK-Beratung</a></li><li><a href="${pageLink('team.html')}">Verein</a></li><li><a href="${pageLink('vorteile.html')}">Vorteile</a></li><li><a href="${pageLink('blog.html')}">Blog</a></li><li><a href="${pageLink('kontakt.html')}">Kontakt</a></li><li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+        <li><a href="${root}index.html">Startseite</a></li>
+        <li><a href="${pageLink('ksk-pruefung-versicherte.html')}">KSK-Prüfung</a></li>
+        <li class="mobile-menu-group"><details><summary>KSK-Rechner</summary><ul><li><a href="${pageLink('ksk-beitragsrechner.html')}">KSK-Beitragsrechner</a></li><li><a href="${pageLink('ksk-beitraege-kosten.html')}">KSK-Beiträge und Kosten</a></li></ul></details></li>
+        <li class="mobile-menu-group"><details><summary>Künstlersozialkasse</summary><ul><li><a href="${pageLink('kuenstlersozialkasse.html')}">KSK für Künstler &amp; Publizisten</a></li><li><a href="${pageLink('antrag-und-aufnahme.html')}">Antrag und Aufnahme</a></li><li><a href="${pageLink('kuenstlersozialabgabe.html')}">Künstlersozialabgabe</a></li></ul></details></li>
+        <li><a href="${pageLink('ksk-beratung.html')}">KSK-Beratung</a></li>
+        <li><a href="${pageLink('team.html')}">Verein</a></li>
+        <li><a href="${pageLink('vorteile.html')}">Vorteile</a></li>
+        <li><a href="${pageLink('blog.html')}">Blog</a></li>
+        <li><a href="${pageLink('kontakt.html')}">Kontakt</a></li>
+        <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
       </ul>
     </div>
     <header>
@@ -55,11 +64,15 @@ window.bindGlobalHeader = function bindGlobalHeader() {
     mobileDrawer.classList.toggle('open', open);
     drawerOverlay.classList.toggle('open', open);
     menuToggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('mobile-menu-open', open);
   };
   menuToggle.addEventListener('click', () => setDrawer(!mobileDrawer.classList.contains('open')));
   closeDrawerBtn.addEventListener('click', () => setDrawer(false));
   drawerOverlay.addEventListener('click', () => setDrawer(false));
   mobileDrawer.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setDrawer(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileDrawer.classList.contains('open')) setDrawer(false);
+  });
 };
 
 window.bindStickyHeader = function bindStickyHeader() {
