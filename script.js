@@ -172,7 +172,9 @@ window.applyGlobalContentCtas = function applyGlobalContentCtas() {
   };
 
   const candidates = contentButtons.filter(
-    button => !button.dataset.pricingCta && buttonType(button)
+    button => !button.dataset.pricingCta &&
+      !button.closest('[data-global-cta-skip]') &&
+      buttonType(button)
   );
   const processed = new Set();
 
