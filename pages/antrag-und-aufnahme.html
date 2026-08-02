@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antrag und Aufnahme | Freie Wildbahn e.V.</title>
-  <meta name="description" content="Vorteile &amp; Erklärungen zur Künstlersozialkasse (KSK) für Künstler, Freelancer &amp; Publizisten. Vorteile, Aufgaben, Leistungen, Voraussetzungen &amp; Antrag">
+  <title>KSK-Antrag und Aufnahme: So kommst Du in die Künstlersozialkasse</title>
+  <meta name="description" content="Wie der Antrag bei der Künstlersozialkasse abläuft, welche Nachweise zählen und worauf Du vor dem Einreichen achten solltest — mit persönlicher KSK-Beratung von Freie Wildbahn e.V.">
   <link rel="stylesheet" href="../style.css?v=9">
   <script src="../script.js?v=8" defer></script>
   <style>
     /* ── Page-specific styles for antrag-und-aufnahme ── */
     .antrag-info-cards {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
-      margin: 40px 0;
-      max-width: 420px;
-      margin-left: auto;
+      margin: 8px 0 0;
+      max-width: none;
     }
     .antrag-info-card {
       background: #fff;
@@ -46,7 +45,7 @@
       margin-bottom: 8px;
     }
     .antrag-info-card p {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text-medium);
       line-height: 1.6;
       margin: 0;
@@ -90,9 +89,9 @@
     }
     .antrag-split {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      align-items: start;
     }
     .antrag-split.reverse {
       direction: rtl;
@@ -117,11 +116,18 @@
       margin-bottom: 16px;
       line-height: 1.3;
     }
+    .antrag-split-text {
+      max-width: 980px;
+    }
     .antrag-split-text p {
-      font-size: 16px;
+      font-size: 18px;
       color: var(--text-medium);
       line-height: 1.75;
       margin-bottom: 16px;
+    }
+    .antrag-split > p,
+    .antrag-split > .antrag-cta-pair {
+      grid-column: 1 / -1;
     }
     .antrag-step-list {
       list-style: none;
@@ -232,7 +238,7 @@
       display: block;
     }
     .antrag-flow-copy p {
-      font-size: 16px;
+      font-size: 18px;
       color: var(--text-medium);
       line-height: 1.75;
       margin-bottom: 20px;
@@ -240,11 +246,24 @@
     .antrag-flow-copy {
       max-width: var(--antrag-flow-content-width);
     }
+    .antrag-cta-pair {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 20px;
+    }
     .antrag-flow-subheading {
       font-size: 22px;
       font-weight: 700;
       color: var(--text-dark);
       margin: 8px 0 16px;
+    }
+    .antrag-page .bullets-list-icon {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      fill: var(--primary-green);
     }
     .antrag-offer-block {
       background: var(--bg-light);
@@ -282,7 +301,7 @@
     .antrag-page .ksk-summary p {
       border-left: 5px solid var(--brand-orange);
       padding: 2px 0 2px 26px;
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.75;
       margin: 0;
     }
@@ -346,7 +365,7 @@
       margin-bottom: 26px;
     }
     .antrag-page .ksk-content p {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.78;
       margin-bottom: 18px;
     }
@@ -362,7 +381,7 @@
       background: transparent;
       color: var(--text-dark);
       font: inherit;
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
       text-align: left;
       padding: 19px 4px;
@@ -416,6 +435,7 @@
     }
     @media (max-width: 768px) {
       .antrag-split, .antrag-split.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .antrag-info-cards { grid-template-columns: 1fr; }
       .antrag-cta-banner { padding: 28px 24px; }
       .antrag-rights-grid { grid-template-columns: 1fr; }
       .antrag-flow-media {
@@ -564,11 +584,14 @@
       <div class="hero-grid">
         <div class="hero-content hero-content-col" style="grid-column: 1; order: 1;">
           <span class="dachzeile">Künstlersozialkasse</span>
-          <h1 style="font-size: 40px; line-height: 1.2; margin-bottom: 20px;">Antrag und Aufnahme</h1>
+          <h1 style="font-size: 40px; line-height: 1.2; margin-bottom: 20px;">KSK-Antrag und Aufnahme</h1>
           <p style="font-size: 18px; color: var(--text-medium); margin-bottom: 30px; line-height: 1.6;">
             Selbständige <strong>Künstlerinnen und Künstler sowie Publizistinnen und Publizisten</strong>, die die Voraussetzungen des <strong>Künstlersozialversicherungsgesetzes (KSVG)</strong> erfüllen, müssen sich bei der Künstlersozialkasse melden. Dafür werden Angaben und Nachweise eingereicht, damit die KSK prüft, ob bei Dir eine <strong>Versicherungspflicht nach dem KSVG</strong> besteht.
           </p>
-          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+          <div class="antrag-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
           <a class="hero-google-review-badge" href="https://www.google.com/maps/place/Freie+Wildbahn+e.V./@51.4315333,7.9589351,684m/data=!3m2!1e3!5s0x47b96741ced1b7b7:0x30a71ba88a66de7f!4m8!3m7!1s0x47b96741cb05854b:0xf3b53f0cdfda43b5!8m2!3d51.43153!4d7.96151!9m1!1b1!16s%2Fg%2F11dd__6phl?entry=ttu" target="_blank" rel="noopener" aria-label="Google Bewertungen von Freie Wildbahn e.V. ansehen"><img class="hero-google-review-logo" src="../assets/google-g.svg" alt=""><span><strong>Google</strong><span><b>4.9</b> <span class="hero-google-review-stars" aria-label="5 von 5 Sternen">★★★★★</span></span><small>Alle Rezensionen ansehen</small></span></a>
         </div>
         <div class="hero-media hero-visual-col" style="grid-column: 2; order: 2;">
@@ -581,7 +604,7 @@
       <div class="container page-container">
         <div class="ksk-summary">
           <h2>Kurz gesagt:</h2>
-          <p>Die KSK prüft anhand Deiner <strong>Tätigkeit</strong>, Deines <strong>voraussichtlichen Arbeitseinkommens</strong> und Deiner <strong>Nachweise</strong>, ob für Dich eine <strong>Versicherungspflicht nach dem KSVG</strong> besteht. Ein sorgfältig vorbereiteter <strong>KSK-Antrag</strong> kann <strong>Rückfragen und unnötige Verzögerungen</strong> vermeiden. Bist Du unsicher, ob Deine Tätigkeit oder Deine Unterlagen ausreichen, solltest Du das <strong>vor dem Einreichen klären</strong>.</p>
+          <p>Die KSK prüft anhand Deiner Tätigkeit, Deines voraussichtlichen Arbeitseinkommens und Deiner Nachweise, ob für Dich eine <strong>Versicherungspflicht nach dem KSVG</strong> besteht. Ein sorgfältig vorbereiteter KSK-Antrag kann Rückfragen und unnötige Verzögerungen vermeiden. Bist Du unsicher, ob Deine Tätigkeit oder Deine Unterlagen ausreichen, solltest Du das <strong>vor dem Einreichen klären</strong>.</p>
         </div>
       </div>
     </section>
@@ -591,12 +614,27 @@
         <div class="quicklinks-box">
           <h2>Quicklinks</h2>
           <div class="ksk-quicklinks-stack">
-            <a class="cta" href="#zugangsvoraussetzungen"><span class="ksk-quick-number">01</span><span>Zugangsvoraussetzungen für eine Mitgliedschaft in der Künstlersozialkasse</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
-            <a class="cta" href="#aufgaben-und-leistungen"><span class="ksk-quick-number">02</span><span>Aufgaben und Leistungen der Künstlersozialkasse</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
-            <a class="cta" href="#ksk-antrag"><span class="ksk-quick-number">03</span><span>KSK-Antrag – der Weg in die Künstlersozialkasse</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
-            <a class="cta" href="#aussagekraeftige-unterlagen"><span class="ksk-quick-number">04</span><span>Aussagekräftige Unterlagen für den KSK-Antrag</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
-            <a class="cta" href="#rechte-und-pflichten"><span class="ksk-quick-number">05</span><span>Rechte und Pflichten während der Versicherung nach dem KSVG</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
-            <a class="cta" href="#faq"><span class="ksk-quick-number">06</span><span>Häufige Fragen zu KSK-Antrag und Aufnahme</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+            <a class="cta" href="#wer-gilt"><span class="ksk-quick-number">01</span><span>Wer gilt als Künstler:in oder Publizist:in?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+            <a class="cta" href="#zugangsvoraussetzungen"><span class="ksk-quick-number">02</span><span>Zugangsvoraussetzungen für die Versicherung über die Künstlersozialkasse</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+            <a class="cta" href="#aufgaben-und-leistungen"><span class="ksk-quick-number">03</span><span>Aufgaben und Leistungen der Künstlersozialkasse</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+            <a class="cta" href="#ksk-antrag"><span class="ksk-quick-number">04</span><span>KSK-Antrag – der Weg in die Künstlersozialversicherung</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+            <a class="cta" href="#aussagekraeftige-unterlagen"><span class="ksk-quick-number">05</span><span>Aussagekräftige Unterlagen für den KSK-Antrag</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+            <a class="cta" href="#rechte-und-pflichten"><span class="ksk-quick-number">06</span><span>Rechte und Pflichten während der Versicherung nach dem KSVG</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+            <a class="cta" href="#faq"><span class="ksk-quick-number">07</span><span>Häufige Fragen zu KSK-Antrag und Aufnahme</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wer-gilt" class="block-section section-padding bg-light">
+      <div class="container page-container content-box">
+        <div class="antrag-flow-section">
+          <span class="dachzeile">Einordnung</span>
+          <h3 class="antrag-flow-heading">Wer gilt als Künstler:in oder Publizist:in?</h3>
+          <div class="antrag-flow-copy">
+            <p>Eine verbindliche allgemeine Definition gibt es nicht. Laut Bundesministerium für Arbeit und Soziales schaffen Künstlerinnen und Künstler Musik, darstellende oder bildende Kunst, üben diese aus oder lehren sie.</p>
+            <p>Publizistisch tätig sind unter anderem Schriftstellende, journalistisch Tätige sowie Personen, die in anderer Weise publizistisch arbeiten oder Publizistik lehren.</p>
+            <p>Ob Deine konkrete Tätigkeit darunter fällt, prüft die KSK im Einzelfall anhand Deiner Angaben und Nachweise.</p>
           </div>
         </div>
       </div>
@@ -608,9 +646,9 @@
         <div class="antrag-split">
           <div class="antrag-split-text">
             <span class="dachzeile">Voraussetzungen</span>
-            <h3>Zugangsvoraussetzungen für eine Mitgliedschaft in der Künstlersozialkasse</h3>
-            <p>Als <strong>Publizistinnen und Publizisten</strong> bezeichnet die Behörde unter anderem Schriftstellende, journalistisch Tätige sowie Personen, die in anderer Weise publizistisch tätig sind oder Publizistik lehren. Weil es keine verbindliche allgemeine Definition gibt, <strong>prüft die Künstlersozialkasse jeden Fall einzeln</strong>. Dafür fordert sie bei einem <strong>KSK-Antrag</strong> umfangreiche Unterlagen an, zum Beispiel <strong>Arbeitsnachweise sowie Belege über Honorare oder Gagen</strong>.</p>
-            <p>Klar definiert ist, dass die <strong>selbständige Erwerbstätigkeit</strong> nicht nur vorübergehend und im Wesentlichen im Inland ausgeübt wird. Das erforderliche Einkommen muss <strong>3.900 Euro jährlich überschreiten</strong>. <strong>Berufsanfängerinnen und Berufsanfänger</strong> sind davon in zwei der ersten drei Jahre einer erstmaligen Selbständigkeit ausgenommen.</p>
+            <h3>Zugangsvoraussetzungen für die Versicherung über die Künstlersozialkasse</h3>
+            <p>Klar definiert ist die Bedingung, dass die <strong>selbständige Erwerbstätigkeit</strong> nicht nur vorübergehend und im Wesentlichen im Inland ausgeübt wird.</p>
+            <p>Das Einkommen, das für eine Versicherung über die Künstlersozialkasse erforderlich ist, muss <strong>3.900 Euro jährlich überschreiten</strong>. Für Berufsanfänger:innen gilt diese Grenze in den ersten drei Jahren nach erstmaliger Aufnahme der selbständigen Tätigkeit nicht. Danach darf sie innerhalb von sechs Kalenderjahren höchstens zweimal unterschritten werden.</p>
           </div>
           <div>
             <div class="antrag-info-cards">
@@ -626,16 +664,21 @@
                   <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                 </div>
                 <h4>Mindesteinkommen</h4>
-                <p>Das Jahreseinkommen muss <strong>3.900 Euro</strong> übersteigen – mit Ausnahmen für Berufsanfänger in den ersten drei Jahren.</p>
+                <p>Das Jahreseinkommen muss <strong>3.900 Euro</strong> übersteigen – mit Ausnahmen für Berufsanfänger:innen in den ersten drei Jahren.</p>
               </div>
               <div class="antrag-info-card">
                 <div class="card-icon">
                   <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                 </div>
                 <h4>Nachweispflicht</h4>
-                <p><strong>Arbeitsnachweise, Honorarbelege und Gagen</strong> sind für die Einzelfallprüfung durch die KSK beizubringen.</p>
+                <p><strong>Arbeitsnachweise, Honorarbelege und Gagen</strong> sind für die Einzelfallprüfung durch die KSK erforderlich.</p>
               </div>
             </div>
+          </div>
+          <p>Du möchtest klären, ob Deine Tätigkeit und Dein Einkommen die Voraussetzungen für eine Versicherung über die Künstlersozialkasse erfüllen?</p>
+          <div class="antrag-cta-pair">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
           </div>
         </div>
       </div>
@@ -651,11 +694,16 @@
             <img src="../assets/kuenstlersozialkasse-maler2-freie-wildbahn-1920w.jpg" alt="KSK Leistungen für Künstler">
           </div>
           <div class="antrag-flow-copy">
-            <p>Freiberuflich Tätige tragen die Kosten für <strong>Krankenversicherung, Pflegeversicherung und Altersvorsorge</strong> selbst. Für Kunst-, Publizistik- und Medienschaffende reduziert die Versicherung über die Künstlersozialkasse diese Ausgaben um etwa die Hälfte.</p>
-            <p>Aufgabe der Künstlersozialkasse ist es, das <strong>Künstlersozialversicherungsgesetz (KSVG)</strong> umzusetzen. Das Gesetz sorgt dafür, dass selbständige Kunst- und Publizistikschaffende ähnlich in der gesetzlichen Sozialversicherung abgesichert sind wie Beschäftigte.</p>
+            <p>Freiberufliche tragen die Kosten für <strong>Krankenversicherung, Pflegeversicherung und Altersvorsorge</strong> selbst.</p>
+            <p>Die Künstlersozialkasse übernimmt genau 50 % Deiner Sozialversicherungsbeiträge. Sie funktioniert damit wie ein Arbeitgeber. Das bedeutet, Du zahlst nur die andere Hälfte für Deine Kranken-, Pflege- und Rentenversicherung.</p>
+            <p>Aufgabe der Künstlersozialkasse ist es, das <strong>Künstlersozialversicherungsgesetz (KSVG)</strong> umzusetzen. Das Gesetz sorgt dafür, dass selbständige Künstler:innen und Publizist:innen ähnlich in der gesetzlichen Sozialversicherung abgesichert sind wie Angestellte.</p>
             <p>Die Künstlersozialkasse ist <strong>weder Arbeitgeber noch Krankenkasse</strong> und erbringt selbst keine Versicherungsleistungen. Sie prüft, ob bei Dir eine <strong>Versicherungspflicht nach dem KSVG</strong> besteht, berechnet Deinen Beitragsanteil, zieht ihn ein und leitet die gesamten Beiträge an die zuständigen Träger der Kranken-, Pflege- und Rentenversicherung weiter.</p>
-            <p>Das Besondere: <strong>Du übernimmst nur etwa die Hälfte der Beiträge.</strong> Der übrige Anteil wird durch die Künstlersozialabgabe und einen Zuschuss des Bundes finanziert. Die eigentlichen Leistungen erhältst Du weiterhin von Deiner Krankenkasse, Pflegekasse oder der Deutschen Rentenversicherung.</p>
-            <p>Gern beraten wir Dich in diesen Fragen ausführlich. <strong>Schreib uns eine E-Mail oder ruf an.</strong></p>
+            <p>Der übrige Anteil wird durch die Künstlersozialabgabe und einen Zuschuss des Bundes finanziert. Die eigentlichen Leistungen erhältst Du weiterhin von Deiner Krankenkasse, Pflegekasse oder der Deutschen Rentenversicherung.</p>
+            <p>Diese Fragen klären wir mit Dir in einer <strong>KSK-Beratung</strong> — bis zu 45 Minuten, mit Blick auf Deine konkrete Situation.</p>
+            <div class="antrag-cta-pair">
+              <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+              <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+            </div>
           </div>
         </div>
       </div>
@@ -666,9 +714,9 @@
       <div class="container page-container content-box">
         <div class="antrag-flow-section">
             <span class="dachzeile">Antragstellung</span>
-            <h3 class="antrag-flow-heading">KSK Antrag – der Weg in die Künstlersozialkasse</h3>
+            <h3 class="antrag-flow-heading">KSK-Antrag – der Weg in die Künstlersozialversicherung</h3>
             <div class="antrag-flow-media">
-              <img src="../assets/kuenstlersozialkasse-malerin-freie-wildbahn-e74be187-1920w.jpg" alt="KSK Antrag – der Weg in die Künstlersozialkasse">
+              <img src="../assets/kuenstlersozialkasse-malerin-freie-wildbahn-e74be187-1920w.jpg" alt="KSK-Antrag – der Weg in die Künstlersozialversicherung">
             </div>
             <div class="antrag-flow-copy">
               <p>Ist der <strong>KSK-Antrag gestellt</strong>, braucht es Geduld. Da jeder Fall einzeln anhand zahlreicher Unterlagen geprüft wird, kann bis zu einem Ergebnis viel Zeit vergehen. Die von der Künstlersozialkasse angeforderten Unterlagen sind die <strong>Grundlage für die Entscheidung</strong>.</p>
@@ -676,7 +724,11 @@
               <p>Die Homepage der Künstlersozialkasse bietet die Möglichkeit, die Anmeldeunterlagen, den Fragebogen und weitere Informationen herunterzuladen. Per E-Mail erhältst Du ein <strong>vorläufiges Aktenzeichen als Nachweis Deiner Meldung</strong>. Wir empfehlen die elektronische Anforderung mit Übersendung per Post.</p>
               <p>Der Zeitpunkt der Anforderung sollte im Vorfeld gut überlegt werden. Im Rahmen einer Beratung kristallisiert sich der <strong>optimale Zeitpunkt</strong> meist erst heraus. Das kann schnell einen <strong>dreistelligen Eurobetrag an gesparten oder doppelt gezahlten Beiträgen</strong> ausmachen.</p>
             </div>
-            <a href="ksk-beratung.html" class="btn btn-orange" style="margin-top: 8px;">KSK-Beratung</a>
+            <p>Du möchtest Deinen KSK-Antrag vor dem Einreichen gemeinsam prüfen lassen?</p>
+            <div class="antrag-cta-pair">
+              <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+              <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+            </div>
         </div>
       </div>
     </section>
@@ -686,9 +738,10 @@
       <div class="container page-container content-box">
         <div class="antrag-flow-section">
           <span class="dachzeile">Unterlagen</span>
-          <h3 class="antrag-flow-heading" style="margin-bottom: 16px;">Aussagekräftige Unterlagen für den KSK Antrag</h3>
+          <h3 class="antrag-flow-heading" style="margin-bottom: 16px;">Aussagekräftige Unterlagen für den KSK-Antrag</h3>
           <div class="antrag-flow-copy">
-            <p>Basis für die Entscheidung über den KSK-Antrag sind die <strong>eingereichten Unterlagen</strong>. Dazu gehören aktuelle Verträge, Abrechnungen sowie Nachweise über Veröffentlichungen, Aufführungen, Ausstellungen, Konzerte und Ähnliches. Je mehr aussagekräftige Nachweise Du von unterschiedlichen Auftraggebenden vorlegst, umso besser.</p>
+            <p>Basis für die Entscheidung über den Antrag bei der Künstlersozialkasse sind die <strong>eingereichten Unterlagen</strong>. Zu diesem Zweck fordert die Künstlersozialkasse von Künstler:innen oder Publizist:innen, die einen KSK-Antrag stellen, umfangreiche Unterlagen an, zum Beispiel Arbeitsnachweise sowie Belege über Honorare oder Gagen.</p>
+            <p>Dazu gehören aktuelle Verträge, Abrechnungen sowie Nachweise über Veröffentlichungen, Aufführungen, Ausstellungen, Konzerte und Ähnliches. Je mehr aussagekräftige Nachweise Du von unterschiedlichen Auftraggebenden vorlegst, umso besser.</p>
             <p>Achte darauf, dass aus den Nachweisen hervorgeht, <strong>welche Tätigkeiten Du konkret ausgeübt hast</strong> und dass Du freiberuflich unter Vertrag warst. Bei manchen Berufen ist es schwierig zu beurteilen, ob eine Tätigkeit freiberuflich oder versicherungspflichtig beschäftigt ausgeübt wird.</p>
             <h4 class="antrag-flow-subheading">Was gehört in die Unterlagen?</h4>
             <ul class="bullets-list">
@@ -712,10 +765,12 @@
             <p>Das <strong>voraussichtliche Jahreseinkommen</strong>, aus dem sich die Beitragshöhe ergibt, wird in geschätzter Höhe angegeben. Änderungen sind im Verlauf des Jahres möglich. Errechnet wird das Einkommen nach den allgemeinen Gewinnermittlungsvorschriften des Einkommensteuerrechts in Form einer <strong>Gewinn- und Verlustrechnung</strong>.</p>
             <div class="antrag-offer-block">
               <h4>Unser Angebot an Dich</h4>
-              <p>Wir bieten Dir an, <strong>Deine Unterlagen zu sichten und Hilfestellung zu geben</strong>.</p>
-              <p>Wende Dich an uns. Wir sind für Dich da.</p>
+              <p>In der <strong>KSK-Beratung</strong> sehen wir Deine Unterlagen gemeinsam durch und sagen Dir, was noch fehlt.</p>
             </div>
-            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+            <div class="antrag-cta-pair">
+              <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+              <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+            </div>
           </div>
         </div>
       </div>
@@ -725,14 +780,14 @@
     <section id="rechte-und-pflichten" class="block-section section-padding">
       <div class="container page-container content-box">
         <div class="antrag-flow-section">
-          <span class="dachzeile">Mitgliedschaft</span>
+          <span class="dachzeile">Versicherung</span>
           <h3 class="antrag-flow-heading">Rechte und Pflichten während der Versicherung nach dem KSVG</h3>
           <div class="antrag-flow-media">
             <img src="../assets/kuenstlersozialkasse-antrag-freie-wildbahn-1920w.jpg" alt="Rechte und Pflichten in der Künstlersozialkasse">
           </div>
           <div class="antrag-flow-copy">
-            <p>Wirst Du in die Künstlersozialkasse aufgenommen, erhältst Du einen entsprechenden Bescheid. Die Versicherung ist mit <strong>Rechten und Pflichten</strong> verbunden. Du hast das Recht auf die Leistungen, für die Du durch Deine Beitragszahlungen einen Anspruch erwirbst.</p>
-            <p>Als KSK-versicherte Person unterliegst Du <strong>Auskunfts- und Meldepflichten</strong>. Dafür sind die Vordrucke der Künstlersozialkasse zu nutzen. Bis zum <strong>1. Dezember eines Jahres</strong> ist das voraussichtliche Jahreseinkommen für das folgende Kalenderjahr zu melden.</p>
+            <p>Wirst Du über die Künstlersozialkasse versichert, erhältst Du einen entsprechenden Bescheid. Die Versicherung ist mit <strong>Rechten und Pflichten</strong> verbunden. Du hast das Recht auf die Leistungen, für die Du durch Deine Beitragszahlungen einen Anspruch erwirbst.</p>
+            <p>Als über die Künstlersozialkasse versicherte Person unterliegst Du <strong>Auskunfts- und Meldepflichten</strong>. Dafür sind die Vordrucke der Künstlersozialkasse zu nutzen. Bis zum <strong>1. Dezember eines Jahres</strong> ist das voraussichtliche Jahreseinkommen für das folgende Kalenderjahr zu melden.</p>
             <div class="antrag-rights-grid">
               <div class="antrag-rights-item">
                 <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
@@ -742,12 +797,12 @@
               <div class="antrag-rights-item">
                 <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
                 <h5>Krankenversicherung</h5>
-                <p>Es gilt <strong>Wahlfreiheit zwischen gesetzlicher und privater Krankenkasse</strong>. Für einen späteren Wechsel gelten besondere Voraussetzungen.</p>
+                <p>Es gilt <strong>Wahlfreiheit zwischen gesetzlicher und privater Krankenkasse</strong>. Eine Rückkehr aus einer privaten Krankenkasse in eine gesetzliche Kasse ist für Berufsanfänger:innen zum Ablauf des dritten Jahres möglich. Danach ist eine Rückkehr in die gesetzliche Krankenversicherung über die KSK in der Regel nicht mehr möglich. Ob in Deinem Fall eine Ausnahme greift, klären wir mit Dir.</p>
               </div>
               <div class="antrag-rights-item">
                 <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
                 <h5>Beitragssätze</h5>
-                <p>Für die Berechnung sind die jeweils gültigen <strong>Beitragssätze</strong> maßgeblich. Einen Zusatzbeitrag Deiner Krankenkasse trägst Du allein.</p>
+                <p>Für die Berechnung der Beiträge sind die jeweils gültigen <strong>Beitragssätze</strong> maßgeblich. Erhebt Deine Krankenkasse einen Zusatzbeitrag, trägst Du davon nur die Hälfte — die andere Hälfte übernimmt die Künstlersozialkasse seit dem 1. Januar 2019, genau wie ein Arbeitgeber. Wie sich Dein Beitrag zusammensetzt, zeigt Dir unsere Seite <a class="ksk-text-link" href="ksk-beitraege-kosten.html"><strong>KSK-Beitrag: Höhe und Berechnung</strong></a>.</p>
               </div>
               <div class="antrag-rights-item">
                 <svg viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
@@ -755,7 +810,11 @@
                 <p>Bis zum <strong>1. Dezember jedes Jahres</strong> ist das voraussichtliche Jahreseinkommen für das folgende Kalenderjahr zu melden.</p>
               </div>
             </div>
-            <p>Wir geben gern weitere Auskünfte. <strong>Mitglieder von Freie Wildbahn e.V.</strong> beraten wir zu allen Belangen rund um die Künstlersozialkasse und vielen weiteren Themen.</p>
+            <p>Als Mitglied bei Freie Wildbahn e.V. kannst Du diese Fragen jederzeit mit uns klären, ohne Zusatzkosten.</p>
+            <div class="antrag-cta-pair">
+              <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+              <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+            </div>
           </div>
         </div>
       </div>
@@ -768,6 +827,10 @@
           <div class="ksk-faq-item">
             <h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="antrag-faq-question-1" aria-expanded="true" aria-controls="antrag-faq-answer-1"><span>Wer kann einen KSK-Antrag stellen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3>
             <div class="ksk-faq-panel" id="antrag-faq-answer-1" role="region" aria-labelledby="antrag-faq-question-1"><p><strong>Selbständige Künstlerinnen und Künstler sowie Publizistinnen und Publizisten</strong> können sich bei der KSK melden, wenn ihre Tätigkeit unter das KSVG fallen könnte. Die KSK prüft anhand Deiner Angaben und Nachweise, ob die <strong>gesetzlichen Voraussetzungen für die Versicherungspflicht</strong> erfüllt sind.</p></div>
+          </div>
+          <div class="ksk-faq-item">
+            <h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="antrag-faq-question-membership" aria-expanded="false" aria-controls="antrag-faq-answer-membership"><span>Wie werde ich Mitglied in der Künstlersozialkasse?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3>
+            <div class="ksk-faq-panel" id="antrag-faq-answer-membership" role="region" aria-labelledby="antrag-faq-question-membership" hidden><p>Genau genommen wird man in der Künstlersozialkasse nicht Mitglied, sondern versichert — der Unterschied ist wichtig, weil Freie Wildbahn e.V. ein Verein mit echter Mitgliedschaft ist.</p></div>
           </div>
           <div class="ksk-faq-item">
             <h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="antrag-faq-question-2" aria-expanded="false" aria-controls="antrag-faq-answer-2"><span>Welche Unterlagen brauche ich für den KSK-Antrag?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3>
@@ -803,9 +866,12 @@
         <div class="antrag-cta-banner">
           <div class="cta-text">
             <h3>Wir unterstützen Dich bei Deinem KSK-Antrag</h3>
-            <p>Erfahre in einer persönlichen Beratung, wie Du Deinen Antrag <strong>optimal vorbereitest</strong> und das <strong>Risiko einer Ablehnung minimierst</strong>.</p>
+            <p>Du möchtest offene Fragen zu Deinem Antrag vor dem Einreichen persönlich klären?</p>
           </div>
-          <a href="ksk-beratung.html" class="btn btn-orange" style="flex-shrink: 0;">KSK-Beratung</a>
+          <div class="antrag-cta-pair" style="flex-shrink: 0; margin-top: 0;">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung <svg class="btn-arrow" viewBox="0 0 320 512" aria-hidden="true"><path d="M285.47 273.37l-192 192C84.14 474.7 72.07 480 60 480c-24 0-44-20-44-44V76c0-24 20-44 44-44 12.07 0 24.14 5.3 33.47 14.63l192 192c9.37 9.37 9.37 24.57 0 34.74z"/></svg></a>
+            <a href="vorteile.html" class="btn btn-green">Vorteile FWB Mitgliedschaft</a>
+          </div>
         </div>
       </div>
     </section>
