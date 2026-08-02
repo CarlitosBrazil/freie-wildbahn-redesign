@@ -713,6 +713,17 @@ body > header.is-scrolled .mobile-logo img {
   gap: 24px;
 }
 
+/* Controlled 20px reading-text standard for the homepage only. */
+.homepage-page main .hero-description,
+.homepage-page main .hero-cta-intro,
+.homepage-page main .quote-text-container > p,
+.homepage-page main .rechner-text-col > p,
+.homepage-page main .feature-grid .feature-card > p,
+.homepage-page main .bg-light.section-padding > .container.page-container.text-center > p {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+}
+
 .hero-cta-intro {
   font-size: 18px;
   font-weight: 400;
