@@ -33,7 +33,7 @@
     .ksk-page .ksk-content li,
     .ksk-page .ksk-hero-copy p {
       color: var(--text-medium);
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.75;
     }
 
@@ -103,14 +103,26 @@
     }
 
     .ksk-page .ksk-content ol.ksk-numbered-list {
-      list-style: decimal;
-      list-style-position: outside;
+      counter-reset: ksk-orientation-step;
+      list-style: none;
       margin: 0 auto 24px;
       padding-left: 0;
     }
 
     .ksk-page .ksk-content ol.ksk-numbered-list li {
+      counter-increment: ksk-orientation-step;
       display: list-item;
+      position: relative;
+      padding-left: 34px;
+    }
+
+    .ksk-page .ksk-content ol.ksk-numbered-list li::before {
+      content: counter(ksk-orientation-step) ".";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      text-align: left;
     }
 
     .ksk-page .ksk-bullet-list li,

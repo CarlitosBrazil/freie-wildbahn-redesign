@@ -211,6 +211,46 @@
       max-width: 780px;
       margin: 0 auto;
     }
+
+    .vorteile-ksk-copy p,
+    .vorteile-inkasso-copy p,
+    .vorteile-insurance-copy p {
+      margin: 0 0 22px;
+    }
+
+    .vorteile-ksk-copy p:last-child,
+    .vorteile-inkasso-copy p:last-child,
+    .vorteile-insurance-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .vorteile-question-list {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+    }
+
+    .vorteile-question-list li {
+      display: grid;
+      grid-template-columns: 30px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .vorteile-question-list li::before {
+      content: "?";
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      margin-top: 1px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--primary-green);
+      font-weight: 800;
+      line-height: 1;
+    }
     .vorteile-media {
       width: 100%;
       max-width: 760px;
@@ -464,14 +504,13 @@
     /* Page-only reading size for the Vorteile page */
     .vorteile-page section p,
     .vorteile-page section li,
-    .vorteile-page section blockquote,
     .vorteile-page .hero-description,
     .vorteile-page .bullets-list-text,
     .vorteile-page section div[style*="font-size: 15px"],
     .vorteile-page .vorteile-faq-panel p,
     .vorteile-page .vorteile-faq-panel li,
     .vorteile-page .vorteile-final-cta p {
-      font-size: 20px !important;
+      font-size: 18px !important;
     }
     .vorteile-page .bullets-list {
       width: 100%;
@@ -675,7 +714,7 @@
       <div class="container" style="max-width: 960px; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <span class="dachzeile">KSK-Beratung &amp; Antrag</span>
         <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--text-dark);">KSK-Antrag, KSK-Prüfung und Kommunikation mit der Künstlersozialkasse</h3>
-        <div style="font-size: 15px; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; text-align: left;">
+        <div class="vorteile-ksk-copy" style="font-size: 15px; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; text-align: left;">
           <p>Früher oder später sitzen viele Künstlerinnen und Künstler sowie Publizistinnen und Publizisten vor dem <strong>KSK-Antrag</strong> und stellen fest: Der ist <strong>gar nicht so einfach auszufüllen</strong>, und es können <strong>schnell Fehler passieren</strong>.</p>
           <p>Freie Wildbahn e.V. hilft Dir beim <strong>Ausfüllen Deines KSK-Antrags</strong> und erklärt Dir, worauf Du achten musst.</p>
           <p>Außerdem stehen wir Dir im Falle einer <strong>KSK-Prüfung Deines tatsächlichen Arbeitseinkommens</strong> zur Seite und unterstützen Dich dabei, den Papierkram <strong>strukturiert, sicher und fristgerecht</strong> zu erledigen.</p>
@@ -697,7 +736,7 @@
             <div class="expert-name">Detlef Husemann</div>
             <div class="expert-role">Vorsitzender von Freie Wildbahn e.V. und KSK-Experte</div>
           </div>
-          <blockquote>Wenn Du nach dem Künstlersozialversicherungsgesetz (KSVG) versichert wirst, beteiligt sich die Künstlersozialversicherung an den Beiträgen zur gesetzlichen Kranken-, Pflege- und Rentenversicherung.<br><br>Wie hoch Deine persönliche Entlastung ausfällt, hängt von Deiner individuellen Versicherungs- und Einkommenssituation ab.</blockquote>
+          <blockquote>„Wenn Du nach dem Künstlersozialversicherungsgesetz (KSVG) versichert wirst, beteiligt sich die Künstlersozialversicherung an den Beiträgen zur gesetzlichen Kranken-, Pflege- und Rentenversicherung.“</blockquote>
         </div>
 
         <div style="margin-top: 16px;" data-global-cta-skip>
@@ -711,17 +750,12 @@
       <div class="container" style="max-width: 960px; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <span class="dachzeile">Inkasso-Service</span>
         <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--text-dark);">Inkasso Beratung: Kostenlos für Vereins-Mitglieder</h3>
-        <div style="font-size: 15px; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; text-align: left;">
+        <div class="vorteile-inkasso-copy" style="font-size: 15px; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; text-align: left;">
           <p>Hast Du manchmal mit Kunden zu tun, die auch nach der dritten Mahnung Deine <strong>Dienstleistung nicht bezahlen</strong>?</p>
-          <p>Unsere Partnerkanzlei bietet Dir als Vereinsmitglied für solche Fälle eine <strong>kostenfreie außergerichtliche Inkassoberatung</strong> an.</p>
-          <p>Diese umfasst die Prüfung, ob die Forderung bislang unbestritten ist und bei weiterer Beauftragung die Voraussetzungen für eine <strong>Kostenübernahme durch die Gegenseite</strong> erfüllt sind.</p>
-          <p>Solltest Du die Partnerkanzlei mit der weiteren Geltendmachung der Forderung beauftragen, so wird die außergerichtliche Tätigkeit Dir nur dann in Rechnung gestellt, wenn das Verfahren erfolgreich ist und die Gegenseite <strong>rechtlich zur Erstattung der entstandenen Kosten verpflichtet ist</strong>.</p>
-          <p>Falls die außergerichtliche Tätigkeit jedoch nicht zum Erfolg führt, wird Dir als Vereinsmitglied der Aufwand hierfür nicht berechnet, sodass für Dich <strong>kein Kostenrisiko</strong> besteht.</p>
-          <p>Sollte sich die Gegenseite außergerichtlich weigern, Deine Forderung auszugleichen, kannst Du im nächsten Schritt über die Partnerkanzlei auch ein <strong>gerichtliches Mahnverfahren</strong> einleiten lassen.</p>
-          <p>In diesem Fall fallen jedoch gesetzliche Mindestgebühren in Form von Gerichts- und Anwaltskosten an, welche wir Dir <strong>vorab transparent kommunizieren</strong> werden.</p>
-          <p>Du kannst dann frei entscheiden, ob Du die Forderung weiter gerichtlich verfolgen lassen möchtest oder ob Du das Verfahren einstellen willst, <strong>ohne ein Kostenrisiko zu tragen</strong>.</p>
-          <p>Hast Du eine offene Forderung und möchtest unseren Inkassoservice in Anspruch nehmen oder hast Du Fragen zu Deinem konkreten Fall?</p>
-          <p>Dann buche gerne einen Termin zur <strong>kostenfreien Inkassoberatung</strong>, bei dem wir Deinen Fall und den genauen Ablauf des Inkassoverfahrens besprechen können.</p>
+          <p>Unsere Partnerkanzlei bietet Dir als Vereinsmitglied für solche Fälle eine <strong>kostenfreie außergerichtliche Inkassoberatung</strong> an. Diese umfasst die Prüfung, ob die Forderung bislang unbestritten ist und bei weiterer Beauftragung die Voraussetzungen für eine <strong>Kostenübernahme durch die Gegenseite</strong> erfüllt sind.</p>
+          <p>Solltest Du die Partnerkanzlei mit der weiteren Geltendmachung der Forderung beauftragen, so wird die außergerichtliche Tätigkeit Dir nur dann in Rechnung gestellt, wenn das Verfahren erfolgreich ist und die Gegenseite <strong>rechtlich zur Erstattung der entstandenen Kosten verpflichtet ist</strong>. Falls die außergerichtliche Tätigkeit jedoch nicht zum Erfolg führt, wird Dir als Vereinsmitglied der Aufwand hierfür nicht berechnet, sodass für Dich <strong>kein Kostenrisiko</strong> besteht.</p>
+          <p>Sollte sich die Gegenseite außergerichtlich weigern, Deine Forderung auszugleichen, kannst Du im nächsten Schritt über die Partnerkanzlei auch ein <strong>gerichtliches Mahnverfahren</strong> einleiten lassen. In diesem Fall fallen jedoch gesetzliche Mindestgebühren in Form von Gerichts- und Anwaltskosten an, welche wir Dir <strong>vorab transparent kommunizieren</strong> werden. Du kannst dann frei entscheiden, ob Du die Forderung weiter gerichtlich verfolgen lassen möchtest oder ob Du das Verfahren einstellen willst, <strong>ohne ein Kostenrisiko zu tragen</strong>.</p>
+          <p>Hast Du eine offene Forderung und möchtest unseren Inkassoservice in Anspruch nehmen oder hast Du Fragen zu Deinem konkreten Fall? Dann buche gerne einen Termin zur <strong>kostenfreien Inkassoberatung</strong>, bei dem wir Deinen Fall und den genauen Ablauf des Inkassoverfahrens besprechen können.</p>
         </div>
         
         <ul class="bullets-list" style="align-self: flex-start; margin-bottom: 32px;">
@@ -736,7 +770,7 @@
             <div class="expert-name">Marlon Rother</div>
             <div class="expert-role">Rechtsanwalt</div>
           </div>
-          <blockquote>Als rechtlicher Berater bei Freie Wildbahn e.V. stehe ich unseren Mitgliedern bei Forderungsmanagement und Inkassoverfahren kompetent zur Seite.</blockquote>
+          <blockquote>„Als rechtlicher Berater bei Freie Wildbahn e.V. stehe ich unseren Mitgliedern bei Forderungsmanagement und Inkassoverfahren kompetent zur Seite.“</blockquote>
         </div>
 
         <div style="margin-top: 16px;" data-global-cta-skip>
@@ -750,11 +784,12 @@
       <div class="container" style="max-width: 960px; text-align: center; display: flex; flex-direction: column; align-items: center;">
         <span class="dachzeile">Versicherung &amp; Vorsorge</span>
         <h3 style="font-size: 28px; margin-bottom: 20px; color: var(--text-dark);">Versicherungs- und Vorsorgeberatung für Künstler, Journalisten und Publizisten</h3>
-        <div style="font-size: 15px; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; text-align: left;">
-          <p>Erscheinen Dir aufgrund Deiner nicht kalkulierbaren Einnahmen Themen wie <strong>Versicherungen und Vorsorge</strong> oft als unbequem?</p>
-          <p>Ist es schwer für Dich als freiberuflicher Künstler oder Publizist, den <strong>Durchblick bei der Menge an Informationen und Ratschlägen</strong> zu behalten?</p>
-          <p>Freie Wildbahn e.V. bietet Dir als Vereinsmitglied <strong>qualifizierte Beratung und fachkundige Unterstützung</strong> zu den Themen Vorsorge und Versicherung.</p>
-          <p>Gemeinsam mit unseren Versicherungsexperten erfolgt die Ermittlung <strong>Deines finanziellen Status quo</strong> und die Erstellung Deines Risikoprofils.</p>
+        <div class="vorteile-insurance-copy" style="font-size: 15px; color: var(--text-medium); line-height: 1.8; margin-bottom: 24px; text-align: left;">
+          <ul class="vorteile-question-list">
+            <li><span>Erscheinen Dir aufgrund Deiner nicht kalkulierbaren Einnahmen Themen wie <strong>Versicherungen und Vorsorge</strong> oft als unbequem?</span></li>
+            <li><span>Ist es schwer für Dich als freiberuflicher Künstler oder Publizist, den <strong>Durchblick bei der Menge an Informationen und Ratschlägen</strong> zu behalten?</span></li>
+          </ul>
+          <p>Freie Wildbahn e.V. bietet Dir als Vereinsmitglied <strong>qualifizierte Beratung und fachkundige Unterstützung</strong> zu den Themen Vorsorge und Versicherung. Gemeinsam mit unseren Versicherungsexperten erfolgt die Ermittlung <strong>Deines finanziellen Status quo</strong> und die Erstellung Deines Risikoprofils.</p>
           <p>Anschließend gibt es für Dich im Rahmen Deiner Möglichkeiten eine <strong>konkrete Maßnahmenempfehlung</strong>.</p>
           <p>Wir sind spezialisiert auf die besonderen Bedürfnisse von freischaffenden Künstlern, Publizisten und Journalisten und können Dich daher umfassend zum Thema <strong>Krankenkasse, Berufsunfähigkeitsvorsorge und Zusatzversicherungen</strong> beraten.</p>
           <p>Du benötigst eine <strong>Spezialversicherung für Dein Kamera- oder Musikequipment</strong>? Kein Problem!</p>
@@ -813,7 +848,7 @@
             <div class="expert-name">Detlef Husemann</div>
             <div class="expert-role">Vorsitzender von Freie Wildbahn e.V. und KSK-Experte</div>
           </div>
-          <blockquote>Wenn Du nach dem Künstlersozialversicherungsgesetz (KSVG) versichert wirst, beteiligt sich die Künstlersozialversicherung an den Beiträgen zur gesetzlichen Kranken-, Pflege- und Rentenversicherung.<br><br>Wie hoch Deine persönliche Entlastung ausfällt, hängt von Deiner individuellen Versicherungs- und Einkommenssituation ab.</blockquote>
+          <blockquote>„Wie hoch Deine persönliche Entlastung ausfällt, hängt von Deiner individuellen Versicherungs- und Einkommenssituation ab.“</blockquote>
         </div>
 
         <div style="margin-top: 40px;" data-global-cta-skip>

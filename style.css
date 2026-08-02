@@ -720,13 +720,13 @@ body > header.is-scrolled .mobile-logo img {
 .homepage-page main .rechner-text-col > p,
 .homepage-page main .feature-grid .feature-card > p,
 .homepage-page main .bg-light.section-padding > .container.page-container.text-center > p {
-  font-size: 20px !important;
+  font-size: 18px !important;
   line-height: 1.7 !important;
 }
 
 .homepage-page main .comparison-feature,
 .homepage-page main .pricing-wrapper > .text-center > p {
-  font-size: 20px !important;
+  font-size: 18px !important;
   line-height: 1.5 !important;
 }
 

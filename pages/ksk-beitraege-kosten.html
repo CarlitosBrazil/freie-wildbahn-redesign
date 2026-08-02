@@ -517,9 +517,27 @@
         line-height: 1.3;
         margin: 28px 0 14px;
       }
+      .ksk-content p,
+      .ksk-content li,
+      .ksk-example,
+      .ksk-table-note {
+        font-size: 18px;
+        line-height: 1.65;
+      }
+      .ksk-content .table th,
+      .ksk-content .table td {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      .ksk-method-comparison {
+        table-layout: fixed;
+        width: 100%;
+      }
+      .ksk-minimum-contribution-table {
+        table-layout: fixed;
+        width: 100%;
+      }
       .ksk-content p {
-        font-size: 16px;
-        line-height: 1.78;
         margin-bottom: 18px;
       }
       .ksk-check-line {
@@ -527,12 +545,12 @@
         align-items: flex-start;
         gap: 12px;
         margin: 12px 0;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.65;
       }
       .ksk-check-line strong,
       .ksk-check-line span:not(.ksk-check) {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.65;
       }
       .ksk-check {
@@ -582,6 +600,34 @@
       .ksk-number-note {
         padding-left: 18px;
         border-left: 3px solid var(--primary-green);
+      }
+      .ksk-factor-list {
+        margin: 0 0 24px;
+        padding-left: 30px;
+        list-style-position: outside;
+      }
+      .ksk-factor-list li {
+        padding-left: 6px;
+        margin-bottom: 8px;
+      }
+      .ksk-numbered-content-list {
+        counter-reset: ksk-content-step;
+        list-style: none;
+        margin: 0 0 24px;
+        padding-left: 0;
+      }
+      .ksk-numbered-content-list li {
+        counter-increment: ksk-content-step;
+        position: relative;
+        padding-left: 36px;
+        margin-bottom: 12px;
+      }
+      .ksk-numbered-content-list li::before {
+        content: counter(ksk-content-step) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 28px;
       }
       .rechner-method-card {
         margin: 24px 0;
@@ -735,6 +781,38 @@
         .ksk-content .rechner-quote-card img {
           margin: 0 auto;
         }
+      }
+      .ksk-table-caption {
+        padding: 16px 18px;
+        color: var(--text-dark);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.4;
+        background: var(--bg-light);
+        border-bottom: 1px solid var(--border-light);
+      }
+      .ksk-content .table tbody tr:last-child td {
+        color: inherit;
+        font-weight: inherit;
+      }
+      .ksk-content .table .table-total-row td {
+        color: var(--primary-green);
+        font-weight: 700;
+      }
+      .ksk-table-note {
+        margin-top: -8px;
+        padding: 14px 18px;
+        border-left: 4px solid var(--primary-green);
+        background: #fff;
+      }
+      .ksk-content .ksk-table-note,
+      .ksk-content .ksk-table-note p,
+      .ksk-content p.ksk-table-note {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+      .ksk-content .ksk-table-note-heading {
+        font-weight: 700;
       }
     </style>
   </head>
@@ -1061,16 +1139,11 @@
                   <path
                     d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
                   /></svg></a
-              ><a class="cta" href="#werte-2026"
-                ><span class="ksk-quick-number">05</span
-                ><span>Werte 2026 auf einen Blick</span
-                ><svg viewBox="0 0 320 512" aria-hidden="true">
-                  <path
-                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
-                  /></svg></a
               ><a class="cta" href="#mindesteinkommen-und-mindestbeitraege"
-                ><span class="ksk-quick-number">06</span
-                ><span>Mindesteinkommen und Mindestbeiträge</span
+                ><span class="ksk-quick-number">05</span
+                ><span
+                  >Wie hoch ist der Mindestbeitrag zur Künstlersozialkasse
+                  2026?</span
                 ><svg viewBox="0 0 320 512" aria-hidden="true">
                   <path
                     d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
@@ -1078,28 +1151,30 @@
               ><a
                 class="cta"
                 href="#hoechstbeitraege-und-beitragsbemessungsgrenzen"
-                ><span class="ksk-quick-number">07</span
-                ><span>Höchstbeiträge und Beitragsbemessungsgrenzen</span
+                ><span class="ksk-quick-number">06</span
+                ><span
+                  >Wie hoch ist der Höchstbeitrag zur Künstlersozialkasse
+                  2026?</span
                 ><svg viewBox="0 0 320 512" aria-hidden="true">
                   <path
                     d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
                   /></svg></a
               ><a class="cta" href="#brutto-netto-umsatz-gewinn"
-                ><span class="ksk-quick-number">08</span
+                ><span class="ksk-quick-number">07</span
                 ><span>Brutto oder netto? Umsatz oder Gewinn?</span
                 ><svg viewBox="0 0 320 512" aria-hidden="true">
                   <path
                     d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
                   /></svg></a
               ><a class="cta" href="#schaetzung-zu-hoch-oder-zu-niedrig"
-                ><span class="ksk-quick-number">09</span
+                ><span class="ksk-quick-number">08</span
                 ><span>Wenn die Schätzung zu hoch oder zu niedrig ist</span
                 ><svg viewBox="0 0 320 512" aria-hidden="true">
                   <path
                     d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
                   /></svg></a
               ><a class="cta" href="#faq"
-                ><span class="ksk-quick-number">10</span
+                ><span class="ksk-quick-number">09</span
                 ><span>Häufige Fragen zu KSK-Beiträgen und Kosten</span
                 ><svg viewBox="0 0 320 512" aria-hidden="true">
                   <path
@@ -1198,18 +1273,49 @@
             vereinfacht gesagt also <strong>der Gewinn</strong>, den Du
             voraussichtlich mit dieser Tätigkeit erzielst.
           </p>
-          <p>
-            <strong>Betriebseinnahmen:</strong> Einnahmen aus Deiner
-            selbständigen künstlerischen oder publizistischen Tätigkeit.
-          </p>
-          <p>
-            <strong>Betriebsausgaben:</strong> Kosten, die durch diese Tätigkeit
-            entstehen.
-          </p>
-          <p>
-            <strong>Arbeitseinkommen:</strong> Betriebseinnahmen minus
-            Betriebsausgaben – also der steuerrechtliche Gewinn vor
-            Einkommensteuer.
+          <div class="table-wrapper">
+            <div class="ksk-table-caption">
+              Tabelle A — Die drei Begriffe, die Deinen Beitrag bestimmen
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Begriff</th>
+                  <th scope="col">Was damit gemeint ist</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Betriebseinnahmen</td>
+                  <td>
+                    Alles, was Du mit Deiner künstlerischen oder publizistischen
+                    Tätigkeit einnimmst — Honorare, Gagen, Tantiemen,
+                    urheberrechtliche Vergütungen
+                  </td>
+                </tr>
+                <tr>
+                  <td>Betriebsausgaben</td>
+                  <td>
+                    Alle Kosten, die durch diese Tätigkeit entstehen — Material,
+                    Technik, Büro, Abschreibungen
+                  </td>
+                </tr>
+                <tr>
+                  <td>Arbeitseinkommen</td>
+                  <td>
+                    Betriebseinnahmen minus Betriebsausgaben. Das ist die Zahl,
+                    die Du der Künstlersozialkasse meldest
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ksk-table-note">
+            Nicht dazu zählen Zuwendungen der Bundesagentur für Arbeit wie
+            Arbeitslosengeld oder Gründungszuschuss. Ebenfalls nicht automatisch
+            dazu zählen eine Festanstellung, eine weitere nicht künstlerische
+            Selbständigkeit oder Beteiligungen an Firmen. Beeinflussen können
+            sie Deine Situation trotzdem.
           </p>
           <p><strong>Ein einfaches Beispiel:</strong></p>
           <div class="ksk-example">
@@ -1262,6 +1368,60 @@
             <strong>drei unterschiedliche Methoden</strong> zur Schätzung Deines
             voraussichtlichen Jahresarbeitseinkommens, um Deinen zukünftigen
             KSK-Beitrag zu ermitteln. Alle drei haben ihre Berechtigung:
+          </p>
+          <div class="table-wrapper">
+            <div class="ksk-table-caption">
+              Tabelle B — Die drei Methoden im Vergleich
+            </div>
+            <table class="table ksk-method-comparison">
+              <colgroup>
+                <col style="width: 28%" />
+                <col style="width: 19%" />
+                <col style="width: 25%" />
+                <col style="width: 28%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">Methode</th>
+                  <th scope="col">Für wen</th>
+                  <th scope="col">Was Du brauchst</th>
+                  <th scope="col">Wie sicher ist das Ergebnis?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1. Jahresgewinn schätzen</td>
+                  <td>Du startest gerade in die Selbständigkeit</td>
+                  <td>Nur Deine eigene Einschätzung</td>
+                  <td>
+                    <strong>Grobe Orientierung.</strong> Reicht für den Start,
+                    sollte im Jahresverlauf nachgeschärft werden
+                  </td>
+                </tr>
+                <tr>
+                  <td>2. Einkünfte aus dem Einkommensteuerbescheid</td>
+                  <td>Du bist bereits einige Jahre selbständig</td>
+                  <td>Mindestens einen Einkommensteuerbescheid</td>
+                  <td>
+                    <strong>Solide.</strong> Bei einer KSK-Prüfung gut belegbar
+                  </td>
+                </tr>
+                <tr>
+                  <td>3. Einnahmen-Überschuss-Rechnung</td>
+                  <td>Du arbeitest professionell selbständig</td>
+                  <td>Laufende Buchhaltung</td>
+                  <td>
+                    <strong>Sehr sicher.</strong> Bei einer KSK-Prüfung
+                    jederzeit belastbar
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ksk-table-note">
+            Alle drei Methoden haben ihre Berechtigung. Welche für Dich passt,
+            hängt davon ab, wie lange Du schon selbständig bist und wie gut Du
+            Deine Zahlen kennst.
           </p>
           <div class="rechner-method-card">
             <h3>
@@ -1469,10 +1629,12 @@
             Wie hoch Dein konkreter monatlicher Beitrag ausfällt, hängt unter
             anderem ab von:
           </p>
-          <p>Deinem voraussichtlichen Jahresarbeitseinkommen</p>
-          <p>den jeweils geltenden Beitragssätzen</p>
-          <p>dem individuellen Zusatzbeitrag Deiner Krankenkasse</p>
-          <p>Deiner persönlichen Situation in der Pflegeversicherung</p>
+          <ol class="ksk-factor-list">
+            <li>Deinem voraussichtlichen Jahresarbeitseinkommen</li>
+            <li>den jeweils geltenden Beitragssätzen</li>
+            <li>dem individuellen Zusatzbeitrag Deiner Krankenkasse</li>
+            <li>Deiner persönlichen Situation in der Pflegeversicherung</li>
+          </ol>
           <p>
             Bei gesetzlicher Krankenversicherung kommt zu Deinem Anteil am
             allgemeinen Beitragssatz zusätzlich die Hälfte des individuellen
@@ -1484,99 +1646,70 @@
           </p>
         </div>
       </section>
-      <section id="werte-2026" class="block-section section-padding bg-light">
+      <section class="block-section section-padding bg-light">
         <div class="container page-container ksk-content">
-          <h2>Werte 2026 auf einen Blick</h2>
-          <p>
-            Die folgenden Werte zeigen Dir,
-            <strong
-              >mit welchen Beitragssätzen und Grenzen 2026 gerechnet
-              wird</strong
-            >.
-          </p>
-          <p>
-            Wichtig für Dich: Nicht jeder Prozentsatz wird einfach vollständig
-            von Deinem Einkommen abgezogen. Dein eigener Anteil ist nur der
-            jeweilige <strong>Versichertenanteil</strong>, und bei höheren
-            Einkommen begrenzen die Beitragsbemessungsgrenzen (BBG), wie weit
-            Deine Beiträge steigen können.
-          </p>
           <div class="table-wrapper">
+            <div class="ksk-table-caption">
+              Tabelle C — Beitragssätze 2026: So viel Prozent zahlst Du selbst
+            </div>
             <table class="table">
               <thead>
                 <tr>
-                  <th>Bereich</th>
-                  <th>Wert 2026</th>
-                  <th>Versichertenanteil / Hinweis</th>
+                  <th scope="col">Versicherung</th>
+                  <th scope="col">Dein Anteil mit Kind</th>
+                  <th scope="col">Dein Anteil ohne Kind</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Rentenversicherung</td>
-                  <td>18,6 %</td>
-                  <td>9,3 %; BBG 101.400 € jährlich</td>
+                  <td>9,3 %</td>
+                  <td>9,3 %</td>
                 </tr>
                 <tr>
                   <td>Krankenversicherung</td>
-                  <td>14,6 %</td>
-                  <td>
-                    7,3 % plus Hälfte des individuellen Zusatzbeitrags; BBG
-                    69.750 € jährlich
-                  </td>
+                  <td>7,3 %</td>
+                  <td>7,3 %</td>
                 </tr>
                 <tr>
-                  <td>Durchschnittlicher Zusatzbeitrag</td>
-                  <td>2,9 %</td>
-                  <td>
-                    Orientierungswert; maßgeblich ist der individuelle
-                    Zusatzbeitrag Deiner Krankenkasse
-                  </td>
+                  <td>Zusatzbeitrag Deiner Krankenkasse *</td>
+                  <td>1,45 %</td>
+                  <td>1,45 %</td>
                 </tr>
                 <tr>
-                  <td>Pflegeversicherung</td>
-                  <td>3,6 % / 4,2 % kinderlos</td>
-                  <td>
-                    Versichertenanteil 1,8 % bzw. 2,4 %; Abschläge ab dem 2.
-                    Kind unter 25 möglich
-                  </td>
+                  <td>** Pflegeversicherung</td>
+                  <td>1,8 % **</td>
+                  <td>2,4 %</td>
                 </tr>
-                <tr>
-                  <td>Mindestarbeitseinkommen § 3 KSVG</td>
-                  <td>mehr als 3.900 € jährlich</td>
-                  <td>gesetzliche Ausnahmen beachten</td>
-                </tr>
-                <tr>
-                  <td>Mindest-Berechnungsgrundlage</td>
-                  <td>RV 3.900 € / KV-PV 7.910 € jährlich</td>
-                  <td>Rechengrundlagen für Mindestbeiträge</td>
+                <tr class="table-total-row">
+                  <td>Dein Beitragssatz gesamt</td>
+                  <td>19,85 %</td>
+                  <td>20,45 %</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <div class="rechner-alert-box">
+          <div class="ksk-table-note">
             <p>
-              <strong>Hinweis: </strong
-              ><em
-                >Die Werte gelten für 2026. Maßgeblich sind die jeweils
-                aktuellen gesetzlichen Werte und – bei der Krankenversicherung –
-                der individuelle Zusatzbeitrag Deiner Krankenkasse.
-              </em>
+              * Durchschnittswert aller Krankenkassen. Deine Krankenkasse legt
+              ihren Zusatzbeitrag selbst fest, er kann höher oder niedriger
+              sein. Du zahlst immer nur die Hälfte davon — die andere Hälfte
+              übernimmt die Künstlersozialkasse.
+            </p>
+            <p>
+              ** Hast Du mehrere Kinder unter 25 Jahren, sinkt Dein Anteil an
+              der Pflegeversicherung ab dem zweiten Kind weiter. Mit fünf
+              Kindern unter 25 Jahren liegt er bei 0,8 %.
             </p>
           </div>
-          <p>
-            Offizielle Quellen:
-            <a
-              class="ksk-text-link"
-              href="https://www.kuenstlersozialkasse.de/kuenstler-und-publizisten/beitrag"
-              >KSK Beitrag</a
-            >
-            ·
-            <a
-              class="ksk-text-link"
-              href="https://www.kuenstlersozialkasse.de/service-und-medien/ksk-in-zahlen"
-              >KSK in Zahlen</a
-            >
-          </p>
+          <div class="ksk-example">
+            <strong>Ein Rechenbeispiel:</strong><br />
+            Du schätzt Deinen Gewinn im Folgejahr auf 30.000 €. Verteilt auf
+            zwölf Monate sind das 2.500 € im Monat. Hast Du mindestens ein Kind,
+            liegt Dein Beitragssatz bei 19,85 %. Daraus ergibt sich ab Januar
+            des Folgejahres ein monatlicher KSK-Beitrag von
+            <strong>496,25 €</strong>.
+          </div>
         </div>
       </section>
       <section
@@ -1586,86 +1719,166 @@
         <div class="container page-container ksk-content">
           <h2>Wie hoch ist der Mindestbeitrag zur Künstlersozialkasse 2026?</h2>
           <p>
-            Auch wenn Dein Einkommen niedrig ist, bedeutet das nicht
-            automatisch, dass Du nicht über die KSK versichert sein kannst. Im
-            Gegenteil – die Künstlersozialkasse wurde ja gerade zur Absicherung
-            von Künstlern mit stark schwankenden Einkommen geschaffen.
+            Auch mit einem niedrigen Einkommen kannst Du über die
+            Künstlersozialkasse versichert sein. Im Gegenteil — die
+            Künstlersozialkasse wurde gerade für Kreative mit stark schwankenden
+            Einnahmen geschaffen. Zwei Zahlen musst Du dafür auseinanderhalten.
           </p>
+          <h3>Mindesteinkommen: Das entscheidet über Deine Versicherung</h3>
           <p>
-            Um in der KSK versichert zu sein, benötigst Du ein jährliches
-            Arbeitseinkommen aus Deiner selbständigen künstlerischen oder
-            publizistischen Tätigkeit von mindestens
-            <strong>3.900 Euro</strong>. Davon gibt es aber wichtige Ausnahmen.
+            Um in der Künstlersozialkasse versichert zu sein, brauchst Du ein
+            voraussichtliches Jahresarbeitseinkommen von
+            <strong>mehr als 3.900 Euro</strong>. Genau 3.900 Euro reichen nicht
+            — dieses Einkommen gilt bereits als geringfügig.
           </p>
+          <p>Davon gibt es zwei wichtige Ausnahmen:</p>
+          <ol class="ksk-numbered-content-list">
+            <li>
+              <strong>Berufsanfang.</strong> In den ersten drei Jahren Deiner
+              selbständigen künstlerischen oder publizistischen Tätigkeit gilt
+              diese Grenze nicht. Du kannst also mit deutlich weniger versichert
+              sein.
+            </li>
+            <li>
+              <strong>Gelegentliches Unterschreiten.</strong> Später darfst Du
+              die Grenze innerhalb von sechs Kalenderjahren höchstens zweimal
+              unterschreiten, ohne Deine Versicherung zu verlieren.
+            </li>
+          </ol>
           <p>
-            Gerade für <strong>Berufsanfänger</strong> ist das relevant: In den
-            <strong>ersten drei Jahren</strong> nach erstmaliger Aufnahme Deiner
-            selbständigen künstlerischen oder publizistischen Tätigkeit gilt
-            diese Mindesteinkommensgrenze nicht.
-          </p>
-          <p>
-            Auch später kann Deine Versicherungspflicht trotz eines niedrigeren
-            Einkommens bestehen bleiben, wenn Du die Grenze innerhalb von sechs
-            Kalenderjahren <strong>höchstens zweimal unterschreitest</strong>.
-          </p>
-          <p>
-            Wichtig für Dich:
+            Unterschreitest Du häufiger,
             <strong
-              >Mindesteinkommen und Mindestbeitrag sind nicht dasselbe.</strong
-            >
+              >droht der Ausschluss aus der Künstlersozialversicherung</strong
+            >. Das ist einer der häufigsten Gründe, warum Kreative ihre
+            Absicherung verlieren — und einer der Punkte, die sich mit einer
+            rechtzeitigen Beratung vermeiden lassen.
           </p>
+          <h3>Mindestbeitrag: Das entscheidet, was Du zahlst</h3>
           <p>
-            Die 3.900-Euro-Grenze betrifft die Frage, ob Du grundsätzlich
-            versicherungspflichtig bist. Für die eigentliche Beitragsberechnung
-            gelten eigene Mindest-Berechnungsgrundlagen.
-          </p>
-          <p>2026 sind das:</p>
-          <p class="ksk-number-note">
-            <strong>3.900 Euro jährlich</strong> für die Rentenversicherung
-          </p>
-          <p class="ksk-number-note">
-            <strong>7.910 Euro jährlich</strong> für Kranken- und
-            Pflegeversicherung
-          </p>
-          <p>
-            Das bedeutet: Auch bei einem sehr niedrigen tatsächlichen
-            Arbeitseinkommen wird Dein Beitrag nicht beliebig niedrig berechnet,
-            sondern mindestens auf Basis dieser Rechengrundlagen.
-          </p>
-          <p>
-            <strong>Wichtig: </strong>Mindesteinkommen und Mindestbeitrag sind
-            nicht dasselbe. Die 3.900-Euro-Grenze betrifft grundsätzlich die
-            Versicherungspflicht; die Mindest-Berechnungsgrundlagen bestimmen,
-            von welchem Einkommen Beiträge mindestens berechnet werden.
+            Die 3.900 Euro sagen nichts darüber, wie hoch Dein Beitrag ausfällt.
+            Dafür gelten eigene Rechengrundlagen, und die sind für die Rente und
+            für Kranken- und Pflegeversicherung unterschiedlich hoch.
           </p>
           <div class="table-wrapper">
+            <div class="ksk-table-caption">
+              Tabelle D — Womit die Künstlersozialkasse mindestens rechnet
+            </div>
             <table class="table">
               <thead>
                 <tr>
-                  <th>Versicherungszweig</th>
-                  <th>Mindestbeitrag 2026 (Versichertenanteil)</th>
-                  <th>Hinweis</th>
+                  <th scope="col">Versicherung</th>
+                  <th scope="col">Mindestens gerechnet wird mit</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Rentenversicherung</td>
-                  <td>30,23 € / Monat</td>
-                  <td>auf Basis 3.900 € jährlich</td>
+                  <td>3.900 € im Jahr</td>
                 </tr>
                 <tr>
-                  <td>Krankenversicherung</td>
-                  <td>48,12 € / Monat + 1/2 individueller Zusatzbeitrag</td>
-                  <td>auf Basis 7.910 € jährlich</td>
-                </tr>
-                <tr>
-                  <td>Pflegeversicherung</td>
-                  <td>11,87 € / Monat bzw. 15,82 € kinderlos</td>
-                  <td>Kinderabschläge ab dem 2. Kind unter 25 möglich</td>
+                  <td>Kranken- und Pflegeversicherung</td>
+                  <td>7.910 € im Jahr</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p>
+            Daraus folgt:
+            <strong
+              >Den Mindestbeitrag zahlen nicht nur Menschen mit sehr wenig
+              Einkommen.</strong
+            >
+            Drei Situationen führen dazu.
+          </p>
+          <ol class="ksk-numbered-content-list">
+            <li>
+              <strong>Du verdienst zwischen 3.900 und 7.910 Euro.</strong> Du
+              bist zweifelsfrei versichert und zahlst Deine Rentenbeiträge nach
+              Deinem tatsächlichen Einkommen — für Kranken- und
+              Pflegeversicherung aber den Mindestbeitrag.
+            </li>
+            <li>
+              <strong>Du bist im Berufsanfang.</strong> Dann kann Dein Einkommen
+              auch unter 3.900 Euro liegen. Rente, Kranken- und
+              Pflegeversicherung werden dann alle nach den Mindestgrundlagen
+              berechnet.
+            </li>
+            <li>
+              <strong>Du unterschreitest die Grenze ausnahmsweise.</strong> Auch
+              dann bleibst Du versichert und zahlst den Mindestbeitrag.
+            </li>
+          </ol>
+          <div class="table-wrapper">
+            <div class="ksk-table-caption">Tabelle E — Mindestbeitrag 2026</div>
+            <table class="table ksk-minimum-contribution-table">
+              <colgroup>
+                <col style="width: 44%" />
+                <col style="width: 28%" />
+                <col style="width: 28%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">Versicherung</th>
+                  <th scope="col">Mindestbeitrag<br />mit Kind</th>
+                  <th scope="col">Mindestbeitrag<br />ohne Kind</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rentenversicherung</td>
+                  <td>30,23 €</td>
+                  <td>30,23 €</td>
+                </tr>
+                <tr>
+                  <td>Krankenversicherung</td>
+                  <td>48,12 €</td>
+                  <td>48,12 €</td>
+                </tr>
+                <tr>
+                  <td>Zusatzbeitrag Deiner Krankenkasse *</td>
+                  <td>9,56 €</td>
+                  <td>9,56 €</td>
+                </tr>
+                <tr>
+                  <td>** Pflegeversicherung</td>
+                  <td>11,86 € **</td>
+                  <td>15,82 €</td>
+                </tr>
+                <tr class="table-total-row">
+                  <td>Mindestbeitrag gesamt</td>
+                  <td>99,77 €</td>
+                  <td>103,73 €</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ksk-table-note">
+            <p class="ksk-table-note-heading">Alle Beträge pro Monat.</p>
+            <p>
+              * Gerechnet mit dem durchschnittlichen Zusatzbeitrag von 2,9 %,
+              von dem Du die Hälfte trägst. Bei Deiner Krankenkasse kann dieser
+              Wert abweichen.
+            </p>
+            <p>
+              ** Ab dem zweiten Kind unter 25 Jahren sinkt Dein Anteil an der
+              Pflegeversicherung weiter. Dein Mindestbeitrag liegt dann unter
+              dem hier genannten Betrag.
+            </p>
+            <p>
+              Unser Beitragsrechner fasst Krankenversicherung und Zusatzbeitrag
+              zu einem Betrag zusammen. Die Summe ist dieselbe.
+            </p>
+          </div>
+          <p>
+            <strong>Nach unten ist Dein Beitrag also gedeckelt.</strong> Er
+            sinkt nicht beliebig weit, egal wie wenig Du verdienst. Wer sehr
+            wenig verdient, zahlt anteilig also mehr als jemand mit mittlerem
+            Einkommen. Wie hoch Dein Beitrag konkret ausfällt, rechnet Dir unser
+            <a class="ksk-text-link" href="ksk-beitragsrechner.html"
+              >KSK-Beitragsrechner</a
+            >
+            in wenigen Sekunden aus.
+          </p>
         </div>
       </section>
       <section
@@ -1690,18 +1903,48 @@
             <strong>nicht weiter</strong>, selbst wenn Du mehr verdienst.
           </p>
           <p>2026 liegt die Beitragsbemessungsgrenze (BBG):</p>
-          <ul>
-            <li>
-              in der
-              <strong>Rentenversicherung bei 101.400 Euro jährlich</strong>
-            </li>
-            <li>
-              in der
-              <strong
-                >Kranken- und Pflegeversicherung bei 69.750 Euro jährlich</strong
-              >
-            </li>
-          </ul>
+          <p class="ksk-number-note">
+            in der
+            <strong>Rentenversicherung bei 101.400 Euro jährlich</strong>
+          </p>
+          <p class="ksk-number-note">
+            in der
+            <strong
+              >Kranken- und Pflegeversicherung bei 69.750 Euro jährlich</strong
+            >
+          </p>
+          <div class="table-wrapper">
+            <div class="ksk-table-caption">
+              Tabelle F — Bis zu welchem Einkommen Dein Beitrag steigt
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Versicherung</th>
+                  <th scope="col">
+                    Bis zu diesem Jahreseinkommen steigt Dein Beitrag
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rentenversicherung</td>
+                  <td>101.400 €</td>
+                </tr>
+                <tr>
+                  <td>Kranken- und Pflegeversicherung</td>
+                  <td>69.750 €</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ksk-table-note">
+            Verdienst Du mehr, steigt Dein Beitrag für diesen Versicherungszweig
+            nicht weiter. Der Fachbegriff dafür lautet Beitragsbemessungsgrenze.
+            Weil für die Rente und für Kranken- und Pflegeversicherung
+            unterschiedliche Grenzen gelten, gibt es keinen einzelnen festen
+            Höchstbeitrag.
+          </p>
           <p>
             Weil für Rentenversicherung und Kranken-/Pflegeversicherung
             unterschiedliche Grenzen gelten, gibt es
@@ -1715,32 +1958,60 @@
             und Deiner Pflegeversicherungssituation ab.
           </p>
           <div class="table-wrapper">
+            <div class="ksk-table-caption">Tabelle G — Höchstbeitrag 2026</div>
             <table class="table">
               <thead>
                 <tr>
-                  <th>Versicherungszweig</th>
-                  <th>Monatlicher Höchstbeitrag 2026 (Versichertenanteil)</th>
-                  <th>Hinweis</th>
+                  <th scope="col">Versicherung</th>
+                  <th scope="col">Höchstbeitrag mit Kind</th>
+                  <th scope="col">Höchstbeitrag ohne Kind</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Rentenversicherung</td>
                   <td>785,85 €</td>
-                  <td>bei RV-BBG 101.400 € jährlich</td>
+                  <td>785,85 €</td>
                 </tr>
                 <tr>
                   <td>Krankenversicherung</td>
-                  <td>424,31 € + 1/2 individueller Zusatzbeitrag</td>
-                  <td>bei KV-BBG 69.750 € jährlich</td>
+                  <td>424,31 €</td>
+                  <td>424,31 €</td>
                 </tr>
                 <tr>
-                  <td>Pflegeversicherung</td>
-                  <td>104,63 € bzw. 139,50 € kinderlos</td>
-                  <td>bei KV/PV-BBG 69.750 €; Kinderabschläge möglich</td>
+                  <td>Zusatzbeitrag Deiner Krankenkasse *</td>
+                  <td>84,28 €</td>
+                  <td>84,28 €</td>
+                </tr>
+                <tr>
+                  <td>** Pflegeversicherung</td>
+                  <td>104,63 € **</td>
+                  <td>139,50 €</td>
+                </tr>
+                <tr class="table-total-row">
+                  <td>Höchstbeitrag gesamt</td>
+                  <td>1.399,07 €</td>
+                  <td>1.433,94 €</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+          <div class="ksk-table-note">
+            <p class="ksk-table-note-heading">Alle Beträge pro Monat.</p>
+            <p>
+              * Gerechnet mit dem durchschnittlichen Zusatzbeitrag von 2,9 %,
+              von dem Du die Hälfte trägst. Bei Deiner Krankenkasse kann dieser
+              Wert abweichen.
+            </p>
+            <p>
+              ** Ab dem zweiten Kind unter 25 Jahren sinkt Dein Anteil an der
+              Pflegeversicherung weiter. Dein Höchstbeitrag liegt dann unter dem
+              hier genannten Betrag.
+            </p>
+            <p>
+              Unser Beitragsrechner fasst Krankenversicherung und Zusatzbeitrag
+              zu einem Betrag zusammen. Die Summe ist dieselbe.
+            </p>
           </div>
         </div>
       </section>
