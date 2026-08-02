@@ -131,6 +131,61 @@ window.applyGlobalRegistrationLinks = function applyGlobalRegistrationLinks() {
   });
 };
 
+window.applyGlobalQuicklinkStyle = function applyGlobalQuicklinkStyle() {
+  const groups = document.querySelectorAll(
+    '.beratung-quicklinks ol, .quicklinks-box .quicklinks-flex, .quicklinks-box .ksk-quicklinks-stack'
+  );
+
+  groups.forEach(group => {
+    const links = [...group.querySelectorAll(':scope > a, :scope > li > a')];
+
+    links.forEach((link, index) => {
+      link.classList.add('global-quicklink-row');
+
+      const directChildren = [...link.children];
+      let number = directChildren.find(child =>
+        child.classList.contains('beratung-quicklinks-number') ||
+        child.classList.contains('ksk-quick-number') ||
+        child.classList.contains('global-quicklink-number')
+      );
+      let arrow = directChildren.find(child => child.matches?.('svg'));
+
+      if (!arrow) {
+        arrow = directChildren.find(child =>
+          child !== number && child.tagName === 'SPAN' && /^[›»❯>]$/.test(child.textContent.trim())
+        );
+      }
+
+      let label = directChildren.find(child =>
+        child !== number && child !== arrow && child.tagName === 'SPAN'
+      );
+
+      if (!label) {
+        label = document.createElement('span');
+        label.textContent = link.textContent.trim();
+        link.prepend(label);
+      }
+
+      label.textContent = label.textContent.replace(/^\s*\d+[.)]?\s*/, '');
+      label.classList.add('global-quicklink-label');
+
+      if (!number) {
+        number = document.createElement('span');
+        label.before(number);
+      }
+      number.textContent = String(index + 1).padStart(2, '0');
+      number.classList.add('global-quicklink-number');
+
+      if (!arrow) {
+        arrow = document.createElement('span');
+        arrow.textContent = '›';
+        link.append(arrow);
+      }
+      arrow.classList.add('global-quicklink-arrow');
+    });
+  });
+};
+
 window.applyGlobalContentCtas = function applyGlobalContentCtas() {
   const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const inPages = window.location.pathname.toLowerCase().includes('/pages/');
@@ -264,6 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.bindGlobalHeader();
   window.renderGlobalReviews();
   window.applyGlobalRegistrationLinks();
+  window.applyGlobalQuicklinkStyle();
   window.applyGlobalContentCtas();
 
   // The calculator pages use compressed one-line hero markup, so attach the

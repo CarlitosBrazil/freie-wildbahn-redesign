@@ -1557,6 +1557,60 @@ body > header.is-scrolled .mobile-logo img {
   fill: currentColor;
 }
 
+/* Shared numbered Quicklinks presentation. Applied only after script.js has
+   separated each existing number, label and arrow without changing its href. */
+.global-quicklink-row {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) 18px !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: 100% !important;
+  padding: 18px 20px !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+}
+
+.global-quicklink-number {
+  display: inline !important;
+  color: var(--primary-green) !important;
+  font-size: inherit !important;
+  font-weight: 800 !important;
+  letter-spacing: .05em !important;
+  line-height: 1 !important;
+}
+
+.global-quicklink-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.global-quicklink-label::before {
+  content: none !important;
+}
+
+.global-quicklink-arrow {
+  justify-self: end;
+  color: var(--primary-green) !important;
+  font-size: 28px !important;
+  line-height: 1 !important;
+}
+
+svg.global-quicklink-arrow {
+  width: 14px !important;
+  height: 14px !important;
+  fill: currentColor !important;
+}
+
+@media (max-width: 768px) {
+  .global-quicklink-row {
+    grid-template-columns: 42px minmax(0, 1fr) 18px !important;
+    gap: 12px !important;
+    padding: 16px 14px !important;
+    font-size: 20px !important;
+  }
+}
+
 .block-section {
   padding-top: 60px;
   padding-bottom: 60px;
