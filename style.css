@@ -724,6 +724,12 @@ body > header.is-scrolled .mobile-logo img {
   line-height: 1.7 !important;
 }
 
+.homepage-page main .comparison-feature,
+.homepage-page main .pricing-wrapper > .text-center > p {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+}
+
 .hero-cta-intro {
   font-size: 18px;
   font-weight: 400;
