@@ -1,666 +1,2288 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KSK-Beiträge und Kosten 2026 | Freie Wildbahn e.V.</title>
-  <meta name="description" content="KSK-Beiträge und Kosten 2026: Arbeitseinkommen, Beitragssätze, Mindestbeiträge und Höchstbeiträge verständlich erklärt.">
-  <link rel="stylesheet" href="../style.css?v=9">
-  <script src="../script.js?v=9" defer></script>
-  <!-- External KSK calculator assets (may not load in local preview) -->
-<style>
-    /* Keep the shared site chrome isolated from the external calculator CSS. */
-    header .container,
-    footer .container {
-      width: 100%;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KSK-Beiträge und Kosten 2026 | Freie Wildbahn e.V.</title>
+    <meta
+      name="description"
+      content="KSK-Beiträge und Kosten 2026: Arbeitseinkommen, Beitragssätze, Mindestbeiträge und Höchstbeiträge verständlich erklärt."
+    />
+    <link rel="stylesheet" href="../style.css?v=9" />
+    <script src="../script.js?v=9" defer></script>
+    <!-- External KSK calculator assets (may not load in local preview) -->
+    <style>
+      /* Keep the shared site chrome isolated from the external calculator CSS. */
+      header .container,
+      footer .container {
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-    /* Force site font over external Tailwind stylesheet overrides */
-    body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, select, button {
-      font-family: 'Open Sans', sans-serif !important;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 700 !important;
-      line-height: 1.25 !important;
-    }
-    h1, h2, h3 {
-      font-weight: 800 !important;
-    }
-    /* ── Page-specific styles for ksk-beitragsrechner ── */
-    .rechner-features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin: 32px 0 0;
-    }
-    .rechner-feature-card {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid var(--border-light);
-      padding: 24px 20px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .rechner-feature-card .feat-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--primary-green);
-    }
-    .rechner-feature-card h4 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin: 0;
-    }
-    .rechner-feature-card p {
-      font-size: 13px;
-      color: var(--text-medium);
-      line-height: 1.55;
-      margin: 0;
-    }
-    .rechner-calculator-wrap {
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid var(--border-light);
-      box-shadow: var(--shadow-md);
-      padding: 40px 48px;
-      margin: 48px 0;
-    }
-    .rechner-calculator-wrap h3 {
-      font-size: 33px;
-      margin-bottom: 8px;
-      color: var(--text-dark);
-    }
-    .rechner-calculator-wrap .rechner-disclaimer {
-      font-size: 14px;
-      color: var(--text-light);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-    .rechner-fallback {
-      background: var(--bg-light);
-      border-radius: 10px;
-      border: 1px solid var(--border-light);
-      padding: 24px 28px;
-      text-align: center;
-      color: var(--text-medium);
-      font-size: 15px;
-    }
-    .rechner-quote-card {
-      background: #f2f8f7;
-      border-radius: 14px;
-      border: 1px solid rgba(38, 128, 128, 0.22);
-      border-left: 5px solid var(--primary-green);
-      padding: 28px 32px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      margin: 40px 0;
-      box-shadow: var(--shadow-sm);
-    }
-    .rechner-quote-card img {
-      width: 132px;
-      height: 132px;
-      border-radius: 12px;
-      object-fit: cover;
-      object-position: center top;
-      flex-shrink: 0;
-    }
-    .rechner-quote-card blockquote {
-      font-size: 16px;
-      color: var(--text-dark);
-      line-height: 1.8;
-      font-style: italic;
-      margin: 0 0 10px;
-    }
-    .rechner-quote-card .q-author {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--primary-green);
-    }
-    .rechner-quote-card .q-title {
-      font-size: 12px;
-      color: var(--text-light);
-    }
-    .rechner-method-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin: 24px 0;
-    }
-    .rechner-method-card {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid var(--border-light);
-      padding: 28px 28px 28px 24px;
-      border-left: 4px solid var(--primary-green);
-      box-shadow: var(--shadow-sm);
-    }
-    .rechner-method-card h4 {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 12px;
-    }
-    .rechner-method-card h5 {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin: 18px 0 10px;
-    }
-    .rechner-method-card p {
-      font-size: 15px;
-      color: var(--text-medium);
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-    .rechner-method-card p:last-child { margin-bottom: 0; }
-    .rechner-method-tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .rechner-method-tag {
-      background: var(--bg-light);
-      border-radius: 20px;
-      border: 1px solid var(--border-light);
-      padding: 6px 14px 6px 34px;
-      font-size: 12px;
-      color: var(--primary-green);
-      font-weight: 600;
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-    }
-    .rechner-method-tag::before {
-      content: "✓";
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
-      border-radius: 999px;
-      background: rgba(38, 128, 128, 0.12);
-      color: var(--primary-green);
-      font-size: 10px;
-      font-weight: 700;
-      line-height: 14px;
-      text-align: center;
-    }
-    .rechner-alert-box {
-      background: #fff8f0;
-      border: 1px solid #f0c090;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 16px 0 30px;
-    }
-    .rechner-alert-box strong {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--brand-orange);
-      margin-bottom: 6px;
-    }
-    .rechner-alert-box p {
-      font-size: 13px;
-      color: var(--text-medium);
-      line-height: 1.6;
-      margin: 0;
-    }
-    .rechner-method-card:last-of-type > p:last-child {
-      background: #fff8f0;
-      border: 1px solid #f0c090;
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin: 16px 0 30px;
-    }
-    .rechner-method-card:last-of-type > p:last-child > strong:first-child {
-      display: block;
-      color: var(--brand-orange);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-    .rechner-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-    .rechner-info-callout {
-      background: var(--bg-light);
-      border-left: 4px solid var(--primary-green);
-      border-radius: 0 10px 10px 0;
-      padding: 20px 24px;
-      margin: 24px 0;
-    }
-    .rechner-info-callout p {
-      font-size: 15px;
-      color: var(--text-dark);
-      line-height: 1.7;
-      margin: 0;
-    }
-    .rechner-cta-banner {
-      background: var(--primary-green);
-      border-radius: 14px;
-      padding: 40px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin: 56px 0 0;
-    }
-    .rechner-cta-banner .cta-text h3 { font-size: 33px; color: #fff; margin-bottom: 8px; }
-    #WaskannderKSK-RechnervonFreieWildbahneV h3,
-    #WieschaetzeichmeinvoraussichtlichesArbeitseinkommenfuerdasFolgejahrrichtig h3,
-    #WiewirdderKuenstlersozialkasse-Beitraggenauberechnet h3,
-    #WiehochistderMindestbeitragzurKuenstlersozialkasse h3,
-    #WasistderHoechstbeitraginderKuenstlersozialkasse h3 {
-      font-size: 33px !important;
-    }
-    .rechner-cta-banner .cta-text p { font-size: 14px; color: rgba(255,255,255,.82); margin: 0; }
-    .rechner-section-img {
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-    }
-    .rechner-section-img img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-    }
-    @media (max-width: 960px) {
-      .rechner-features { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .rechner-features { grid-template-columns: 1fr; }
-      .rechner-split { grid-template-columns: 1fr; }
-      .rechner-calculator-wrap { padding: 24px 20px; }
-      .rechner-cta-banner { padding: 28px 24px; }
-      .rechner-quote-card { flex-direction: column; }
-    }
-    
-    /* Table styles */
-    .table-wrapper {
-      overflow-x: auto;
-      margin: 24px 0;
-      border: 1px solid var(--border-light);
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: var(--shadow-sm);
-    }
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 15px;
-    }
-    .table th, .table td {
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--border-light);
-    }
-    .table th {
-      background-color: var(--primary-green);
-      color: #fff;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-    }
-    .table tr:last-child td {
-      border-bottom: none;
-    }
-    .table tr:nth-child(even) {
-      background-color: var(--bg-light);
-    }
-    .table tr:hover {
-      background-color: #f1f5f9;
-    }
-    /* Bold formatting for summary rows */
-    .table tr:last-child td {
-      font-weight: 700;
-      color: var(--primary-green);
-    }
-  </style>
+      /* Force site font over external Tailwind stylesheet overrides */
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a,
+      span,
+      li,
+      input,
+      select,
+      button {
+        font-family: "Open Sans", sans-serif !important;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700 !important;
+        line-height: 1.25 !important;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 800 !important;
+      }
+      /* ── Page-specific styles for ksk-beitragsrechner ── */
+      .rechner-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 32px 0 0;
+      }
+      .rechner-feature-card {
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid var(--border-light);
+        padding: 24px 20px;
+        box-shadow: var(--shadow-sm);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .rechner-feature-card .feat-label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-green);
+      }
+      .rechner-feature-card h4 {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 0;
+      }
+      .rechner-feature-card p {
+        font-size: 13px;
+        color: var(--text-medium);
+        line-height: 1.55;
+        margin: 0;
+      }
+      .rechner-calculator-wrap {
+        background: #fff;
+        border-radius: 16px;
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
+        padding: 40px 48px;
+        margin: 48px 0;
+      }
+      .rechner-calculator-wrap h3 {
+        font-size: 33px;
+        margin-bottom: 8px;
+        color: var(--text-dark);
+      }
+      .rechner-calculator-wrap .rechner-disclaimer {
+        font-size: 14px;
+        color: var(--text-light);
+        margin-bottom: 24px;
+        line-height: 1.6;
+      }
+      .rechner-fallback {
+        background: var(--bg-light);
+        border-radius: 10px;
+        border: 1px solid var(--border-light);
+        padding: 24px 28px;
+        text-align: center;
+        color: var(--text-medium);
+        font-size: 15px;
+      }
+      .rechner-quote-card {
+        background: #f2f8f7;
+        border-radius: 14px;
+        border: 1px solid rgba(38, 128, 128, 0.22);
+        border-left: 5px solid var(--primary-green);
+        padding: 28px 32px;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin: 40px 0;
+        box-shadow: var(--shadow-sm);
+      }
+      .rechner-quote-card img {
+        width: 132px;
+        height: 132px;
+        border-radius: 12px;
+        object-fit: cover;
+        object-position: center top;
+        flex-shrink: 0;
+      }
+      .rechner-quote-card blockquote {
+        font-size: 16px;
+        color: var(--text-dark);
+        line-height: 1.8;
+        font-style: italic;
+        margin: 0 0 10px;
+      }
+      .rechner-quote-card .q-author {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--primary-green);
+      }
+      .rechner-quote-card .q-title {
+        font-size: 12px;
+        color: var(--text-light);
+      }
+      .rechner-method-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: 24px 0;
+      }
+      .rechner-method-card {
+        background: #fff;
+        border-radius: 12px;
+        border: 1px solid var(--border-light);
+        padding: 28px 28px 28px 24px;
+        border-left: 4px solid var(--primary-green);
+        box-shadow: var(--shadow-sm);
+      }
+      .rechner-method-card h4 {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 12px;
+      }
+      .rechner-method-card h5 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 18px 0 10px;
+      }
+      .rechner-method-card p {
+        font-size: 15px;
+        color: var(--text-medium);
+        line-height: 1.7;
+        margin-bottom: 12px;
+      }
+      .rechner-method-card p:last-child {
+        margin-bottom: 0;
+      }
+      .rechner-method-tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .rechner-method-tag {
+        background: var(--bg-light);
+        border-radius: 20px;
+        border: 1px solid var(--border-light);
+        padding: 6px 14px 6px 34px;
+        font-size: 12px;
+        color: var(--primary-green);
+        font-weight: 600;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+      }
+      .rechner-method-tag::before {
+        content: "✓";
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 999px;
+        background: rgba(38, 128, 128, 0.12);
+        color: var(--primary-green);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 14px;
+        text-align: center;
+      }
+      .rechner-alert-box {
+        background: #fff8f0;
+        border: 1px solid #f0c090;
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 16px 0 30px;
+      }
+      .rechner-alert-box strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--brand-orange);
+        margin-bottom: 6px;
+      }
+      .rechner-alert-box p {
+        font-size: 13px;
+        color: var(--text-medium);
+        line-height: 1.6;
+        margin: 0;
+      }
+      .rechner-method-card:last-of-type > p:last-child {
+        background: #fff8f0;
+        border: 1px solid #f0c090;
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 16px 0 30px;
+      }
+      .rechner-method-card:last-of-type > p:last-child > strong:first-child {
+        display: block;
+        color: var(--brand-orange);
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+      .rechner-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+      .rechner-info-callout {
+        background: var(--bg-light);
+        border-left: 4px solid var(--primary-green);
+        border-radius: 0 10px 10px 0;
+        padding: 20px 24px;
+        margin: 24px 0;
+      }
+      .rechner-info-callout p {
+        font-size: 15px;
+        color: var(--text-dark);
+        line-height: 1.7;
+        margin: 0;
+      }
+      .rechner-cta-banner {
+        background: var(--primary-green);
+        border-radius: 14px;
+        padding: 40px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin: 56px 0 0;
+      }
+      .rechner-cta-banner .cta-text h3 {
+        font-size: 33px;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      #WaskannderKSK-RechnervonFreieWildbahneV h3,
+      #WieschaetzeichmeinvoraussichtlichesArbeitseinkommenfuerdasFolgejahrrichtig
+        h3,
+      #WiewirdderKuenstlersozialkasse-Beitraggenauberechnet h3,
+      #WiehochistderMindestbeitragzurKuenstlersozialkasse h3,
+      #WasistderHoechstbeitraginderKuenstlersozialkasse h3 {
+        font-size: 33px !important;
+      }
+      .rechner-cta-banner .cta-text p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.82);
+        margin: 0;
+      }
+      .rechner-section-img {
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+      }
+      .rechner-section-img img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        display: block;
+      }
+      @media (max-width: 960px) {
+        .rechner-features {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .rechner-features {
+          grid-template-columns: 1fr;
+        }
+        .rechner-split {
+          grid-template-columns: 1fr;
+        }
+        .rechner-calculator-wrap {
+          padding: 24px 20px;
+        }
+        .rechner-cta-banner {
+          padding: 28px 24px;
+        }
+        .rechner-quote-card {
+          flex-direction: column;
+        }
+      }
 
-  <!-- KSK-CONTENT-SPLIT-STYLES -->
-  <style>
-    .ksk-split-page { color: var(--text-medium); }
-    .ksk-split-page .ksk-split-hero { padding: 64px 0; background: var(--bg-light); border-bottom: 1px solid var(--border-light); }
-    .ksk-split-page .hero-grid { align-items: center; }
-    .ksk-split-page .hero-content-col { grid-column: 1; }
-    .ksk-split-page .hero-visual-col { grid-column: 2; }
-    .ksk-split-page .hero-content-col, .ksk-split-page .hero-visual-col { min-width: 0; max-width: 100%; }
-    .ksk-split-page h1 { font-size: clamp(34px, 4vw, 46px); line-height: 1.14; margin-bottom: var(--hero-heading-content-gap); overflow-wrap: normal; hyphens: manual; }
-    .ksk-split-page .ksk-hero-subtitle { color: var(--primary-green); font-size: 27px; line-height: 1.25; margin: 0 0 18px; }
-    .ksk-split-page .hero-content p { font-size: 17px; line-height: 1.72; margin-bottom: 16px; }
-    .ksk-split-page .ksk-hero-video video { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-radius: 12px; box-shadow: var(--shadow-md); }
-    .ksk-summary-section { padding: 64px 0; background: linear-gradient(180deg, #fff 0%, #fdfcf9 100%); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-    .ksk-summary { max-width: 980px; margin: 0 auto; }
-    .ksk-summary h2 { color: var(--brand-orange); font-size: clamp(21px, 2vw, 26px); margin: 0 0 24px; }
-    .ksk-summary p { border-left: 5px solid var(--brand-orange); padding: 2px 0 2px 26px; font-size: 17px; line-height: 1.75; margin: 0; }
-    .ksk-quicklinks-section { padding: 40px 0; background: var(--bg-light); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
-    .ksk-quicklinks-section .quicklinks-box { margin: 0 auto; width: min(64vw, var(--text-section-width)); max-width: none; }
-    .ksk-quicklinks-section h2 { color: var(--text-dark); font-size: 25px; border: 0; padding: 0; margin-bottom: 24px; }
-    .ksk-quicklinks-stack { display: grid; gap: 12px; counter-reset: ksk-quicklink; }
-    .ksk-quicklinks-stack .cta { counter-increment: ksk-quicklink; display: grid; grid-template-columns: minmax(0, 1fr) 14px; align-items: center; gap: 18px; width: 100%; background: #fff; border: 1px solid var(--border-light); border-radius: 8px; padding: 20px; color: var(--text-dark); }
-    .ksk-quicklinks-stack .cta > span:nth-child(2)::before { content: counter(ksk-quicklink) ". "; }
-    .ksk-quicklinks-stack .cta > span:nth-child(2) { font-size: 18px; line-height: 1.35; }
-    .ksk-quick-number { display: none; }
-    .ksk-content { max-width: 980px; }
-    .ksk-content > h2 { color: var(--text-dark); font-size: clamp(28px, 3vw, 36px); line-height: 1.2; margin-bottom: 26px; }
-    .ksk-content > h3, .rechner-method-card h3 { color: var(--primary-green); font-size: 23px; line-height: 1.3; margin: 28px 0 14px; }
-    .ksk-content p { font-size: 16px; line-height: 1.78; margin-bottom: 18px; }
-    .ksk-check-line { display: flex; align-items: flex-start; gap: 12px; margin: 12px 0; font-size: 16px; line-height: 1.65; }
-    .ksk-check-line strong, .ksk-check-line span:not(.ksk-check) { font-size: 16px; line-height: 1.65; }
-    .ksk-check { color: var(--primary-green); font-size: 23px; line-height: 1; font-weight: 800; flex: 0 0 auto; }
-    .ksk-cta-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 26px; }
-    .btn-teal { background: var(--primary-green); color: #fff; }
-    .btn-teal:hover { background: #fff; color: var(--primary-green); box-shadow: inset 0 0 0 2px var(--primary-green); }
-    .ksk-text-link { color: var(--primary-green); font-weight: 700; }
-    .ksk-text-link:hover { text-decoration: underline; }
-    .ksk-formula, .ksk-example { background: #fff; border: 1px solid var(--border-light); border-left: 5px solid var(--primary-green); border-radius: 8px; padding: 20px 22px; margin: 22px 0; box-shadow: var(--shadow-sm); }
-    .ksk-formula { color: var(--primary-green); font-size: 18px; font-weight: 700; }
-    .ksk-number-note { padding-left: 18px; border-left: 3px solid var(--primary-green); }
-    .rechner-method-card { margin: 24px 0; }
-    .rechner-method-card h3 { margin-top: 0; }
-    .ksk-content .table-wrapper { margin: 28px 0; overflow-x: auto; }
-    .ksk-content .table { min-width: 680px; }
-    .ksk-content .rechner-quote-card { margin-top: 32px; align-items: center; }
-    .ksk-content .rechner-quote-card blockquote { margin: 0 0 12px; }
-    .ksk-bridge-link { margin-top: 24px; }
-    .ksk-faq-item { border-bottom: 1px solid var(--border-light); }
-    .ksk-faq-heading { margin: 0 !important; }
-    .ksk-faq-question { width: 100%; border: 0; background: transparent; color: var(--text-dark); font: inherit; font-size: 17px; font-weight: 700; text-align: left; padding: 19px 4px; display: flex; justify-content: space-between; align-items: center; gap: 18px; cursor: pointer; }
-    .ksk-faq-question:hover { color: var(--primary-green); }
-    .ksk-faq-question:focus-visible { outline: 3px solid rgba(0,128,128,.28); outline-offset: 3px; }
-    .ksk-faq-indicator { width: 18px; height: 18px; position: relative; flex: 0 0 18px; }
-    .ksk-faq-indicator::before, .ksk-faq-indicator::after { content: ""; position: absolute; background: var(--primary-green); border-radius: 2px; transition: transform .2s ease; }
-    .ksk-faq-indicator::before { width: 14px; height: 2px; top: 8px; left: 2px; }
-    .ksk-faq-indicator::after { width: 2px; height: 14px; top: 2px; left: 8px; }
-    .ksk-faq-question[aria-expanded="true"] .ksk-faq-indicator::after { transform: rotate(90deg); }
-    .ksk-faq-panel { padding: 0 44px 20px 4px; }
-    .ksk-faq-panel[hidden] { display: none; }
-    #faq {
-      border-bottom: 0 !important;
-      padding-bottom: 52px;
-    }
-    #support-final-cta {
-      background: #fff;
-      border: 0 !important;
-      padding: 48px 0;
-    }
-    #support-final-cta .rechner-cta-banner {
-      margin-top: 0;
-    }
-    @media (max-width: 980px) {
-      .ksk-split-page .hero-content-col, .ksk-split-page .hero-visual-col { grid-column: 1 !important; }
-      .ksk-split-page .hero-visual-col { margin-top: 28px; }
-      .ksk-content { max-width: 760px; }
-    }
-    @media (max-width: 640px) {
-      .ksk-split-page .ksk-split-hero { padding: 42px 0; }
-      .ksk-split-page h1 { font-size: 32px !important; }
-      .ksk-content h2, .ksk-content h3, .ksk-quicklinks-stack span { overflow-wrap: anywhere; hyphens: auto; }
-      .ksk-split-page .ksk-hero-subtitle { font-size: 23px; }
-      .ksk-summary-section, .ksk-quicklinks-section { padding: 34px 0; }
-      .ksk-summary p { padding-left: 20px; }
-      .ksk-quicklinks-section .quicklinks-box { width: 100%; }
-      .ksk-quicklinks-stack .cta { grid-template-columns: minmax(0, 1fr) 14px; padding: 16px 14px; }
-      .ksk-cta-row .btn { width: 100%; text-align: center; }
-      .ksk-content .rechner-quote-card { grid-template-columns: 1fr; text-align: center; }
-      .ksk-content .rechner-quote-card img { margin: 0 auto; }
-    }
-  </style>
+      /* Table styles */
+      .table-wrapper {
+        overflow-x: auto;
+        margin: 24px 0;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: var(--shadow-sm);
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 15px;
+      }
+      .table th,
+      .table td {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .table th {
+        background-color: var(--primary-green);
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+      }
+      .table tr:last-child td {
+        border-bottom: none;
+      }
+      .table tr:nth-child(even) {
+        background-color: var(--bg-light);
+      }
+      .table tr:hover {
+        background-color: #f1f5f9;
+      }
+      /* Bold formatting for summary rows */
+      .table tr:last-child td {
+        font-weight: 700;
+        color: var(--primary-green);
+      }
+    </style>
 
-</head>
-<body>
-
-  <!-- MOBILE NAVIGATION DRAWER -->
-  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
-  <div class="mobile-menu-drawer" id="mobileDrawer">
-    <div class="mobile-drawer-header">
-      <div class="mobile-logo">
-        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
-      </div>
-      <button class="close-drawer" id="closeDrawer" aria-label="Menü schließen">✕</button>
-    </div>
-    <ul class="mobile-menu-list">
-      <li><a href="../index.html">Startseite</a></li>
-      <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
-      <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
-      <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
-      <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
-      <li><a href="#">Verein</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="ksk-beratung.html">Beratung</a></li>
-      <li><a href="#">Mitgliedschaft</a></li>
-      <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
-    </ul>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <!-- Level 1: Green Top Bar -->
-    <div class="top-bar">
-      <div class="container top-bar-container">
-        <nav aria-label="Hilfsnavigation">
-          <ul class="top-nav-list">
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="ksk-beratung.html">Beratung</a></li>
-            <li><a href="#">Mitgliedschaft</a></li>
-            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-    <!-- Level 2: White Main Navigation Bar -->
-    <div class="main-nav">
-      <div class="container main-nav-container">
-        <a href="../index.html" class="logo">
-          <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
-        </a>
-        
-        <nav aria-label="Hauptnavigation">
-          <ul class="menu-list">
-            <li class="menu-item">
-              <a href="../index.html" class="home-icon" aria-label="Startseite">
-                <svg viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-34 32.1h-32v176c0 26.5-21.5 48-48 48H352c-17.7 0-32-14.3-32-32V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7-14.3 32-32 32H112c-26.5 0-48-21.5-48-48V287.6H32c-19 0-34-14-34-32.1c0-9 3-17 10-24L266.4 8c7-7 15-10.9 25.6-10.9s18.6 3.9 25.6 10.9L565.8 231c8 8 10 16 10 24.5z"/></svg>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a>
-            </li>
-            <li class="menu-item">
-              <a href="ksk-beitragsrechner.html">KSK-Rechner <svg class="arrow-icon" viewBox="0 0 320 512" aria-hidden="true"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
-              <ul class="dropdown-menu">
-                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
-                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
-              </ul>
-            </li>
-            <li class="menu-item active">
-              <a href="#">Künstlersozialkasse <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
-              <ul class="dropdown-menu">
-                <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse (KSK)</a></li>
-                <li><a href="antrag-und-aufnahme.html">Antrag und Aufnahme</a></li>
-                <li><a href="#">Künstlersozialabgabe</a></li>
-                <li><a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a></li>
-                <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
-                <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung der Versicherten</a></li>
-                <li><a href="ksk-beratung.html">KSK-Beratung</a></li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="#">Verein <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
-              <ul class="dropdown-menu">
-                <li><a href="team.html">Team</a></li>
-                <li><a href="#">Erfahrungen</a></li>
-                <li><a href="vorteile.html">Vorteile</a></li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="blog.html">Blog <svg class="arrow-icon" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"/></svg></a>
-              <ul class="dropdown-menu">
-                <li><a href="blog-kategorie.html?kategorie=allgemein">Allgemein</a></li>
-                <li><a href="blog-kategorie.html?kategorie=kuenstlersozialkasse">Künstlersozialkasse</a></li>
-                <li><a href="blog-kategorie.html?kategorie=recht">Recht</a></li>
-                <li><a href="blog-kategorie.html?kategorie=steuern">Steuern</a></li>
-                <li><a href="blog-kategorie.html?kategorie=versicherung">Versicherung</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="nav-right-group">
-          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+    <!-- KSK-CONTENT-SPLIT-STYLES -->
+    <style>
+      .ksk-split-page {
+        color: var(--text-medium);
+      }
+      .ksk-split-page .ksk-split-hero {
+        padding: 64px 0;
+        background: var(--bg-light);
+        border-bottom: 1px solid var(--border-light);
+      }
+      .ksk-split-page .hero-grid {
+        align-items: center;
+      }
+      .ksk-split-page .hero-content-col {
+        grid-column: 1;
+      }
+      .ksk-split-page .hero-visual-col {
+        grid-column: 2;
+      }
+      .ksk-split-page .hero-content-col,
+      .ksk-split-page .hero-visual-col {
+        min-width: 0;
+        max-width: 100%;
+      }
+      .ksk-split-page h1 {
+        font-size: clamp(34px, 4vw, 46px);
+        line-height: 1.14;
+        margin-bottom: var(--hero-heading-content-gap);
+        overflow-wrap: normal;
+        hyphens: manual;
+      }
+      .ksk-split-page .ksk-hero-subtitle {
+        color: var(--primary-green);
+        font-size: 27px;
+        line-height: 1.25;
+        margin: 0 0 18px;
+      }
+      .ksk-split-page .hero-content p {
+        font-size: 17px;
+        line-height: 1.72;
+        margin-bottom: 16px;
+      }
+      .ksk-split-page .ksk-hero-video video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+        border-radius: 12px;
+        box-shadow: var(--shadow-md);
+      }
+      .ksk-summary-section {
+        padding: 64px 0;
+        background: linear-gradient(180deg, #fff 0%, #fdfcf9 100%);
+        border-top: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light);
+      }
+      .ksk-summary {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+      .ksk-summary h2 {
+        color: var(--brand-orange);
+        font-size: clamp(21px, 2vw, 26px);
+        margin: 0 0 24px;
+      }
+      .ksk-summary p {
+        border-left: 5px solid var(--brand-orange);
+        padding: 2px 0 2px 26px;
+        font-size: 17px;
+        line-height: 1.75;
+        margin: 0;
+      }
+      .ksk-quicklinks-section {
+        padding: 40px 0;
+        background: var(--bg-light);
+        border-top: 1px solid var(--border-light);
+        border-bottom: 1px solid var(--border-light);
+      }
+      .ksk-quicklinks-section .quicklinks-box {
+        margin: 0 auto;
+        width: min(64vw, var(--text-section-width));
+        max-width: none;
+      }
+      .ksk-quicklinks-section h2 {
+        color: var(--text-dark);
+        font-size: 25px;
+        border: 0;
+        padding: 0;
+        margin-bottom: 24px;
+      }
+      .ksk-quicklinks-stack {
+        display: grid;
+        gap: 12px;
+        counter-reset: ksk-quicklink;
+      }
+      .ksk-quicklinks-stack .cta {
+        counter-increment: ksk-quicklink;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 14px;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        background: #fff;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 20px;
+        color: var(--text-dark);
+      }
+      .ksk-quicklinks-stack .cta > span:nth-child(2)::before {
+        content: counter(ksk-quicklink) ". ";
+      }
+      .ksk-quicklinks-stack .cta > span:nth-child(2) {
+        font-size: 18px;
+        line-height: 1.35;
+      }
+      .ksk-quick-number {
+        display: none;
+      }
+      .ksk-content {
+        max-width: 980px;
+      }
+      .ksk-content > h2 {
+        color: var(--text-dark);
+        font-size: clamp(28px, 3vw, 36px);
+        line-height: 1.2;
+        margin-bottom: 26px;
+      }
+      .ksk-content > h3,
+      .rechner-method-card h3 {
+        color: var(--primary-green);
+        font-size: 23px;
+        line-height: 1.3;
+        margin: 28px 0 14px;
+      }
+      .ksk-content p {
+        font-size: 16px;
+        line-height: 1.78;
+        margin-bottom: 18px;
+      }
+      .ksk-check-line {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin: 12px 0;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+      .ksk-check-line strong,
+      .ksk-check-line span:not(.ksk-check) {
+        font-size: 16px;
+        line-height: 1.65;
+      }
+      .ksk-check {
+        color: var(--primary-green);
+        font-size: 23px;
+        line-height: 1;
+        font-weight: 800;
+        flex: 0 0 auto;
+      }
+      .ksk-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 26px;
+      }
+      .btn-teal {
+        background: var(--primary-green);
+        color: #fff;
+      }
+      .btn-teal:hover {
+        background: #fff;
+        color: var(--primary-green);
+        box-shadow: inset 0 0 0 2px var(--primary-green);
+      }
+      .ksk-text-link {
+        color: var(--primary-green);
+        font-weight: 700;
+      }
+      .ksk-text-link:hover {
+        text-decoration: underline;
+      }
+      .ksk-formula,
+      .ksk-example {
+        background: #fff;
+        border: 1px solid var(--border-light);
+        border-left: 5px solid var(--primary-green);
+        border-radius: 8px;
+        padding: 20px 22px;
+        margin: 22px 0;
+        box-shadow: var(--shadow-sm);
+      }
+      .ksk-formula {
+        color: var(--primary-green);
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .ksk-number-note {
+        padding-left: 18px;
+        border-left: 3px solid var(--primary-green);
+      }
+      .rechner-method-card {
+        margin: 24px 0;
+      }
+      .rechner-method-card h3 {
+        margin-top: 0;
+      }
+      .ksk-content .table-wrapper {
+        margin: 28px 0;
+        overflow-x: auto;
+      }
+      .ksk-content .table {
+        min-width: 680px;
+      }
+      .ksk-content .rechner-quote-card {
+        margin-top: 32px;
+        align-items: center;
+      }
+      .ksk-content .rechner-quote-card blockquote {
+        margin: 0 0 12px;
+      }
+      .ksk-bridge-link {
+        margin-top: 24px;
+      }
+      .ksk-faq-item {
+        border-bottom: 1px solid var(--border-light);
+      }
+      .ksk-faq-heading {
+        margin: 0 !important;
+      }
+      .ksk-faq-question {
+        width: 100%;
+        border: 0;
+        background: transparent;
+        color: var(--text-dark);
+        font: inherit;
+        font-size: 17px;
+        font-weight: 700;
+        text-align: left;
+        padding: 19px 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        cursor: pointer;
+      }
+      .ksk-faq-question:hover {
+        color: var(--primary-green);
+      }
+      .ksk-faq-question:focus-visible {
+        outline: 3px solid rgba(0, 128, 128, 0.28);
+        outline-offset: 3px;
+      }
+      .ksk-faq-indicator {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        flex: 0 0 18px;
+      }
+      .ksk-faq-indicator::before,
+      .ksk-faq-indicator::after {
+        content: "";
+        position: absolute;
+        background: var(--primary-green);
+        border-radius: 2px;
+        transition: transform 0.2s ease;
+      }
+      .ksk-faq-indicator::before {
+        width: 14px;
+        height: 2px;
+        top: 8px;
+        left: 2px;
+      }
+      .ksk-faq-indicator::after {
+        width: 2px;
+        height: 14px;
+        top: 2px;
+        left: 8px;
+      }
+      .ksk-faq-question[aria-expanded="true"] .ksk-faq-indicator::after {
+        transform: rotate(90deg);
+      }
+      .ksk-faq-panel {
+        padding: 0 44px 20px 4px;
+      }
+      .ksk-faq-panel[hidden] {
+        display: none;
+      }
+      #faq {
+        border-bottom: 0 !important;
+        padding-bottom: 52px;
+      }
+      #support-final-cta {
+        background: #fff;
+        border: 0 !important;
+        padding: 48px 0;
+      }
+      #support-final-cta .rechner-cta-banner {
+        margin-top: 0;
+      }
+      @media (max-width: 980px) {
+        .ksk-split-page .hero-content-col,
+        .ksk-split-page .hero-visual-col {
+          grid-column: 1 !important;
+        }
+        .ksk-split-page .hero-visual-col {
+          margin-top: 28px;
+        }
+        .ksk-content {
+          max-width: 760px;
+        }
+      }
+      @media (max-width: 640px) {
+        .ksk-split-page .ksk-split-hero {
+          padding: 42px 0;
+        }
+        .ksk-split-page h1 {
+          font-size: 32px !important;
+        }
+        .ksk-content h2,
+        .ksk-content h3,
+        .ksk-quicklinks-stack span {
+          overflow-wrap: anywhere;
+          hyphens: auto;
+        }
+        .ksk-split-page .ksk-hero-subtitle {
+          font-size: 23px;
+        }
+        .ksk-summary-section,
+        .ksk-quicklinks-section {
+          padding: 34px 0;
+        }
+        .ksk-summary p {
+          padding-left: 20px;
+        }
+        .ksk-quicklinks-section .quicklinks-box {
+          width: 100%;
+        }
+        .ksk-quicklinks-stack .cta {
+          grid-template-columns: minmax(0, 1fr) 14px;
+          padding: 16px 14px;
+        }
+        .ksk-cta-row .btn {
+          width: 100%;
+          text-align: center;
+        }
+        .ksk-content .rechner-quote-card {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .ksk-content .rechner-quote-card img {
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- MOBILE NAVIGATION DRAWER -->
+    <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+    <div class="mobile-menu-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-header">
+        <div class="mobile-logo">
+          <img src="../assets/logo.png" alt="Freie Wildbahn e. V." />
         </div>
-      </div>
-    </div>
-
-    <!-- Mobile Header -->
-    <div class="mobile-header">
-      <a href="../index.html" class="mobile-logo">
-        <img src="../assets/logo.png" alt="Freie Wildbahn e. V.">
-      </a>
-      <div class="mobile-nav-actions">
-        <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
-        <button class="mobile-nav-toggle" id="layout-drawer-hamburger" aria-label="Menü öffnen" aria-controls="mobileDrawer" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button
+          class="close-drawer"
+          id="closeDrawer"
+          aria-label="Menü schließen"
+        >
+          ✕
         </button>
       </div>
+      <ul class="mobile-menu-list">
+        <li><a href="../index.html">Startseite</a></li>
+        <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+        <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+        <li><a href="ksk-beitraege-kosten.html">KSK-Beiträge und Kosten</a></li>
+        <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
+        <li><a href="#">Verein</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="ksk-beratung.html">Beratung</a></li>
+        <li><a href="#">Mitgliedschaft</a></li>
+        <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+      </ul>
     </div>
-  </header>
 
-  <main class="ksk-split-page"><section class="hero ksk-split-hero"><div class="hero-grid"><div class="hero-content hero-content-col"><span class="dachzeile">KSK-Beiträge und Kosten</span><h1>KSK-Beiträge und Kosten 2026: Beitrag zur Künstler&shy;sozial&shy;versicherung verstehen</h1><p>Der<a class="ksk-text-link" href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"> </a><a class="ksk-text-link" href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen">KSK-Beitragsrechner</a> zeigt Dir schnell, <strong>wie hoch Dein monatlicher Beitrag zur Künstlersozialversicherung ungefähr ausfallen kann</strong>.</p><p>Auf dieser Seite erfährst Du, <strong>welches Einkommen </strong><strong>für die Berechnung Deines KSK-Beitrages </strong><strong>zählt</strong>, wie Du Dein voraussichtliches Jahresarbeitseinkommen realistisch einschätzen kannst und welche Mindest- und Höchstwerte 2026 für Deine Beiträge eine Rolle spielen.</p><a class="btn btn-orange" href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen">KSK-Beitrag berechnen</a></div><div class="hero-media hero-visual-col"><div class="video-container ksk-hero-video"><video src="../assets/QIbxTKYSmWGL0rcR6KwH_KSK_Freie_Wildbahn_Erklaerfilm(2024)-v.mp4" poster="../assets/QIbxTKYSmWGL0rcR6KwH_KSK_Freie_Wildbahn_Erklaerfilm(2024).v2.0000000.jpg" controls loop autoplay playsinline muted></video></div></div></div></section><section class="ksk-summary-section"><div class="container page-container"><div class="ksk-summary"><h2>Kurz gesagt:</h2><p>Für Deinen KSK-Beitrag zählt <strong>nicht einfach Dein Umsatz und auch nicht Dein gesamtes privates Einkommen</strong>. Entscheidend ist <strong>Dein voraussichtliches Arbeitseinkommen aus Deiner selbständigen künstlerischen oder publizistischen Tätigkeit</strong> – also der <strong>steuerrechtliche Gewinn aus Betriebseinnahmen minus Betriebsausgaben</strong>.</p></div></div></section><section class="ksk-quicklinks-section"><div class="container page-container"><div class="quicklinks-box"><h2>Quicklinks</h2><div class="ksk-quicklinks-stack"><a class="cta" href="#unterschied-ksk-beitrag-kuenstlersozialabgabe"><span class="ksk-quick-number">01</span><span>Unterschied zwischen KSK-Beitrag und Künstlersozialabgabe</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#welches-einkommen-zaehlt"><span class="ksk-quick-number">02</span><span>Welches Einkommen zählt für den KSK-Beitrag?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#wie-schaetze-ich-mein-voraussichtliches-jahresarbeitseinkommen-richtig"><span class="ksk-quick-number">03</span><span>Wie schätze ich mein voraussichtliches Jahresarbeitseinkommen richtig?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#wie-wird-der-ksk-beitrag-berechnet"><span class="ksk-quick-number">04</span><span>Wie wird der KSK-Beitrag berechnet?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#werte-2026"><span class="ksk-quick-number">05</span><span>Werte 2026 auf einen Blick</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#mindesteinkommen-und-mindestbeitraege"><span class="ksk-quick-number">06</span><span>Mindesteinkommen und Mindestbeiträge</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#hoechstbeitraege-und-beitragsbemessungsgrenzen"><span class="ksk-quick-number">07</span><span>Höchstbeiträge und Beitragsbemessungsgrenzen</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#brutto-netto-umsatz-gewinn"><span class="ksk-quick-number">08</span><span>Brutto oder netto? Umsatz oder Gewinn?</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#schaetzung-zu-hoch-oder-zu-niedrig"><span class="ksk-quick-number">09</span><span>Wenn die Schätzung zu hoch oder zu niedrig ist</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a><a class="cta" href="#faq"><span class="ksk-quick-number">10</span><span>Häufige Fragen zu KSK-Beiträgen und Kosten</span><svg viewBox="0 0 320 512" aria-hidden="true"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"/></svg></a></div></div></div></section><section id="unterschied-ksk-beitrag-kuenstlersozialabgabe" class="block-section section-padding bg-light"><div class="container page-container ksk-content"><h2>Unterschied zwischen KSK-Beitrag und Künstlersozialabgabe</h2><p><strong>Der KSK-Beitrag und die Künstlersozialabgabe sind zwei verschiedene Dinge</strong> – und als in der KSK versicherte Person zahlst Du im Normalfall <strong>nur Deinen KSK-Beitrag</strong>. Dieser ist Dein eigener Anteil zur gesetzlichen Renten-, Kranken- und Pflegeversicherung im Rahmen der Künstlersozialversicherung.</p><p>Die Künstlersozialabgabe betrifft dagegen <strong>abgabepflichtige Unternehmen</strong>, die selbständige künstlerische oder publizistische Leistungen einkaufen und verwerten. Also auch die Firmen, die Dich beauftragen, sind verpflichtet, die Künstlersozialabgabe zu zahlen.</p><p>Solltest Du allerdings <strong>selbst künstlerische oder publizistische Leistungen</strong> von anderen Soloselbständigen oder Personengesellschaften einkaufen, dann wärst <strong>auch Du dazu verpflichtet</strong>, dies an die Künstlersozialkasse zu melden und Künstlersozialabgabe für diese Leistungen zu entrichten.</p><p><strong>Kurz gesagt:</strong><em> Möchtest Du wissen, was Du selbst monatlich ungefähr zahlst, nutze den</em><a class="ksk-text-link" href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"> </a><a class="ksk-text-link" href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen">KSK-Beitragsrechner</a><em>. Geht es darum, ob ein Unternehmen für beauftragte künstlerische oder publizistische Leistungen Künstlersozialabgabe zahlen muss, findest Du die Informationen auf unserer Seite zur </em><em><strong>Künstlersozialabgabe</strong></em><em>.</em></p></div></section><section id="welches-einkommen-zaehlt" class="block-section section-padding"><div class="container page-container ksk-content"><h2>Welches Einkommen zählt für den KSK-Beitrag?</h2><p>Für die Beitragshöhe in der Künstlersozialkasse (KSK) ist entscheidend, <strong>was Du voraussichtlich mit Deiner selbständigen künstlerischen oder publizistischen Tätigkeit verdienst</strong>. Das bei der KSK anzugebende Jahreseinkommen bezieht sich auf das kommende Geschäftsjahr und ist deshalb <strong>immer eine Schätzung</strong>.</p><p>Die KSK nutzt im Künstlersozialversicherungsrecht <strong>exakt denselben Einkommensbegriff wie das Einkommensteuergesetz</strong>. Das für die Beiträge entscheidende <strong>„Arbeitseinkommen“</strong> entspricht im Regelfall genau den Einkünften aus selbständiger Arbeit auf Deinem finalen Einkommensteuerbescheid.</p><p>Von Deinen Betriebseinnahmen ziehst Du die betrieblich veranlassten Ausgaben Deiner künstlerischen oder publizistischen Tätigkeit ab. Das Ergebnis ist <strong>Dein Arbeitseinkommen</strong> – vereinfacht gesagt also <strong>der Gewinn</strong>, den Du voraussichtlich mit dieser Tätigkeit erzielst.</p><p><strong>Betriebseinnahmen:</strong> Einnahmen aus Deiner selbständigen künstlerischen oder publizistischen Tätigkeit.</p><p><strong>Betriebsausgaben:</strong> Kosten, die durch diese Tätigkeit entstehen.</p><p><strong>Arbeitseinkommen:</strong> Betriebseinnahmen minus Betriebsausgaben – also der steuerrechtliche Gewinn vor Einkommensteuer.</p><p><strong>Ein einfaches Beispiel:</strong></p><div class="ksk-example">Du erwartest im Jahr <strong>50.000 Euro Betriebseinnahmen</strong> und hast voraussichtlich <strong>20.000 Euro abzugsfähige Betriebsausgaben</strong>. Dein voraussichtliches Arbeitseinkommen beträgt in diesem vereinfachten Beispiel <strong>30.000 Euro</strong>.</div><p><strong>Andere Einkünfte werden nicht automatisch zu diesem Betrag addiert.</strong> Eine zusätzliche Festanstellung, eine weitere nicht künstlerische selbständige Tätigkeit, Firmenbeteiligungen oder andere Einkünfte <strong>können Deine Situation trotzdem beeinflussen</strong>.</p><p>Gerade wenn Du <strong>mehrere Tätigkeiten oder unterschiedliche Einkommensquellen</strong> hast, solltest Du deshalb nicht einfach Dein gesamtes Einkommen in den KSK-Rechner übernehmen.</p><div class="ksk-cta-row"><a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a><a class="btn btn-teal" href="vorteile.html">Vorteile FWB Mitgliedschaft</a></div></div></section><section id="wie-schaetze-ich-mein-voraussichtliches-jahresarbeitseinkommen-richtig" class="block-section section-padding bg-light"><div class="container page-container ksk-content"><h2>Wie schätze ich mein voraussichtliches Jahresarbeitseinkommen richtig?</h2><p>Das bei der KSK anzugebende Jahreseinkommen bezieht sich auf das kommende Geschäftsjahr und ist deshalb <strong>immer eine Schätzung</strong>. Im Grunde gibt es <strong>drei unterschiedliche Methoden</strong> zur Schätzung Deines voraussichtlichen Jahresarbeitseinkommens, um Deinen zukünftigen KSK-Beitrag zu ermitteln. Alle drei haben ihre Berechtigung:</p><div class="rechner-method-card"><h3>1. Einkünfte aus den Einkommensteuerbescheiden der zurückliegenden Jahre</h3><p>Wenn Du bereits ein paar Jahre als selbständiger Künstler oder Publizist tätig bist, verfügst Du sicherlich schon über <strong>mindestens einen Einkommensteuerbescheid vom Finanzamt</strong>. Ist das der Fall, entnimmst Du dem aktuellsten Dokument den Wert <strong>„Einkünfte aus selbständiger Tätigkeit“</strong>. Falls Du innerhalb einer gewerblich agierenden Personengesellschaft vorwiegend eine künstlerische oder publizistische Tätigkeit ausübst, kommt der Wert „Einkünfte aus Gewerbebetrieb“ für Dich in Betracht – unter Umständen sogar beides: die „Summe der Einkünfte“.</p><div class="ksk-formula"><strong>Einkommen = Gewinn = Einkünfte</strong></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>einfache und relativ sichere Methode</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>mindestens ein Einkommensteuerbescheid</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>für bereits Selbständige</span></div><div class="rechner-alert-box"><p><strong>ACHTUNG: </strong>Erzielst Du außerdem noch Einkünfte aus einer weiteren der insgesamt sieben Einkunftsarten? Dann solltest Du Dich professionell beraten lassen, um Deinen KSK-Status nicht ungewollt zu gefährden.</p></div><p class="ksk-number-note"><strong>1.1 </strong>Sollte zwischenzeitlich ein <strong>neuer Einkommensteuerbescheid</strong> durch Dein Finanzamt ergehen, nutze dessen <strong>aktuellere Werte</strong> für Deine Schätzung oder zur Nachmeldung an die KSK.</p><p class="ksk-number-note"><strong>1.2 </strong>Hast Du einen konkreten Anlass, <strong>deutlich mehr oder weniger Einkünfte</strong> zu erwarten, <strong>passe Deine Schätzung dementsprechend an</strong>.</p></div><div class="rechner-method-card"><h3>2. Schätze Deinen Jahresgewinn zur Berechnung Deines KSK-Beitrags</h3><p>Diese hemdsärmelige Methode empfehlen wir <strong>nur beim Start in eine Selbständigkeit</strong>. Woher sollst Du ohne Erfahrung auch wissen, wie das erste Jahr tatsächlich läuft? Natürlich kannst Du auch die angenommenen Zahlen aus Deinem Businessplan nehmen. Diese sind für die Bewilligung von Existenzgründungshilfen jedoch häufig besonders positiv gestaltet. Wird diese Prognose unterschritten, <strong>zahlst Du mehr KSK-Beitrag als nötig</strong>. Dieser wird <strong>nicht zurückerstattet</strong>, was die Liquidität gerade im ersten Jahr der Selbständigkeit unnötig schmälert.</p><p class="ksk-number-note"><strong>2.1 </strong><strong>Schätze beim Start konservativ</strong> – im ersten Jahr lieber etwas zu wenig als zu viel.</p><p class="ksk-number-note"><strong>2.2 </strong>Passe Deinen KSK-Beitrag über eine <strong>Veränderungsmitteilung</strong> an, wenn es läuft.</p><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>einfachste Methode für den Start</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>für Existenzgründer</span></div><div class="rechner-alert-box"><p><strong>WICHTIG: </strong>Gehst Du gerade beim Start Deiner neuen Selbständigkeit auf Nummer sicher und lässt Dich professionell und unabhängig beraten – unbedingt BEVOR Du den KSK-Antrag bei der Künstlersozialkasse anforderst. Ab diesem Zeitpunkt läuft nämlich bereits eine Frist für Dich.</p></div></div><div class="rechner-method-card"><h3>3. Ermittle Deinen Jahresgewinn mittels Einnahmen-Überschuss-Rechnung</h3><p>Egal ob Du als Freiberufler oder in einer Personengesellschaft selbständig bist, Deine Gewinnermittlung erfolgt mittels einer <strong>einfachen Einnahmen-Überschuss-Rechnung (EÜR)</strong>. Hierbei werden von Deinen Einnahmen Deine Ausgaben abgezogen. <strong>Was übrig bleibt, ist Dein Gewinn.</strong> Für diesen Gewinn wird im Einkommensteuerrecht der Begriff Einkünfte benutzt (§ 4–7k EStG.).</p><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>sehr genaue und sichere Methode</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>laufende Buchhaltung</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>für professionelle Selbständige</span></div><p>Mit diesem sehr exakten Vorgehen bist Du im Falle einer KSK-Prüfung bezogen auf Deine Einnahmesituation <strong>absolut sicher aufgestellt</strong>.</p><p class="ksk-number-note"><strong>3.1 Was zählt alles zu den Betriebseinnahmen?</strong></p><p>Sämtliche Einnahmen, die Du durch Deine künstlerische oder publizistische Tätigkeit generiert hast, kannst Du zu Deinen Betriebseinnahmen zählen. Das können zum Beispiel Tantiemen, Gagen, Honorare oder urheberrechtliche Vergütungen sein. Von der Bundesagentur für Arbeit erhaltene Zuwendungen wie ALG I, ALG II oder Dein Gründungszuschuss musst Du hingegen nicht zu Deinen Einnahmen hinzurechnen.</p><p class="ksk-number-note"><strong>3.2 Was zählt alles zu den Betriebsausgaben?</strong></p><p>Als Betriebsausgaben gelten alle Ausgaben, die im Rahmen der eigenen Selbständigkeit anfallen. Dazu zählen zum Beispiel Kosten für Betriebsmittel, die zur Leistungserbringung notwendig sind: Bei Musikern können das Abschreibungen auf Instrumente, Mikrofone, Mischpulte oder Ähnliches sein; bei bildenden Künstlern Materialien wie Leinwand, Pinsel und Farben; bei Kameraleuten das Kameraequipment. Dazu kommen allgemein anerkannte Betriebsmittel wie Büromöbel oder technische Geräte wie Notebook und Drucker. Die Liste möglicher Betriebsausgaben ist sehr umfangreich.</p><p><strong>Wichtig:</strong> Wenn Du zusätzlich angestellt bist, mehrere selbständige Tätigkeiten ausübst oder Einkünfte aus anderen Bereichen der 7 Einkommensarten hast, solltest Du <strong>nicht einfach alles zusammenrechnen</strong>. Entscheidend ist, <strong>welche Einkünfte für Deine Versicherung nach dem KSVG tatsächlich relevant sind</strong>.</p></div></div></section><section id="wie-wird-der-ksk-beitrag-berechnet" class="block-section section-padding"><div class="container page-container ksk-content"><h2>Wie wird der KSK-Beitrag berechnet?</h2><p>Dein Beitrag richtet sich vor allem danach, <strong>wie hoch Du Dein voraussichtliches Jahresarbeitseinkommen einschätzt</strong>.</p><p>Das Besondere an der Künstlersozialversicherung: Als selbständiger Künstler oder Publizist musst Du die Beiträge zur gesetzlichen Renten-, Kranken- und Pflegeversicherung <strong>nicht vollständig allein tragen</strong>.</p><p>Du zahlst im Grundmodell den Anteil, den auch ein Arbeitnehmer selbst tragen würde, nämlich <strong>nur 50 %</strong>. <strong>Die andere Hälfte übernimmt die Künstlersozialkasse für Dich.</strong></p><p>Das bedeutet: <strong>Deine soziale Absicherung kostet Dich deutlich weniger</strong>, als wenn Du die entsprechenden gesetzlichen Beiträge als Selbständiger vollständig allein finanzieren müsstest.</p><p>Wie hoch Dein konkreter monatlicher Beitrag ausfällt, hängt unter anderem ab von:</p><p>Deinem voraussichtlichen Jahresarbeitseinkommen</p><p>den jeweils geltenden Beitragssätzen</p><p>dem individuellen Zusatzbeitrag Deiner Krankenkasse</p><p>Deiner persönlichen Situation in der Pflegeversicherung</p><p>Bei gesetzlicher Krankenversicherung kommt zu Deinem Anteil am allgemeinen Beitragssatz zusätzlich die Hälfte des individuellen Zusatzbeitrags Deiner Krankenkasse hinzu.</p><p>Die frühere Trennung nach den Rechtskreisen <strong>Ost und West entfällt seit dem 1. Januar 2025</strong>.</p></div></section><section id="werte-2026" class="block-section section-padding bg-light"><div class="container page-container ksk-content"><h2>Werte 2026 auf einen Blick</h2><p>Die folgenden Werte zeigen Dir, <strong>mit welchen Beitragssätzen und Grenzen 2026 gerechnet wird</strong>.</p><p>Wichtig für Dich: Nicht jeder Prozentsatz wird einfach vollständig von Deinem Einkommen abgezogen. Dein eigener Anteil ist nur der jeweilige <strong>Versichertenanteil</strong>, und bei höheren Einkommen begrenzen die Beitragsbemessungsgrenzen (BBG), wie weit Deine Beiträge steigen können.</p><div class="table-wrapper"><table class="table"><thead><tr><th>Bereich</th><th>Wert 2026</th><th>Versichertenanteil / Hinweis</th></tr></thead><tbody><tr><td>Rentenversicherung</td><td>18,6 %</td><td>9,3 %; BBG 101.400 € jährlich</td></tr><tr><td>Krankenversicherung</td><td>14,6 %</td><td>7,3 % plus Hälfte des individuellen Zusatzbeitrags; BBG 69.750 € jährlich</td></tr><tr><td>Durchschnittlicher Zusatzbeitrag</td><td>2,9 %</td><td>Orientierungswert; maßgeblich ist der individuelle Zusatzbeitrag Deiner Krankenkasse</td></tr><tr><td>Pflegeversicherung</td><td>3,6 % / 4,2 % kinderlos</td><td>Versichertenanteil 1,8 % bzw. 2,4 %; Abschläge ab dem 2. Kind unter 25 möglich</td></tr><tr><td>Mindestarbeitseinkommen § 3 KSVG</td><td>mehr als 3.900 € jährlich</td><td>gesetzliche Ausnahmen beachten</td></tr><tr><td>Mindest-Berechnungsgrundlage</td><td>RV 3.900 € / KV-PV 7.910 € jährlich</td><td>Rechengrundlagen für Mindestbeiträge</td></tr></tbody></table></div><div class="rechner-alert-box"><p><strong>Hinweis: </strong><em>Die Werte gelten für 2026. Maßgeblich sind die jeweils aktuellen gesetzlichen Werte und – bei der Krankenversicherung – der individuelle Zusatzbeitrag Deiner Krankenkasse. </em></p></div><p>Offizielle Quellen: <a class="ksk-text-link" href="https://www.kuenstlersozialkasse.de/kuenstler-und-publizisten/beitrag">KSK Beitrag</a> · <a class="ksk-text-link" href="https://www.kuenstlersozialkasse.de/service-und-medien/ksk-in-zahlen">KSK in Zahlen</a></p></div></section><section id="mindesteinkommen-und-mindestbeitraege" class="block-section section-padding"><div class="container page-container ksk-content"><h2>Mindesteinkommen und Mindestbeiträge</h2><p>Auch wenn Dein Einkommen niedrig ist, bedeutet das nicht automatisch, dass Du nicht über die KSK versichert sein kannst. Im Gegenteil – die Künstlersozialkasse wurde ja gerade zur Absicherung von Künstlern mit stark schwankenden Einkommen geschaffen.</p><p>Um in der KSK versichert zu sein, benötigst Du ein jährliches Arbeitseinkommen aus Deiner selbständigen künstlerischen oder publizistischen Tätigkeit von mindestens <strong>3.900 Euro</strong>. Davon gibt es aber wichtige Ausnahmen.</p><p>Gerade für <strong>Berufsanfänger</strong> ist das relevant: In den <strong>ersten drei Jahren</strong> nach erstmaliger Aufnahme Deiner selbständigen künstlerischen oder publizistischen Tätigkeit gilt diese Mindesteinkommensgrenze nicht.</p><p>Auch später kann Deine Versicherungspflicht trotz eines niedrigeren Einkommens bestehen bleiben, wenn Du die Grenze innerhalb von sechs Kalenderjahren <strong>höchstens zweimal unterschreitest</strong>.</p><p>Wichtig für Dich: <strong>Mindesteinkommen und Mindestbeitrag sind nicht dasselbe.</strong></p><p>Die 3.900-Euro-Grenze betrifft die Frage, ob Du grundsätzlich versicherungspflichtig bist. Für die eigentliche Beitragsberechnung gelten eigene Mindest-Berechnungsgrundlagen.</p><p>2026 sind das:</p><p class="ksk-number-note"><strong>3.900 Euro jährlich</strong> für die Rentenversicherung</p><p class="ksk-number-note"><strong>7.910 Euro jährlich</strong> für Kranken- und Pflegeversicherung</p><p>Das bedeutet: Auch bei einem sehr niedrigen tatsächlichen Arbeitseinkommen wird Dein Beitrag nicht beliebig niedrig berechnet, sondern mindestens auf Basis dieser Rechengrundlagen.</p><p><strong>Wichtig: </strong>Mindesteinkommen und Mindestbeitrag sind nicht dasselbe. Die 3.900-Euro-Grenze betrifft grundsätzlich die Versicherungspflicht; die Mindest-Berechnungsgrundlagen bestimmen, von welchem Einkommen Beiträge mindestens berechnet werden.</p><div class="table-wrapper"><table class="table"><thead><tr><th>Versicherungszweig</th><th>Mindestbeitrag 2026 (Versichertenanteil)</th><th>Hinweis</th></tr></thead><tbody><tr><td>Rentenversicherung</td><td>30,23 € / Monat</td><td>auf Basis 3.900 € jährlich</td></tr><tr><td>Krankenversicherung</td><td>48,12 € / Monat + 1/2 individueller Zusatzbeitrag</td><td>auf Basis 7.910 € jährlich</td></tr><tr><td>Pflegeversicherung</td><td>11,87 € / Monat bzw. 15,82 € kinderlos</td><td>Kinderabschläge ab dem 2. Kind unter 25 möglich</td></tr></tbody></table></div></div></section><section id="hoechstbeitraege-und-beitragsbemessungsgrenzen" class="block-section section-padding bg-light"><div class="container page-container ksk-content"><h2>Höchstbeiträge und Beitragsbemessungsgrenzen</h2><p>Wenn Dein Einkommen steigt, steigen auch Deine Beiträge – aber <strong>nicht unbegrenzt</strong>.</p><p>Für jeden Versicherungszweig gibt es eine <strong>Beitragsbemessungsgrenze</strong>. Einkommen oberhalb dieser Grenze wird für die Beitragsberechnung des jeweiligen Versicherungszweigs <strong>nicht mehr berücksichtigt</strong>.</p><p>Das bedeutet für Dich: Ab einem bestimmten Einkommen erhöht sich Dein Beitrag für diesen Versicherungszweig <strong>nicht weiter</strong>, selbst wenn Du mehr verdienst.</p><p>2026 liegt die Beitragsbemessungsgrenze (BBG):</p><p>in der <strong>Rentenversicherung bei 101.400 Euro jährlich</strong></p><p>in der <strong>Kranken- und Pflegeversicherung bei 69.750 Euro jährlich</strong></p><p>Weil für Rentenversicherung und Kranken-/Pflegeversicherung unterschiedliche Grenzen gelten, gibt es <strong>nicht einen einzigen starren KSK-Gesamt-Höchstbeitrag</strong>.</p><p>Wie hoch Dein tatsächlicher Höchstbeitrag ausfällt, hängt zusätzlich unter anderem vom individuellen Zusatzbeitrag Deiner Krankenkasse und Deiner Pflegeversicherungssituation ab.</p><div class="table-wrapper"><table class="table"><thead><tr><th>Versicherungszweig</th><th>Monatlicher Höchstbeitrag 2026 (Versichertenanteil)</th><th>Hinweis</th></tr></thead><tbody><tr><td>Rentenversicherung</td><td>785,85 €</td><td>bei RV-BBG 101.400 € jährlich</td></tr><tr><td>Krankenversicherung</td><td>424,31 € + 1/2 individueller Zusatzbeitrag</td><td>bei KV-BBG 69.750 € jährlich</td></tr><tr><td>Pflegeversicherung</td><td>104,63 € bzw. 139,50 € kinderlos</td><td>bei KV/PV-BBG 69.750 €; Kinderabschläge möglich</td></tr></tbody></table></div></div></section><section id="brutto-netto-umsatz-gewinn" class="block-section section-padding"><div class="container page-container ksk-content"><h2>Brutto oder netto? Umsatz oder Gewinn?</h2><p>Wenn Du Deine Einkommensprognose für die KSK machst, ist die entscheidende Frage meistens nicht <strong>„brutto oder netto?“</strong>, sondern:</p><p><em><strong>Wie hoch ist mein voraussichtlicher Gewinn aus meiner selbständigen künstlerischen oder publizistischen Tätigkeit?</strong></em></p><p><em>Dein Umsatz allein ist dafür nicht maßgeblich.</em></p><p>Von Deinen Betriebseinnahmen ziehst Du Deine betrieblich veranlassten Ausgaben ab. Das Ergebnis ist Dein voraussichtliches Arbeitseinkommen.</p><p><strong>Vereinfacht gesagt:</strong></p><div class="ksk-formula"><strong>Betriebseinnahmen – Betriebsausgaben = voraussichtliches Arbeitseinkommen</strong></div><p>Das ist die Zahl, die für Deine Beitragsberechnung grundsätzlich entscheidend ist.</p><p>Wenn Du zusätzlich angestellt bist, weitere selbständige Tätigkeiten ausübst oder andere Einkünfte hast, solltest Du diese Beträge nicht einfach alle zusammenrechnen. Dann kann eine genauere Einordnung notwendig sein.</p><p><strong>Beispiel: </strong>Du erzielst 50.000 Euro Betriebseinnahmen und hast 20.000 Euro abzugsfähige Betriebsausgaben. Das Arbeitseinkommen beträgt in diesem vereinfachten Beispiel 30.000 Euro.</p></div></section><section id="schaetzung-zu-hoch-oder-zu-niedrig" class="block-section section-padding bg-light"><div class="container page-container ksk-content"><h2>Wenn die Schätzung zu hoch oder zu niedrig ist</h2><p>Das <strong>voraussichtliche Jahresarbeitseinkommen ist eine Prognose</strong>. Wenn sich Deine Erwartungen ändern, kannst Du der Künstlersozialkasse eine <strong>aktualisierte Einkommensschätzung</strong> mitteilen.</p><p>Nach den aktuellen KSK-Hinweisen wirkt sich die Änderung grundsätzlich <strong>ab dem Folgemonat nach Eingang der Mitteilung</strong> aus. Eine <strong>rückwirkende Beitragskorrektur</strong> bereits begonnener oder abgelaufener Monate erfolgt allein wegen einer später geänderten Schätzung nicht.</p><p><strong>Wichtig: </strong>Eine abweichende tatsächliche Einkommensentwicklung ist nicht dasselbe wie eine automatische Beitragsnachzahlung. Unrichtige oder unvollständige Angaben sowie KSK-Prüfungen sind davon getrennt zu betrachten.</p><p><a class="ksk-text-link" href="https://www.kuenstlersozialkasse.de/kuenstler-und-publizisten/aenderungsmitteilungen">Offizielle Änderungsmitteilungen der KSK</a> · <a class="ksk-text-link" href="ksk-pruefung-versicherte.html">Informationen zur KSK-Prüfung</a></p><div class="ksk-cta-row"><a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a><a class="btn btn-teal" href="vorteile.html">Vorteile FWB Mitgliedschaft</a></div></div></section><section id="wann-ksk-beratung-sinnvoll-ist" class="block-section section-padding"><div class="container page-container ksk-content"><h2>Wann eine KSK-Beratung sinnvoll ist</h2><p><strong>Der Rechner liefert Dir eine Zahl.</strong> Eine Beratung hilft dann weiter, wenn <strong>die Grundlage dieser Zahl nicht eindeutig ist</strong>.</p><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>Du übst mehrere oder gemischte Tätigkeiten aus.</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>Du bist neben der künstlerischen oder publizistischen Selbständigkeit angestellt.</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>Du hast Beteiligungen an Firmen oder weitere selbständige Einkünfte.</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>Deine Einnahmen schwanken stark.</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>Du bist unsicher, welches Arbeitseinkommen Du melden solltest.</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>Du möchtest Deine Einkommensschätzung ändern und kannst die Folgen nicht sicher einordnen.</span></div><div class="ksk-check-line"><span class="ksk-check" aria-hidden="true">✓</span><span>Du hast bereits eine KSK-Rückfrage oder ein Prüfschreiben erhalten.</span></div><div class="ksk-cta-row"><a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a><a class="btn btn-teal" href="vorteile.html">Vorteile FWB Mitgliedschaft</a></div></div></section><section id="faq" class="block-section section-padding bg-light"><div class="container page-container ksk-content"><h2>Häufige Fragen zu KSK-Beiträgen und Kosten</h2><div class="ksk-faq" data-ksk-faq><div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="support-faq-question-1" aria-expanded="true" aria-controls="support-faq-answer-1"><span>Was kostet die Künstlersozialversicherung im Monat?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="support-faq-answer-1" role="region" aria-labelledby="support-faq-question-1"><p>Das hängt von Deinem voraussichtlichen Jahresarbeitseinkommen, den jeweils geltenden Beitragssätzen, dem individuellen Zusatzbeitrag Deiner Krankenkasse und Deiner Pflegeversicherungssituation ab. Für eine erste Orientierung nutze den KSK-Beitragsrechner.</p></div></div><div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="support-faq-question-2" aria-expanded="false" aria-controls="support-faq-answer-2"><span>Was ist der KSK-Mindestbeitrag?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="support-faq-answer-2" role="region" aria-labelledby="support-faq-question-2" hidden><p>Die Mindestbeiträge ergeben sich aus Mindest-Berechnungsgrundlagen der einzelnen Versicherungszweige. Sie sind von der 3.900-Euro-Grenze für die Versicherungspflicht zu unterscheiden.</p></div></div><div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="support-faq-question-3" aria-expanded="false" aria-controls="support-faq-answer-3"><span>Was ist der KSK-Höchstbeitrag?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="support-faq-answer-3" role="region" aria-labelledby="support-faq-question-3" hidden><p>Die Höchstbeiträge ergeben sich aus den jeweiligen Beitragssätzen und Beitragsbemessungsgrenzen. Weil Rentenversicherung und Kranken-/Pflegeversicherung unterschiedliche Grenzen haben und der Zusatzbeitrag der Krankenkasse individuell ist, gibt es keinen einzigen starren Gesamt-Höchstbeitrag.</p></div></div><div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="support-faq-question-4" aria-expanded="false" aria-controls="support-faq-answer-4"><span>Muss ich brutto oder netto melden?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="support-faq-answer-4" role="region" aria-labelledby="support-faq-question-4" hidden><p>Maßgeblich ist grundsätzlich Dein voraussichtliches Arbeitseinkommen, also der steuerrechtliche Gewinn aus der relevanten selbständigen Tätigkeit - Betriebseinnahmen minus Betriebsausgaben.</p></div></div><div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="support-faq-question-5" aria-expanded="false" aria-controls="support-faq-answer-5"><span>Kann ich meinen Einkommensteuerbescheid als Grundlage nehmen?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="support-faq-answer-5" role="region" aria-labelledby="support-faq-question-5" hidden><p>Vorjahreswerte und Steuerunterlagen können eine Orientierung geben. Entscheidend bleibt aber die realistische Prognose Deines voraussichtlichen Arbeitseinkommens für den relevanten Zeitraum und nur aus der selbständigen künstlerischen oder publizistischen Tätigkeit.</p></div></div><div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="support-faq-question-6" aria-expanded="false" aria-controls="support-faq-answer-6"><span>Was passiert, wenn ich mein Einkommen später anders einschätze?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="support-faq-answer-6" role="region" aria-labelledby="support-faq-question-6" hidden><p>Du kannst der KSK eine aktualisierte Schätzung mit dem Formular „Änderungsmitteilung des voraussichtlichen Arbeitseinkommens aus selbständiger künstlerischer / publizistischer Tätigkeit“</p><p>melden. Sie wirkt sich grundsätzlich für die Zukunft ab dem Folgemonat nach Eingang der Mitteilung auf die Beitragshöhe aus.</p></div></div><div class="ksk-faq-item"><h3 class="ksk-faq-heading"><button type="button" class="ksk-faq-question" id="support-faq-question-7" aria-expanded="false" aria-controls="support-faq-answer-7"><span>Was ist der Unterschied zum KSK-Beitragsrechner?</span><span class="ksk-faq-indicator" aria-hidden="true"></span></button></h3><div class="ksk-faq-panel" id="support-faq-answer-7" role="region" aria-labelledby="support-faq-question-7" hidden><p>Der Rechner liefert schnell eine mögliche Beitragshöhe. Diese Seite erklärt die Begriffe, Rechengrundlagen, Mindestwerte und Beitragsbemessungsgrenzen hinter dem Ergebnis.</p></div></div></div><div class="ksk-cta-row"><a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a><a class="btn btn-teal" href="vorteile.html">Vorteile FWB Mitgliedschaft</a></div></div></section><section id="support-final-cta"><div class="container page-container content-box"><div class="rechner-cta-banner"><div class="cta-text"><h3>Unsicher bei der Einkommensschätzung?</h3><p>Buchen Sie eine persönliche KSK-Beratung und erfahren Sie, wie Sie Ihren Beitrag optimal kalkulieren.</p></div><a href="https://login.freie-wildbahn.de/beratung?registrychoice=2" class="btn btn-orange" style="flex-shrink: 0;">KSK-Beratung buchen</a></div></div></section></main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <!-- Upper zone: #faf9f6 background with logo + columns -->
-    <div class="footer-upper">
-      <div class="container footer-upper-grid">
-
-        <!-- Brand column -->
-        <div class="footer-brand-col">
-          <a href="../index.html" class="footer-logo">
-            <img src="../assets/logo.png" alt="Freie Wildbahn e.V.">
-          </a>
-          <p class="footer-tagline">Schnell und einfach stetig auf dem neuesten Stand rund um das Thema „Künstler und Künstlersozialkasse".</p>
+    <!-- HEADER -->
+    <header>
+      <!-- Level 1: Green Top Bar -->
+      <div class="top-bar">
+        <div class="container top-bar-container">
+          <nav aria-label="Hilfsnavigation">
+            <ul class="top-nav-list">
+              <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="ksk-beratung.html">Beratung</a></li>
+              <li><a href="#">Mitgliedschaft</a></li>
+              <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+            </ul>
+          </nav>
         </div>
-
-        <!-- Unsere Themen -->
-        <div class="footer-col">
-          <h6 class="footer-col-heading">Unsere Themen</h6>
-          <ul class="footer-col-links">
-            <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
-            <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
-            <li><a href="kuenstlersozialkasse.html">Künstlersozialkasse</a></li>
-          </ul>
-        </div>
-
-        <!-- Über uns -->
-        <div class="footer-col">
-          <h6 class="footer-col-heading">Über uns</h6>
-          <ul class="footer-col-links">
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="blog.html">Blog</a></li>
-          </ul>
-        </div>
-
-        <!-- Konto -->
-        <div class="footer-col">
-          <h6 class="footer-col-heading">Konto</h6>
-          <ul class="footer-col-links">
-            <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
-            <li><a href="#">Registrieren</a></li>
-          </ul>
-        </div>
-
       </div>
-    </div>
 
-    <!-- Lower bar: teal background -->
-    <div class="footer-lower">
-      <div class="container footer-lower-inner">
+      <!-- Level 2: White Main Navigation Bar -->
+      <div class="main-nav">
+        <div class="container main-nav-container">
+          <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="Freie Wildbahn e. V." />
+          </a>
 
-        <!-- Legal links -->
-        <nav class="footer-legal-nav" aria-label="Rechtliches">
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutzinformation</a>
-          <a href="#">Quellenangaben</a>
-        </nav>
+          <nav aria-label="Hauptnavigation">
+            <ul class="menu-list">
+              <li class="menu-item">
+                <a
+                  href="../index.html"
+                  class="home-icon"
+                  aria-label="Startseite"
+                >
+                  <svg viewBox="0 0 576 512">
+                    <path
+                      d="M575.8 255.5c0 18-15 32.1-34 32.1h-32v176c0 26.5-21.5 48-48 48H352c-17.7 0-32-14.3-32-32V352c0-17.7-14.3-32-32-32s-32 14.3-32 32v128c0 17.7-14.3 32-32 32H112c-26.5 0-48-21.5-48-48V287.6H32c-19 0-34-14-34-32.1c0-9 3-17 10-24L266.4 8c7-7 15-10.9 25.6-10.9s18.6 3.9 25.6 10.9L565.8 231c8 8 10 16 10 24.5z"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a>
+              </li>
+              <li class="menu-item">
+                <a href="ksk-beitragsrechner.html"
+                  >KSK-Rechner
+                  <svg
+                    class="arrow-icon"
+                    viewBox="0 0 320 512"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"
+                    /></svg
+                ></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a>
+                  </li>
+                  <li>
+                    <a href="ksk-beitraege-kosten.html"
+                      >KSK-Beiträge und Kosten</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-item active">
+                <a href="#"
+                  >Künstlersozialkasse
+                  <svg class="arrow-icon" viewBox="0 0 320 512">
+                    <path
+                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"
+                    /></svg
+                ></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="kuenstlersozialkasse.html"
+                      >Künstlersozialkasse (KSK)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="antrag-und-aufnahme.html">Antrag und Aufnahme</a>
+                  </li>
+                  <li><a href="#">Künstlersozialabgabe</a></li>
+                  <li>
+                    <a href="ksk-beitragsrechner.html">KSK-Beitragsrechner</a>
+                  </li>
+                  <li>
+                    <a href="ksk-beitraege-kosten.html"
+                      >KSK-Beiträge und Kosten</a
+                    >
+                  </li>
+                  <li>
+                    <a href="ksk-pruefung-versicherte.html"
+                      >KSK-Prüfung der Versicherten</a
+                    >
+                  </li>
+                  <li><a href="ksk-beratung.html">KSK-Beratung</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a href="#"
+                  >Verein
+                  <svg class="arrow-icon" viewBox="0 0 320 512">
+                    <path
+                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"
+                    /></svg
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="team.html">Team</a></li>
+                  <li><a href="#">Erfahrungen</a></li>
+                  <li><a href="vorteile.html">Vorteile</a></li>
+                </ul>
+              </li>
+              <li class="menu-item">
+                <a href="blog.html"
+                  >Blog
+                  <svg class="arrow-icon" viewBox="0 0 320 512">
+                    <path
+                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l109.9 109.9 109.9-109.9c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L177 352.3c-9.4 9.4-24.6 9.4-34 0z"
+                    /></svg
+                ></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="blog-kategorie.html?kategorie=allgemein"
+                      >Allgemein</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog-kategorie.html?kategorie=kuenstlersozialkasse"
+                      >Künstlersozialkasse</a
+                    >
+                  </li>
+                  <li>
+                    <a href="blog-kategorie.html?kategorie=recht">Recht</a>
+                  </li>
+                  <li>
+                    <a href="blog-kategorie.html?kategorie=steuern">Steuern</a>
+                  </li>
+                  <li>
+                    <a href="blog-kategorie.html?kategorie=versicherung"
+                      >Versicherung</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
 
-        <!-- Copyright + credit -->
-        <div class="footer-copy">
-          <p>© 2026 Freie Wildbahn e.V. | Alle Rechte vorbehalten</p>
-          <p><a href="https://digitallanders.de" target="_blank" rel="noopener">Website &amp; Marketing: digitallanders</a></p>
+          <div class="nav-right-group">
+            <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+          </div>
         </div>
+      </div>
 
-        <!-- Social + back to top -->
-        <div class="footer-right-group">
-          <div class="footer-social">
-            <!-- Facebook icon -->
-            <a href="#" aria-label="Facebook" class="footer-social-link">
-              <svg viewBox="0 0 320 512" aria-hidden="true"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+      <!-- Mobile Header -->
+      <div class="mobile-header">
+        <a href="../index.html" class="mobile-logo">
+          <img src="../assets/logo.png" alt="Freie Wildbahn e. V." />
+        </a>
+        <div class="mobile-nav-actions">
+          <a href="ksk-beratung.html" class="btn btn-orange">KSK-Beratung</a>
+          <button
+            class="mobile-nav-toggle"
+            id="layout-drawer-hamburger"
+            aria-label="Menü öffnen"
+            aria-controls="mobileDrawer"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="ksk-split-page">
+      <section class="hero ksk-split-hero">
+        <div class="hero-grid">
+          <div class="hero-content hero-content-col">
+            <span class="dachzeile">KSK-Beiträge und Kosten</span>
+            <h1>KSK-Beitrag: Höhe und Berechnung</h1>
+            <p>
+              Der<a
+                class="ksk-text-link"
+                href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"
+              >
+              </a
+              ><a
+                class="ksk-text-link"
+                href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"
+                >KSK-Beitragsrechner</a
+              >
+              zeigt Dir schnell,
+              <strong
+                >wie hoch Dein monatlicher Beitrag zur
+                Künstlersozialversicherung ungefähr ausfallen kann</strong
+              >.
+            </p>
+            <p>
+              Auf dieser Seite erfährst Du, <strong>welches Einkommen </strong
+              ><strong>für die Berechnung Deines KSK-Beitrages </strong
+              ><strong>zählt</strong>, wie Du Dein voraussichtliches
+              Jahresarbeitseinkommen realistisch einschätzen kannst und welche
+              Mindest- und Höchstwerte 2026 für Deine Beiträge eine Rolle
+              spielen.
+            </p>
+            <a
+              class="btn btn-orange"
+              href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"
+              >KSK-Beitrag berechnen</a
+            >
+          </div>
+          <div class="hero-media hero-visual-col">
+            <div class="video-container ksk-hero-video">
+              <video
+                src="../assets/QIbxTKYSmWGL0rcR6KwH_KSK_Freie_Wildbahn_Erklaerfilm(2024)-v.mp4"
+                poster="../assets/QIbxTKYSmWGL0rcR6KwH_KSK_Freie_Wildbahn_Erklaerfilm(2024).v2.0000000.jpg"
+                controls
+                loop
+                autoplay
+                playsinline
+                muted
+              ></video>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ksk-summary-section">
+        <div class="container page-container">
+          <div class="ksk-summary">
+            <h2>Kurz gesagt:</h2>
+            <p>
+              Für Deinen KSK-Beitrag zählt
+              <strong
+                >nicht einfach Dein Umsatz und auch nicht Dein gesamtes privates
+                Einkommen</strong
+              >. Entscheidend ist
+              <strong
+                >Dein voraussichtliches Arbeitseinkommen aus Deiner
+                selbständigen künstlerischen oder publizistischen
+                Tätigkeit</strong
+              >
+              – also der
+              <strong
+                >steuerrechtliche Gewinn aus Betriebseinnahmen minus
+                Betriebsausgaben</strong
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="ksk-quicklinks-section">
+        <div class="container page-container">
+          <div class="quicklinks-box">
+            <h2>Quicklinks</h2>
+            <div class="ksk-quicklinks-stack">
+              <a
+                class="cta"
+                href="#unterschied-ksk-beitrag-kuenstlersozialabgabe"
+                ><span class="ksk-quick-number">01</span
+                ><span
+                  >Unterschied zwischen KSK-Beitrag und
+                  Künstlersozialabgabe</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a class="cta" href="#welches-einkommen-zaehlt"
+                ><span class="ksk-quick-number">02</span
+                ><span>Welches Einkommen zählt für den KSK-Beitrag?</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a
+                class="cta"
+                href="#wie-schaetze-ich-mein-voraussichtliches-jahresarbeitseinkommen-richtig"
+                ><span class="ksk-quick-number">03</span
+                ><span
+                  >Wie schätze ich mein voraussichtliches Jahresarbeitseinkommen
+                  richtig?</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a class="cta" href="#wie-wird-der-ksk-beitrag-berechnet"
+                ><span class="ksk-quick-number">04</span
+                ><span>Wie wird der KSK-Beitrag berechnet?</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a class="cta" href="#werte-2026"
+                ><span class="ksk-quick-number">05</span
+                ><span>Werte 2026 auf einen Blick</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a class="cta" href="#mindesteinkommen-und-mindestbeitraege"
+                ><span class="ksk-quick-number">06</span
+                ><span>Mindesteinkommen und Mindestbeiträge</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a
+                class="cta"
+                href="#hoechstbeitraege-und-beitragsbemessungsgrenzen"
+                ><span class="ksk-quick-number">07</span
+                ><span>Höchstbeiträge und Beitragsbemessungsgrenzen</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a class="cta" href="#brutto-netto-umsatz-gewinn"
+                ><span class="ksk-quick-number">08</span
+                ><span>Brutto oder netto? Umsatz oder Gewinn?</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a class="cta" href="#schaetzung-zu-hoch-oder-zu-niedrig"
+                ><span class="ksk-quick-number">09</span
+                ><span>Wenn die Schätzung zu hoch oder zu niedrig ist</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg></a
+              ><a class="cta" href="#faq"
+                ><span class="ksk-quick-number">10</span
+                ><span>Häufige Fragen zu KSK-Beiträgen und Kosten</span
+                ><svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.371 9.371 9.371 24.572.001 33.941z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="unterschied-ksk-beitrag-kuenstlersozialabgabe"
+        class="block-section section-padding bg-light"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Unterschied zwischen KSK-Beitrag und Künstlersozialabgabe</h2>
+          <p>
+            <strong
+              >Der KSK-Beitrag und die Künstlersozialabgabe sind zwei
+              verschiedene Dinge</strong
+            >
+            – und als in der KSK versicherte Person zahlst Du im Normalfall
+            <strong>nur Deinen KSK-Beitrag</strong>. Dieser ist Dein eigener
+            Anteil zur gesetzlichen Renten-, Kranken- und Pflegeversicherung im
+            Rahmen der Künstlersozialversicherung.
+          </p>
+          <p>
+            Die Künstlersozialabgabe betrifft dagegen
+            <strong>abgabepflichtige Unternehmen</strong>, die selbständige
+            künstlerische oder publizistische Leistungen einkaufen und
+            verwerten. Also auch die Firmen, die Dich beauftragen, sind in der
+            Regel verpflichtet, die Künstlersozialabgabe zu zahlen, wenn die
+            gesetzlichen Voraussetzungen erfüllt sind.
+          </p>
+          <p>
+            Solltest Du allerdings
+            <strong>selbst künstlerische oder publizistische Leistungen</strong>
+            von anderen Soloselbständigen oder Personengesellschaften einkaufen,
+            dann wärst <strong>auch Du dazu verpflichtet</strong>, dies an die
+            Künstlersozialkasse zu melden und Künstlersozialabgabe für diese
+            Leistungen zu entrichten.
+          </p>
+          <p>
+            <strong>Kurz gesagt:</strong
+            ><em>
+              Möchtest Du wissen, was Du selbst monatlich ungefähr zahlst, nutze
+              den</em
+            ><a
+              class="ksk-text-link"
+              href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"
+            >
+            </a
+            ><a
+              class="ksk-text-link"
+              href="ksk-beitragsrechner.html#JetztKSK-Beitragberechnen"
+              >KSK-Beitragsrechner</a
+            ><em
+              >. Geht es darum, ob ein Unternehmen für beauftragte künstlerische
+              oder publizistische Leistungen Künstlersozialabgabe zahlen muss,
+              findest Du die Informationen auf unserer Seite zur </em
+            ><em><strong>Künstlersozialabgabe</strong></em
+            ><em>.</em>
+          </p>
+        </div>
+      </section>
+      <section
+        id="welches-einkommen-zaehlt"
+        class="block-section section-padding"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Welches Einkommen zählt für den KSK-Beitrag?</h2>
+          <p>
+            Für die Beitragshöhe in der Künstlersozialkasse (KSK) ist
+            entscheidend,
+            <strong
+              >was Du voraussichtlich mit Deiner selbständigen künstlerischen
+              oder publizistischen Tätigkeit verdienst</strong
+            >. Das bei der KSK anzugebende Jahreseinkommen bezieht sich auf das
+            kommende Geschäftsjahr und ist deshalb
+            <strong>immer eine Schätzung</strong>.
+          </p>
+          <p>
+            Die KSK nutzt im Künstlersozialversicherungsrecht
+            <strong
+              >exakt denselben Einkommensbegriff wie das
+              Einkommensteuergesetz</strong
+            >. Das für die Beiträge entscheidende
+            <strong>„Arbeitseinkommen“</strong> entspricht im Regelfall genau
+            den Einkünften aus selbständiger Arbeit auf Deinem finalen
+            Einkommensteuerbescheid.
+          </p>
+          <p>
+            Von Deinen Betriebseinnahmen ziehst Du die betrieblich veranlassten
+            Ausgaben Deiner künstlerischen oder publizistischen Tätigkeit ab.
+            Das Ergebnis ist <strong>Dein Arbeitseinkommen</strong> –
+            vereinfacht gesagt also <strong>der Gewinn</strong>, den Du
+            voraussichtlich mit dieser Tätigkeit erzielst.
+          </p>
+          <p>
+            <strong>Betriebseinnahmen:</strong> Einnahmen aus Deiner
+            selbständigen künstlerischen oder publizistischen Tätigkeit.
+          </p>
+          <p>
+            <strong>Betriebsausgaben:</strong> Kosten, die durch diese Tätigkeit
+            entstehen.
+          </p>
+          <p>
+            <strong>Arbeitseinkommen:</strong> Betriebseinnahmen minus
+            Betriebsausgaben – also der steuerrechtliche Gewinn vor
+            Einkommensteuer.
+          </p>
+          <p><strong>Ein einfaches Beispiel:</strong></p>
+          <div class="ksk-example">
+            Du erwartest im Jahr
+            <strong>50.000 Euro Betriebseinnahmen</strong> und hast
+            voraussichtlich
+            <strong>20.000 Euro abzugsfähige Betriebsausgaben</strong>. Dein
+            voraussichtliches Arbeitseinkommen beträgt in diesem vereinfachten
+            Beispiel <strong>30.000 Euro</strong>.
+          </div>
+          <p>
+            <strong
+              >Andere Einkünfte werden nicht automatisch zu diesem Betrag
+              addiert.</strong
+            >
+            Eine zusätzliche Festanstellung, eine weitere nicht künstlerische
+            selbständige Tätigkeit, Firmenbeteiligungen oder andere Einkünfte
+            <strong>können Deine Situation trotzdem beeinflussen</strong>.
+          </p>
+          <p>
+            Gerade wenn Du
+            <strong
+              >mehrere Tätigkeiten oder unterschiedliche
+              Einkommensquellen</strong
+            >
+            hast, solltest Du deshalb nicht einfach Dein gesamtes Einkommen in
+            den KSK-Rechner übernehmen.
+          </p>
+          <div class="ksk-cta-row">
+            <a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a
+            ><a class="btn btn-teal" href="vorteile.html"
+              >Vorteile FWB Mitgliedschaft</a
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        id="wie-schaetze-ich-mein-voraussichtliches-jahresarbeitseinkommen-richtig"
+        class="block-section section-padding bg-light"
+      >
+        <div class="container page-container ksk-content">
+          <h2>
+            Wie schätze ich mein voraussichtliches Jahresarbeitseinkommen
+            richtig?
+          </h2>
+          <p>
+            Das bei der KSK anzugebende Jahreseinkommen bezieht sich auf das
+            kommende Geschäftsjahr und ist deshalb
+            <strong>immer eine Schätzung</strong>. Im Grunde gibt es
+            <strong>drei unterschiedliche Methoden</strong> zur Schätzung Deines
+            voraussichtlichen Jahresarbeitseinkommens, um Deinen zukünftigen
+            KSK-Beitrag zu ermitteln. Alle drei haben ihre Berechtigung:
+          </p>
+          <div class="rechner-method-card">
+            <h3>
+              1. Einkünfte aus den Einkommensteuerbescheiden der zurückliegenden
+              Jahre
+            </h3>
+            <p>
+              Wenn Du bereits ein paar Jahre als selbständiger Künstler oder
+              Publizist tätig bist, verfügst Du sicherlich schon über
+              <strong
+                >mindestens einen Einkommensteuerbescheid vom Finanzamt</strong
+              >. Ist das der Fall, entnimmst Du dem aktuellsten Dokument den
+              Wert <strong>„Einkünfte aus selbständiger Tätigkeit“</strong>.
+              Falls Du innerhalb einer gewerblich agierenden
+              Personengesellschaft vorwiegend eine künstlerische oder
+              publizistische Tätigkeit ausübst, kommt der Wert „Einkünfte aus
+              Gewerbebetrieb“ für Dich in Betracht – unter Umständen sogar
+              beides: die „Summe der Einkünfte“.
+            </p>
+            <div class="ksk-formula">
+              <strong>Einkommen = Gewinn = Einkünfte</strong>
+            </div>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>einfache und relativ sichere Methode</span>
+            </div>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>mindestens ein Einkommensteuerbescheid</span>
+            </div>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>für bereits Selbständige</span>
+            </div>
+            <div class="rechner-alert-box">
+              <p>
+                <strong>ACHTUNG: </strong>Erzielst Du außerdem noch Einkünfte
+                aus einer weiteren der insgesamt sieben Einkunftsarten? Dann
+                solltest Du Dich professionell beraten lassen, um Deinen
+                KSK-Status nicht ungewollt zu gefährden.
+              </p>
+            </div>
+            <p class="ksk-number-note">
+              <strong>1.1 </strong>Sollte zwischenzeitlich ein
+              <strong>neuer Einkommensteuerbescheid</strong> durch Dein
+              Finanzamt ergehen, nutze dessen
+              <strong>aktuellere Werte</strong> für Deine Schätzung oder zur
+              Nachmeldung an die KSK.
+            </p>
+            <p class="ksk-number-note">
+              <strong>1.2 </strong>Hast Du einen konkreten Anlass,
+              <strong>deutlich mehr oder weniger Einkünfte</strong> zu erwarten,
+              <strong>passe Deine Schätzung dementsprechend an</strong>.
+            </p>
+          </div>
+          <div class="rechner-method-card">
+            <h3>
+              2. Schätze Deinen Jahresgewinn zur Berechnung Deines KSK-Beitrags
+            </h3>
+            <p>
+              Diese hemdsärmelige Methode empfehlen wir
+              <strong>nur beim Start in eine Selbständigkeit</strong>. Woher
+              sollst Du ohne Erfahrung auch wissen, wie das erste Jahr
+              tatsächlich läuft? Natürlich kannst Du auch die angenommenen
+              Zahlen aus Deinem Businessplan nehmen. Diese sind für die
+              Bewilligung von Existenzgründungshilfen jedoch häufig besonders
+              positiv gestaltet. Wird diese Prognose unterschritten,
+              <strong>zahlst Du mehr KSK-Beitrag als nötig</strong>. Dieser wird
+              <strong>nicht zurückerstattet</strong>, was die Liquidität gerade
+              im ersten Jahr der Selbständigkeit unnötig schmälert.
+            </p>
+            <p class="ksk-number-note">
+              <strong>2.1 </strong
+              ><strong>Schätze beim Start konservativ</strong> – im ersten Jahr
+              lieber etwas zu wenig als zu viel.
+            </p>
+            <p class="ksk-number-note">
+              <strong>2.2 </strong>Passe Deinen KSK-Beitrag über eine
+              <strong>Veränderungsmitteilung</strong> an, wenn es läuft.
+            </p>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>einfachste Methode für den Start</span>
+            </div>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>für Existenzgründer</span>
+            </div>
+            <div class="rechner-alert-box">
+              <p>
+                <strong>WICHTIG: </strong>Gehst Du gerade beim Start Deiner
+                neuen Selbständigkeit auf Nummer sicher und lässt Dich
+                professionell und unabhängig beraten – unbedingt BEVOR Du den
+                KSK-Antrag bei der Künstlersozialkasse anforderst. Ab diesem
+                Zeitpunkt läuft nämlich bereits eine Frist für Dich.
+              </p>
+            </div>
+          </div>
+          <div class="rechner-method-card">
+            <h3>
+              3. Ermittle Deinen Jahresgewinn mittels
+              Einnahmen-Überschuss-Rechnung
+            </h3>
+            <p>
+              Egal ob Du als Freiberufler oder in einer Personengesellschaft
+              selbständig bist, Deine Gewinnermittlung erfolgt mittels einer
+              <strong>einfachen Einnahmen-Überschuss-Rechnung (EÜR)</strong>.
+              Hierbei werden von Deinen Einnahmen Deine Ausgaben abgezogen.
+              <strong>Was übrig bleibt, ist Dein Gewinn.</strong> Für diesen
+              Gewinn wird im Einkommensteuerrecht der Begriff Einkünfte benutzt
+              (§ 4–7k EStG.).
+            </p>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>sehr genaue und sichere Methode</span>
+            </div>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>laufende Buchhaltung</span>
+            </div>
+            <div class="ksk-check-line">
+              <span class="ksk-check" aria-hidden="true">✓</span
+              ><span>für professionelle Selbständige</span>
+            </div>
+            <p>
+              Mit diesem sehr exakten Vorgehen bist Du im Falle einer
+              KSK-Prüfung bezogen auf Deine Einnahmesituation
+              <strong>absolut sicher aufgestellt</strong>.
+            </p>
+            <p class="ksk-number-note">
+              <strong>3.1 Was zählt alles zu den Betriebseinnahmen?</strong>
+            </p>
+            <p>
+              Sämtliche Einnahmen, die Du durch Deine künstlerische oder
+              publizistische Tätigkeit generiert hast, kannst Du zu Deinen
+              Betriebseinnahmen zählen. Das können zum Beispiel Tantiemen,
+              Gagen, Honorare oder urheberrechtliche Vergütungen sein. Von der
+              Bundesagentur für Arbeit erhaltene Zuwendungen wie ALG I, ALG II
+              oder Dein Gründungszuschuss musst Du hingegen nicht zu Deinen
+              Einnahmen hinzurechnen.
+            </p>
+            <p class="ksk-number-note">
+              <strong>3.2 Was zählt alles zu den Betriebsausgaben?</strong>
+            </p>
+            <p>
+              Als Betriebsausgaben gelten alle Ausgaben, die im Rahmen der
+              eigenen Selbständigkeit anfallen. Dazu zählen zum Beispiel Kosten
+              für Betriebsmittel, die zur Leistungserbringung notwendig sind:
+              Bei Musikern können das Abschreibungen auf Instrumente, Mikrofone,
+              Mischpulte oder Ähnliches sein; bei bildenden Künstlern
+              Materialien wie Leinwand, Pinsel und Farben; bei Kameraleuten das
+              Kameraequipment. Dazu kommen allgemein anerkannte Betriebsmittel
+              wie Büromöbel oder technische Geräte wie Notebook und Drucker. Die
+              Liste möglicher Betriebsausgaben ist sehr umfangreich.
+            </p>
+            <p>
+              <strong>Wichtig:</strong> Wenn Du zusätzlich angestellt bist,
+              mehrere selbständige Tätigkeiten ausübst oder Einkünfte aus
+              anderen Bereichen der 7 Einkommensarten hast, solltest Du
+              <strong>nicht einfach alles zusammenrechnen</strong>. Entscheidend
+              ist,
+              <strong
+                >welche Einkünfte für Deine Versicherung nach dem KSVG
+                tatsächlich relevant sind</strong
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="wie-wird-der-ksk-beitrag-berechnet"
+        class="block-section section-padding"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Wie wird der Beitrag zur Künstlersozialkasse berechnet?</h2>
+          <p>
+            Dein Beitrag richtet sich vor allem danach,
+            <strong
+              >wie hoch Du Dein voraussichtliches Jahresarbeitseinkommen
+              einschätzt</strong
+            >.
+          </p>
+          <p>
+            Das Besondere an der Künstlersozialversicherung: Als selbständiger
+            Künstler oder Publizist musst Du die Beiträge zur gesetzlichen
+            Renten-, Kranken- und Pflegeversicherung
+            <strong>nicht vollständig allein tragen</strong>.
+          </p>
+          <p>
+            <strong
+              >Die Künstlersozialkasse (KSK) übernimmt genau 50 % Deiner
+              Sozialversicherungsbeiträge. Sie funktioniert damit wie ein
+              Arbeitgeber. Das bedeutet, Du zahlst nur die andere Hälfte für
+              Deine Kranken-, Pflege- und Rentenversicherung.</strong
+            >
+          </p>
+          <p>
+            Das bedeutet:
+            <strong
+              >Deine soziale Absicherung kostet Dich deutlich weniger</strong
+            >, als wenn Du die entsprechenden gesetzlichen Beiträge als
+            Selbständiger vollständig allein finanzieren müsstest.
+          </p>
+          <p>
+            Wie hoch Dein konkreter monatlicher Beitrag ausfällt, hängt unter
+            anderem ab von:
+          </p>
+          <p>Deinem voraussichtlichen Jahresarbeitseinkommen</p>
+          <p>den jeweils geltenden Beitragssätzen</p>
+          <p>dem individuellen Zusatzbeitrag Deiner Krankenkasse</p>
+          <p>Deiner persönlichen Situation in der Pflegeversicherung</p>
+          <p>
+            Bei gesetzlicher Krankenversicherung kommt zu Deinem Anteil am
+            allgemeinen Beitragssatz zusätzlich die Hälfte des individuellen
+            Zusatzbeitrags Deiner Krankenkasse hinzu.
+          </p>
+          <p>
+            Die frühere Trennung nach den Rechtskreisen
+            <strong>Ost und West entfällt seit dem 1. Januar 2025</strong>.
+          </p>
+        </div>
+      </section>
+      <section id="werte-2026" class="block-section section-padding bg-light">
+        <div class="container page-container ksk-content">
+          <h2>Werte 2026 auf einen Blick</h2>
+          <p>
+            Die folgenden Werte zeigen Dir,
+            <strong
+              >mit welchen Beitragssätzen und Grenzen 2026 gerechnet
+              wird</strong
+            >.
+          </p>
+          <p>
+            Wichtig für Dich: Nicht jeder Prozentsatz wird einfach vollständig
+            von Deinem Einkommen abgezogen. Dein eigener Anteil ist nur der
+            jeweilige <strong>Versichertenanteil</strong>, und bei höheren
+            Einkommen begrenzen die Beitragsbemessungsgrenzen (BBG), wie weit
+            Deine Beiträge steigen können.
+          </p>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Bereich</th>
+                  <th>Wert 2026</th>
+                  <th>Versichertenanteil / Hinweis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rentenversicherung</td>
+                  <td>18,6 %</td>
+                  <td>9,3 %; BBG 101.400 € jährlich</td>
+                </tr>
+                <tr>
+                  <td>Krankenversicherung</td>
+                  <td>14,6 %</td>
+                  <td>
+                    7,3 % plus Hälfte des individuellen Zusatzbeitrags; BBG
+                    69.750 € jährlich
+                  </td>
+                </tr>
+                <tr>
+                  <td>Durchschnittlicher Zusatzbeitrag</td>
+                  <td>2,9 %</td>
+                  <td>
+                    Orientierungswert; maßgeblich ist der individuelle
+                    Zusatzbeitrag Deiner Krankenkasse
+                  </td>
+                </tr>
+                <tr>
+                  <td>Pflegeversicherung</td>
+                  <td>3,6 % / 4,2 % kinderlos</td>
+                  <td>
+                    Versichertenanteil 1,8 % bzw. 2,4 %; Abschläge ab dem 2.
+                    Kind unter 25 möglich
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mindestarbeitseinkommen § 3 KSVG</td>
+                  <td>mehr als 3.900 € jährlich</td>
+                  <td>gesetzliche Ausnahmen beachten</td>
+                </tr>
+                <tr>
+                  <td>Mindest-Berechnungsgrundlage</td>
+                  <td>RV 3.900 € / KV-PV 7.910 € jährlich</td>
+                  <td>Rechengrundlagen für Mindestbeiträge</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="rechner-alert-box">
+            <p>
+              <strong>Hinweis: </strong
+              ><em
+                >Die Werte gelten für 2026. Maßgeblich sind die jeweils
+                aktuellen gesetzlichen Werte und – bei der Krankenversicherung –
+                der individuelle Zusatzbeitrag Deiner Krankenkasse.
+              </em>
+            </p>
+          </div>
+          <p>
+            Offizielle Quellen:
+            <a
+              class="ksk-text-link"
+              href="https://www.kuenstlersozialkasse.de/kuenstler-und-publizisten/beitrag"
+              >KSK Beitrag</a
+            >
+            ·
+            <a
+              class="ksk-text-link"
+              href="https://www.kuenstlersozialkasse.de/service-und-medien/ksk-in-zahlen"
+              >KSK in Zahlen</a
+            >
+          </p>
+        </div>
+      </section>
+      <section
+        id="mindesteinkommen-und-mindestbeitraege"
+        class="block-section section-padding"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Wie hoch ist der Mindestbeitrag zur Künstlersozialkasse 2026?</h2>
+          <p>
+            Auch wenn Dein Einkommen niedrig ist, bedeutet das nicht
+            automatisch, dass Du nicht über die KSK versichert sein kannst. Im
+            Gegenteil – die Künstlersozialkasse wurde ja gerade zur Absicherung
+            von Künstlern mit stark schwankenden Einkommen geschaffen.
+          </p>
+          <p>
+            Um in der KSK versichert zu sein, benötigst Du ein jährliches
+            Arbeitseinkommen aus Deiner selbständigen künstlerischen oder
+            publizistischen Tätigkeit von mindestens
+            <strong>3.900 Euro</strong>. Davon gibt es aber wichtige Ausnahmen.
+          </p>
+          <p>
+            Gerade für <strong>Berufsanfänger</strong> ist das relevant: In den
+            <strong>ersten drei Jahren</strong> nach erstmaliger Aufnahme Deiner
+            selbständigen künstlerischen oder publizistischen Tätigkeit gilt
+            diese Mindesteinkommensgrenze nicht.
+          </p>
+          <p>
+            Auch später kann Deine Versicherungspflicht trotz eines niedrigeren
+            Einkommens bestehen bleiben, wenn Du die Grenze innerhalb von sechs
+            Kalenderjahren <strong>höchstens zweimal unterschreitest</strong>.
+          </p>
+          <p>
+            Wichtig für Dich:
+            <strong
+              >Mindesteinkommen und Mindestbeitrag sind nicht dasselbe.</strong
+            >
+          </p>
+          <p>
+            Die 3.900-Euro-Grenze betrifft die Frage, ob Du grundsätzlich
+            versicherungspflichtig bist. Für die eigentliche Beitragsberechnung
+            gelten eigene Mindest-Berechnungsgrundlagen.
+          </p>
+          <p>2026 sind das:</p>
+          <p class="ksk-number-note">
+            <strong>3.900 Euro jährlich</strong> für die Rentenversicherung
+          </p>
+          <p class="ksk-number-note">
+            <strong>7.910 Euro jährlich</strong> für Kranken- und
+            Pflegeversicherung
+          </p>
+          <p>
+            Das bedeutet: Auch bei einem sehr niedrigen tatsächlichen
+            Arbeitseinkommen wird Dein Beitrag nicht beliebig niedrig berechnet,
+            sondern mindestens auf Basis dieser Rechengrundlagen.
+          </p>
+          <p>
+            <strong>Wichtig: </strong>Mindesteinkommen und Mindestbeitrag sind
+            nicht dasselbe. Die 3.900-Euro-Grenze betrifft grundsätzlich die
+            Versicherungspflicht; die Mindest-Berechnungsgrundlagen bestimmen,
+            von welchem Einkommen Beiträge mindestens berechnet werden.
+          </p>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Versicherungszweig</th>
+                  <th>Mindestbeitrag 2026 (Versichertenanteil)</th>
+                  <th>Hinweis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rentenversicherung</td>
+                  <td>30,23 € / Monat</td>
+                  <td>auf Basis 3.900 € jährlich</td>
+                </tr>
+                <tr>
+                  <td>Krankenversicherung</td>
+                  <td>48,12 € / Monat + 1/2 individueller Zusatzbeitrag</td>
+                  <td>auf Basis 7.910 € jährlich</td>
+                </tr>
+                <tr>
+                  <td>Pflegeversicherung</td>
+                  <td>11,87 € / Monat bzw. 15,82 € kinderlos</td>
+                  <td>Kinderabschläge ab dem 2. Kind unter 25 möglich</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section
+        id="hoechstbeitraege-und-beitragsbemessungsgrenzen"
+        class="block-section section-padding bg-light"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Wie hoch ist der Höchstbeitrag zur Künstlersozialkasse 2026?</h2>
+          <p>
+            Wenn Dein Einkommen steigt, steigen auch Deine Beiträge – aber
+            <strong>nicht unbegrenzt</strong>.
+          </p>
+          <p>
+            Für jeden Versicherungszweig gibt es eine
+            <strong>Beitragsbemessungsgrenze</strong>. Einkommen oberhalb dieser
+            Grenze wird für die Beitragsberechnung des jeweiligen
+            Versicherungszweigs <strong>nicht mehr berücksichtigt</strong>.
+          </p>
+          <p>
+            Das bedeutet für Dich: Ab einem bestimmten Einkommen erhöht sich
+            Dein Beitrag für diesen Versicherungszweig
+            <strong>nicht weiter</strong>, selbst wenn Du mehr verdienst.
+          </p>
+          <p>2026 liegt die Beitragsbemessungsgrenze (BBG):</p>
+          <ul>
+            <li>
+              in der
+              <strong>Rentenversicherung bei 101.400 Euro jährlich</strong>
+            </li>
+            <li>
+              in der
+              <strong
+                >Kranken- und Pflegeversicherung bei 69.750 Euro jährlich</strong
+              >
+            </li>
+          </ul>
+          <p>
+            Weil für Rentenversicherung und Kranken-/Pflegeversicherung
+            unterschiedliche Grenzen gelten, gibt es
+            <strong
+              >nicht einen einzigen starren KSK-Gesamt-Höchstbeitrag</strong
+            >.
+          </p>
+          <p>
+            Wie hoch Dein tatsächlicher Höchstbeitrag ausfällt, hängt zusätzlich
+            unter anderem vom individuellen Zusatzbeitrag Deiner Krankenkasse
+            und Deiner Pflegeversicherungssituation ab.
+          </p>
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Versicherungszweig</th>
+                  <th>Monatlicher Höchstbeitrag 2026 (Versichertenanteil)</th>
+                  <th>Hinweis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Rentenversicherung</td>
+                  <td>785,85 €</td>
+                  <td>bei RV-BBG 101.400 € jährlich</td>
+                </tr>
+                <tr>
+                  <td>Krankenversicherung</td>
+                  <td>424,31 € + 1/2 individueller Zusatzbeitrag</td>
+                  <td>bei KV-BBG 69.750 € jährlich</td>
+                </tr>
+                <tr>
+                  <td>Pflegeversicherung</td>
+                  <td>104,63 € bzw. 139,50 € kinderlos</td>
+                  <td>bei KV/PV-BBG 69.750 €; Kinderabschläge möglich</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section
+        id="brutto-netto-umsatz-gewinn"
+        class="block-section section-padding"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Brutto oder netto? Umsatz oder Gewinn?</h2>
+          <p>
+            Wenn Du Deine Einkommensprognose für die KSK machst, ist die
+            entscheidende Frage meistens nicht
+            <strong>„brutto oder netto?“</strong>, sondern:
+          </p>
+          <p>
+            <em
+              ><strong
+                >Wie hoch ist mein voraussichtlicher Gewinn aus meiner
+                selbständigen künstlerischen oder publizistischen
+                Tätigkeit?</strong
+              ></em
+            >
+          </p>
+          <p><em>Dein Umsatz allein ist dafür nicht maßgeblich.</em></p>
+          <p>
+            Von Deinen Betriebseinnahmen ziehst Du Deine betrieblich
+            veranlassten Ausgaben ab. Das Ergebnis ist Dein voraussichtliches
+            Arbeitseinkommen.
+          </p>
+          <p><strong>Vereinfacht gesagt:</strong></p>
+          <div class="ksk-formula">
+            <strong
+              >Betriebseinnahmen – Betriebsausgaben = voraussichtliches
+              Arbeitseinkommen</strong
+            >
+          </div>
+          <p>
+            Das ist die Zahl, die für Deine Beitragsberechnung grundsätzlich
+            entscheidend ist.
+          </p>
+          <p>
+            Wenn Du zusätzlich angestellt bist, weitere selbständige Tätigkeiten
+            ausübst oder andere Einkünfte hast, solltest Du diese Beträge nicht
+            einfach alle zusammenrechnen. Dann kann eine genauere Einordnung
+            notwendig sein.
+          </p>
+          <p>
+            <strong>Beispiel: </strong>Du erzielst 50.000 Euro Betriebseinnahmen
+            und hast 20.000 Euro abzugsfähige Betriebsausgaben. Das
+            Arbeitseinkommen beträgt in diesem vereinfachten Beispiel 30.000
+            Euro.
+          </p>
+        </div>
+      </section>
+      <section
+        id="schaetzung-zu-hoch-oder-zu-niedrig"
+        class="block-section section-padding bg-light"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Wenn die Schätzung zu hoch oder zu niedrig ist</h2>
+          <p>
+            Das
+            <strong
+              >voraussichtliche Jahresarbeitseinkommen ist eine Prognose</strong
+            >. Wenn sich Deine Erwartungen ändern, kannst Du der
+            Künstlersozialkasse eine
+            <strong>aktualisierte Einkommensschätzung</strong> mitteilen.
+          </p>
+          <p>
+            Nach den aktuellen KSK-Hinweisen wirkt sich die Änderung
+            grundsätzlich
+            <strong>ab dem Folgemonat nach Eingang der Mitteilung</strong> aus.
+            Eine <strong>rückwirkende Beitragskorrektur</strong> bereits
+            begonnener oder abgelaufener Monate erfolgt allein wegen einer
+            später geänderten Schätzung nicht.
+          </p>
+          <p>
+            <strong>Wichtig: </strong>Eine abweichende tatsächliche
+            Einkommensentwicklung ist nicht dasselbe wie eine automatische
+            Beitragsnachzahlung. Unrichtige oder unvollständige Angaben sowie
+            KSK-Prüfungen sind davon getrennt zu betrachten.
+          </p>
+          <p>
+            <a
+              class="ksk-text-link"
+              href="https://www.kuenstlersozialkasse.de/kuenstler-und-publizisten/aenderungsmitteilungen"
+              >Offizielle Änderungsmitteilungen der KSK</a
+            >
+            ·
+            <a class="ksk-text-link" href="ksk-pruefung-versicherte.html"
+              >Informationen zur KSK-Prüfung</a
+            >
+          </p>
+          <div class="ksk-cta-row">
+            <a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a
+            ><a class="btn btn-teal" href="vorteile.html"
+              >Vorteile FWB Mitgliedschaft</a
+            >
+          </div>
+        </div>
+      </section>
+      <section
+        id="wann-ksk-beratung-sinnvoll-ist"
+        class="block-section section-padding"
+      >
+        <div class="container page-container ksk-content">
+          <h2>Wann eine KSK-Beratung sinnvoll ist</h2>
+          <p>
+            <strong>Der Rechner liefert Dir eine Zahl.</strong> Eine Beratung
+            hilft dann weiter, wenn
+            <strong>die Grundlage dieser Zahl nicht eindeutig ist</strong>.
+          </p>
+          <div class="ksk-check-line">
+            <span class="ksk-check" aria-hidden="true">✓</span
+            ><span>Du übst mehrere oder gemischte Tätigkeiten aus.</span>
+          </div>
+          <div class="ksk-check-line">
+            <span class="ksk-check" aria-hidden="true">✓</span
+            ><span
+              >Du bist neben der künstlerischen oder publizistischen
+              Selbständigkeit angestellt.</span
+            >
+          </div>
+          <div class="ksk-check-line">
+            <span class="ksk-check" aria-hidden="true">✓</span
+            ><span
+              >Du hast Beteiligungen an Firmen oder weitere selbständige
+              Einkünfte.</span
+            >
+          </div>
+          <div class="ksk-check-line">
+            <span class="ksk-check" aria-hidden="true">✓</span
+            ><span>Deine Einnahmen schwanken stark.</span>
+          </div>
+          <div class="ksk-check-line">
+            <span class="ksk-check" aria-hidden="true">✓</span
+            ><span
+              >Du bist unsicher, welches Arbeitseinkommen Du melden
+              solltest.</span
+            >
+          </div>
+          <div class="ksk-check-line">
+            <span class="ksk-check" aria-hidden="true">✓</span
+            ><span
+              >Du möchtest Deine Einkommensschätzung ändern und kannst die
+              Folgen nicht sicher einordnen.</span
+            >
+          </div>
+          <div class="ksk-check-line">
+            <span class="ksk-check" aria-hidden="true">✓</span
+            ><span
+              >Du hast bereits eine KSK-Rückfrage oder ein Prüfschreiben
+              erhalten.</span
+            >
+          </div>
+          <div class="ksk-cta-row">
+            <a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a
+            ><a class="btn btn-teal" href="vorteile.html"
+              >Vorteile FWB Mitgliedschaft</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="faq" class="block-section section-padding bg-light">
+        <div class="container page-container ksk-content">
+          <h2>Häufige Fragen zu KSK-Beiträgen und Kosten</h2>
+          <div class="ksk-faq" data-ksk-faq>
+            <div class="ksk-faq-item">
+              <h3 class="ksk-faq-heading">
+                <button
+                  type="button"
+                  class="ksk-faq-question"
+                  id="support-faq-question-1"
+                  aria-expanded="true"
+                  aria-controls="support-faq-answer-1"
+                >
+                  <span
+                    >Was kostet die Künstlersozialversicherung im Monat?</span
+                  ><span class="ksk-faq-indicator" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="ksk-faq-panel"
+                id="support-faq-answer-1"
+                role="region"
+                aria-labelledby="support-faq-question-1"
+              >
+                <p>
+                  Das hängt von Deinem voraussichtlichen Jahresarbeitseinkommen,
+                  den jeweils geltenden Beitragssätzen, dem individuellen
+                  Zusatzbeitrag Deiner Krankenkasse und Deiner
+                  Pflegeversicherungssituation ab. Für eine erste Orientierung
+                  nutze den KSK-Beitragsrechner.
+                </p>
+              </div>
+            </div>
+            <div class="ksk-faq-item">
+              <h3 class="ksk-faq-heading">
+                <button
+                  type="button"
+                  class="ksk-faq-question"
+                  id="support-faq-question-2"
+                  aria-expanded="false"
+                  aria-controls="support-faq-answer-2"
+                >
+                  <span>Was ist der KSK-Mindestbeitrag?</span
+                  ><span class="ksk-faq-indicator" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="ksk-faq-panel"
+                id="support-faq-answer-2"
+                role="region"
+                aria-labelledby="support-faq-question-2"
+                hidden
+              >
+                <p>
+                  Die Mindestbeiträge ergeben sich aus
+                  Mindest-Berechnungsgrundlagen der einzelnen
+                  Versicherungszweige. Sie sind von der 3.900-Euro-Grenze für
+                  die Versicherungspflicht zu unterscheiden.
+                </p>
+              </div>
+            </div>
+            <div class="ksk-faq-item">
+              <h3 class="ksk-faq-heading">
+                <button
+                  type="button"
+                  class="ksk-faq-question"
+                  id="support-faq-question-3"
+                  aria-expanded="false"
+                  aria-controls="support-faq-answer-3"
+                >
+                  <span>Was ist der KSK-Höchstbeitrag?</span
+                  ><span class="ksk-faq-indicator" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="ksk-faq-panel"
+                id="support-faq-answer-3"
+                role="region"
+                aria-labelledby="support-faq-question-3"
+                hidden
+              >
+                <p>
+                  Die Höchstbeiträge ergeben sich aus den jeweiligen
+                  Beitragssätzen und Beitragsbemessungsgrenzen. Weil
+                  Rentenversicherung und Kranken-/Pflegeversicherung
+                  unterschiedliche Grenzen haben und der Zusatzbeitrag der
+                  Krankenkasse individuell ist, gibt es keinen einzigen starren
+                  Gesamt-Höchstbeitrag.
+                </p>
+              </div>
+            </div>
+            <div class="ksk-faq-item">
+              <h3 class="ksk-faq-heading">
+                <button
+                  type="button"
+                  class="ksk-faq-question"
+                  id="support-faq-question-4"
+                  aria-expanded="false"
+                  aria-controls="support-faq-answer-4"
+                >
+                  <span>Muss ich brutto oder netto melden?</span
+                  ><span class="ksk-faq-indicator" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="ksk-faq-panel"
+                id="support-faq-answer-4"
+                role="region"
+                aria-labelledby="support-faq-question-4"
+                hidden
+              >
+                <p>
+                  Maßgeblich ist grundsätzlich Dein voraussichtliches
+                  Arbeitseinkommen, also der steuerrechtliche Gewinn aus der
+                  relevanten selbständigen Tätigkeit - Betriebseinnahmen minus
+                  Betriebsausgaben.
+                </p>
+              </div>
+            </div>
+            <div class="ksk-faq-item">
+              <h3 class="ksk-faq-heading">
+                <button
+                  type="button"
+                  class="ksk-faq-question"
+                  id="support-faq-question-5"
+                  aria-expanded="false"
+                  aria-controls="support-faq-answer-5"
+                >
+                  <span
+                    >Kann ich meinen Einkommensteuerbescheid als Grundlage
+                    nehmen?</span
+                  ><span class="ksk-faq-indicator" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="ksk-faq-panel"
+                id="support-faq-answer-5"
+                role="region"
+                aria-labelledby="support-faq-question-5"
+                hidden
+              >
+                <p>
+                  Vorjahreswerte und Steuerunterlagen können eine Orientierung
+                  geben. Entscheidend bleibt aber die realistische Prognose
+                  Deines voraussichtlichen Arbeitseinkommens für den relevanten
+                  Zeitraum und nur aus der selbständigen künstlerischen oder
+                  publizistischen Tätigkeit.
+                </p>
+              </div>
+            </div>
+            <div class="ksk-faq-item">
+              <h3 class="ksk-faq-heading">
+                <button
+                  type="button"
+                  class="ksk-faq-question"
+                  id="support-faq-question-6"
+                  aria-expanded="false"
+                  aria-controls="support-faq-answer-6"
+                >
+                  <span
+                    >Was passiert, wenn ich mein Einkommen später anders
+                    einschätze?</span
+                  ><span class="ksk-faq-indicator" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="ksk-faq-panel"
+                id="support-faq-answer-6"
+                role="region"
+                aria-labelledby="support-faq-question-6"
+                hidden
+              >
+                <p>
+                  Du kannst der KSK eine aktualisierte Schätzung mit dem
+                  Formular „Änderungsmitteilung des voraussichtlichen
+                  Arbeitseinkommens aus selbständiger künstlerischer /
+                  publizistischer Tätigkeit“
+                </p>
+                <p>
+                  melden. Sie wirkt sich grundsätzlich für die Zukunft ab dem
+                  Folgemonat nach Eingang der Mitteilung auf die Beitragshöhe
+                  aus.
+                </p>
+              </div>
+            </div>
+            <div class="ksk-faq-item">
+              <h3 class="ksk-faq-heading">
+                <button
+                  type="button"
+                  class="ksk-faq-question"
+                  id="support-faq-question-7"
+                  aria-expanded="false"
+                  aria-controls="support-faq-answer-7"
+                >
+                  <span>Was ist der Unterschied zum KSK-Beitragsrechner?</span
+                  ><span class="ksk-faq-indicator" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div
+                class="ksk-faq-panel"
+                id="support-faq-answer-7"
+                role="region"
+                aria-labelledby="support-faq-question-7"
+                hidden
+              >
+                <p>
+                  Der Rechner liefert schnell eine mögliche Beitragshöhe. Diese
+                  Seite erklärt die Begriffe, Rechengrundlagen, Mindestwerte und
+                  Beitragsbemessungsgrenzen hinter dem Ergebnis.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="ksk-cta-row">
+            <a class="btn btn-orange" href="ksk-beratung.html">KSK-Beratung</a
+            ><a class="btn btn-teal" href="vorteile.html"
+              >Vorteile FWB Mitgliedschaft</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="support-final-cta">
+        <div class="container page-container content-box">
+          <div class="rechner-cta-banner">
+            <div class="cta-text">
+              <h3>Unsicher, welches Einkommen Du melden sollst?</h3>
+              <p>
+                Der Rechner liefert Dir eine Zahl. Ob die Grundlage dieser Zahl
+                stimmt, klären wir mit Dir in 45 Minuten — bevor Deine Schätzung
+                bei der Künstlersozialkasse liegt.
+              </p>
+            </div>
+            <a
+              href="ksk-beratung.html"
+              class="btn btn-orange"
+              style="flex-shrink: 0"
+              >KSK-Beratung</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <!-- Upper zone: #faf9f6 background with logo + columns -->
+      <div class="footer-upper">
+        <div class="container footer-upper-grid">
+          <!-- Brand column -->
+          <div class="footer-brand-col">
+            <a href="../index.html" class="footer-logo">
+              <img src="../assets/logo.png" alt="Freie Wildbahn e.V." />
             </a>
-            <!-- YouTube icon -->
-            <a href="#" aria-label="YouTube" class="footer-social-link">
-              <svg viewBox="0 0 576 512" aria-hidden="true"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            <p class="footer-tagline">
+              Schnell und einfach stetig auf dem neuesten Stand rund um das
+              Thema „Künstler und Künstlersozialkasse".
+            </p>
+          </div>
+
+          <!-- Unsere Themen -->
+          <div class="footer-col">
+            <h6 class="footer-col-heading">Unsere Themen</h6>
+            <ul class="footer-col-links">
+              <li><a href="ksk-pruefung-versicherte.html">KSK-Prüfung</a></li>
+              <li><a href="ksk-beitragsrechner.html">KSK-Rechner</a></li>
+              <li>
+                <a href="kuenstlersozialkasse.html">Künstlersozialkasse</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Über uns -->
+          <div class="footer-col">
+            <h6 class="footer-col-heading">Über uns</h6>
+            <ul class="footer-col-links">
+              <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Konto -->
+          <div class="footer-col">
+            <h6 class="footer-col-heading">Konto</h6>
+            <ul class="footer-col-links">
+              <li><a href="https://login.freie-wildbahn.de/login">Login</a></li>
+              <li><a href="#">Registrieren</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower bar: teal background -->
+      <div class="footer-lower">
+        <div class="container footer-lower-inner">
+          <!-- Legal links -->
+          <nav class="footer-legal-nav" aria-label="Rechtliches">
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutzinformation</a>
+            <a href="#">Quellenangaben</a>
+          </nav>
+
+          <!-- Copyright + credit -->
+          <div class="footer-copy">
+            <p>© 2026 Freie Wildbahn e.V. | Alle Rechte vorbehalten</p>
+            <p>
+              <a href="https://digitallanders.de" target="_blank" rel="noopener"
+                >Website &amp; Marketing: digitallanders</a
+              >
+            </p>
+          </div>
+
+          <!-- Social + back to top -->
+          <div class="footer-right-group">
+            <div class="footer-social">
+              <!-- Facebook icon -->
+              <a href="#" aria-label="Facebook" class="footer-social-link">
+                <svg viewBox="0 0 320 512" aria-hidden="true">
+                  <path
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                  />
+                </svg>
+              </a>
+              <!-- YouTube icon -->
+              <a href="#" aria-label="YouTube" class="footer-social-link">
+                <svg viewBox="0 0 576 512" aria-hidden="true">
+                  <path
+                    d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <a
+              href="#"
+              class="footer-back-top"
+              id="backToTop"
+              aria-label="Zurück nach oben"
+            >
+              <svg viewBox="0 0 448 512" aria-hidden="true">
+                <path
+                  d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"
+                />
+              </svg>
+              Zurück nach oben
             </a>
           </div>
-          <a href="#" class="footer-back-top" id="backToTop" aria-label="Zurück nach oben">
-            <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
-            Zurück nach oben
-          </a>
         </div>
-
       </div>
-    </div>
+    </footer>
 
-  </footer>
-
-
-  <!-- KSK-CONTENT-SPLIT-FAQ -->
-  <script>
-    (() => {
-      document.querySelectorAll('[data-ksk-faq]').forEach((accordion) => {
-        const questions = Array.from(accordion.querySelectorAll('.ksk-faq-question'));
-        questions.forEach((question) => {
-          question.addEventListener('click', () => {
-            const shouldOpen = question.getAttribute('aria-expanded') !== 'true';
-            questions.forEach((item) => {
-              const panel = document.getElementById(item.getAttribute('aria-controls'));
-              item.setAttribute('aria-expanded', 'false');
-              if (panel) panel.hidden = true;
+    <!-- KSK-CONTENT-SPLIT-FAQ -->
+    <script>
+      (() => {
+        document.querySelectorAll("[data-ksk-faq]").forEach((accordion) => {
+          const questions = Array.from(
+            accordion.querySelectorAll(".ksk-faq-question"),
+          );
+          questions.forEach((question) => {
+            question.addEventListener("click", () => {
+              const shouldOpen =
+                question.getAttribute("aria-expanded") !== "true";
+              questions.forEach((item) => {
+                const panel = document.getElementById(
+                  item.getAttribute("aria-controls"),
+                );
+                item.setAttribute("aria-expanded", "false");
+                if (panel) panel.hidden = true;
+              });
+              if (shouldOpen) {
+                const panel = document.getElementById(
+                  question.getAttribute("aria-controls"),
+                );
+                question.setAttribute("aria-expanded", "true");
+                if (panel) panel.hidden = false;
+              }
             });
-            if (shouldOpen) {
-              const panel = document.getElementById(question.getAttribute('aria-controls'));
-              question.setAttribute('aria-expanded', 'true');
-              if (panel) panel.hidden = false;
-            }
           });
         });
-      });
-    })();
-  </script>
-
-</body>
+      })();
+    </script>
+  </body>
 </html>
